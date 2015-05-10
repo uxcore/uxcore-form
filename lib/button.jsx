@@ -12,7 +12,6 @@ const Button = React.createClass({
             bsStyle: "kuma-formbutton"
         };
     },
-
     getParent: function() {
         return this.props.parent;
     },
@@ -24,7 +23,7 @@ const Button = React.createClass({
         this.props.parent=null;
     },
     render() {
-           return <div className={this.props.bsStyle} onClick={this.doClick.bind(this,{context:this})}>{this.props.label}</div>;
+        return <div className={this.props.bsStyle} onClick={this.doClick.bind(this,{context:this})}>{this.props.label}</div>;
     }
 
 });

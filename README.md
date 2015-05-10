@@ -1,11 +1,11 @@
-# uxcore-uxcore-form
+# uxcore-form
 ---
 
 uxcore-form ui component for react
 
 
-```sh
-$ git clone https://github.com/uxcore/uxcore-uxcore-form
+``` how to run
+$ git clone https://github.com/uxcore/uxcore-form
 $ cd uxcore-uxcore-form
 $ npm install
 $ npm run dev
