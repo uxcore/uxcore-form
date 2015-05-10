@@ -1,0 +1,65 @@
+ul,li,dt,dd,dl,p{
+    padding: 0px;
+    margin: 0px;
+}
+ul, li{
+    list-style: none;
+}
+.kuma-form{
+    padding: 20px;
+}
+.kuma-formfield{
+    line-height: 48px;
+    clear:both;
+}
+.kuma-formfield label{
+    float: right;
+    padding: 0px 20px 0px 12px;
+    text-align: right;
+}
+.kuma-formfield label i{
+    color:Red;
+}
+.kuma-formfield ul{
+    float:left;
+    width:100%;
+}
+.kuma-formfield dt{
+    float: left;
+    width: 15%;
+    min-height: 48px;
+}
+.kuma-formfield dd{
+    float: left;
+    width: 80%;
+    padding-left:0px;
+}
+.kuma-formfield input[type=text]{
+    width: 100%;
+    height: 30px;
+}
+.kuma-formfield textarea{
+    width: 100%;
+    height: 200px;
+}
+.kuma-formfield-columns .kuma-formfield-tips{
+    line-height: 30px;
+    color: #efefef;
+}
+.kuma-formfield-columns .kuma-formfield-errorMsg{
+    line-height: 30px;
+    color: red;
+}
+.kuma-formbutton{
+     height: 40px;
+     padding: 0px 12px;
+     min-width: 60px;
+     background-color: #0040D0;
+     float: left;
+     text-align: center;
+     line-height:40px;
+     cursor: pointer;
+     border-radius: 4px;
+     margin-right: 12px;
+    color: #fff;
+ }
