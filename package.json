@@ -45,6 +45,8 @@
     "webpack-dev-server": "1.6.6"
   },
   "dependencies": {
+    "classnames": "^2.1.1",
+    "uxcore-radiogroup":"1.0.0",
     "es6-promise": "^2.1.1",
     "object-assign": "^2.0.0"
   },

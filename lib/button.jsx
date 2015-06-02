@@ -13,10 +13,10 @@ const Button = React.createClass({
         };
     },
     getParent: function() {
-        return this.props.parent;
+        return this.props.form;
     },
     doClick: function() {
-        var _form=this.getParent().getParent();
+        var _form=this.getParent();
         _form.doSave();
     },
     componentWillUnmount: function() {

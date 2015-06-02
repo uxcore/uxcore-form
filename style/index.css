@@ -1,7 +1,21 @@
+* {
+     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
 ul,li,dt,dd,dl,p{
     padding: 0px;
     margin: 0px;
 }
+
 ul, li{
     list-style: none;
 }
@@ -11,17 +25,17 @@ ul, li{
 .kuma-formfield{
     line-height: 48px;
     clear:both;
+    display: table;
+    width: 100%
 }
 .kuma-formfield label{
-    float: right;
-    padding: 0px 20px 0px 12px;
+    padding: 0px 0px 0px 0px;
     text-align: right;
 }
 .kuma-formfield label i{
     color:Red;
 }
 .kuma-formfield ul{
-    float:left;
     width:100%;
 }
 .kuma-formfield dt{
@@ -62,4 +76,33 @@ ul, li{
      border-radius: 4px;
      margin-right: 12px;
     color: #fff;
+ }
+
+ .kuma-form.horizontal-form  .kuma-formfield-label{
+    display: table-cell;
+    padding: 0px 12px 0px 0px;
+    width: 168px;
+ }
+ .kuma-formfield-label {
+    /*display: table-cell;*/
+    width: 20%;
+    vertical-align:top;
+ }
+ .kuma-form-row {
+    min-width: 100%;
+    float: left;
+    clear: both;
+ }
+ .kuma-form-row .kuma-formfield{
+    display: table;
+    float:left;
+    padding: 0px 6px;
+ }
+ .kuma-form-row .kuma-formfield.one-half{
+    width:50%;
+    clear: none;
+ }
+ .kuma-form-row .kuma-formfield.one-third{
+    width:33.33%;
+    clear: none;
  }
