@@ -6,6 +6,8 @@ import FormField from "./formField"
 import FormRow from "./formRow"
 import Button from "./button"
 import RadioGroupFormField from "./radioGroupFormField"
+import SelectFormField from "./SelectFormField"
+
 
 module.exports = {
     Form: Form,
@@ -13,6 +15,7 @@ module.exports = {
     TextAreaFormField: TextAreaFormField,
     FormField: FormField,
     FormRow: FormRow,
-    RadioGroupFormField:RadioGroupFormField,
+    RadioGroupFormField: RadioGroupFormField,
+    SelectFormField: SelectFormField,
     Button:Button
 }
