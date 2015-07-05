@@ -1,12 +1,25 @@
 # uxcore-form
+
 ---
 
-uxcore-form ui component for react
-
+* tag: uxcore, form
+* description: 让form代码变的简单，可配
+* maintainers: 骁勇
+* version: 1.0.0
+* lastupdate: 7/5/2015
+* screenshots: example/screenshot.png
 
 ![](example/screenshot.png)
 
 
+## TL;DR
+
+
+
+## Feature List/特性
+
+
+## Usage 最佳实践
 
 ```sh
 $ git clone https://github.com/uxcore/uxcore-form
@@ -18,39 +31,39 @@ $ npm run dev
 then nav http://localhost:9090/example/ to see the demo
 
 
-## Apply scope
+### Apply scope
 
 * uxcore-form, including form common validation, layout etc
 
-	```
-		import React from 'react';
-		import RCForm from "../lib/index"
+    ```
+        import React from 'react';
+        import RCForm from "../lib/index"
 
-		let Form = RCForm.Form;
-		let InputFormField = RCForm.InputFormField;
-		let TextAreaFormField = RCForm.TextAreaFormField;
-		let FormField = RCForm.FormField;
-		let Button = RCForm.Button;
-		let FormRow = RCForm.FormRow;
-		let RadioGroupFormField= RCForm.RadioGroupFormField;
+        let Form = RCForm.Form;
+        let InputFormField = RCForm.InputFormField;
+        let TextAreaFormField = RCForm.TextAreaFormField;
+        let FormField = RCForm.FormField;
+        let Button = RCForm.Button;
+        let FormRow = RCForm.FormRow;
+        let RadioGroupFormField= RCForm.RadioGroupFormField;
 
 
-	const App=<Form mode="EDIT" className="horizontal-form">
+    const App=<Form mode="EDIT" className="horizontal-form">
            
             <InputFormField  className="one-half" label="姓名"  keyMap="name" tips="中文名称"  rules={{required: true , message: "not empty"}}/>
 
             <InputFormField  className="one-half"  label="Email" keyMap="email" tips="Email格式"  rules={{required: true,type:"email",message:"should be email"}}/>
-	
+    
             <FormRow>
-            	<InputFormField  className="one-half"  label="岗位" keyMap="job" />
-	            <InputFormField  className="one-half"  label="岗位" keyMap="job" />
+                <InputFormField  className="one-half"  label="岗位" keyMap="job" />
+                <InputFormField  className="one-half"  label="岗位" keyMap="job" />
                 <InputFormField  className="one-half"  label="岗位" keyMap="job" />
             <InputFormField  className="one-half"  label="岗位" keyMap="job" />
 
               </FormRow>
             <FormRow>
                 <TextAreaFormField  className="one-half" label="简介" keyMap="introduce" ></TextAreaFormField>
-            	<RadioGroupFormField  className="one-half" label="水果" keyMap="fruit" jsxname="fruit" jsxvalue="orange"  tips="sss" rules={{required: true , message: "not empty"}}>
+                <RadioGroupFormField  className="one-half" label="水果" keyMap="fruit" jsxname="fruit" jsxvalue="orange"  tips="sss" rules={{required: true , message: "not empty"}}>
                     <input type="radio" value="apple" />Apple
                     <input type="radio" value="orange" />Orange
                     <input type="radio" value="watermelon" />Watermelon
@@ -59,13 +72,15 @@ then nav http://localhost:9090/example/ to see the demo
             <FormRow><Button label="提交"/></FormRow>
         </Form>;
 
-		React.render(App, document.getElementById('content'))
+        React.render(App, document.getElementById('content'))
 
-	```
+    ```
 
-## Attr
+## API
 
-* jsxdata
-* jsxmode
-* jsxprefixCls
+*  Attr
+
+    * jsxdata
+    * jsxmode
+    * jsxprefixCls
 

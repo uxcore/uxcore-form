@@ -16,8 +16,11 @@ var options=[
 ];
 
 const App=<Form mode="EDIT" className="horizontal-form">
-            <InputFormField  className="one-half" label="姓名"  keyMap="name" tips="中文名称"  rules={{required: true , message: "not empty"}}/>
-            <InputFormField  className="one-half"  label="Email" keyMap="email" tips="Email格式"  rules={{required: true,type:"email",message:"should be email"}}/>
+            <FormRow>
+                <InputFormField  className="one-half" label="姓名"  keyMap="name" tips="中文名称"  rules={{required: true , message: "not empty"}}/>
+                <InputFormField  className="one-half"  label="Email" keyMap="email" tips="Email格式"  rules={{required: true,type:"email",message:"should be email"}}/>
+            </FormRow>
+
             <FormRow>
             	<InputFormField  className="one-half"  label="岗位" keyMap="job" />
 	            <InputFormField  className="one-half"  label="岗位" keyMap="job2" />
