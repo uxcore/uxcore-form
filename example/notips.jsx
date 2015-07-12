@@ -15,11 +15,6 @@ var options=[
     {label:"北京",value:"BJ"}
 ];
 
-var _doClick= function() {
-     debugger;
-     Form.doSave();
-};
-
 const App=<Form mode="EDIT" className="horizontal-form">
             <FormRow>
                 <InputFormField  className="one-half" label="姓名"  keyMap="name" tips="中文名称"  rules={{required: true , message: "not empty"}}/>
@@ -50,7 +45,7 @@ const App=<Form mode="EDIT" className="horizontal-form">
                     <option value="xj">西京</option>
                 </SelectFormField>
             </FormRow>
-            <FormRow><Button label="提交" onClick={_doClick} /></FormRow>
+            <FormRow><Button label="提交"/></FormRow>
         </Form>;
 
 React.render(App, document.getElementById('content'))

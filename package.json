@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha --recursive --reporter spec --require should",
-    "dev": "webpack-dev-server --progress --colors --port  9090"
+    "dev": "webpack-dev-server --progress --colors --port  9090",
+    "dist": "webpack --progress --colors --config dist.config.js"
   },
   "repository": {
     "type": "git",
