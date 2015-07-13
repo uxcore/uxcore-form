@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha --recursive --reporter spec --require should",
     "dev": "webpack-dev-server --progress --colors --port  9090",
-    "dist": "webpack --progress --colors --config dist.config.js"
+    "dist": "webpack --progress --colors --config dist.config.js",
+    "demo": "webpack --progress --colors --config demo.config.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "file-loader": "^0.8.1",
     "guid": "0.0.12",
     "gulp": "^3.8.11",
+    "gulp-gh-pages":"0.5.2",
     "gulp-react": "^3.0.0",
     "jsdom": "5.1.0",
     "jquery": "2.1.4",
