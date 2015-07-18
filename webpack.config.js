@@ -6,7 +6,7 @@ module.exports = {
     entry: [
         // 'webpack-dev-server/client?http://localhost:9090/assets',
         // 'webpack/hot/only-dev-server',
-        './example/index.jsx'
+        './example/comment.jsx'
     ],
     output: {
         publicPath: 'http://localhost:9090/assets'
