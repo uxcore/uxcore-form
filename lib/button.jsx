@@ -1,5 +1,4 @@
 import React from 'react';
-import FormFieldMixin from './formfieldMixin.js';
 import Constants from "./constants";
 
 const Button = React.createClass({
@@ -12,20 +11,23 @@ const Button = React.createClass({
             bsStyle: "kuma-button"
         };
     },
-    getParent: function() {
+    getForm() {
         return this.props.form;
     },
     doClick: function() {
-        var _form=this.getParent();
+        var _form=this.getForm();
         _form.doSave();
     },
+    
     componentWillUnmount: function() {
         this.props.parent=null;
     },
     render() {
-        return <div className="kuma-button kuma-button-lblue" onClick={this.doClick.bind(this,{context:this})}>{this.props.label}</div>;
-       // return <div className="kuma-button kuma-button-lblue" onClick={this.props.onClick}>{this.props.label}</div>;
-
+        if (this.props.jsxmode==Constants.MODE.edit) {
+            return <div className="kuma-button kuma-button-lblue" onClick={this.doClick.bind(this,{context:this})}>{this.props.jsxtext}</div>;
+        }else {
+            return <span></span>;
+        }
     }
 
 });
