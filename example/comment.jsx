@@ -1,6 +1,6 @@
 import React from 'react';
 import RCForm from "../index";
-import ExampleCode from "./exampleCode";
+import ExampleCode from "examplecode";
 
 let Form = RCForm.Form;
 let InputFormField = RCForm.InputFormField;
