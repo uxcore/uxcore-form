@@ -33,7 +33,7 @@ var  Form1 = React.createClass({
                 <div className="site-type">多列表单22</div>
                 <div className="site-container">
                 <Form jsxmode="EDIT" ref="myform">
-                    <FormRowTitle title="生态公司">sss</FormRowTitle>
+                    <FormRowTitle title="Row title 1">sss</FormRowTitle>
                     <FormRow>
                         <InputFormField  className="one-half"  jsxtext="姓名"  jsxname="name" jsxtips="中文名称" jsxvalue="sss" jsxrule={{required: true , message: "not empty"}}/>
                         <InputFormField  className="one-half"  jsxtext="Email" jsxname="email" jsxtips="Email格式"  jsxrule={{required: true,type:"email",message:"should be email"}}/>
@@ -47,6 +47,7 @@ var  Form1 = React.createClass({
                             <input type="radio" value="watermelon" />Watermelon
                         </RadioGroupFormField>
                     </FormRow>
+
                     <FormRow>
                         <InputFormField  className="one-half"  jsxtext="啦啦" jsxname="lala" />
                         <SelectFormField className="one-half"  jsxtext="城市" jsxname="city">
@@ -57,6 +58,8 @@ var  Form1 = React.createClass({
                             <option value="xj">西京</option>
                         </SelectFormField>
                     </FormRow>
+                    <FormRowTitle title="表格篇">sss</FormRowTitle>
+
                     <FormRow>
                         <FormField jsxtext="表格" jsxname="table" jsxtips="请留意表格类型" jsxrule={{required: true,message:"not empty"}} jsxvalue="table test">
                             <TableTest/>
