@@ -1,6 +1,7 @@
 import React from 'react';
 import ExampleCode from "examplecode";
 import RCForm from "../index";
+import TableTest from "../__test/table"
 
 let Form = RCForm.Form;
 let InputFormField = RCForm.InputFormField;
@@ -10,22 +11,29 @@ let Button = RCForm.Button;
 let FormRow = RCForm.FormRow;
 let RadioGroupFormField= RCForm.RadioGroupFormField;
 let SelectFormField= RCForm.SelectFormField;
-
+let FormRowTitle= RCForm.FormRowTitle;
 var options=[
     {jsxtext:"上海",value:"SH",selected:true},
     {jsxtext:"北京",value:"BJ"}
 ];
 
 var _doClick= function() {
-     Form.doSave();
+     //Form.doSave();
 };
 
 //multiple columns form
 
-const App=<div>
-                <div className="site-type">多列表单</div>
+
+var  Form1 = React.createClass({
+  doClick: function(){
+     this.refs.myform.doSave();
+  },
+  render: function() {
+    return <div>
+                <div className="site-type">多列表单22</div>
                 <div className="site-container">
-                <Form jsxmode="EDIT">
+                <Form jsxmode="EDIT" ref="myform">
+                    <FormRowTitle title="生态公司">sss</FormRowTitle>
                     <FormRow>
                         <InputFormField  className="one-half"  jsxtext="姓名"  jsxname="name" jsxtips="中文名称" jsxvalue="sss" jsxrule={{required: true , message: "not empty"}}/>
                         <InputFormField  className="one-half"  jsxtext="Email" jsxname="email" jsxtips="Email格式"  jsxrule={{required: true,type:"email",message:"should be email"}}/>
@@ -33,7 +41,7 @@ const App=<div>
 
                     <FormRow>
                         <TextAreaFormField  className="one-half" jsxtext="简介" jsxname="introduce" ></TextAreaFormField>
-                    	<RadioGroupFormField  className="one-half" jsxtext="水果" jsxname="fruit"  jsxvalue=""  jsxtips="sss" jsxrule={{required: true , message: "not empty"}}>
+                        <RadioGroupFormField  className="one-half" jsxtext="水果" jsxname="fruit"  jsxvalue=""   jsxrule={{required: true , message: "not empty"}}>
                             <input type="radio" value="apple" />Apple
                             <input type="radio" value="orange" />Orange
                             <input type="radio" value="watermelon" />Watermelon
@@ -49,7 +57,13 @@ const App=<div>
                             <option value="xj">西京</option>
                         </SelectFormField>
                     </FormRow>
-                    <FormRow><Button jsxtext="提交" onClick={_doClick} /></FormRow>
+                    <FormRow>
+                        <FormField jsxtext="表格" jsxname="table" jsxtips="请留意表格类型" jsxrule={{required: true,message:"not empty"}} jsxvalue="table test">
+                            <TableTest/>
+                        </FormField>
+                    </FormRow>
+
+                    <FormRow><Button jsxtext="提交" onClick={this.doClick.bind(this)} /></FormRow>
                 </Form>
                 </div>
                 <ExampleCode>
@@ -78,13 +92,15 @@ const App=<div>
                             <option value="xj">西京</option>
                         </SelectFormField>
                     </FormRow>
-                    <FormRow><Button jsxtext="提交" onClick={_doClick} /></FormRow>
+                    <FormRow><Button jsxtext="提交" onClick={this.doClick.bind(this)} /></FormRow>
                 </Form>
                    `}
                 </ExampleCode>
-        </div>;
+        </div>
+  }
+});
 
-React.render(App, document.getElementById('box1'))
+React.render(<Form1/>, document.getElementById('box1'))
 
 
 const App3=

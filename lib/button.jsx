@@ -15,8 +15,9 @@ const Button = React.createClass({
         return this.props.form;
     },
     doClick: function() {
-        var _form=this.getForm();
-        _form.doSave();
+        //var _form=this.getForm();
+        //_form.doSave();
+        this.props.onClick.apply(null,[]);
     },
     
     componentWillUnmount: function() {
