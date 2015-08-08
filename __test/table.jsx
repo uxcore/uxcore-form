@@ -6,8 +6,10 @@ import React from 'react';
 class TableTest extends React.Component {
     constructor(props) {
         super(props);
+                console.info(this.props);
+
          this.state= {
-            value: props.jsxvalue
+            value: this.props.jsxvalue
         };
     }
     getValue() {
@@ -21,10 +23,9 @@ class TableTest extends React.Component {
 
     render(){
 
-        console.info(this.props);
         return <table>
             <tr>
-                <td><input type="text" ref="el" value={this.state.jsxvalue} onChange={this.handleChange.bind(this)}/></td>
+                <td><input type="text" ref="el" value={this.props.jsxvalue} onChange={this.handleChange.bind(this)}/></td>
                 <td>002</td>
                 <td>003</td>
             </tr>
