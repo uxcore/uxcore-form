@@ -33,15 +33,15 @@ var  Form1 = React.createClass({
                 <div className="site-type">多列表单22</div>
                 <div className="site-container">
                 <Form jsxmode="EDIT" ref="myform">
-                    <FormRowTitle title="Row title 1">sss</FormRowTitle>
+                    <FormRowTitle title="Basic Information">sss</FormRowTitle>
                     <FormRow>
-                        <InputFormField  className="one-half"  jsxtext="姓名"  jsxname="name" jsxtips="中文名称" jsxvalue="sss" jsxrule={{required: true , message: "not empty"}}/>
+                        <InputFormField  jsxdisabled className="one-half"  jsxtext="Name"  jsxname="name" jsxtips="中文名称" jsxvalue="sss" jsxrule={{required: true , message: "not empty"}}/>
                         <InputFormField  className="one-half"  jsxtext="Email" jsxname="email" jsxtips="Email格式"  jsxrule={{required: true,type:"email",message:"should be email"}}/>
                     </FormRow>
 
                     <FormRow>
-                        <TextAreaFormField  className="one-half" jsxtext="简介" jsxname="introduce" ></TextAreaFormField>
-                        <RadioGroupFormField  className="one-half" jsxtext="水果" jsxname="fruit"  jsxvalue=""   jsxrule={{required: true , message: "not empty"}}>
+                        <TextAreaFormField  className="one-half" jsxtext="Introduce" jsxname="introduce" ></TextAreaFormField>
+                        <RadioGroupFormField  className="one-half" jsxtext="Fruit Type" jsxname="fruit"  jsxvalue=""   jsxrule={{required: true , message: "not empty"}}>
                             <input type="radio" value="apple" />Apple
                             <input type="radio" value="orange" />Orange
                             <input type="radio" value="watermelon" />Watermelon
@@ -49,8 +49,8 @@ var  Form1 = React.createClass({
                     </FormRow>
 
                     <FormRow>
-                        <InputFormField  className="one-half"  jsxtext="啦啦" jsxname="lala" />
-                        <SelectFormField className="one-half"  jsxtext="城市" jsxname="city">
+                        <InputFormField  className="one-half"  jsxtext="LALA" jsxname="lala" />
+                        <SelectFormField className="one-half"  jsxtext="City" jsxname="city">
                             <option >请选择</option>
                             <option value="bj" selected>北京</option>
                             <option value="nj">南京</option>
@@ -58,10 +58,10 @@ var  Form1 = React.createClass({
                             <option value="xj">西京</option>
                         </SelectFormField>
                     </FormRow>
-                    <FormRowTitle title="表格篇">sss</FormRowTitle>
+                    <FormRowTitle title="Grid">sss</FormRowTitle>
 
                     <FormRow>
-                        <FormField jsxtext="表格" jsxname="table" jsxtips="请留意表格类型" jsxrule={{required: true,message:"not empty"}} jsxvalue="table test">
+                        <FormField jsxtext="Grid" jsxname="table" jsxtips="please note the grid cell input type" jsxrule={{required: true,message:"not empty"}} jsxvalue="table test">
                             <TableTest/>
                         </FormField>
                     </FormRow>
