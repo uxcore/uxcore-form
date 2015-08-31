@@ -1,10 +1,9 @@
-import React from 'react';
-import Constants from "./constants";
+import Constants from "./Constants";
 
 const Button = React.createClass({
     propTypes: {
         mode: React.PropTypes.oneOf([Constants.MODE.view, Constants.MODE.edit]),
-        isRequire: React.PropTypes.boolean
+        isRequire: React.PropTypes.bool
     },
     getDefaultProps() {
         return {
@@ -15,8 +14,6 @@ const Button = React.createClass({
         return this.props.form;
     },
     doClick: function() {
-        //var _form=this.getForm();
-        //_form.doSave();
         this.props.onClick.apply(null,[]);
     },
     

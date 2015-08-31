@@ -1,10 +1,8 @@
 /**
  * Created by xy on 15/4/13.
  */
-import React from 'react';
-import FormField from './formField';
-import Constants from "./constants";
-import classNames from 'classnames';
+let FormField = require('./FormField');
+let Constants = require("./Constants");
 
 export default class TextAreaFormField extends FormField{
     

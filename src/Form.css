@@ -1,0 +1,146 @@
+/*@pager-bg:                             @pagination-bg;
+@pager-border:                         @pagination-border;
+@pager-border-radius:                  15px;
+
+@pager-hover-bg:                       @pagination-hover-bg;
+
+@pager-active-bg:                      @pagination-active-bg;
+@pager-active-color:                   @pagination-active-color;*/
+.kuma-input {
+  padding: 5px 10px;
+  height: 28px;
+  line-height: 28px;
+  border: 1px solid #cccccc;
+  color: #666666;
+  font-size: 12px;
+  width: 100%;
+}
+.kuma-input:hover,
+.kuma-textarea:hover,
+.kuma-input-hover {
+  border: 1px #cccccc solid;
+}
+.kuma-input:focus,
+.kuma-textarea:focus,
+.kuma-input-focus {
+  border: 1px #288df0 solid;
+  color: #666666;
+  outline: none;
+}
+.kuma-textarea {
+  line-height: 25px;
+  border: 1px #cccccc solid;
+  padding: 5px 10px;
+  overflow: auto;
+  font-family: Arial;
+  font-size: 12px;
+  color: #666666;
+  width: 100%;
+}
+.kuma-input[disabled],
+.kuma-textarea[disabled] {
+  border: 1px solid #cccccc;
+  background: #f2f2f2;
+}
+.kuma-input:disabled,
+.kuma-textarea:disabled {
+  border: 1px solid #cccccc;
+  background: #f2f2f2;
+}
+.kuma-label {
+  width: 100px;
+  margin-left: 0px;
+  padding-top: 5px;
+  padding-right: 0px;
+  text-align: right;
+  color: #666666;
+  display: table-cell;
+  vertical-align: baseline;
+  vertical-align: -webkit-baseline-middle;
+}
+.kuma-label i {
+  color: Red;
+}
+.kuma-form-row-title {
+  font-size: 16px;
+  border-left: 6px solid #ff9300;
+  padding: 0px 8px;
+  line-height: 30px;
+  margin: 20px 0px;
+  clear: both;
+}
+.kuma-form-row {
+  min-width: 100%;
+  float: left;
+  clear: both;
+}
+.kuma-form-row .kuma-form-field {
+  display: table;
+  float: left;
+  padding: 6px 0px;
+  width: 100%;
+  padding: 0 5px 15px 0px;
+  *zoom: 1;
+}
+.kuma-form-row .kuma-form-field:after {
+  clear: both;
+  content: '.';
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+.kuma-form-row .kuma-form-field select {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAWCAYAAADwza0nAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODBFQkMyNkZDRUJFMTFFNEIzQzZGOUUwMjFDMTZDRkQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODBFQkMyNzBDRUJFMTFFNEIzQzZGOUUwMjFDMTZDRkQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4MEVCQzI2RENFQkUxMUU0QjNDNkY5RTAyMUMxNkNGRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4MEVCQzI2RUNFQkUxMUU0QjNDNkY5RTAyMUMxNkNGRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkYdGT4AAADNSURBVHjaYuzp6WHAASqgdAc2SRYcmvyAuAWImYD4OhBvRFfAhEWTORAvB2JmIGYE4mVQMbwaVYB4MxBzIYlxQcVUcGkUBeLtUBodYMgx4TMVn2uYoH5Zjs0f+PwP0jgZGorEApDayaDoyIJikgATA5lgpGicBsT/ScTTQBpzgXgTCZaB1OaCNP4F4kggPkmEppNQtX9hfvwGxL5AfAePpjtQNd/QA+c1EHtCaXSAIceEz1R8rmHC449/0BCMxuZ/FjwhVw1lb8CmACDAABlpNwXghNgSAAAAAElFTkSuQmCC");
+  background-position: center right -15px;
+  background-repeat: no-repeat;
+  background-size: 7px 11px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+  border-bottom-color: #c2c2c2;
+  border-top-color: #d6d6d6;
+  height: 30px;
+  width: 100%;
+}
+.kuma-form-row .kuma-form-field input {
+  margin-right: 2px;
+  vertical-align: middle;
+}
+.kuma-form-row .kuma-form-field .kuma-input {
+  color: #666666;
+  vertical-align: middle;
+  *vertical-align: -5px;
+}
+.kuma-form-row .kuma-form-field.one-half {
+  width: 50%;
+  clear: none;
+}
+.kuma-form-row .kuma-form-field.one-third {
+  width: 33.33% !important;
+  clear: none;
+}
+.kuma-form-row .kuma-form-field .kuma-form-field-content {
+  font-size: 12px;
+  color: #b2b2b2;
+  width: 100%;
+  padding: 5px 12px;
+}
+.kuma-form-row .kuma-form-field .kuma-form-field-content .kuma-form-tips {
+  line-height: 30px;
+  color: #efefef;
+}
+.kuma-form-row .kuma-form-field .kuma-form-field-content .kuma-form-tips .kuma-icon {
+  color: #48c5ff;
+  margin-right: 4px;
+}
+.kuma-form-row .kuma-form-field .kuma-form-field-content .kuma-form-errormsg {
+  line-height: 30px;
+  color: red;
+}
+.kuma-form-row .kuma-form-field .kuma-form-field-content .kuma-radio-group > span {
+  padding: 0px 20px 0px 4px;
+}
+.kuma-form-edit-mode .kuma-form-row .kuma-form-field.kuma-input-form-field .kuma-label,
+.kuma-form-edit-mode .kuma-form-row .kuma-form-field.kuma-select-form-field .kuma-label {
+  padding-top: 11px;
+}
+
+/*# sourceMappingURL=Form.css.map */

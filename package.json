@@ -1,17 +1,13 @@
 {
   "name": "uxcore-form",
-  "version": "1.0.1",
-  "description": "uxcore-form ui component for react",
-  "main": "lib/index.js",
+  "version": "0.0.0",
+  "description": "form component for uxcore",
+  "repository": "https://github.com/uxcore/uxcore-form.git",
+  "author": "eternalsky",
+  "main": "src/index.js",
   "scripts": {
-    "test": "mocha --recursive --reporter spec --require should",
-    "dev": "webpack-dev-server --progress --colors --port  9090",
-    "dist": "webpack --progress --colors --config dist.config.js",
-    "demo": "webpack --progress --colors --config demo.config.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:uxcore/uxcore-form.git"
+    "dev": "gulp server",
+    "deploy": "git subtree push --prefix build origin gh-pages"
   },
   "bugs": {
     "url": "http://github.com/uxcore/uxcore-form/issues"
@@ -19,46 +15,30 @@
   "keywords": [
     "react",
     "react-component",
-    "react-uxcore-form",
-    "uxcore-form"
+    "uxcore-form",
+    "Form"
   ],
   "devDependencies": {
-    "babel-core": "^5.1.13",
-    "babel-loader": "^5.0.0",
-    "css-loader": "^0.9.0",
-    "exports-loader": "^0.6.2",
-    "extract-text-webpack-plugin": "^0.3.8",
-    "faker": "^2.1.2",
-    "file-loader": "^0.8.1",
-    "guid": "0.0.12",
-    "gulp": "^3.8.11",
-    "gulp-gh-pages":"0.5.2",
-    "gulp-react": "^3.0.0",
-    "jsdom": "5.1.0",
-    "jquery": "2.1.4",
-    "mocha": "^2.2.1",
-    "raw-loader": "^0.5.1",
-    "react-hot-loader": "^1.2.4",
-    "should": "^6.0.1",
-    "sorty": "^1.2.0",
-    "style-loader": "^0.8.2",
-    "stylus-loader": "^0.4.0",
-    "webpack": "^1.8.4",
-    "webpack-dev-middleware": "^1.0.11",
-    "webpack-dev-server": "1.6.6",
-    "examplecode":"1.0.0"
+    "babel-core": "^5.6.18",
+    "babel-loader": "^5.3.1",
+    "browser-sync": "~2.8.2",
+    "console-polyfill": "~0.2.1",
+    "es5-shim": "~4.1.10",
+    "gulp": "~3.9.0",
+    "gulp-concat": "~2.6.0",
+    "gulp-just-replace": "~1.0.2",
+    "gulp-less": "~3.0.3",
+    "gulp-sourcemaps": "~1.5.2",
+    "webpack": "^1.10.5",
+    "uxcore-radiogroup":"1.0.1",
+    "uxcore-select":"1.0.0"
   },
   "dependencies": {
-    "classnames": "^2.1.1",
-    "uxcore-radiogroup":"1.0.1",
-    "uxcore-select":"1.0.0",
-    "es6-promise": "^2.1.1",
-    "object-assign": "^2.0.0"
+    "classnames": "^2.1.2",
+    "object-assign": "^2.0.0",
+    "react": "^0.13.3",
+    "uxcore-kuma": "~1.0.6"
   },
-  "peerDependencies": {
-    "react": ">=0.13.0"
-  },
-  "author": "",
   "contributors": [],
   "license": "MIT"
 }
