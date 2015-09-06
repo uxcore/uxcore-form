@@ -41,11 +41,13 @@ class RadioGroupFormField extends FormField {
                     </RadioGroup>);
         }
         else {
-            arr.push(<span>{this.state.value}</span>);
+            arr.push(<span key="radiogroup">{this.state.value}</span>);
         }
         return arr;
     }
 }
 
 RadioGroupFormField.displayName = "RadioGroupFormField";
+RadioGroupFormField.propTypes = FormField.propTypes;
+RadioGroupFormField.defaultProps = FormField.defaultProps;
 module.exports = RadioGroupFormField;

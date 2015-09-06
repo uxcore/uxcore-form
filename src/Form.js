@@ -14,10 +14,15 @@ let TextAreaFormField = require("./TextAreaFormField");
 let InputFormField = require("./InputFormField");
 let RadioGroupFormField = require("./RadioGroupFormField");
 let SelectFormField = require("./SelectFormField");
+let NumberInputFormField = require('./NumberInputFormField');
+let DateFormField = require('./DateFormField');
+let CheckboxGroupFormField = require("./CheckboxGroupFormField");
+let CascadeSelectFormField = require("./CascadeSelectFormField");
 let Constants = require("./Constants");
-let Validator = require("./Validator");
+let Validators = require("./Validators");
 
 let classnames = require('classnames');
+let update = React.addons.update;
 
 
 class Form extends React.Component {
@@ -28,7 +33,6 @@ class Form extends React.Component {
         this.errors = {};
         this.data = {};
         this.state= {
-            data: [],
             dirty: false,
             mode: this.props.jsxmode
         };
@@ -53,8 +57,9 @@ class Form extends React.Component {
     }
 
     handleDataChange(field, value, fn){
-        this.state.data[field.props.jsxname] = value;
-        console.log(this.state.data);
+        let me = this;
+        me.data[field.props.jsxname]  = value;
+        // console.log(me.data);
     }
 
     doValidate() {
@@ -149,8 +154,12 @@ Form.TextAreaFormField = TextAreaFormField;
 Form.InputFormField = InputFormField;
 Form.RadioGroupFormField = RadioGroupFormField;
 Form.SelectFormField = SelectFormField;
+Form.NumberInputFormField = NumberInputFormField;
+Form.DateFormField = DateFormField;
+Form.CheckboxGroupFormField = CheckboxGroupFormField;
+Form.CascadeSelectFormField = CascadeSelectFormField;
 Form.Constants = Constants;
-Form.Validator = Validator;
+Form.Validators = Validators;
 
 
 Form.defaultProps = {

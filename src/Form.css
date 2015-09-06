@@ -28,7 +28,7 @@
   outline: none;
 }
 .kuma-textarea {
-  line-height: 25px;
+  line-height: 20px;
   border: 1px #cccccc solid;
   padding: 5px 10px;
   overflow: auto;
@@ -109,13 +109,8 @@
   vertical-align: middle;
   *vertical-align: -5px;
 }
-.kuma-form-row .kuma-form-field.one-half {
-  width: 50%;
-  clear: none;
-}
-.kuma-form-row .kuma-form-field.one-third {
-  width: 33.33% !important;
-  clear: none;
+.kuma-form-row .kuma-form-field .kuma-select {
+  margin: 0 20px 0 0;
 }
 .kuma-form-row .kuma-form-field .kuma-form-field-content {
   font-size: 12px;
@@ -138,6 +133,7 @@
 .kuma-form-row .kuma-form-field .kuma-form-field-content .kuma-radio-group > span {
   padding: 0px 20px 0px 4px;
 }
+.kuma-form-edit-mode .kuma-form-row .kuma-form-field.kuma-textarea-form-field .kuma-label,
 .kuma-form-edit-mode .kuma-form-row .kuma-form-field.kuma-input-form-field .kuma-label,
 .kuma-form-edit-mode .kuma-form-row .kuma-form-field.kuma-select-form-field .kuma-label {
   padding-top: 11px;

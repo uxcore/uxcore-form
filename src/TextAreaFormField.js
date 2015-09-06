@@ -4,18 +4,46 @@
 let FormField = require('./FormField');
 let Constants = require("./Constants");
 
-export default class TextAreaFormField extends FormField{
+class TextAreaFormField extends FormField {
     
     constructor(props) {
         super(props);
     }
+
+    handleChange(e) {
+        let me = this;
+        let value = e.currentTarget.value;
+        me.handleDataChange(value);
+    }
+
+    addSpecificClass() {
+        let me = this;
+        if (me.props.jsxprefixCls == "kuma-form-field") {
+            return me.props.jsxprefixCls + " kuma-textarea-form-field" ;
+        }
+        else {
+            return me.props.jsxprefixCls
+        }
+    }
+
     
     renderField() {
-    	if(this.props.jsxdisabled) {
-            this.props.jsxdisabled='disabled';
-        }else {
-            this.props.jsxdisabled="";
+        let me = this;
+        if (me.props.mode == Constants.MODE.EDIT) {
+            return  <textarea 
+                     disabled={me.props.jsxdisabled} 
+                     className="kuma-textarea" 
+                     ref="root" 
+                     value={me.state.value}
+                     onChange={me.handleChange.bind(me)}/>
         }
-        return  <textarea disabled={this.props.jsxdisabled} className="kuma-textarea" ref="el">{this.state.value}</textarea>
+        else if (me.props.mode == Constants.MODE.VIEW) {
+            return <span>{me.state.value}</span>
+        }
     }
 }
+
+TextAreaFormField.displayName = "TextAreaFormField";
+TextAreaFormField.propTypes = FormField.propTypes;
+TextAreaFormField.defaultProps = FormField.defaultProps;
+module.exports = TextAreaFormField;

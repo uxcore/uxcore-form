@@ -26,7 +26,7 @@
 }
 
 .kuma-textarea {
-    line-height: 25px;
+    line-height: 20px;
     border: 1px @input-border solid;
     padding: 5px 10px;
     overflow: auto;
@@ -111,13 +111,8 @@
             vertical-align: middle;
             *vertical-align: -5px;
         }
-        &.one-half {
-            width:50%;
-            clear: none;
-        }
-        &.one-third {
-            width:33.33% !important;
-            clear: none; 
+        .kuma-select {
+            margin: 0 20px 0 0;
         }
         .kuma-form-field-content {
             font-size: 12px;
@@ -153,6 +148,7 @@
 .kuma-form-edit-mode {
     .kuma-form-row {
         .kuma-form-field {
+            &.kuma-textarea-form-field,
             &.kuma-input-form-field,
             &.kuma-select-form-field {
                 .kuma-label {

@@ -13,7 +13,7 @@ class FormField extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state= {
+        this.state = {
             value: props.value,
             formatValue: this.formatValue(props.value),
             error: false,
@@ -146,12 +146,13 @@ class FormField extends React.Component {
     
     render() {
         let me = this;
+        let specificCls = me.addSpecificClass();
 
         return (
             <div className={classnames({
-                [me.addSpecificClass()]: true,
+                [specificCls]: true,
                 [me.props.className]: !!me.props.className
-            })}>
+            })} style={me.props.style}>
                 {me.renderLabel()}
                 <ul className="kuma-form-field-content">
                     <li>{me.renderField()}</li>
@@ -175,6 +176,7 @@ FormField.propTypes = {
 
 FormField.defaultProps = {
     jsxprefixCls: "kuma-form-field", // 默认类名
+    jsxflex: 1, // 占 Form 的比例，类似于 css3 中的 flex-box
     jsxname: "", // 表单字段
     jsxplaceholder: "", // 在未选值之前的占位符
     jsxlabel: "LABEL", // 左侧表单域标题
