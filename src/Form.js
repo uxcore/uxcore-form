@@ -61,14 +61,19 @@ class Form extends React.Component {
         let me = this;
         me.data[field.props.jsxname]  = value;
         if (!fromMount) {
-            me.props.jsxonChange(me.data);
+            let _flag = me.doValidate();
+            me.props.jsxonChange(me.data, _flag);
         }
         // console.log(me.data);
     }
 
-    getData() {
+    getValues() {
         let me = this;
-        return me.data;
+        let _flag = me.doValidate();
+        return {
+            values: me.data,
+            pass: _flag
+        }
     }
 
     doValidate() {
@@ -91,7 +96,7 @@ class Form extends React.Component {
 
     doSave() {
         let flag = this.doValidate();
-        var _mode = flag ? Constants.MODE.VIEW : Constants.MODE.EDIT;
+        let _mode = flag ? Constants.MODE.VIEW : Constants.MODE.EDIT;
         this.setState({mode:_mode});
     }
 
@@ -141,7 +146,7 @@ class Form extends React.Component {
                 {!!elements && elements.map(function(child, index) {
                     return React.cloneElement(child, {
                         mode: me.state.mode,
-                        data: me.props.jsxdata,
+                        data: me.props.jsxvalues,
                         key: index,
                         attachFormField: me.attachFormField.bind(me),
                         detachFormField: me.detachFormField.bind(me),
@@ -173,9 +178,10 @@ Form.Validators = Validators;
 
 
 Form.defaultProps = {
-    jsxprefixCls: "kuma-form fn-clear",
+    jsxprefixCls: "kuma-form",
     jsxmode: Constants.MODE.EDIT,
-    jsxdata: {}
+    jsxvalues: {},
+    jsxonChange: () => {}
 }
 
 
@@ -183,7 +189,8 @@ Form.defaultProps = {
 Form.propTypes = {
     jsxprefixCls: React.PropTypes.string,
     jsxmode: React.PropTypes.string,
-    jsxdata: React.PropTypes.object
+    jsxvalues: React.PropTypes.object,
+    jsxonChange: React.PropTypes.func
 }
 
 Form.displayName = Form;

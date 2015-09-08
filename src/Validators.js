@@ -9,7 +9,8 @@ const PATTERN = {
     URL: /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/,
     HEX: /^#?([a-f0-9]{6}|[a-f0-9]{3})$/i,
     NUM: /^((-?\d+\.\d+)|(-?\d+)|(-?\.\d+))$/,
-    IDCARD: /(^\d{15}$)|(^\d{17}([0-9]|X)$)/i
+    IDCARD: /(^\d{15}$)|(^\d{17}([0-9]|X)$)/i,
+    CNMOBILE: /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/
 };
 
 Validator.isNotEmpty = (value) => {
@@ -64,7 +65,10 @@ Validator.isHex = (value) => {
 };
 
 Validator.isIdCard = (value) => {
-    return typeof(value) === 'string' && PATTERN.IDCARD.test(value)
+    return typeof(value) === 'string' && PATTERN.IDCARD.test(value);
 };
 
+Validator.isCNMobile = (value) => {
+    return typeof(value) === 'string' && PATTERN.CNMOBILE.test(value);
+};
 module.exports = Validator;

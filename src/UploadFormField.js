@@ -14,6 +14,16 @@ class UploadFormField extends FormField {
         }
     }
 
+    addSpecificClass() {
+        let me = this;
+        if (me.props.jsxprefixCls == "kuma-form-field") {
+            return me.props.jsxprefixCls + " kuma-upload-form-field" ;
+        }
+        else {
+            return me.props.jsxprefixCls
+        }
+    }
+
     renderField() {
         let me = this;
         let options = {

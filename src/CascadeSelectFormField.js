@@ -33,11 +33,28 @@ class CascadeSelectFormField extends FormField {
         });
     }
 
+    addSpecificClass() {
+        let me = this;
+        if (me.props.jsxprefixCls == "kuma-form-field") {
+            return me.props.jsxprefixCls + " kuma-cascade-select-form-field" ;
+        }
+        else {
+            return me.props.jsxprefixCls
+        }
+    }
+
     renderField() {
         let me = this;  
         let length = me.getDataLength();
         let arr = [];
-        let data = me.props.jsxdata.contents;
+        let data = {};
+        try {
+            data = me.props.jsxdata.contents;
+        }
+        catch(e) {
+            console.warn(e.message)
+            return;
+        }
         let selectOptions = {
             ref: "el", 
             key: "select",
@@ -80,7 +97,8 @@ class CascadeSelectFormField extends FormField {
 CascadeSelectFormField.propTypes = assign({}, FormField.propTypes, {
     jsxstyle: React.PropTypes.object,
     jsxshowSearch: React.PropTypes.bool,
-    jsxplaceholder: React.PropTypes.string
+    jsxplaceholder: React.PropTypes.string,
+    jsxdata: React.PropTypes.object
 });
 CascadeSelectFormField.defaultProps = assign({}, FormField.defaultProps, {
     jsxshowSearch: false,

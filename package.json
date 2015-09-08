@@ -1,13 +1,12 @@
 {
   "name": "uxcore-form",
-  "version": "0.0.0",
+  "version": "1.0.2",
   "description": "form component for uxcore",
   "repository": "https://github.com/uxcore/uxcore-form.git",
   "author": "eternalsky",
   "main": "src/index.js",
   "scripts": {
-    "dev": "gulp server",
-    "deploy": "git subtree push --prefix build origin gh-pages"
+    "dev": "gulp server"
   },
   "bugs": {
     "url": "http://github.com/uxcore/uxcore-form/issues"

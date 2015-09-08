@@ -16,6 +16,16 @@ class CheckboxGroupFormField extends FormField {
         me.handleDataChange(value);
     }
 
+    addSpecificClass() {
+        let me = this;
+        if (me.props.jsxprefixCls == "kuma-form-field") {
+            return me.props.jsxprefixCls + " kuma-checkbox-group-form-field" ;
+        }
+        else {
+            return me.props.jsxprefixCls
+        }
+    }
+
     renderField() {
         let me = this;
         return <CheckboxGroup onChange={me.handleChange.bind(me)} value={me.state.value}>

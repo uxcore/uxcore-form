@@ -36,6 +36,16 @@ class NumberInputFormField extends InputFormField {
         }
     }
 
+    addSpecificClass() {
+        let me = this;
+        if (me.props.jsxprefixCls == "kuma-form-field") {
+            return me.props.jsxprefixCls + " kuma-number-input-form-field" ;
+        }
+        else {
+            return me.props.jsxprefixCls
+        }
+    }
+
 }
 
 NumberInputFormField.displayName = "NumberInputFormField";

@@ -40,8 +40,12 @@ class Demo extends React.Component {
 
     handleClick() {
         let me = this;
-        console.log(me.refs.form.getData());
+        console.log(me.refs.form.getValues());
     }
+
+    handleChange(value) {
+        console.log(value);
+    } 
 
     render() {
         let me = this;
@@ -131,7 +135,7 @@ class Demo extends React.Component {
             
         return (
             <div>
-                <Form ref="form" jsxmode={Constants.MODE.EDIT} jsxdata={data}>
+                <Form ref="form" jsxmode={Constants.MODE.EDIT} jsxvalues={data} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField  

@@ -69,6 +69,16 @@ class SelectFormField extends FormField {
 
     }
 
+    addSpecificClass() {
+        let me = this;
+        if (me.props.jsxprefixCls == "kuma-form-field") {
+            return me.props.jsxprefixCls + " kuma-select-form-field" ;
+        }
+        else {
+            return me.props.jsxprefixCls
+        }
+    }
+
     renderField() {
         let me = this;
         let arr = [];
@@ -104,6 +114,7 @@ class SelectFormField extends FormField {
 
 SelectFormField.displayName = "SelectFormField";
 SelectFormField.propTypes = assign({}, FormField.propTypes, {
+    jsxstyle: React.PropTypes.object,
     jsxplaceholder: React.PropTypes.string,
     BeforeFetch: React.PropTypes.func,
     AfterFetch: React.PropTypes.func,
