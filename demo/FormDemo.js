@@ -7,6 +7,7 @@
  */
 
 let classnames = require('classnames');
+let {Button, ButtonGroup} = require('uxcore-button');
 
 let Form = require('../src');
 let {
@@ -22,7 +23,9 @@ let {
     NumberInputFormField,
     DateFormField,
     CheckboxGroupFormField,
-    CascadeSelectFormField
+    CascadeSelectFormField,
+    UploadFormField,
+    OtherFormField
 } = Form;
 
 let CheckboxItem = CheckboxGroupFormField.Item;
@@ -35,7 +38,13 @@ class Demo extends React.Component {
         }
     }
 
+    handleClick() {
+        let me = this;
+        console.log(me.refs.form.getData());
+    }
+
     render() {
+        let me = this;
         let data = {
             test1: "我是测试", 
             fruit: "apple", 
@@ -122,7 +131,7 @@ class Demo extends React.Component {
             
         return (
             <div>
-                <Form jsxmode={Constants.MODE.EDIT} jsxdata={data}>
+                <Form ref="form" jsxmode={Constants.MODE.EDIT} jsxdata={data}>
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField  
@@ -136,6 +145,7 @@ class Demo extends React.Component {
                                 <input type="radio" value="orange" />Orange
                                 <input type="radio" value="watermelon" />Watermelon
                         </RadioGroupFormField>
+
                     </FormRow>
                     <FormRow>
                         <SelectFormField 
@@ -162,7 +172,7 @@ class Demo extends React.Component {
                          <NumberInputFormField
                           jsxname="number"
                           jsxlabel="数字输入"
-                          jsxtype="cnmobile"
+                          jsxtype="money"
                           jsxplaceholder="输入数字"
                           jsxtips="数字和一般的输入框不同"
                           jsxrules={[
@@ -185,7 +195,17 @@ class Demo extends React.Component {
                      jsxstyle={{
                         width: 200
                      }}/>
+                    <UploadFormField
+                      jsxname="upload"
+                      jsxlabel="上传" 
+                      jsxaction="http://demo.nwux.taobao.net/file/upload"/>
                     <div className="demo"></div>
+                    <OtherFormField className="button-group">
+                        <ButtonGroup>
+                            <Button size="medium" onClick={me.handleClick.bind(me)}>提交</Button>
+                            <Button size="medium">重置</Button>
+                        </ButtonGroup>
+                    </OtherFormField>
                 </Form>
             </div>
         );

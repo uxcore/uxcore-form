@@ -24,7 +24,7 @@ class FormField extends React.Component {
     componentDidMount() {
         let me = this;
         me.props.attachFormField(me);
-        me.props.handleDataChange(me, me.props.value);
+        me.props.handleDataChange(me, me.props.value, true);
     }
 
     componentWillUnmount () {
@@ -167,6 +167,7 @@ class FormField extends React.Component {
 
 FormField.propTypes = {
     jsxprefixCls: React.PropTypes.string,
+    jsxflex: React.PropTypes.number,
     jsxname: React.PropTypes.string.isRequired,
     jsxplaceholder: React.PropTypes.string,
     jsxlabel: React.PropTypes.string,

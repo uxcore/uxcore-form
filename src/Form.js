@@ -8,7 +8,6 @@
 
 let FormRow = require("./FormRow");
 let FormRowTitle = require("./FormRowTitle");
-let Button = require("./Button");
 let FormField = require("./FormField");
 let TextAreaFormField = require("./TextAreaFormField");
 let InputFormField = require("./InputFormField");
@@ -18,6 +17,8 @@ let NumberInputFormField = require('./NumberInputFormField');
 let DateFormField = require('./DateFormField');
 let CheckboxGroupFormField = require("./CheckboxGroupFormField");
 let CascadeSelectFormField = require("./CascadeSelectFormField");
+let UploadFormField = require("./UploadFormField");
+let OtherFormField = require("./OtherFormField");
 let Constants = require("./Constants");
 let Validators = require("./Validators");
 
@@ -56,10 +57,18 @@ class Form extends React.Component {
         delete this.fields[field.getName()];
     }
 
-    handleDataChange(field, value, fn){
+    handleDataChange(field, value, fromMount){
         let me = this;
         me.data[field.props.jsxname]  = value;
+        if (!fromMount) {
+            me.props.jsxonChange(me.data);
+        }
         // console.log(me.data);
+    }
+
+    getData() {
+        let me = this;
+        return me.data;
     }
 
     doValidate() {
@@ -148,7 +157,6 @@ class Form extends React.Component {
 // 以 Form 的插件的形式给出
 Form.FormRow = FormRow;
 Form.FormRowTitle = FormRowTitle;
-Form.Button = Button;
 Form.FormField = FormField;
 Form.TextAreaFormField = TextAreaFormField;
 Form.InputFormField = InputFormField;
@@ -158,6 +166,8 @@ Form.NumberInputFormField = NumberInputFormField;
 Form.DateFormField = DateFormField;
 Form.CheckboxGroupFormField = CheckboxGroupFormField;
 Form.CascadeSelectFormField = CascadeSelectFormField;
+Form.UploadFormField = UploadFormField;
+Form.OtherFormField = OtherFormField;
 Form.Constants = Constants;
 Form.Validators = Validators;
 

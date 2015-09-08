@@ -39,10 +39,10 @@ class NumberInputFormField extends InputFormField {
 }
 
 NumberInputFormField.displayName = "NumberInputFormField";
-NumberInputFormField.propTypes = assign(InputFormField.propTypes, {
+NumberInputFormField.propTypes = assign({}, InputFormField.propTypes, {
     jsxtype: React.PropTypes.string
 });
-NumberInputFormField.defaultProps = assign(InputFormField.defaultProps, {
+NumberInputFormField.defaultProps = assign({}, InputFormField.defaultProps, {
     jsxtype: ''
 });
 

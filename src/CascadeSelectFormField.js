@@ -77,13 +77,14 @@ class CascadeSelectFormField extends FormField {
     }
 }
 
-CascadeSelectFormField.propTypes = assign(FormField.propTypes, {
+CascadeSelectFormField.propTypes = assign({}, FormField.propTypes, {
     jsxstyle: React.PropTypes.object,
     jsxshowSearch: React.PropTypes.bool,
     jsxplaceholder: React.PropTypes.string
 });
-CascadeSelectFormField.defaultProps = assign(FormField.defaultProps, {
-    jsxshowSearch: false
+CascadeSelectFormField.defaultProps = assign({}, FormField.defaultProps, {
+    jsxshowSearch: false,
+    jsxplaceholder: "请下拉选择"
 });
 CascadeSelectFormField.displayName = "CascadeSelectFormField"
 

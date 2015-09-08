@@ -81,6 +81,7 @@ class SelectFormField extends FormField {
                 multiple: me.props.jsxmultiple,
                 tags: me.props.jsxtags,
                 value: me.state.value,
+                // showSearch: true,
                 showSearch: me.props.jsxshowSearch,
                 placeholder: me.props.jsxplaceholder,
                 onChange: me.handleChange.bind(me),
@@ -102,13 +103,13 @@ class SelectFormField extends FormField {
 }
 
 SelectFormField.displayName = "SelectFormField";
-SelectFormField.propTypes = assign(FormField.propTypes, {
+SelectFormField.propTypes = assign({}, FormField.propTypes, {
     jsxplaceholder: React.PropTypes.string,
     BeforeFetch: React.PropTypes.func,
     AfterFetch: React.PropTypes.func,
     jsxshowSearch: React.PropTypes.bool
 });
-SelectFormField.defaultProps = assign(FormField.defaultProps, {
+SelectFormField.defaultProps = assign({}, FormField.defaultProps, {
     jsxplaceholder: "请下拉选择",
     beforeFetch: (obj) => {return obj},
     afterFetch: (obj) => {return obj},
