@@ -77,13 +77,17 @@ class Form extends React.Component {
     }
 
     doValidate() {
-        let flag=true;
-        Object.keys(this.fields).map(function(key){
-            let _flag = this.fields[key].doValidate();
-            this.errors[key] = _flag;
-            flag = flag && !_flag;
-        }.bind(this));
-        return flag;
+        let me = this;
+        let pass = true;
+        let keys = Object.keys(me.fields);
+        for (let i = 0; i < keys.length; i++) {
+            let itemPass = me.fields[keys[i]].doValidate();
+            me.errors[keys[i]] = !itemPass;
+            if (!itemPass) {
+                pass = false;
+            }
+        }
+        return pass;
     }
 
     isDirty() {

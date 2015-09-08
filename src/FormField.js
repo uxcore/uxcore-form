@@ -180,7 +180,7 @@ FormField.defaultProps = {
     jsxflex: 1, // 占 Form 的比例，类似于 css3 中的 flex-box
     jsxname: "", // 表单字段
     jsxplaceholder: "", // 在未选值之前的占位符
-    jsxlabel: "LABEL", // 左侧表单域标题
+    jsxlabel: "", // 左侧表单域标题
     jsxtips: "" // 提醒
 };
 
