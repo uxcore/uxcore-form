@@ -72,7 +72,9 @@ class UploadFormField extends FormField {
         };
         !!me.props.jsxfileName && (options.name = me.props.jsxfileName);
         let arr = [];
-        arr.push(<Upload key="upload" {...options}></Upload>);
+        if (me.props.mode == Constants.MODE.EDIT) {
+            arr.push(<Upload key="upload" {...options}></Upload>);
+        }
         arr = arr.concat(me.state.files.map((file, index) => {
             let str = file.name;
             if (!isIE) {

@@ -10,9 +10,6 @@ class CheckboxGroupFormField extends FormField {
 
     handleChange(value) {
         let me = this;
-        me.setState({
-            value: value
-        });
         me.handleDataChange(value);
     }
 
@@ -28,9 +25,14 @@ class CheckboxGroupFormField extends FormField {
 
     renderField() {
         let me = this;
-        return <CheckboxGroup onChange={me.handleChange.bind(me)} value={me.state.value}>
-                    {me.props.children}
-               </CheckboxGroup>
+        if (me.props.mode == Constants.MODE.EDIT) {
+            return <CheckboxGroup onChange={me.handleChange.bind(me)} value={me.state.value}>
+                        {me.props.children}
+                   </CheckboxGroup>
+        }
+        else {
+            return <span>{(me.state.value instanceof Array) && me.state.value.join(" ")}</span>
+        }
     }
 }
 

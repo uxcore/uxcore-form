@@ -33,6 +33,9 @@ class DateFormField extends FormField {
                     onSelect={me.handleChange.bind(me)}
                     {...others}/>
         }
+        else if (me.props.mode == Constants.MODE.VIEW) {
+            return <span>{me.state.value}</span>
+        }
     }
 }
 

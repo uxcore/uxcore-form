@@ -37,6 +37,10 @@ module.exports = {
                     return isNpmModule & !isUxcore;
                 },
                 loader: 'babel-loader?stage=1'
+            },
+            {
+                test: /\.css$/,
+                loader: 'style-loader!raw'
             }
         ]
     },

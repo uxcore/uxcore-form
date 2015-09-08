@@ -105,7 +105,7 @@ class SelectFormField extends FormField {
                     </Select>);
         }
         else if (me.props.mode == Constants.MODE.VIEW){
-            arr.push(<span key="select">{me.props.jsxdata[me.state.value]}</span>);
+            arr.push(<span key="select">{me.state.data[me.state.value]}</span>);
         }
         return arr;
     }
@@ -121,7 +121,7 @@ SelectFormField.propTypes = assign({}, FormField.propTypes, {
     jsxtags: React.PropTypes.bool,
     jsxmultiple: React.PropTypes.bool,
     jsxallowClear: React.PropTypes.bool,
-    jsxsearchPlaceholder: React.PropTypes.bool
+    jsxsearchPlaceholder: React.PropTypes.string
 });
 SelectFormField.defaultProps = assign({}, FormField.defaultProps, {
     jsxplaceholder: "请下拉选择",

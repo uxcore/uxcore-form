@@ -55,7 +55,8 @@ class Demo extends React.Component {
             city: "nj", 
             textArea: "我是多行文本", 
             date: "2015-09-01",
-            checkbox: ["sea"]
+            checkbox: ["sea"],
+            cascade: ["a", "ab"]
         }
 
         let casData = {
