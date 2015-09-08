@@ -61,8 +61,7 @@ class Form extends React.Component {
         let me = this;
         me.data[field.props.jsxname]  = value;
         if (!fromMount) {
-            let _flag = me.doValidate();
-            me.props.jsxonChange(me.data, _flag);
+            me.props.jsxonChange(me.data);
         }
         // console.log(me.data);
     }

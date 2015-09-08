@@ -143,9 +143,11 @@
 .kuma-form-row .kuma-form-field .kuma-form-field-content .kuma-radio-group > span {
   padding: 0px 20px 0px 4px;
 }
-.kuma-form-edit-mode .kuma-form-row .kuma-form-field.kuma-textarea-form-field .kuma-label,
-.kuma-form-edit-mode .kuma-form-row .kuma-form-field.kuma-input-form-field .kuma-label,
-.kuma-form-edit-mode .kuma-form-row .kuma-form-field.kuma-select-form-field .kuma-label {
+.kuma-form-edit-mode .kuma-form-row .kuma-form-field .kuma-label {
+  padding-top: 11px;
+}
+.kuma-form-edit-mode .kuma-form-row .kuma-form-field.kuma-checkbox-group-form-field .kuma-form-field-content,
+.kuma-form-edit-mode .kuma-form-row .kuma-form-field.kuma-radio-group-form-field .kuma-form-field-content {
   padding-top: 11px;
 }
 

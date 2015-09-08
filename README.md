@@ -180,6 +180,12 @@ SelectFormField
 |beforeFetch|func|optional|-|会传入 {q: value}， value 为搜索框中变化的值，在发出 ajax 请求之前，将数据处理为应该发送的格式，并需返回该数据。|
 |afterFetch|func|optional|-|会传入返回的数据， 将其处理为 jsxdata 的格式并返回|
 |jsxshowSearch|func|optional|true|是否显示搜索栏|
+|jsxtags|bool|optional|false|是否启用 tag 模式|
+|jsxmultiple|bool|optional|false|是否启用 multiple 模式|
+|jsxallowClear|bool|optional|false|是否显示清除按钮|
+|jsxsearchPlaceholder|string|optional|""|搜索框默认文字|
+
+see datails in [uxcore-select2](https://www.npmjs.com/package/uxcore-select2)
 
 CheckboxGroupFormField
 

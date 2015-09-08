@@ -184,6 +184,7 @@ class Demo extends React.Component {
                             {validator: Validators.isNum, errMsg: "请输入数字"}
                          ]}/>
                     </FormRow>
+                    <FormRowTitle jsxtitle="我是行标题2"/>
                     <FormRow>
                         <TextAreaFormField jsxname="textArea" jsxlabel="多行文本框"/>
                         <CheckboxGroupFormField jsxname="checkbox" jsxlabel="多选">

@@ -16,12 +16,12 @@ class RadioGroupFormField extends FormField {
     handleChange() {
         let me = this;
         let value = me.getValue();
-        me.props.handleDataChange(this, value);
+        me.handleDataChange(value);
     }
     addSpecificClass() {
         let me = this;
         if (me.props.jsxprefixCls == "kuma-form-field") {
-            return me.props.jsxprefixCls + " kuma-radiogroup-form-field" ;
+            return me.props.jsxprefixCls + " kuma-radio-group-form-field" ;
         }
         else {
             return me.props.jsxprefixCls
@@ -35,13 +35,13 @@ class RadioGroupFormField extends FormField {
                     jsxname={me.props.jsxname} 
                     ref="el" 
                     key="radiogroup"
-                    jsxvalue={me.props.value} 
+                    jsxvalue={me.state.value} 
                     onChange={me.handleChange.bind(me)}>
                         {me.props.children}
                     </RadioGroup>);
         }
         else {
-            arr.push(<span key="radiogroup">{this.state.value}</span>);
+            arr.push(<span key="radiogroup">{me.state.value}</span>);
         }
         return arr;
     }

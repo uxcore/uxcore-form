@@ -14,6 +14,16 @@ class DateFormField extends FormField {
         me.handleDataChange(new Date(value).toJSON());
     }
 
+    addSpecificClass() {
+        let me = this;
+        if (me.props.jsxprefixCls == "kuma-form-field") {
+            return me.props.jsxprefixCls + " kuma-date-form-field" ;
+        }
+        else {
+            return me.props.jsxprefixCls
+        }
+    }
+
     renderField() {
         let me = this;
         let {onSelect, style, prefixCls, value, ...others} = me.props;

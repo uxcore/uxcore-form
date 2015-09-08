@@ -10,11 +10,10 @@ let {Option} = Select;
 class SelectFormField extends FormField {
     constructor(props) {
         super(props);
-        let data = {};
         let me = this;
-        me.state = {
-            data: me.props.jsxdata
-        };
+        assign(me.state, {
+            data: props.jsxdata
+        })
     }
     fetchData(value) {
         let me = this;
@@ -88,6 +87,8 @@ class SelectFormField extends FormField {
                 optionLabelProp: "children",
                 style: me.props.jsxstyle,
                 multiple: me.props.jsxmultiple,
+                allowClear: me.props.jsxallowClear,
+                searchPlaceholder: me.props.jsxsearchPlaceholder,
                 tags: me.props.jsxtags,
                 value: me.state.value,
                 showSearch: me.props.jsxshowSearch,
@@ -116,13 +117,21 @@ SelectFormField.propTypes = assign({}, FormField.propTypes, {
     jsxplaceholder: React.PropTypes.string,
     beforeFetch: React.PropTypes.func,
     afterFetch: React.PropTypes.func,
-    jsxshowSearch: React.PropTypes.bool
+    jsxshowSearch: React.PropTypes.bool,
+    jsxtags: React.PropTypes.bool,
+    jsxmultiple: React.PropTypes.bool,
+    jsxallowClear: React.PropTypes.bool,
+    jsxsearchPlaceholder: React.PropTypes.bool
 });
 SelectFormField.defaultProps = assign({}, FormField.defaultProps, {
     jsxplaceholder: "请下拉选择",
     beforeFetch: (obj) => {return obj},
     afterFetch: (obj) => {return obj},
-    jsxshowSearch: true
+    jsxshowSearch: true,
+    jsxallowClear: false,
+    jsxtags: false,
+    jsxmultiple: false,
+    jsxsearchPlaceholder: ""
 });
 
 module.exports = SelectFormField;
