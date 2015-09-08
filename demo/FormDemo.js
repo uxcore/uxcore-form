@@ -182,11 +182,17 @@ class Demo extends React.Component {
                     </FormRow>
                     <FormRow>
                         <TextAreaFormField jsxname="textArea" jsxlabel="多行文本框"/>
-                        <DateFormField jsxflex={2} jsxname="date" jsxlabel="日期"/>
                         <CheckboxGroupFormField jsxname="checkbox" jsxlabel="多选">
                           <CheckboxItem value="air" text="天空"/>
                           <CheckboxItem value="sea" text="大海"/>
                         </CheckboxGroupFormField>
+                    </FormRow>
+                    <FormRow>
+                        <DateFormField jsxname="date" jsxlabel="日期"/>
+                        <UploadFormField
+                          jsxname="upload"
+                          jsxlabel="上传" 
+                          jsxaction="http://demo.nwux.taobao.net/file/upload"/>
                     </FormRow>
                     <CascadeSelectFormField 
                      jsxdata={casData} 
@@ -195,11 +201,7 @@ class Demo extends React.Component {
                      jsxstyle={{
                         width: 200
                      }}/>
-                    <UploadFormField
-                      jsxname="upload"
-                      jsxlabel="上传" 
-                      jsxaction="http://demo.nwux.taobao.net/file/upload"/>
-                    <div className="demo"></div>
+                    
                     <OtherFormField className="button-group">
                         <ButtonGroup>
                             <Button size="medium" onClick={me.handleClick.bind(me)}>提交</Button>
