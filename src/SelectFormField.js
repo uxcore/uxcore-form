@@ -23,7 +23,6 @@ class SelectFormField extends FormField {
             dataType: "jsonp",
             data: me.props.beforeFetch({q: value}),
             success: (data) => {
-                // me.props.afterFetch(data)
                 me.setState({
                     data: me.props.afterFetch(data)
                 });
@@ -91,7 +90,6 @@ class SelectFormField extends FormField {
                 multiple: me.props.jsxmultiple,
                 tags: me.props.jsxtags,
                 value: me.state.value,
-                // showSearch: true,
                 showSearch: me.props.jsxshowSearch,
                 placeholder: me.props.jsxplaceholder,
                 onChange: me.handleChange.bind(me),
@@ -116,8 +114,8 @@ SelectFormField.displayName = "SelectFormField";
 SelectFormField.propTypes = assign({}, FormField.propTypes, {
     jsxstyle: React.PropTypes.object,
     jsxplaceholder: React.PropTypes.string,
-    BeforeFetch: React.PropTypes.func,
-    AfterFetch: React.PropTypes.func,
+    beforeFetch: React.PropTypes.func,
+    afterFetch: React.PropTypes.func,
     jsxshowSearch: React.PropTypes.bool
 });
 SelectFormField.defaultProps = assign({}, FormField.defaultProps, {

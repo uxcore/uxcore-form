@@ -17,7 +17,7 @@ $ gulp server
 
 ## Usage
 
-> see demo/FormDemo.js for details
+> see demo/FormDemo.js for details  
 > 每一个 field 需要按照 Form -> FormRow -> FormField 的方式进行嵌套，允许 Form -> FormField 的嵌套，会自动增加 FormRow 这一层，并默认占一整行。
 
 ```
@@ -112,7 +112,7 @@ http://uxcore.github.io/uxcore/
 
 ### Form
 
-* getValues() 获取目前的 values 和 pass（是否通过检测），在使用 onchangge 函数监听的情况下意义不大。
+* getValues() 获取目前的 values 和 pass（是否通过检测），在使用 onChange 函数监听的情况下意义不大。  
 * isDirty() 获取目前的数据是否没有通过检测。
 
 ## props
@@ -177,7 +177,7 @@ SelectFormField
 |jsxdata|object|optional|-|传入用于生成列表的数据，格式为{value: text}|
 |jsxfetchUrl|string|optional|-|如果 Select 是通过搜索异步获取选项，则需要填入此项，目前指支持 jsonp。|
 |jsxstyle|obj|optional|-|与 react 传入 style 的方式相同，修改 Field 的样式|
-|BeforeFetch|func|optional|-|会传入 {q: value}， value 为搜索框中变化的值，在发出 ajax 请求之前，将数据处理为应该发送的格式，并需返回该数据。|
+|beforeFetch|func|optional|-|会传入 {q: value}， value 为搜索框中变化的值，在发出 ajax 请求之前，将数据处理为应该发送的格式，并需返回该数据。|
 |afterFetch|func|optional|-|会传入返回的数据， 将其处理为 jsxdata 的格式并返回|
 |jsxshowSearch|func|optional|true|是否显示搜索栏|
 
