@@ -1,3 +1,7 @@
+## 1.0.5
+
+`fix` fix jsxshow bug in Other & ButtonGroup FormField
+
 ## 1.0.4
 
 `NEW` issue #7, add prop jsxshow in FormField

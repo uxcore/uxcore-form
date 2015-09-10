@@ -155,8 +155,9 @@ class Demo extends React.Component {
                                 <input type="radio" value="orange" />Orange
                                 <input type="radio" value="watermelon" />Watermelon
                         </RadioGroupFormField>
-
-
+                        <ButtonGroupFormField jsxshow={false}>
+                            <Button size="medium" type="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
+                        </ButtonGroupFormField>
                     </FormRow>
                     <FormRow>
                         <SelectFormField 
@@ -213,13 +214,6 @@ class Demo extends React.Component {
                      jsxstyle={{
                         width: 200
                      }}/>
-                    
-                    <OtherFormField className="button-group">
-                        <ButtonGroup>
-                            <Button size="medium" onClick={me.handleClick.bind(me)}>提交</Button>
-                            <Button size="medium">重置</Button>
-                        </ButtonGroup>
-                    </OtherFormField>
                     <ButtonGroupFormField>
                         <Button size="medium" type="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
                     </ButtonGroupFormField>

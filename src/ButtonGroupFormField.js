@@ -1,5 +1,6 @@
 let classnames = require('classnames');
 let {Button, ButtonGroup} = require('uxcore-button');
+let assign = require("object-assign");
 
 class ButtonGroupFormField extends React.Component {
     constructor(props) {
@@ -33,7 +34,9 @@ class ButtonGroupFormField extends React.Component {
             <div className={classnames({
                 [me.props.jsxprefixCls]: true,
                 [me.props.className]: !!me.props.className
-            })} style={me.props.style}>
+            })} style={assign({}, me.props.style, {
+                display: me.props.jsxshow ? "table" : "none"
+            })}>
                 {!!elements && elements}
             </div>
         )
@@ -42,11 +45,13 @@ class ButtonGroupFormField extends React.Component {
 
 ButtonGroupFormField.propTypes = {
     jsxprefixCls: React.PropTypes.string,
-    jsxflex: React.PropTypes.number
+    jsxflex: React.PropTypes.number,
+    jsxshow: React.PropTypes.bool
 };
 ButtonGroupFormField.defaultProps = {
     jsxprefixCls: "kuma-form-field kuma-button-group-form-field", // 默认类名
-    jsxflex: 1 // 占 Form 的比例，类似于 css3 中的 flex-box
+    jsxflex: 1, // 占 Form 的比例，类似于 css3 中的 flex-box
+    jsxshow: true
 };
 ButtonGroupFormField.displayName = "ButtonGroupFormField";
 
