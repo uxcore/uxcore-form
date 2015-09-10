@@ -19,6 +19,7 @@ let CheckboxGroupFormField = require("./CheckboxGroupFormField");
 let CascadeSelectFormField = require("./CascadeSelectFormField");
 let UploadFormField = require("./UploadFormField");
 let OtherFormField = require("./OtherFormField");
+let ButtonGroupFormField = require("./ButtonGroupFormField");
 let Constants = require("./Constants");
 let Validators = require("./Validators");
 
@@ -149,11 +150,12 @@ class Form extends React.Component {
                 {!!elements && elements.map(function(child, index) {
                     return React.cloneElement(child, {
                         mode: me.state.mode,
-                        data: me.props.jsxvalues,
+                        data: me.props.jsxvalues || me.props.passedData || {},
                         key: index,
                         attachFormField: me.attachFormField.bind(me),
                         detachFormField: me.detachFormField.bind(me),
-                        handleDataChange: me.handleDataChange.bind(me)
+                        handleDataChange: me.handleDataChange.bind(me),
+                        getValues: me.getValues.bind(me)
                     });
                 })}
             </div>
@@ -176,6 +178,7 @@ Form.CheckboxGroupFormField = CheckboxGroupFormField;
 Form.CascadeSelectFormField = CascadeSelectFormField;
 Form.UploadFormField = UploadFormField;
 Form.OtherFormField = OtherFormField;
+Form.ButtonGroupFormField = ButtonGroupFormField;
 Form.Constants = Constants;
 Form.Validators = Validators;
 
@@ -183,7 +186,6 @@ Form.Validators = Validators;
 Form.defaultProps = {
     jsxprefixCls: "kuma-form",
     jsxmode: Constants.MODE.EDIT,
-    jsxvalues: {},
     jsxonChange: () => {}
 }
 

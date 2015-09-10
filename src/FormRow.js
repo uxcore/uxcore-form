@@ -47,7 +47,8 @@ class FormRow extends React.Component {
                         style: {width: child.props.jsxflex / me.totalFlex * 100 + '%'},
                         attachFormField: me.props.attachFormField,
                         detachFormField: me.props.detachFormField,
-                        handleDataChange: me.props.handleDataChange
+                        handleDataChange: me.props.handleDataChange,
+                        getValues: me.props.getValues
                     });
 
                     return child;

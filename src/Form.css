@@ -17,7 +17,7 @@
   clear: both;
   height: 0;
 }
-.kuma-form .kuma-input {
+.kuma-input {
   padding: 5px 10px;
   height: 28px;
   line-height: 28px;
@@ -26,19 +26,19 @@
   font-size: 12px;
   width: 100%;
 }
-.kuma-form .kuma-input:hover,
-.kuma-form .kuma-textarea:hover,
-.kuma-form .kuma-input-hover {
+.kuma-input:hover,
+.kuma-textarea:hover,
+.kuma-input-hover {
   border: 1px #cccccc solid;
 }
-.kuma-form .kuma-input:focus,
-.kuma-form .kuma-textarea:focus,
-.kuma-form .kuma-input-focus {
+.kuma-input:focus,
+.kuma-textarea:focus,
+.kuma-input-focus {
   border: 1px #288df0 solid;
   color: #666666;
   outline: none;
 }
-.kuma-form .kuma-textarea {
+.kuma-textarea {
   line-height: 20px;
   border: 1px #cccccc solid;
   padding: 5px 10px;
@@ -48,17 +48,17 @@
   color: #666666;
   width: 100%;
 }
-.kuma-form .kuma-input[disabled],
-.kuma-form .kuma-textarea[disabled] {
+.kuma-input[disabled],
+.kuma-textarea[disabled] {
   border: 1px solid #cccccc;
   background: #f2f2f2;
 }
-.kuma-form .kuma-input:disabled,
-.kuma-form .kuma-textarea:disabled {
+.kuma-input:disabled,
+.kuma-textarea:disabled {
   border: 1px solid #cccccc;
   background: #f2f2f2;
 }
-.kuma-form .kuma-label {
+.kuma-label {
   width: 100px;
   margin-left: 0px;
   padding-top: 5px;
@@ -69,7 +69,7 @@
   vertical-align: baseline;
   vertical-align: -webkit-baseline-middle;
 }
-.kuma-form .kuma-label i {
+.kuma-label i {
   color: Red;
 }
 .kuma-form-row-title {
@@ -142,6 +142,9 @@
 }
 .kuma-form-row .kuma-form-field .kuma-form-field-content .kuma-radio-group > span {
   padding: 0px 20px 0px 4px;
+}
+.kuma-form-row .kuma-form-field.kuma-button-group-form-field {
+  padding-left: 112px;
 }
 .kuma-form-edit-mode .kuma-form-row .kuma-form-field .kuma-label {
   padding-top: 11px;

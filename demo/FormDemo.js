@@ -25,7 +25,8 @@ let {
     CheckboxGroupFormField,
     CascadeSelectFormField,
     UploadFormField,
-    OtherFormField
+    OtherFormField,
+    ButtonGroupFormField
 } = Form;
 
 let CheckboxItem = CheckboxGroupFormField.Item;
@@ -41,6 +42,10 @@ class Demo extends React.Component {
     handleClick() {
         let me = this;
         console.log(me.refs.form.getValues());
+    }
+
+    handleFormClick(data) {
+        console.log(data)
     }
 
     handleChange(value) {
@@ -136,7 +141,7 @@ class Demo extends React.Component {
             
         return (
             <div>
-                <Form ref="form" jsxmode={Constants.MODE.EDIT} jsxvalues={data} jsxonChange={me.handleChange.bind(me)}>
+                <Form ref="form" jsxmode={Constants.MODE.EDIT} passedData={data} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField  
@@ -214,6 +219,9 @@ class Demo extends React.Component {
                             <Button size="medium">重置</Button>
                         </ButtonGroup>
                     </OtherFormField>
+                    <ButtonGroupFormField>
+                        <Button size="medium" type="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
+                    </ButtonGroupFormField>
                 </Form>
             </div>
         );

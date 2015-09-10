@@ -12,67 +12,69 @@
         clear: both;
         height: 0;
     }
-    .kuma-input {
-        padding: 5px 10px;
-        height: 28px;
-        line-height: 28px;
-        border: 1px solid @input-border;
-        color: @input-color;
-        font-size: @font-size-small;
-        width:100%;
-    }
+    
+}
 
-    .kuma-input:hover,
-    .kuma-textarea:hover,
-    .kuma-input-hover {
-        border: 1px @input-border solid;
-    }
+.kuma-input {
+    padding: 5px 10px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid @input-border;
+    color: @input-color;
+    font-size: @font-size-small;
+    width:100%;
+}
 
-    .kuma-input:focus,
-    .kuma-textarea:focus,
-    .kuma-input-focus {
-        border: 1px @input-border-focus solid;
-        color: @input-color;
-        outline: none;
-    }
+.kuma-input:hover,
+.kuma-textarea:hover,
+.kuma-input-hover {
+    border: 1px @input-border solid;
+}
 
-    .kuma-textarea {
-        line-height: 20px;
-        border: 1px @input-border solid;
-        padding: 5px 10px;
-        overflow: auto;
-        font-family: Arial;
-        font-size: @font-size-small;
-        color: @input-color;
-        width:100%;
-    }
+.kuma-input:focus,
+.kuma-textarea:focus,
+.kuma-input-focus {
+    border: 1px @input-border-focus solid;
+    color: @input-color;
+    outline: none;
+}
 
-    .kuma-input[disabled],
-    .kuma-textarea[disabled] {
-        border: 1px solid @input-border;
-        background: @input-bg-disabled;
-    }
+.kuma-textarea {
+    line-height: 20px;
+    border: 1px @input-border solid;
+    padding: 5px 10px;
+    overflow: auto;
+    font-family: Arial;
+    font-size: @font-size-small;
+    color: @input-color;
+    width:100%;
+}
 
-    .kuma-input:disabled,
-    .kuma-textarea:disabled {
-        border: 1px solid @input-border;
-        background: @input-bg-disabled;
-    }
+.kuma-input[disabled],
+.kuma-textarea[disabled] {
+    border: 1px solid @input-border;
+    background: @input-bg-disabled;
+}
+
+.kuma-input:disabled,
+.kuma-textarea:disabled {
+    border: 1px solid @input-border;
+    background: @input-bg-disabled;
+}
 
 
-    .kuma-label {
-        width: 100px;
-        margin-left: 0px;
-        padding-top: 5px;
-        padding-right:0px;
-        text-align: right;
-        color: @label-color;
-        display:table-cell;
-        vertical-align: baseline;
-        vertical-align: -webkit-baseline-middle;
-        i {
-           color: Red; 
-        }
+.kuma-label {
+    width: 100px;
+    margin-left: 0px;
+    padding-top: 5px;
+    padding-right:0px;
+    text-align: right;
+    color: @label-color;
+    display:table-cell;
+    vertical-align: baseline;
+    vertical-align: -webkit-baseline-middle;
+    i {
+       color: Red; 
     }
 }
 
@@ -89,6 +91,7 @@
     min-width: 100%;
     float: left;
     clear: both;
+    
     .kuma-form-field {
         display: table;
         float: left;
@@ -147,6 +150,9 @@
                     padding: 0px 20px 0px 4px;
                 }
             }
+        }
+        &.kuma-button-group-form-field {
+            padding-left: 112px;
         }
     }
 }
