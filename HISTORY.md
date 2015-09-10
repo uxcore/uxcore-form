@@ -1,3 +1,7 @@
+## 1.0.4
+
+`NEW` issue #7, add prop jsxshow in FormField
+
 ## 1.0.3
 
 `NEW` add ButtonGroupFormField used in Grid sub component.

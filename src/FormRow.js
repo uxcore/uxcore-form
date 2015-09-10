@@ -20,7 +20,9 @@ class FormRow extends React.Component {
             // 如果是自己添加的 DOM 直接抛弃
             if (typeof child.type == 'function') {
                 if (/FormField/.test(child.type.displayName)) {
-                    me.totalFlex += child.props.jsxflex;
+                    if (child.props.jsxshow) {
+                        me.totalFlex += child.props.jsxflex;
+                    }
                     elements.push(child);
                 }
             }

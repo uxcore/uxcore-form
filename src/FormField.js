@@ -8,6 +8,7 @@
 
 let Constants = require("./Constants");
 let classnames = require("classnames");
+let assign = require("object-assign");
 
 class FormField extends React.Component {
 
@@ -152,7 +153,9 @@ class FormField extends React.Component {
             <div className={classnames({
                 [specificCls]: true,
                 [me.props.className]: !!me.props.className
-            })} style={me.props.style}>
+            })} style={assign({}, me.props.style, {
+                display: me.props.jsxshow ? "table" : "none"
+            })}>
                 {me.renderLabel()}
                 <ul className="kuma-form-field-content">
                     <li>{me.renderField()}</li>
@@ -166,6 +169,7 @@ class FormField extends React.Component {
 };
 
 FormField.propTypes = {
+    jsxshow: React.PropTypes.bool,
     jsxprefixCls: React.PropTypes.string,
     jsxflex: React.PropTypes.number,
     jsxname: React.PropTypes.string.isRequired,
@@ -176,6 +180,7 @@ FormField.propTypes = {
 };
 
 FormField.defaultProps = {
+    jsxshow: true, // 是否显示该块
     jsxprefixCls: "kuma-form-field", // 默认类名
     jsxflex: 1, // 占 Form 的比例，类似于 css3 中的 flex-box
     jsxname: "", // 表单字段
