@@ -223,7 +223,8 @@ class Demo extends React.Component {
                           jsxlabel="上传" 
                           jsxaction="http://demo.nwux.taobao.net/file/upload"/>
                     </FormRow>
-                    <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期"/>
+                    <FormRowTitle jsxtitle="级联类"/>
+                    <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" jsxfrom="2015-10-2" jsxto="2015-10-10"/>
                     <CascadeSelectFormField 
                      jsxdata={casData} 
                      jsxname="cascade" 

@@ -83,6 +83,12 @@ class DateFormField extends FormField {
                 arr.push(<Calendar 
                         key="calendar2"
                         onSelect={me.handleCascadeChange.bind(me, 1)}
+                        disabledDate={(current, value) => {
+                            let now = current.getTime();
+                            let first = me.state.value ? me.state.value[0] : 0;
+                            first = new Date(first).getTime();
+                            return (now < from || now > to || now < first);
+                        }}
                         {...others2}/>);
                 return arr;
             }
