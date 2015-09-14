@@ -55,8 +55,7 @@ class SelectFormField extends FormField {
         let me = this;
         let values = Object.keys(me.state.data);
         if (!values.length) {
-            console.warn("You need to pass data to initialize Select.");
-            // return [];
+            // console.warn("You need to pass data to initialize Select.");
         }
         else {
             let arr = values.map(function(value, index) {
@@ -88,6 +87,7 @@ class SelectFormField extends FormField {
                 style: me.props.jsxstyle,
                 multiple: me.props.jsxmultiple,
                 allowClear: me.props.jsxallowClear,
+                combobox: me.props.jsxcombobox,
                 searchPlaceholder: me.props.jsxsearchPlaceholder,
                 tags: me.props.jsxtags,
                 value: me.state.value,
@@ -115,6 +115,8 @@ SelectFormField.displayName = "SelectFormField";
 SelectFormField.propTypes = assign({}, FormField.propTypes, {
     jsxstyle: React.PropTypes.object,
     jsxplaceholder: React.PropTypes.string,
+    jsxcombobox: React.PropTypes.bool,
+    jsxdata: React.PropTypes.object,
     beforeFetch: React.PropTypes.func,
     afterFetch: React.PropTypes.func,
     jsxshowSearch: React.PropTypes.bool,
@@ -125,6 +127,8 @@ SelectFormField.propTypes = assign({}, FormField.propTypes, {
 });
 SelectFormField.defaultProps = assign({}, FormField.defaultProps, {
     jsxplaceholder: "请下拉选择",
+    jsxcombobox: false,
+    jsxdata: {},
     beforeFetch: (obj) => {return obj},
     afterFetch: (obj) => {return obj},
     jsxshowSearch: true,

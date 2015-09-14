@@ -153,5 +153,15 @@
 .kuma-form-edit-mode .kuma-form-row .kuma-form-field.kuma-radio-group-form-field .kuma-form-field-content {
   padding-top: 11px;
 }
+.kuma-form-edit-mode .kuma-form-row .kuma-form-field.kuma-cascade-date-form-field .kuma-calendar-picker {
+  width: 200px;
+  display: inline-block;
+  vertical-align: top;
+}
+.kuma-form-edit-mode .kuma-form-row .kuma-form-field.kuma-cascade-date-form-field .kuma-form-split {
+  margin-top: 10px;
+  display: inline-block;
+  margin: 8px 10px 0;
+}
 
 /*# sourceMappingURL=Form.css.map */

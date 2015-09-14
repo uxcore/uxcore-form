@@ -3,6 +3,7 @@ let Constants = require('./Constants');
 let classnames = require('classnames');
 let Calendar = require('uxcore-calendar');
 let assign = require('object-assign');
+let update = React.addons.update;
 
 class DateFormField extends FormField {
     constructor(props) {
@@ -14,10 +15,27 @@ class DateFormField extends FormField {
         me.handleDataChange(new Date(value).toJSON());
     }
 
+    handleCascadeChange(i, value) {
+        let me = this;
+        let values = update(me.state.value, {}) || [];
+        if (!!values[i]) {
+            values = values.slice(0, i);
+            values.push(new Date(value).toJSON());
+        }
+        else {
+            values[i] = new Date(value).toJSON();
+        }
+        me.handleDataChange(values);
+    }
+
     addSpecificClass() {
         let me = this;
         if (me.props.jsxprefixCls == "kuma-form-field") {
-            return me.props.jsxprefixCls + " kuma-date-form-field" ;
+            let str = me.props.jsxprefixCls + " kuma-date-form-field" ;
+            if (me.props.jsxtype == "cascade") {
+                str += " kuma-cascade-date-form-field"
+            }
+            return str;
         }
         else {
             return me.props.jsxprefixCls
@@ -26,12 +44,48 @@ class DateFormField extends FormField {
 
     renderField() {
         let me = this;
-        let {onSelect, style, prefixCls, value, ...others} = me.props;
+        let {onSelect, style, prefixCls, value, jsxtype, jsxfrom, jsxto, disabledDate, ...others} = me.props;
+        let from = !!jsxfrom ? new Date(jsxfrom).getTime() : 0;
+        let to = !!jsxto ? new Date(jsxto).getTime() : Infinity;
         if (me.props.mode == Constants.MODE.EDIT) {
-            return <Calendar 
-                    value={me.state.value}
-                    onSelect={me.handleChange.bind(me)}
-                    {...others}/>
+            if (jsxtype == "single") {
+                return <Calendar 
+                        value={me.state.value}
+                        onSelect={me.handleChange.bind(me)}
+                        disabledDate={(current, value) => {
+                            return (current.getTime() < from || current.getTime() > to)
+                        }}
+                        {...others}/>
+            }
+            else if (jsxtype == "cascade") {
+                let arr = [];
+                let others1 = assign({}, others);
+                let others2 = assign({}, others);
+                if (me.state.value && me.state.value[0]) {
+                    others1 = assign({}, others, {
+                        value: me.state.value[0]
+                    });
+                }
+                if (me.state.value && me.state.value[1]) {
+                    others2 = assign({}, others, {
+                        value: me.state.value[1]
+                    });
+                }
+                arr.push(<Calendar 
+                        key="calendar1"
+                        onSelect={me.handleCascadeChange.bind(me, 0)}
+                        disabledDate={(current, value) => {
+                            return (current.getTime() < from || current.getTime() > to)
+                        }}
+                        {...others1}/>);
+                arr.push(<span key="split" className="kuma-form-split">-</span>)
+
+                arr.push(<Calendar 
+                        key="calendar2"
+                        onSelect={me.handleCascadeChange.bind(me, 1)}
+                        {...others2}/>);
+                return arr;
+            }
         }
         else if (me.props.mode == Constants.MODE.VIEW) {
             return <span>{me.state.value}</span>
@@ -41,9 +95,13 @@ class DateFormField extends FormField {
 
 DateFormField.displayName = "DateFormField";
 DateFormField.propTypes = assign(FormField.propTypes, {
+    jsxtype: React.PropTypes.string,
+    jsxfrom: React.PropTypes.string,
+    jsxto: React.PropTypes.string
 });
 DateFormField.defaultProps = assign(FormField.defaultProps, {
     locale: 'zh-cn',
-    hasTrigger: true
+    hasTrigger: true,
+    jsxtype: "single"
 });
 module.exports = DateFormField;

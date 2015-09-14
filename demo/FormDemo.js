@@ -192,6 +192,22 @@ class Demo extends React.Component {
                             {validator: Validators.isNum, errMsg: "请输入数字"}
                          ]}/>
                     </FormRow>
+                    <FormRow>
+                        <SelectFormField 
+                         jsxlabel="单选 combo 模式" 
+                         jsxname="货物"
+                         jsxfetchUrl="http://suggest.taobao.com/sug"
+                         jsxcombobox={true}
+                         afterFetch={(obj) => {
+                            let data = {};
+                            obj.result.forEach((item, index) => {
+                                data[item[1]] = item[0];
+                            });
+                            return data;
+                         }} 
+                         jsxstyle={{width: 200}}/>
+
+                    </FormRow>
                     <FormRowTitle jsxtitle="我是行标题2"/>
                     <FormRow>
                         <TextAreaFormField jsxname="textArea" jsxlabel="多行文本框"/>
@@ -201,12 +217,13 @@ class Demo extends React.Component {
                         </CheckboxGroupFormField>
                     </FormRow>
                     <FormRow>
-                        <DateFormField jsxname="date" jsxlabel="日期"/>
+                        <DateFormField jsxname="date" jsxlabel="日期" jsxfrom="2015-10-2" jsxto="2015-10-10"/>
                         <UploadFormField
                           jsxname="upload"
                           jsxlabel="上传" 
                           jsxaction="http://demo.nwux.taobao.net/file/upload"/>
                     </FormRow>
+                    <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期"/>
                     <CascadeSelectFormField 
                      jsxdata={casData} 
                      jsxname="cascade" 

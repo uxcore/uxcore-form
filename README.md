@@ -185,6 +185,7 @@ SelectFormField
 |jsxmultiple|bool|optional|false|是否启用 multiple 模式|
 |jsxallowClear|bool|optional|false|是否显示清除按钮|
 |jsxsearchPlaceholder|string|optional|""|搜索框默认文字|
+|jsxcombobox|bool|optional|false|标准搜索模式|
 
 see datails in [uxcore-select2](https://www.npmjs.com/package/uxcore-select2)
 
