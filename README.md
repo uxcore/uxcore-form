@@ -137,6 +137,7 @@ http://uxcore.github.io/uxcore/
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|
 |jsxshow|bool|optional|true|是否显示该表单域，不显示的表单域将不占宽度|
+|jsxshowLabel|bool|optional|true|是否显示 label|
 |jsxname|string|required|-|表单字段，返回值时该字段将作为 key|
 |jsxlabel|string|required|-|左侧的说明文字，不写即为留白|
 |jsxprefixCls|string|optional|"kuma-form-field"|默认类名，用户可以通过修改此项来完成样式的定制|

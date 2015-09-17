@@ -1,6 +1,10 @@
+## 1.0.6
+
+`NEW` add props jsxshowLabel
+
 ## 1.0.5
 
-`fix` fix jsxshow bug in Other & ButtonGroup FormField
+`FIX` fix jsxshow bug in Other & ButtonGroup FormField
 
 ## 1.0.4
 
