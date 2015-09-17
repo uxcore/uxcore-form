@@ -26,7 +26,8 @@ let {
     CascadeSelectFormField,
     UploadFormField,
     OtherFormField,
-    ButtonGroupFormField
+    ButtonGroupFormField,
+    EditorFormField
 } = Form;
 
 let CheckboxItem = CheckboxGroupFormField.Item;
@@ -161,7 +162,7 @@ class Demo extends React.Component {
                     </FormRow>
                     <FormRow>
                         <SelectFormField 
-                         jsxlabel="City" 
+                         jsxlabel="City"
                          jsxname="city"
                          jsxfetchUrl="http://suggest.taobao.com/sug"
                          afterFetch={(obj) => {
@@ -232,6 +233,8 @@ class Demo extends React.Component {
                      jsxstyle={{
                         width: 200
                      }}/>
+                    <EditorFormField jsxname="editor" 
+                                     jsxlabel="富文本编辑器"/>
                     <ButtonGroupFormField>
                         <Button size="medium" type="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
                     </ButtonGroupFormField>

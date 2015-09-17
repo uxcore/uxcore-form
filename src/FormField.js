@@ -135,10 +135,13 @@ class FormField extends React.Component {
     }
 
     renderLabel() {
-        return  <label className="kuma-label">
-                    {this.props.jsxlabel}
-                    <i>{this.state.required ? "*" : ""}</i>
-                </label>
+        let me = this;
+        if (me.props.jsxshowLabel) {
+            return  <label className="kuma-label">
+                        {this.props.jsxlabel}
+                        <i>{this.state.required ? "*" : ""}</i>
+                    </label>
+        }
     }
 
     addSpecificClass(classname) {
@@ -170,6 +173,7 @@ class FormField extends React.Component {
 
 FormField.propTypes = {
     jsxshow: React.PropTypes.bool,
+    jsxshowLabel: React.PropTypes.bool,
     jsxprefixCls: React.PropTypes.string,
     jsxflex: React.PropTypes.number,
     jsxname: React.PropTypes.string.isRequired,
@@ -181,6 +185,7 @@ FormField.propTypes = {
 
 FormField.defaultProps = {
     jsxshow: true, // 是否显示该块
+    jsxshowLabel: true, // 是否展示 label
     jsxprefixCls: "kuma-form-field", // 默认类名
     jsxflex: 1, // 占 Form 的比例，类似于 css3 中的 flex-box
     jsxname: "", // 表单字段

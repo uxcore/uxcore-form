@@ -20,6 +20,7 @@ let CascadeSelectFormField = require("./CascadeSelectFormField");
 let UploadFormField = require("./UploadFormField");
 let OtherFormField = require("./OtherFormField");
 let ButtonGroupFormField = require("./ButtonGroupFormField");
+let EditorFormField = require("./EditorFormField");
 let Constants = require("./Constants");
 let Validators = require("./Validators");
 
@@ -179,6 +180,7 @@ Form.CascadeSelectFormField = CascadeSelectFormField;
 Form.UploadFormField = UploadFormField;
 Form.OtherFormField = OtherFormField;
 Form.ButtonGroupFormField = ButtonGroupFormField;
+Form.EditorFormField = EditorFormField;
 Form.Constants = Constants;
 Form.Validators = Validators;
 
