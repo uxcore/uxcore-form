@@ -158,6 +158,7 @@ class Demo extends React.Component {
                         </RadioGroupFormField>
                         <ButtonGroupFormField jsxshow={false}>
                             <Button size="medium" type="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
+                            <Button size="medium" type="reset">取消</Button>
                         </ButtonGroupFormField>
                     </FormRow>
                     <FormRow>
@@ -237,6 +238,7 @@ class Demo extends React.Component {
                                      jsxlabel="富文本编辑器"/>
                     <ButtonGroupFormField>
                         <Button size="medium" type="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
+                        <Button size="medium" type="reset">取消</Button>
                     </ButtonGroupFormField>
                 </Form>
             </div>

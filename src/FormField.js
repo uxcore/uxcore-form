@@ -35,7 +35,7 @@ class FormField extends React.Component {
     getName() {
         return this.props.jsxname;
     }
-    
+
     /*
      * Fired when field value changes，update form's state and then trigger re-render.
      */
@@ -131,7 +131,10 @@ class FormField extends React.Component {
     renderErrorMsg() {
         let me = this;
         if (me.props.mode != Constants.MODE.EDIT) return;
-        return  <li className="kuma-form-errormsg">{me.state.errMsg}</li>
+        return  <li className="kuma-form-errormsg">
+                    <i className="kuma-icon kuma-icon-close-hover"></i>
+                    {me.state.errMsg}
+                </li>
     }
 
     renderLabel() {
@@ -139,7 +142,7 @@ class FormField extends React.Component {
         if (me.props.jsxshowLabel) {
             return  <label className="kuma-label">
                         {this.props.jsxlabel}
-                        <i>{this.state.required ? "*" : ""}</i>
+                        <i>{me.props.required ? "*" : ""}</i>
                     </label>
         }
     }
@@ -180,7 +183,8 @@ FormField.propTypes = {
     jsxplaceholder: React.PropTypes.string,
     jsxlabel: React.PropTypes.string,
     jsxtips: React.PropTypes.string,
-    jsxrules: React.PropTypes.oneOfType([React.PropTypes.object, React.PropTypes.array])
+    jsxrules: React.PropTypes.oneOfType([React.PropTypes.object, React.PropTypes.array]),
+    required: React.PropTypes.bool
 };
 
 FormField.defaultProps = {
@@ -191,7 +195,8 @@ FormField.defaultProps = {
     jsxname: "", // 表单字段
     jsxplaceholder: "", // 在未选值之前的占位符
     jsxlabel: "", // 左侧表单域标题
-    jsxtips: "" // 提醒
+    jsxtips: "", // 提醒
+    required: false
 };
 
 FormField.displayName = "FormField";

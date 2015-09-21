@@ -21,6 +21,12 @@ class ButtonGroupFormField extends React.Component {
                     child.props.onClick(data)
                 }
             }
+            if (child.props.type == "reset") {
+                props.onClick = () => {
+                    console.log("reset")
+                    me.props.resetValues();
+                }
+             }
             return React.cloneElement(child, props);
         });
 

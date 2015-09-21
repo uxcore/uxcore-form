@@ -42,12 +42,13 @@
 .kuma-textarea {
     line-height: 20px;
     border: 1px @input-border solid;
-    padding: 5px 10px;
+    padding: 8px 10px;
     overflow: auto;
     font-family: Arial;
     font-size: @font-size-small;
     color: @input-color;
     width:100%;
+    resize: vertical;
 }
 
 .kuma-input[disabled],
@@ -79,12 +80,16 @@
 }
 
 .kuma-form-row-title{
-    font-size: 16px;
-    border-left: 6px solid #ff9300;
-    padding: 0px 8px;
-    line-height: 30px;
-    margin: 20px 0px;
-    clear:both;
+    font-size: 14px;
+    border-left: 4px solid #ff9300;
+    padding: 0px 12px;
+    line-height: 14px;
+    margin: 30px 0px 20px;
+    font-weight: bold;
+    clear: both;
+    > span {
+        display: inline-block;
+    }
 }
 
 .kuma-form-row {
@@ -124,6 +129,7 @@
             color: @input-color;
             vertical-align: middle;
             *vertical-align: -5px;
+            height: 36px;
         }
         .kuma-select {
             margin: 0 20px 0 0;
@@ -132,18 +138,23 @@
             font-size: 12px;
             color: @input-color-explain;
             width: 100%;
-            padding: 5px 12px;
+            padding: 5px 0 5px 20px;
             .kuma-form-tips {
-                line-height: 30px;
-                color: #efefef;
+                // line-height: 30px;
+                padding-top: 8px;
+                color: #999999;
                 .kuma-icon {
-                    color: #48c5ff;
+                    color: #39bffc;
                     margin-right: 4px;
                 }
             }
             .kuma-form-errormsg {
-                line-height: 30px;
-                color: red;
+                // line-height: 30px;
+                padding-top: 8px;
+                color: #ea5652;
+                .kuma-icon {
+                    margin-right: 4px;
+                }
             }
             .kuma-radio-group {
                 > span {
@@ -161,24 +172,36 @@
     .kuma-form-row {
         .kuma-form-field {
             .kuma-label {
-                padding-top: 11px;
+                padding-top: 15px;
             }
             &.kuma-checkbox-group-form-field,
             &.kuma-radio-group-form-field {
                 .kuma-form-field-content {
-                    padding-top: 11px;
+                    padding-top: 15px;
                 }
             }
             &.kuma-cascade-date-form-field {
                 .kuma-calendar-picker {
                     width: 200px;
                     display: inline-block;
-                    vertical-align: top
+                    // vertical-align: top
                 }
                 .kuma-form-split {
                     margin-top: 10px;
                     display: inline-block;
                     margin: 8px 10px 0
+                }
+            }
+            &.kuma-select-form-field,
+            &.kuma-cascade-select-form-field {
+                .kuma-select-selection {
+                    height: 36px;
+                    .kuma-select-selection__rendered {
+                        line-height: 34px;
+                    }
+                    .kuma-select-arrow {
+                        height: 34px;
+                    }
                 }
             }
 

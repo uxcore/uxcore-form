@@ -61,7 +61,7 @@ class Form extends React.Component {
 
     handleDataChange(field, value, fromMount){
         let me = this;
-        me.data[field.props.jsxname]  = value;
+        me.data[field.props.jsxname] = value;
         if (!fromMount) {
             me.props.jsxonChange(me.data);
         }
@@ -74,6 +74,15 @@ class Form extends React.Component {
         return {
             values: me.data,
             pass: _flag
+        }
+    }
+
+    resetValues() {
+        let me = this;
+        let keys = Object.keys(me.fields);
+        let data = me.props.jsxvalues || me.props.passedData || {};
+        for (let i = 0; i < keys.length; i++) {
+            me.fields[keys[i]].handleDataChange(data[keys[i]])
         }
     }
 
@@ -90,6 +99,7 @@ class Form extends React.Component {
         }
         return pass;
     }
+
 
     isDirty() {
         return !this.doValidate();
@@ -156,7 +166,8 @@ class Form extends React.Component {
                         attachFormField: me.attachFormField.bind(me),
                         detachFormField: me.detachFormField.bind(me),
                         handleDataChange: me.handleDataChange.bind(me),
-                        getValues: me.getValues.bind(me)
+                        getValues: me.getValues.bind(me),
+                        resetValues: me.resetValues.bind(me)
                     });
                 })}
             </div>

@@ -50,7 +50,8 @@ class FormRow extends React.Component {
                         attachFormField: me.props.attachFormField,
                         detachFormField: me.props.detachFormField,
                         handleDataChange: me.props.handleDataChange,
-                        getValues: me.props.getValues
+                        getValues: me.props.getValues,
+                        resetValues: me.props.resetValues
                     });
 
                     return child;
