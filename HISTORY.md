@@ -1,6 +1,7 @@
 ## 1.0.6
 
 `NEW` add props jsxshowLabel
+`NEW` add api resetValues()
 
 ## 1.0.5
 
