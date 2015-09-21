@@ -142,7 +142,7 @@ class Demo extends React.Component {
             
         return (
             <div>
-                <Form ref="form" jsxmode={Constants.MODE.EDIT} passedData={data} jsxonChange={me.handleChange.bind(me)}>
+                <Form ref="form" jsxmode={Constants.MODE.EDIT} jsxvalues={data} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField  
