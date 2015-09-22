@@ -2,6 +2,8 @@
 
 `NEW` add props jsxshowLabel
 `NEW` add api resetValues()
+`CHANGED` RadioGroupFormField change with the update of uxcore-radiogroup
+`CHNAGED` ButtonGroupFormField change with the update of uxcore-button
 
 ## 1.0.5
 

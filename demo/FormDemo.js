@@ -7,7 +7,7 @@
  */
 
 let classnames = require('classnames');
-let {Button, ButtonGroup} = require('uxcore-button');
+let Button = require('uxcore-button');
 
 let Form = require('../src');
 let {
@@ -38,6 +38,15 @@ class Demo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            jsxvalues: {
+                test1: "我是测试", 
+                fruit: "apple", 
+                city: "nj", 
+                textArea: "我是多行文本", 
+                date: "2015-09-01",
+                checkbox: ["sea"],
+                // cascade: ["a", "ab"]
+            }
         }
     }
 
@@ -54,6 +63,21 @@ class Demo extends React.Component {
         console.log(value);
     } 
 
+    handleValueChange() {
+        let me = this;
+        me.setState({
+            jsxvalues: {
+                test1: "我是测试22", 
+                fruit: "apple", 
+                city: "nj", 
+                textArea: "我是多行文本", 
+                date: "2015-09-01",
+                checkbox: ["sea"],
+                // cascade: ["a", "ab"]
+            }
+        })
+    }
+
     render() {
         let me = this;
         let data = {
@@ -63,7 +87,7 @@ class Demo extends React.Component {
             textArea: "我是多行文本", 
             date: "2015-09-01",
             checkbox: ["sea"],
-            cascade: ["a", "ab"]
+            // cascade: ["a", "ab"]
         }
 
         let casData = {
@@ -143,7 +167,7 @@ class Demo extends React.Component {
             
         return (
             <div>
-                <Form ref="form" jsxmode={Constants.MODE.EDIT} jsxvalues={data} jsxonChange={me.handleChange.bind(me)}>
+                <Form ref="form" jsxmode={Constants.MODE.EDIT} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField  
@@ -198,7 +222,7 @@ class Demo extends React.Component {
                     <FormRow>
                         <SelectFormField 
                          jsxlabel="单选 combo 模式" 
-                         jsxname="货物"
+                         jsxname="goods"
                          jsxfetchUrl="http://suggest.taobao.com/sug"
                          jsxcombobox={true}
                          afterFetch={(obj) => {
@@ -240,6 +264,7 @@ class Demo extends React.Component {
                     <ButtonGroupFormField>
                         <Button size="medium" type="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
                         <Button size="medium" type="reset">取消</Button>
+                        <Button size="medium" onClick={me.handleValueChange.bind(me)}>修改 props</Button>
                     </ButtonGroupFormField>
                 </Form>
             </div>

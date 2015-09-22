@@ -28,6 +28,20 @@ class FormField extends React.Component {
         me.props.handleDataChange(me, me.props.value, true);
     }
 
+    componentWillReceiveProps(nextProps) {
+        let me = this;
+        if (!me._isEqual(nextProps.value, me.props.value)) {
+            me.setState({
+                value: nextProps.value,
+                formatValue: this.formatValue(nextProps.value)
+            });
+        }
+    }
+
+    _isEqual(a, b) {
+        return JSON.stringify(a) == JSON.stringify(b);
+    }
+
     componentWillUnmount () {
         this.props.detachFormField(this);
     }

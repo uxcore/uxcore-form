@@ -1,5 +1,5 @@
 let classnames = require('classnames');
-let {Button, ButtonGroup} = require('uxcore-button');
+let Button = require('uxcore-button');
 let assign = require("object-assign");
 
 class ButtonGroupFormField extends React.Component {
