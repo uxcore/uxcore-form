@@ -4,18 +4,15 @@
 let FormField = require('./FormField');
 let Constants = require("./Constants");
 let RadioGroup = require('uxcore-radiogroup');
+let Item = RadioGroup.Item;
 
 
 class RadioGroupFormField extends FormField {
     constructor(props) {
         super(props);
     }
-    getValue() {
-        return this.refs.el.getCheckedValue();
-    }
-    handleChange() {
+    handleChange(value) {
         let me = this;
-        let value = me.getValue();
         me.handleDataChange(value);
     }
     addSpecificClass() {
@@ -32,10 +29,9 @@ class RadioGroupFormField extends FormField {
         let arr = [];
         if (me.props.mode == Constants.MODE.EDIT) {
             arr.push(<RadioGroup 
-                    jsxname={me.props.jsxname} 
                     ref="el" 
                     key="radiogroup"
-                    jsxvalue={me.state.value} 
+                    value={me.state.value} 
                     onChange={me.handleChange.bind(me)}>
                         {me.props.children}
                     </RadioGroup>);
@@ -50,4 +46,5 @@ class RadioGroupFormField extends FormField {
 RadioGroupFormField.displayName = "RadioGroupFormField";
 RadioGroupFormField.propTypes = FormField.propTypes;
 RadioGroupFormField.defaultProps = FormField.defaultProps;
+RadioGroupFormField.Item = Item;
 module.exports = RadioGroupFormField;

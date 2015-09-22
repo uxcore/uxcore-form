@@ -31,6 +31,7 @@ let {
 } = Form;
 
 let CheckboxItem = CheckboxGroupFormField.Item;
+let RadioItem = RadioGroupFormField.Item;
 
 class Demo extends React.Component {
 
@@ -152,9 +153,9 @@ class Demo extends React.Component {
                          jsxtips="请输入数字"
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}/>
                         <RadioGroupFormField jsxname="fruit" jsxlabel="Fruit Type" jsxflex={1}>
-                                <input type="radio" value="apple" />Apple
-                                <input type="radio" value="orange" />Orange
-                                <input type="radio" value="watermelon" />Watermelon
+                                <RadioItem value="apple" text="Apple"/>
+                                <RadioItem value="orange" text="Orange"/>
+                                <RadioItem value="watermelon" text="Watermelon"/>
                         </RadioGroupFormField>
                         <ButtonGroupFormField jsxshow={false}>
                             <Button size="medium" type="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
