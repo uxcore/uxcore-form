@@ -41,7 +41,8 @@
     "uxcore-radiogroup": "~1.1.0",
     "uxcore-rc-upload": "~1.0.0",
     "uxcore-select2": "~0.1.4",
-    "uxcore-tinymce": "~0.1.0"
+    "uxcore-tinymce": "~0.1.0",
+    "uxcore-grid": "1.0.6"
   },
   "contributors": [],
   "license": "MIT"

@@ -21,6 +21,7 @@ let UploadFormField = require("./UploadFormField");
 let OtherFormField = require("./OtherFormField");
 let ButtonGroupFormField = require("./ButtonGroupFormField");
 let EditorFormField = require("./EditorFormField");
+let GridFormField = require("./GridFormField");
 let Constants = require("./Constants");
 let Validators = require("./Validators");
 
@@ -51,6 +52,9 @@ class Form extends React.Component {
             console.warn("Each field needs a name to identify itself");
         }
         else {
+            if(name=='grid') {
+                debugger;
+            }
             this.fields[name] = field
         }
     }
@@ -173,7 +177,7 @@ class Form extends React.Component {
             </div>
         );
     }
-    
+
 }
 
 // 以 Form 的插件的形式给出
@@ -192,6 +196,7 @@ Form.UploadFormField = UploadFormField;
 Form.OtherFormField = OtherFormField;
 Form.ButtonGroupFormField = ButtonGroupFormField;
 Form.EditorFormField = EditorFormField;
+Form.GridFormField = GridFormField;
 Form.Constants = Constants;
 Form.Validators = Validators;
 
