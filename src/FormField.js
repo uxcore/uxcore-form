@@ -52,15 +52,19 @@ class FormField extends React.Component {
 
     /*
      * Fired when field value changes，update form's state and then trigger re-render.
+     * @param fromReset {boolean} if handleDataChange is invoked by form's resetValues,
+     * doValidate should not be invoked.
      */
 
-    handleDataChange(value) {
+    handleDataChange(value, fromReset) {
         let me = this;
         me.setState({
             value: value,
             formatValue: me.formatValue(value)
         }, () => {
-            me.doValidate();
+            if (!fromReset) {
+                me.doValidate();
+            }
         });
         me.props.handleDataChange(me, value);
         
