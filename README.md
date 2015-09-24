@@ -137,6 +137,7 @@ http://uxcore.github.io/uxcore/
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|
 |jsxshow|bool|optional|true|是否显示该表单域，不显示的表单域将不占宽度|
+|jsxmode|string|optional|"EDIT"|FormField 的编辑和只读模式，优先级高于 Form，传值方式见 demo|
 |jsxshowLabel|bool|optional|true|是否显示 label|
 |jsxname|string|required|-|表单字段，返回值时该字段将作为 key|
 |jsxlabel|string|required|-|左侧的说明文字，不写即为留白|

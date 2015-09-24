@@ -103,6 +103,9 @@
         width: 100%;
         padding: 0 5px 15px 0px;
         *zoom: 1;
+        .kuma-label {
+            padding-top: 15px;
+        }
         &:after { 
             clear: both;
             content: '.';
@@ -159,59 +162,55 @@
                     padding: 0px 20px 0px 4px;
                 }
             }
+            &.view-mode {
+                padding-top: 15px;
+            }
         }
         &.kuma-button-group-form-field {
             padding-left: 120px;
         }
+        &.kuma-checkbox-group-form-field,
+        &.kuma-radio-group-form-field {
+            .kuma-form-field-content {
+                padding-top: 15px;
+            }
+        }
+        &.kuma-cascade-date-form-field {
+            .kuma-calendar-picker {
+                width: 200px;
+                display: inline-block;
+                .kuma-icon-calender {
+                    top: 9px;
+                }
+            }
+            .kuma-form-split {
+                display: inline-block;
+                margin: 0 10px;
+                vertical-align: middle;
+                line-height: 36px;
+            }
+        }
+        &.kuma-select-form-field,
+        &.kuma-cascade-select-form-field {
+            .kuma-select-selection {
+                height: 36px;
+                .kuma-select-selection__rendered {
+                    line-height: 34px;
+                }
+                .kuma-select-arrow {
+                    height: 34px;
+                }
+            }
+        }
+        &.kuma-upload-form-field {
+            .kuma-rc-upload {
+                margin-top: 4px;
+            }
+        }
     }
 }
 
-.kuma-form-edit-mode {
-    .kuma-form-field {
-        .kuma-label {
-            padding-top: 15px;
-        }
-    }
-    .kuma-checkbox-group-form-field,
-    .kuma-radio-group-form-field {
-        .kuma-form-field-content {
-            padding-top: 15px;
 
-        }
-    }
-    .kuma-cascade-date-form-field {
-        .kuma-calendar-picker {
-            width: 200px;
-            display: inline-block;
-            .kuma-icon-calender {
-                top: 9px;
-            }
-        }
-        .kuma-form-split {
-            display: inline-block;
-            margin: 0 10px;
-            vertical-align: middle;
-            line-height: 36px;
-        }
-    }
-    .kuma-select-form-field,
-    .kuma-cascade-select-form-field {
-        .kuma-select-selection {
-            height: 36px;
-            .kuma-select-selection__rendered {
-                line-height: 34px;
-            }
-            .kuma-select-arrow {
-                height: 34px;
-            }
-        }
-    }
-    .kuma-upload-form-field {
-        .kuma-rc-upload {
-            margin-top: 4px;
-        }
-    }
-}
 
 
 

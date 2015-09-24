@@ -170,8 +170,9 @@ class Demo extends React.Component {
                 <Form ref="form" jsxmode={Constants.MODE.EDIT} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
-                        <InputFormField  
-                         jsxname="test1" 
+                        <InputFormField
+                         jsxname="test1"
+                         jsxmode={Constants.MODE.VIEW} 
                          jsxlabel="测试输入框" 
                          jsxplaceholder="请输入" 
                          jsxtips="请输入数字"
