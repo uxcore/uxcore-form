@@ -33,7 +33,8 @@ class FormField extends React.Component {
         if (!me._isEqual(nextProps.value, me.props.value)) {
             me.setState({
                 value: nextProps.value,
-                formatValue: this.formatValue(nextProps.value)
+                formatValue: this.formatValue(nextProps.value),
+                error: false
             });
         }
     }
