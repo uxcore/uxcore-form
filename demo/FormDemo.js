@@ -195,8 +195,7 @@ class Demo extends React.Component {
                     <FormRow>
                         <InputFormField
                          jsxname="test1"
-                         jsxlabel="测试输入框"
-                         jsxplaceholder="请输入"
+                         jsxmode={Constants.MODE.VIEW}
                          jsxtips="请输入数字"
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}/>
                         <RadioGroupFormField jsxname="fruit" jsxlabel="Fruit Type" jsxflex={1}>

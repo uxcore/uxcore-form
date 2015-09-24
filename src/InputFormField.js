@@ -37,7 +37,8 @@ class InputFormField extends FormField {
     renderField() {
         let me = this;
         let arr = [];
-        if (me.props.mode == Constants.MODE.EDIT) {
+        let mode = me.props.jsxmode || me.props.mode;
+        if (mode == Constants.MODE.EDIT) {
             arr.push(<input 
                     className="kuma-input"  
                     ref="root"
@@ -49,7 +50,7 @@ class InputFormField extends FormField {
                     value={me.state.formatValue} 
                     onChange={me.handleChange.bind(me)} />);
         }
-        else if (me.props.mode == Constants.MODE.VIEW) {
+        else if (mode == Constants.MODE.VIEW) {
             arr.push(<span key="text">{me.state.formatValue}</span>)
         }
         return arr;

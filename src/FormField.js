@@ -31,10 +31,7 @@ class FormField extends React.Component {
     componentWillReceiveProps(nextProps) {
         let me = this;
         if (!me._isEqual(nextProps.value, me.props.value)) {
-            me.setState({
-                value: nextProps.value,
-                formatValue: this.formatValue(nextProps.value)
-            });
+            me.handleDataChange(nextProps.value, true);
         }
     }
 
@@ -52,15 +49,20 @@ class FormField extends React.Component {
 
     /*
      * Fired when field value changes，update form's state and then trigger re-render.
+     * @param fromReset {boolean} if handleDataChange is invoked by form's resetValues,
+     * doValidate should not be invoked.
      */
 
-    handleDataChange(value) {
+    handleDataChange(value, fromReset) {
         let me = this;
         me.setState({
             value: value,
-            formatValue: me.formatValue(value)
+            formatValue: me.formatValue(value),
+            error: !!fromReset ? false: me.state.error
         }, () => {
-            me.doValidate();
+            if (!fromReset) {
+                me.doValidate();
+            }
         });
         me.props.handleDataChange(me, value);
         
@@ -117,7 +119,8 @@ class FormField extends React.Component {
 
     renderTips() {
         let me = this;
-        if (me.props.mode != Constants.MODE.EDIT) return;
+        let mode = me.props.jsxmode || me.props.mode;
+        if (mode != Constants.MODE.EDIT) return;
         if(!!this.props.jsxtips) {
             return <li className="kuma-form-tips">
                         <i className="kuma-icon kuma-icon-information"></i>
@@ -144,7 +147,8 @@ class FormField extends React.Component {
 
     renderErrorMsg() {
         let me = this;
-        if (me.props.mode != Constants.MODE.EDIT) return;
+        let mode = me.props.jsxmode || me.props.mode;
+        if (mode != Constants.MODE.EDIT) return;
         return  <li className="kuma-form-errormsg">
                     <i className="kuma-icon kuma-icon-close-hover"></i>
                     {me.state.errMsg}
@@ -168,6 +172,7 @@ class FormField extends React.Component {
     render() {
         let me = this;
         let specificCls = me.addSpecificClass();
+        let mode = me.props.jsxmode || me.props.mode;
 
         return (
             <div className={classnames({
@@ -177,7 +182,11 @@ class FormField extends React.Component {
                 display: me.props.jsxshow ? "table" : "none"
             })}>
                 {me.renderLabel()}
-                <ul className="kuma-form-field-content">
+                <ul className={classnames({
+                    "kuma-form-field-content": true,
+                    "view-mode": mode == Constants.MODE.VIEW,
+                    "edit-mode": mode == Constants.MODE.EDIT
+                })}>
                     <li>{me.renderField()}</li>
                     {me.renderTips()}
                     {!!me.state.error && me.renderErrorMsg()}
@@ -190,6 +199,7 @@ class FormField extends React.Component {
 
 FormField.propTypes = {
     jsxshow: React.PropTypes.bool,
+    jsxmode: React.PropTypes.string,
     jsxshowLabel: React.PropTypes.bool,
     jsxprefixCls: React.PropTypes.string,
     jsxflex: React.PropTypes.number,
