@@ -33,8 +33,7 @@ class FormField extends React.Component {
         if (!me._isEqual(nextProps.value, me.props.value)) {
             me.setState({
                 value: nextProps.value,
-                formatValue: this.formatValue(nextProps.value),
-                error: false
+                formatValue: this.formatValue(nextProps.value)
             });
         }
     }
@@ -61,7 +60,8 @@ class FormField extends React.Component {
         let me = this;
         me.setState({
             value: value,
-            formatValue: me.formatValue(value)
+            formatValue: me.formatValue(value),
+            error: !!fromReset ? false: me.state.error
         }, () => {
             if (!fromReset) {
                 me.doValidate();
