@@ -31,10 +31,7 @@ class FormField extends React.Component {
     componentWillReceiveProps(nextProps) {
         let me = this;
         if (!me._isEqual(nextProps.value, me.props.value)) {
-            me.setState({
-                value: nextProps.value,
-                formatValue: this.formatValue(nextProps.value)
-            });
+            me.handleDataChange(nextProps.value, true);
         }
     }
 
