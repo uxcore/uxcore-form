@@ -26,17 +26,20 @@ class GridFormField extends FormField {
     }
 
     onBlur() {
-        console.log("+++onblur+++");
         this.handleDataChange(this.getValue());
     }
 
     renderField() {
         let me = this;
-        let arr = [];
+        let arr = [],renderGridProp={
+            mode: this.props.mode,
+            jsxdata: this.state.value
+        };
+        $.extend(renderGridProp, this.props);
         if (me.props.mode == Constants.MODE.EDIT) {
-             arr.push(<div onBlur={this.onBlur.bind(this)}><Grid {...this.props} ref="grid" /></div>);
+             arr.push(<div onBlur={this.onBlur.bind(this)}><Grid {...renderGridProp} ref="grid" /></div>);
         }else if (me.props.mode == Constants.MODE.VIEW) {
-            // arr.push(<Grid {...this.props} />);
+             arr.push(<Grid {...renderGridProp} />);
         }
         return arr;
     }

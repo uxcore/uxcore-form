@@ -81,7 +81,7 @@ class SelectFormField extends FormField {
         let arr = [];
         if (me.props.mode == Constants.MODE.EDIT) {
             let options = {
-                ref: "el", 
+                ref: "el",
                 key: "select",
                 optionLabelProp: "children",
                 style: me.props.jsxstyle,

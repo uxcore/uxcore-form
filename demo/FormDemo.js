@@ -46,7 +46,19 @@ class Demo extends React.Component {
                 textArea: "我是多行文本",
                 date: "2015-09-01",
                 checkbox: ["sea"],
-                // cascade: ["a", "ab"]
+                dicts:{
+                   datas:[
+                      {
+                        city: "hz",
+                        email: "333",
+                        name: "33"
+                      }, {
+                        city: "bj",
+                        email: "33322",
+                        name: "3322"
+                      }
+                   ]
+                }
             }
         }
     }
@@ -57,7 +69,9 @@ class Demo extends React.Component {
     }
 
     handleFormClick(data) {
-        console.log(data)
+        this.refs.form.setState({
+           mode:'VIEW'
+        })
     }
 
     handleChange(value) {
@@ -280,6 +294,7 @@ class Demo extends React.Component {
                      jsxlabel="级联"
                      jsxstyle={{
                         width: 200
+
                      }}/>
                     <EditorFormField jsxname="editor"
                                      jsxlabel="富文本编辑器"/>

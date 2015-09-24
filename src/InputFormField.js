@@ -33,21 +33,21 @@ class InputFormField extends FormField {
             return me.props.jsxprefixCls
         }
     }
-    
+
     renderField() {
         let me = this;
         let arr = [];
         let mode = me.props.jsxmode || me.props.mode;
         if (mode == Constants.MODE.EDIT) {
-            arr.push(<input 
-                    className="kuma-input"  
+            arr.push(<input
+                    className="kuma-input"
                     ref="root"
-                    type="text" 
+                    type="text"
                     key="input"
                     placeholder={me.props.jsxplaceholder}
-                    disabled={me.props.jsxdisabled == "disabled" ? "disabled" : ""} 
-                    name={me.props.key} 
-                    value={me.state.formatValue} 
+                    disabled={me.props.jsxdisabled == "disabled" ? "disabled" : ""}
+                    name={me.props.key}
+                    value={me.state.formatValue}
                     onChange={me.handleChange.bind(me)} />);
         }
         else if (mode == Constants.MODE.VIEW) {
