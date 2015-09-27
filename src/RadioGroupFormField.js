@@ -37,7 +37,13 @@ class RadioGroupFormField extends FormField {
                     </RadioGroup>);
         }
         else {
-            arr.push(<span key="radiogroup">{me.state.value}</span>);
+            let text = me.props.children.filter((child, index) => {
+                return child.props.value == me.state.value
+            });
+
+            if (text.length) {
+                arr.push(<span key="radiogroup">{text[0].props.text}</span>);
+            }
         }
         return arr;
     }

@@ -92,7 +92,19 @@ class CascadeSelectFormField extends FormField {
             }
         }
         else if (me.props.mode == Constants.MODE.VIEW) {
-            arr.push(<span key="cascade">{(me.state.value instanceof Array) && me.state.value.join(" ")}</span>)
+            if (me.state.value instanceof Array) {
+                let data = me.props.jsxdata;
+                let textArr = me.state.value.map((item, index) => {
+                    data = data.contents.filter((ele, i) => {
+                        return ele.value = item
+                    })[0];
+                    return data.text;
+
+                });
+                console.log(textArr);
+                arr.push(<span key="cascade">{textArr.join(" ")}</span>)
+            }
+
         }
 
         return arr;

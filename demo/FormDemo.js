@@ -58,7 +58,8 @@ class Demo extends React.Component {
                         name: "3322"
                       }
                    ]
-                }
+                },
+                cascade: ["a", "ab"]
             }
         }
     }
@@ -110,33 +111,33 @@ class Demo extends React.Component {
             contents: [
                 {
                     value: "a",
-                    text: "a",
+                    text: "A",
                     contents: [
                         {
                             value: "ab",
-                            text: "ab",
+                            text: "AB",
                             contents: [
                                 {
                                     value: "abc",
-                                    text: "abc"
+                                    text: "ABC"
                                 },
                                 {
                                     value: "abd",
-                                    text: "abd"
+                                    text: "ABD"
                                 }
                             ]
                         },
                         {
                             value: "ac",
-                            text: "ac",
+                            text: "AC",
                             contents: [
                                 {
                                     value: "acb",
-                                    text: "acb"
+                                    text: "ACB"
                                 },
                                 {
                                     value: "acd",
-                                    text: "acd"
+                                    text: "ACD"
                                 }
                             ]
                         }
@@ -144,33 +145,33 @@ class Demo extends React.Component {
                 },
                 {
                     value: "b",
-                    text: "b",
+                    text: "B",
                     contents: [
                         {
                             value: "ba",
-                            text: "ba",
+                            text: "BA",
                             contents: [
                                 {
                                     value: "bab",
-                                    text: "bab"
+                                    text: "BAB"
                                 },
                                 {
                                     value: "bad",
-                                    text: "bad"
+                                    text: "BAD"
                                 }
                             ]
                         },
                         {
                             value: "bc",
-                            text: "bc",
+                            text: "BC",
                             contents: [
                                 {
                                     value: "bca",
-                                    text: "bca"
+                                    text: "BCA"
                                 },
                                 {
                                     value: "bcd",
-                                    text: "bcd"
+                                    text: "BCD"
                                 }
                             ]
                         }
@@ -204,15 +205,16 @@ class Demo extends React.Component {
 
         return (
             <div>
-                <Form ref="form" jsxmode={Constants.MODE.EDIT} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
+                <Form ref="form" jsxmode={Constants.MODE.VIEW} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField
                          jsxname="test1"
+                         jsxlabel="普通输入框"
                          jsxmode={Constants.MODE.VIEW}
                          jsxtips="请输入数字"
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}/>
-                        <RadioGroupFormField jsxname="fruit" jsxlabel="Fruit Type" jsxflex={1}>
+                        <RadioGroupFormField jsxname="fruit" jsxlabel="Radio" jsxflex={1}>
                                 <RadioItem value="apple" text="Apple"/>
                                 <RadioItem value="orange" text="Orange"/>
                                 <RadioItem value="watermelon" text="Watermelon"/>
@@ -224,7 +226,7 @@ class Demo extends React.Component {
                     </FormRow>
                     <FormRow>
                         <SelectFormField
-                         jsxlabel="City"
+                         jsxlabel="单选"
                          jsxname="city"
                          jsxfetchUrl="http://suggest.taobao.com/sug"
                          afterFetch={(obj) => {
@@ -246,7 +248,7 @@ class Demo extends React.Component {
                          }}/>
                          <NumberInputFormField
                           jsxname="number"
-                          jsxlabel="数字输入"
+                          jsxlabel="数字输入框"
                           jsxtype="money"
                           jsxplaceholder="输入数字"
                           jsxtips="数字和一般的输入框不同"
@@ -274,7 +276,7 @@ class Demo extends React.Component {
                     <FormRowTitle jsxtitle="我是行标题2"/>
                     <FormRow>
                         <TextAreaFormField jsxname="textArea" jsxlabel="多行文本框"/>
-                        <CheckboxGroupFormField jsxname="checkbox" jsxlabel="多选">
+                        <CheckboxGroupFormField jsxname="checkbox" jsxlabel="复选框">
                           <CheckboxItem value="air" text="天空"/>
                           <CheckboxItem value="sea" text="大海"/>
                         </CheckboxGroupFormField>
@@ -284,23 +286,23 @@ class Demo extends React.Component {
                         <UploadFormField
                           jsxname="upload"
                           jsxlabel="上传"
-                          jsxaction="http://demo.nwux.taobao.net/file/upload"/>
+                          url="http://demo.nwux.taobao.net/file/upload"/>
                     </FormRow>
                     <FormRowTitle jsxtitle="级联类"/>
                     <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" jsxfrom="2015-10-2" jsxto="2015-10-10"/>
                     <CascadeSelectFormField
                      jsxdata={casData}
                      jsxname="cascade"
-                     jsxlabel="级联"
+                     jsxlabel="级联选择"
                      jsxstyle={{
                         width: 200
 
                      }}/>
-                    <EditorFormField jsxname="editor"
-                                     jsxlabel="富文本编辑器"/>
+                    {/*<EditorFormField jsxname="editor"
+                                     jsxlabel="富文本编辑器"/>*/}
 
-                    <GridFormField jsxname="dicts" jsxlabel="薪酬字典" {...renderProps}>
-                    </GridFormField>
+                    {/*<GridFormField jsxname="dicts" jsxlabel="薪酬字典" {...renderProps}>
+                    </GridFormField>*/}
                     <ButtonGroupFormField>
                         <Button size="medium" type="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
                         <Button size="medium" type="reset">取消</Button>
