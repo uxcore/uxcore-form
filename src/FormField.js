@@ -58,7 +58,12 @@ class FormField extends React.Component {
         me.setState({
             value: value,
             formatValue: me.formatValue(value),
-            error: !!fromReset ? false: me.state.error
+            error: !!fromReset ? false: me.state.error,
+            /*
+             * why set state fromReset? some field like editor cannot be reset in the common way
+             * so set this state to tell the field that you need to reset by yourself.
+             */ 
+            fromReset: fromReset
         }, () => {
             if (!fromReset) {
                 me.doValidate();

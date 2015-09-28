@@ -40,26 +40,27 @@ class Demo extends React.Component {
         super(props);
         this.state = {
             jsxvalues: {
-                // test1: "我是测试",
-                // fruit: "apple",
-                // city: "nj",
-                // textArea: "我是多行文本",
-                // date: "2015-09-01",
-                // checkbox: ["sea"],
-                // dicts:{
-                //    datas:[
-                //       {
-                //         city: "hz",
-                //         email: "333",
-                //         name: "33"
-                //       }, {
-                //         city: "bj",
-                //         email: "33322",
-                //         name: "3322"
-                //       }
-                //    ]
-                // },
-                // cascade: ["a", "ab"]
+                test1: "我是测试",
+                fruit: "apple",
+                city: "nj",
+                textArea: "我是多行文本",
+                date: "2015-09-01",
+                checkbox: ["sea"],
+                dicts:{
+                   datas:[
+                      {
+                        city: "hz",
+                        email: "333",
+                        name: "33"
+                      }, {
+                        city: "bj",
+                        email: "33322",
+                        name: "3322"
+                      }
+                   ]
+                },
+                cascade: ["a", "ab"],
+                editor: "a"
             }
         }
     }
@@ -299,7 +300,8 @@ class Demo extends React.Component {
 
                      }}/>
                     <EditorFormField jsxname="editor"
-                                     jsxlabel="富文本编辑器"/>
+                                     jsxlabel="富文本编辑器"
+                                     jsxcontent="1"/>
 
                     {/*<GridFormField jsxname="dicts" jsxlabel="薪酬字典" {...renderProps}>
                     </GridFormField>*/}

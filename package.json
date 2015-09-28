@@ -42,7 +42,7 @@
     "uxcore-radiogroup": "~1.1.0",
     "uxcore-rc-upload": "~1.0.0",
     "uxcore-select2": "~0.1.4",
-    "uxcore-tinymce": "~0.1.0",
+    "uxcore-tinymce": "~0.1.3",
     "uxcore-uploader": "~1.0.0-beta"
   },
   "contributors": [],
