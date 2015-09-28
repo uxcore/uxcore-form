@@ -66,9 +66,19 @@ class DateFormField extends FormField {
                         value: me.state.value[0]
                     });
                 }
+                else {
+                    others1 = assign({}, others, {
+                        value: null
+                    });
+                }
                 if (me.state.value && me.state.value[1]) {
                     others2 = assign({}, others, {
                         value: me.state.value[1]
+                    });
+                }
+                else {
+                    others2 = assign({}, others, {
+                        value: null
                     });
                 }
                 arr.push(<Calendar 

@@ -9,17 +9,21 @@ class EditorFormField extends FormField {
     }
 
     handleChange(e, editor) {
-        console.log(editor.getContent());
+        let me = this;
+        // me.handleDataChange(editor.getContent())
+        console.log(editor.getContent())
     }
 
     handleKeyup(e, editor) {
-        console.log(editor.getContent());
+        let me = this;
+        console.log(editor.getContent())
+        // me.handleDataChange(editor.getContent())
     }
 
     renderField() {
         let me = this;
         return <Tinymce config={me.props.jsxconfig}
-                        content={me.props.jsxcontent}
+                        content={me.state.value}
                         onChange={me.handleChange.bind(me)}
                         onKeyup={me.handleKeyup.bind(me)}/>
     }

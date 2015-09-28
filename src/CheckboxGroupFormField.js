@@ -26,7 +26,7 @@ class CheckboxGroupFormField extends FormField {
     renderField() {
         let me = this;
         if (me.props.mode == Constants.MODE.EDIT) {
-            return <CheckboxGroup onChange={me.handleChange.bind(me)} value={me.state.value}>
+            return <CheckboxGroup onChange={me.handleChange.bind(me)} value={me.state.value || []}>
                         {me.props.children}
                    </CheckboxGroup>
         }

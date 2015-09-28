@@ -4,6 +4,9 @@
 `NEW` add api resetValues()
 `CHANGED` RadioGroupFormField change with the update of uxcore-radiogroup
 `CHNAGED` ButtonGroupFormField change with the update of uxcore-button
+`CHANGED` EditorFormField change with the update of uxcore-tinymce
+`CHANGED` UploadFormField now depends on uxcore-upload
+`FIXED` API resetValues bug.
 
 ## 1.0.5
 

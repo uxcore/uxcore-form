@@ -72,10 +72,7 @@ class CascadeSelectFormField extends FormField {
                     placeholder: me.props.jsxplaceholder
                 };
                 selectOptions.onChange = me.handleChange.bind(me, i);
-                if (!!stateValue[i]) { 
-                    // 虽然有两个地方判断了 stateValue[i] 是否存在，但这样显得逻辑更加清晰，因此保留。
-                    selectOptions.value = stateValue[i];
-                }
+                selectOptions.value = stateValue[i] || null;
                 arr.push(<Select {...selectOptions} key={i}>
                             {options}
                         </Select>);
@@ -101,7 +98,6 @@ class CascadeSelectFormField extends FormField {
                     return data.text;
 
                 });
-                console.log(textArr);
                 arr.push(<span key="cascade">{textArr.join(" ")}</span>)
             }
 
