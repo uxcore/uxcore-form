@@ -303,8 +303,8 @@ class Demo extends React.Component {
                                      jsxlabel="富文本编辑器"
                                      jsxcontent="1"/>
 
-                    {/*<GridFormField jsxname="dicts" jsxlabel="薪酬字典" {...renderProps}>
-                    </GridFormField>*/}
+                    <GridFormField jsxname="dicts" jsxlabel="薪酬字典" {...renderProps}>
+                    </GridFormField>
                     <ButtonGroupFormField>
                         <Button size="medium" type="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
                         <Button size="medium" type="reset">取消</Button>

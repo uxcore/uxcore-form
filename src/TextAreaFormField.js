@@ -31,7 +31,8 @@ class TextAreaFormField extends FormField {
         let me = this;
         if (me.props.mode == Constants.MODE.EDIT) {
             return  <textarea 
-                     disabled={me.props.jsxdisabled} 
+                     disabled={me.props.jsxdisabled}
+                     placeholder={me.props.jsxplaceholder} 
                      className="kuma-textarea" 
                      ref="root" 
                      value={me.state.value}

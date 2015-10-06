@@ -18,7 +18,7 @@ class GridFormField extends FormField {
     addSpecificClass() {
         let me = this;
         if (me.props.jsxprefixCls == "kuma-form-field") {
-            return me.props.jsxprefixCls + " kuma-input-form-field" ;
+            return me.props.jsxprefixCls + " kuma-grid-form-field" ;
         }
         else {
             return me.props.jsxprefixCls

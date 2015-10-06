@@ -126,6 +126,7 @@ SelectFormField.propTypes = assign({}, FormField.propTypes, {
     jsxsearchPlaceholder: React.PropTypes.string
 });
 SelectFormField.defaultProps = assign({}, FormField.defaultProps, {
+    jsxstyle: {},
     jsxplaceholder: "请下拉选择",
     jsxcombobox: false,
     jsxdata: {},
