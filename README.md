@@ -498,6 +498,12 @@ see datails in [uxcore-select2](https://www.npmjs.com/package/uxcore-select2)
 |jsxplaceholder|string|optional|"请下拉选择"|占位符|
 |jsxstyle|object|optional|-|与 react 传入 style 的方式相同，修改选择框的样式|
 
+
+### GridFormField
+
+> 支持 uxcore-grid 的全部配置项，在 Form 中通常只需要传入 column 来生成配置项，见 Usage 中的使用。
+> 具体说明参考：https://github.com/uxcore/uxcore-grid
+
 ### OtherFormField
 
 > OtherFormField 是一个特殊的 FormField，它用来和其他 FormField 一起完成布局（比如在一行排列等），如果需要一些装饰类的东西，可以以子元素的形式传入到这个 Field 里。
