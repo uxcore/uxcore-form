@@ -21,42 +21,42 @@
   padding: 5px 10px;
   height: 28px;
   line-height: 28px;
-  border: 1px solid #cccccc;
-  color: #666666;
+  border: 1px solid #ccc;
+  color: #666;
   font-size: 12px;
   width: 100%;
 }
 .kuma-input:hover,
 .kuma-textarea:hover,
 .kuma-input-hover {
-  border: 1px #cccccc solid;
+  border: 1px #ccc solid;
 }
 .kuma-input:focus,
 .kuma-textarea:focus,
 .kuma-input-focus {
   border: 1px #288df0 solid;
-  color: #666666;
+  color: #666;
   outline: none;
 }
 .kuma-textarea {
   line-height: 20px;
-  border: 1px #cccccc solid;
+  border: 1px #ccc solid;
   padding: 8px 10px;
   overflow: auto;
   font-family: Arial;
   font-size: 12px;
-  color: #666666;
+  color: #666;
   width: 100%;
   resize: vertical;
 }
 .kuma-input[disabled],
 .kuma-textarea[disabled] {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   background: #f2f2f2;
 }
 .kuma-input:disabled,
 .kuma-textarea:disabled {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   background: #f2f2f2;
 }
 .kuma-label {
@@ -65,7 +65,7 @@
   padding-top: 5px;
   padding-right: 0px;
   text-align: right;
-  color: #666666;
+  color: #666;
   display: table-cell;
   vertical-align: baseline;
   vertical-align: -webkit-baseline-middle;
@@ -90,24 +90,24 @@
   float: left;
   clear: both;
 }
-.kuma-form-row .kuma-form-field {
+.kuma-form-field {
   display: table;
   float: left;
   width: 100%;
   padding: 0 5px 15px 0px;
   *zoom: 1;
 }
-.kuma-form-row .kuma-form-field .kuma-label {
-  padding-top: 15px;
+.kuma-form-field .kuma-label {
+  padding-top: 10px;
 }
-.kuma-form-row .kuma-form-field:after {
+.kuma-form-field:after {
   clear: both;
   content: '.';
   display: block;
   height: 0;
   visibility: hidden;
 }
-.kuma-form-row .kuma-form-field select {
+.kuma-form-field select {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAWCAYAAADwza0nAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODBFQkMyNkZDRUJFMTFFNEIzQzZGOUUwMjFDMTZDRkQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODBFQkMyNzBDRUJFMTFFNEIzQzZGOUUwMjFDMTZDRkQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4MEVCQzI2RENFQkUxMUU0QjNDNkY5RTAyMUMxNkNGRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4MEVCQzI2RUNFQkUxMUU0QjNDNkY5RTAyMUMxNkNGRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkYdGT4AAADNSURBVHjaYuzp6WHAASqgdAc2SRYcmvyAuAWImYD4OhBvRFfAhEWTORAvB2JmIGYE4mVQMbwaVYB4MxBzIYlxQcVUcGkUBeLtUBodYMgx4TMVn2uYoH5Zjs0f+PwP0jgZGorEApDayaDoyIJikgATA5lgpGicBsT/ScTTQBpzgXgTCZaB1OaCNP4F4kggPkmEppNQtX9hfvwGxL5AfAePpjtQNd/QA+c1EHtCaXSAIceEz1R8rmHC449/0BCMxuZ/FjwhVw1lb8CmACDAABlpNwXghNgSAAAAAElFTkSuQmCC");
   background-position: center right -15px;
   background-repeat: no-repeat;
@@ -118,80 +118,89 @@
   height: 30px;
   width: 100%;
 }
-.kuma-form-row .kuma-form-field input {
+.kuma-form-field input {
   margin-right: 2px;
   vertical-align: middle;
 }
-.kuma-form-row .kuma-form-field .kuma-input {
-  color: #666666;
+.kuma-form-field .kuma-input {
+  color: #666;
   vertical-align: middle;
   *vertical-align: -5px;
   height: 36px;
 }
-.kuma-form-row .kuma-form-field .kuma-select {
-  margin: 0 20px 0 0;
-}
-.kuma-form-row .kuma-form-field .kuma-form-field-content {
+.kuma-form-field-content {
   font-size: 12px;
   color: #b2b2b2;
   width: 100%;
-  padding: 5px 0 5px 20px;
+  padding: 0 0 0 20px;
 }
-.kuma-form-row .kuma-form-field .kuma-form-field-content .kuma-form-tips {
+.kuma-form-field-content .kuma-form-tips {
   padding-top: 8px;
   color: #999999;
 }
-.kuma-form-row .kuma-form-field .kuma-form-field-content .kuma-form-tips .kuma-icon {
+.kuma-form-field-content .kuma-form-tips .kuma-icon {
   color: #39bffc;
   margin-right: 4px;
 }
-.kuma-form-row .kuma-form-field .kuma-form-field-content .kuma-form-errormsg {
+.kuma-form-field-content .kuma-form-errormsg {
   padding-top: 8px;
   color: #ea5652;
 }
-.kuma-form-row .kuma-form-field .kuma-form-field-content .kuma-form-errormsg .kuma-icon {
+.kuma-form-field-content .kuma-form-errormsg .kuma-icon {
   margin-right: 4px;
 }
-.kuma-form-row .kuma-form-field .kuma-form-field-content .kuma-radio-group > span {
+.kuma-form-field-content .kuma-radio-group > span {
   padding: 0px 20px 0px 4px;
 }
-.kuma-form-row .kuma-form-field .kuma-form-field-content.view-mode {
-  padding-top: 15px;
+.kuma-form-field-content.view-mode {
+  padding-top: 10px;
 }
-.kuma-form-row .kuma-form-field.kuma-button-group-form-field {
+.kuma-button-group-form-field {
   padding-left: 120px;
 }
-.kuma-form-row .kuma-form-field.kuma-checkbox-group-form-field .kuma-form-field-content,
-.kuma-form-row .kuma-form-field.kuma-radio-group-form-field .kuma-form-field-content {
-  padding-top: 15px;
+.kuma-button-group-form-field .kuma-button {
+  margin-right: 20px;
 }
-.kuma-form-row .kuma-form-field.kuma-cascade-date-form-field .kuma-calendar-picker {
+.kuma-checkbox-group-form-field .kuma-form-field-content,
+.kuma-radio-group-form-field .kuma-form-field-content {
+  padding-top: 10px;
+}
+.kuma-cascade-date-form-field .kuma-calendar-picker {
   width: 200px;
   display: inline-block;
 }
-.kuma-form-row .kuma-form-field.kuma-cascade-date-form-field .kuma-calendar-picker .kuma-icon-calender {
+.kuma-cascade-date-form-field .kuma-calendar-picker .kuma-icon-calender {
   top: 9px;
 }
-.kuma-form-row .kuma-form-field.kuma-cascade-date-form-field .kuma-form-split {
+.kuma-form-split {
   display: inline-block;
   margin: 0 10px;
   vertical-align: middle;
   line-height: 36px;
 }
-.kuma-form-row .kuma-form-field.kuma-select-form-field .kuma-select-selection,
-.kuma-form-row .kuma-form-field.kuma-cascade-select-form-field .kuma-select-selection {
-  height: 36px;
+.kuma-select-form-field .kuma-select-selection,
+.kuma-cascade-select-form-field .kuma-select-selection {
+  min-height: 36px;
 }
-.kuma-form-row .kuma-form-field.kuma-select-form-field .kuma-select-selection .kuma-select-selection__rendered,
-.kuma-form-row .kuma-form-field.kuma-cascade-select-form-field .kuma-select-selection .kuma-select-selection__rendered {
+.kuma-select-form-field .kuma-select-selection .kuma-select-selection__rendered,
+.kuma-cascade-select-form-field .kuma-select-selection .kuma-select-selection__rendered {
   line-height: 34px;
 }
-.kuma-form-row .kuma-form-field.kuma-select-form-field .kuma-select-selection .kuma-select-arrow,
-.kuma-form-row .kuma-form-field.kuma-cascade-select-form-field .kuma-select-selection .kuma-select-arrow {
+.kuma-select-form-field .kuma-select-selection .kuma-select-arrow,
+.kuma-cascade-select-form-field .kuma-select-selection .kuma-select-arrow {
   height: 34px;
 }
-.kuma-form-row .kuma-form-field.kuma-upload-form-field .kuma-rc-upload {
-  margin-top: 4px;
+.kuma-select-form-field .kuma-select {
+  width: 100%;
+}
+.kuma-select-form-field .kuma-select-selection--multiple > ul > li {
+  margin-top: 7px;
+}
+.kuma-cascade-select-form-field .kuma-select {
+  width: 200px;
+}
+.kuma-grid-form-field .kuma-input {
+  height: 30px;
 }
 
 /*# sourceMappingURL=Form.css.map */

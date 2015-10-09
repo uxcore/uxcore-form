@@ -1,5 +1,4 @@
 let classnames = require('classnames');
-let Button = require('uxcore-button');
 let assign = require("object-assign");
 
 class ButtonGroupFormField extends React.Component {
@@ -15,13 +14,13 @@ class ButtonGroupFormField extends React.Component {
         }
         let elements = React.Children.map(me.props.children, (child, index) => {
             let props = {};
-            if (child.props.type == "submit") {
+            if (child.props.action == "submit") {
                 props.onClick = () => {
                     let data = me.props.getValues();
                     child.props.onClick(data)
                 }
             }
-            if (child.props.type == "reset") {
+            if (child.props.action == "reset") {
                 props.onClick = () => {
                     console.log("reset")
                     me.props.resetValues();

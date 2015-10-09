@@ -15,6 +15,19 @@ class SelectFormField extends FormField {
             data: props.jsxdata
         })
     }
+
+    componentWillReceiveProps(nextProps) {
+        let me = this;
+        if (!me._isEqual(nextProps.value, me.props.value)) {
+            me.handleDataChange(nextProps.value, true);
+        }
+        if (!me._isEqual(nextProps.jsxdata, me.props.jsxdata)) {
+            me.setState({
+                data: nextProps.jsxdata
+            });
+        }
+    }
+
     fetchData(value) {
         let me = this;
         $.ajax({
@@ -35,7 +48,8 @@ class SelectFormField extends FormField {
         let me = this;
         me.handleDataChange(value);
     }
-    handleSearch(value) {
+    handleSearch(value, label) {
+        console.log(value, label);
         let me = this;
         if (me.props.jsxfetchUrl) {
             me.fetchData(value);
@@ -59,7 +73,7 @@ class SelectFormField extends FormField {
         }
         else {
             let arr = values.map(function(value, index) {
-                return <Option key={index} value={value}>{me.state.data[value]}</Option>
+                return <Option key={value}>{me.state.data[value]}</Option>
             });
             return arr;
         }

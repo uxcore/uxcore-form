@@ -1,6 +1,7 @@
 let FormField = require('./FormField');
 let Constants = require("./Constants");
 let classnames = require('classnames');
+let assign = require('object-assign');
 let Grid = require("uxcore-grid");
 
 /**
@@ -35,7 +36,8 @@ class GridFormField extends FormField {
             mode: this.props.mode,
             jsxdata: this.state.value
         };
-        $.extend(renderGridProp, this.props);
+        let {className, jsxprefixCls, ...passedProps} = me.props;
+        $.extend(renderGridProp, passedProps);
         if (me.props.mode == Constants.MODE.EDIT) {
              arr.push(<div onBlur={this.onBlur.bind(this)}><Grid {...renderGridProp} ref="grid" /></div>);
         }else if (me.props.mode == Constants.MODE.VIEW) {
@@ -46,6 +48,8 @@ class GridFormField extends FormField {
 }
 
 GridFormField.propTypes = FormField.propTypes;
-GridFormField.defaultProps = FormField.defaultProps;
+GridFormField.defaultProps = assign({}, FormField.defaultProps, {
+    width: "100%"
+});
 GridFormField.displayName = "GridFormField";
 module.exports = GridFormField;

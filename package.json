@@ -34,7 +34,7 @@
     "classnames": "^2.1.2",
     "object-assign": "^2.0.0",
     "react": "^0.13.3",
-    "uxcore-button": "~0.2.0",
+    "uxcore-button": "~0.3.0",
     "uxcore-calendar": "~0.1.5",
     "uxcore-checkbox-group": "~1.0.0",
     "uxcore-grid": "1.0.6",
