@@ -1,7 +1,7 @@
 let FormField = require('./FormField');
 let Constants = require("./Constants");
 let assign = require('object-assign');
-let Upload = require("uxcore-uploader")['default'];
+let Upload = require("uxcore-uploader");
 let update = React.addons.update;
 
 class UploadFormField extends FormField {
