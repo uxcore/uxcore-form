@@ -42,7 +42,7 @@ class Demo extends React.Component {
             jsxvalues: {
                 test1: "我是测试",
                 fruit: "apple",
-                city: "nj",
+                // city: "nj",
                 textArea: "我是多行文本",
                 date: "2015-09-01",
                 checkbox: ["sea"],

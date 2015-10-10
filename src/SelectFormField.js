@@ -104,12 +104,17 @@ class SelectFormField extends FormField {
                 combobox: me.props.jsxcombobox,
                 searchPlaceholder: me.props.jsxsearchPlaceholder,
                 tags: me.props.jsxtags,
-                value: me.state.value,
+                // value: me.state.value || [],
                 showSearch: me.props.jsxshowSearch,
                 placeholder: me.props.jsxplaceholder,
                 onChange: me.handleChange.bind(me),
                 onSearch: me.handleSearch.bind(me)
             };
+
+            if (!me.props.jsxmultiple || me.state.fromReset) {
+                options.value = me.state.value || [];
+            }
+
             if (!!me.props.jsxfetchUrl) {
                 options.filterOption = false;
             }
