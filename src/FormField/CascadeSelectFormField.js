@@ -1,5 +1,5 @@
 let FormField = require('./FormField');
-let Constants = require("./Constants");
+let Constants = require("../Constants");
 let Select = require('uxcore-select2');
 let {Option} = Select;
 let assign = require('object-assign');

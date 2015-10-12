@@ -40,10 +40,10 @@
     "uxcore-grid": "1.0.6",
     "uxcore-kuma": "~1.0.6",
     "uxcore-radiogroup": "~1.1.0",
-    "uxcore-rc-upload": "~1.0.0",
     "uxcore-select2": "~0.1.4",
     "uxcore-tinymce": "~0.1.3",
-    "uxcore-uploader": "~1.0.0-beta"
+    "uxcore-uploader": "~1.0.0-beta",
+    "uxcore-validator": "~0.1.0"
   },
   "contributors": [],
   "license": "MIT"

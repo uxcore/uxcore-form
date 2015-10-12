@@ -6,7 +6,7 @@
  *      但仔细想，这两个不可能同时发生
  */
 
-let Constants = require("./Constants");
+let Constants = require("../Constants");
 let classnames = require("classnames");
 let assign = require("object-assign");
 

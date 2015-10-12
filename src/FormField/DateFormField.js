@@ -1,5 +1,5 @@
 let FormField = require('./FormField');
-let Constants = require('./Constants');
+let Constants = require('../Constants');
 let classnames = require('classnames');
 let Calendar = require('uxcore-calendar');
 let assign = require('object-assign');

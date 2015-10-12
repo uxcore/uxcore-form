@@ -195,7 +195,6 @@ class Demo extends React.Component {
 
 
         let columns = [
-            { dataKey: 'jsxid',title:"jsxid",width: 40 },
             { dataKey: 'city',title:'城市', width: 180,type:'select' ,options:{
                'hz':'杭州',
                'bj':'北京',
@@ -239,8 +238,8 @@ class Demo extends React.Component {
                          ]}/>
                         
                         <ButtonGroupFormField jsxshow={false}>
-                            <Button size="medium" type="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
-                            <Button size="medium" type="reset">取消</Button>
+                            <Button size="medium" type="primary" action="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
+                            <Button size="medium" type="secondary" action="reset">取消</Button>
                         </ButtonGroupFormField>
                     </FormRow>
                     <FormRow>
@@ -269,7 +268,7 @@ class Demo extends React.Component {
                             return data;
                          }}
                          jsxdata={me.state.jsxdata}/>
-                        <DateFormField jsxname="date" jsxlabel="日期" jsxfrom="2015-10-2" jsxto="2015-10-10"/>
+                        <DateFormField showTime={true} format="yyyy-MM-dd HH:mm:ss" jsxname="date" jsxlabel="日期"/>
                     </FormRow>
                     <FormRow>
                         <SelectFormField

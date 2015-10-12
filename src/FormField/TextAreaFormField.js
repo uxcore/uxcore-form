@@ -2,7 +2,7 @@
  * Created by xy on 15/4/13.
  */
 let FormField = require('./FormField');
-let Constants = require("./Constants");
+let Constants = require("../Constants");
 
 class TextAreaFormField extends FormField {
     
