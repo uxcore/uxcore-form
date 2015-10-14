@@ -39,6 +39,7 @@
     "uxcore-checkbox-group": "~1.0.0",
     "uxcore-grid": "1.0.6",
     "uxcore-kuma": "~1.0.6",
+    "uxcore-mention": "~0.1.1",
     "uxcore-radiogroup": "~1.1.0",
     "uxcore-select2": "~0.1.4",
     "uxcore-tinymce": "~0.1.3",

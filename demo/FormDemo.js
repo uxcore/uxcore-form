@@ -67,7 +67,8 @@ class Demo extends React.Component {
                 "nj": "南京",
                 "dj": "东京",
                 "xj": "西京"
-            }
+            },
+            mode: Constants.MODE.EDIT
         }
     }
 
@@ -84,6 +85,12 @@ class Demo extends React.Component {
 
     handleChange(value) {
         console.log(value);
+    }
+
+    changeMode() {
+        this.setState({
+            mode: this.state.mode == Constants.MODE.EDIT ? Constants.MODE.VIEW : Constants.MODE.EDIT
+        })
     }
 
     handleValueChange() {
@@ -217,7 +224,7 @@ class Demo extends React.Component {
 
         return (
             <div className="demo">
-                <Form ref="form" jsxmode={Constants.MODE.EDIT} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
+                <Form ref="form" jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField
@@ -318,6 +325,7 @@ class Demo extends React.Component {
                         <Button size="medium" action="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
                         <Button size="medium" type="secondary" action="reset">取消</Button>
                         <Button size="medium" type="secondary" onClick={me.handleValueChange.bind(me)}>修改 props</Button>
+                        <Button tpye="secondary" onClick={me.changeMode.bind(me)}>转变模式</Button>
                     </ButtonGroupFormField>
                 </Form>
             </div>

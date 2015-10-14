@@ -22,6 +22,7 @@ let OtherFormField = require("./FormField/OtherFormField");
 let ButtonGroupFormField = require("./FormField/ButtonGroupFormField");
 let EditorFormField = require("./FormField/EditorFormField");
 let GridFormField = require("./FormField/GridFormField");
+// let MentionFormField = require("./FormField/MentionFormField");
 let Constants = require("./Constants");
 let Validators = require("./Validators");
 
@@ -37,8 +38,6 @@ class Form extends React.Component {
         this.errors = {};
         this.data = {};
         this.state= {
-            dirty: false,
-            mode: this.props.jsxmode
         };
     }
 
@@ -110,16 +109,6 @@ class Form extends React.Component {
     }
 
     /*
-     * check all the field, and store the error state, use error state
-     */
-
-    doSave() {
-        let flag = this.doValidate();
-        let _mode = flag ? Constants.MODE.VIEW : Constants.MODE.EDIT;
-        this.setState({mode:_mode});
-    }
-
-    /*
      * 统一数据流，所有的 props，通过 Form -> FormRow -> FormField 向下传递，如果有的
      * 子元素是 FormField，则自动在他的外面包一层 FormRow。
      * @param {React Elements Array} children this.props.children
@@ -164,7 +153,7 @@ class Form extends React.Component {
             })}>
                 {!!elements && elements.map(function(child, index) {
                     return React.cloneElement(child, {
-                        mode: me.state.mode,
+                        mode: me.props.jsxmode,
                         data: me.props.jsxvalues || me.props.passedData || {},
                         key: index,
                         attachFormField: me.attachFormField.bind(me),
@@ -197,6 +186,7 @@ Form.OtherFormField = OtherFormField;
 Form.ButtonGroupFormField = ButtonGroupFormField;
 Form.EditorFormField = EditorFormField;
 Form.GridFormField = GridFormField;
+// Form.MentionFormField = MentionFormField;
 Form.Constants = Constants;
 Form.Validators = Validators;
 
