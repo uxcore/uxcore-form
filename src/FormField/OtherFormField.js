@@ -24,7 +24,7 @@ class OtherFormField extends React.Component {
 
 
 OtherFormField.defaultProps = {
-    jsxprefixCls: "kuma-form-field kuma-other-form-field", // 默认类名
+    jsxprefixCls: "kuma-uxform-field kuma-other-uxform-field", // 默认类名
     jsxflex: 1, // 占 Form 的比例，类似于 css3 中的 flex-box
     jsxshow: true
 };

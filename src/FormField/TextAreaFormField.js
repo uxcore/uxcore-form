@@ -18,8 +18,8 @@ class TextAreaFormField extends FormField {
 
     addSpecificClass() {
         let me = this;
-        if (me.props.jsxprefixCls == "kuma-form-field") {
-            return me.props.jsxprefixCls + " kuma-textarea-form-field" ;
+        if (me.props.jsxprefixCls == "kuma-uxform-field") {
+            return me.props.jsxprefixCls + " kuma-textarea-uxform-field" ;
         }
         else {
             return me.props.jsxprefixCls

@@ -18,6 +18,16 @@ class EditorFormField extends FormField {
         me.handleDataChange(editor.getContent())
     }
 
+    addSpecificClass() {
+        let me = this;
+        if (me.props.jsxprefixCls == "kuma-uxform-field") {
+            return me.props.jsxprefixCls + " kuma-editor-uxform-field" ;
+        }
+        else {
+            return me.props.jsxprefixCls
+        }
+    }
+
     renderField() {
         let me = this;
         if (me.state.fromReset) {

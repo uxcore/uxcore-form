@@ -15,8 +15,8 @@ class CheckboxGroupFormField extends FormField {
 
     addSpecificClass() {
         let me = this;
-        if (me.props.jsxprefixCls == "kuma-form-field") {
-            return me.props.jsxprefixCls + " kuma-checkbox-group-form-field" ;
+        if (me.props.jsxprefixCls == "kuma-uxform-field") {
+            return me.props.jsxprefixCls + " kuma-checkbox-group-uxform-field" ;
         }
         else {
             return me.props.jsxprefixCls

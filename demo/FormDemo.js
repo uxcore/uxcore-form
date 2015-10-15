@@ -325,7 +325,7 @@ class Demo extends React.Component {
                         <Button size="medium" action="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
                         <Button size="medium" type="secondary" action="reset">取消</Button>
                         <Button size="medium" type="secondary" onClick={me.handleValueChange.bind(me)}>修改 props</Button>
-                        <Button tpye="secondary" onClick={me.changeMode.bind(me)}>转变模式</Button>
+                        <Button type="secondary" onClick={me.changeMode.bind(me)}>转变模式</Button>
                     </ButtonGroupFormField>
                 </Form>
             </div>

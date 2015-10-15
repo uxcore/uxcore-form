@@ -30,8 +30,8 @@ class CascadeSelectFormField extends FormField {
 
     addSpecificClass() {
         let me = this;
-        if (me.props.jsxprefixCls == "kuma-form-field") {
-            return me.props.jsxprefixCls + " kuma-cascade-select-form-field" ;
+        if (me.props.jsxprefixCls == "kuma-uxform-field") {
+            return me.props.jsxprefixCls + " kuma-cascade-select-uxform-field" ;
         }
         else {
             return me.props.jsxprefixCls
@@ -74,7 +74,7 @@ class CascadeSelectFormField extends FormField {
                 selectOptions.onChange = me.handleChange.bind(me, i);
                 selectOptions.value = stateValue[i] || null;
                 if (i != 0) {
-                    arr.push(<span key={"split" + i} className="kuma-form-split">-</span>)
+                    arr.push(<span key={"split" + i} className="kuma-uxform-split">-</span>)
                 }
                 arr.push(<Select {...selectOptions} key={i}>
                             {options}

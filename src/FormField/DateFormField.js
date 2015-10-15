@@ -30,10 +30,10 @@ class DateFormField extends FormField {
 
     addSpecificClass() {
         let me = this;
-        if (me.props.jsxprefixCls == "kuma-form-field") {
-            let str = me.props.jsxprefixCls + " kuma-date-form-field" ;
+        if (me.props.jsxprefixCls == "kuma-uxform-field") {
+            let str = me.props.jsxprefixCls + " kuma-date-uxform-field" ;
             if (me.props.jsxtype == "cascade") {
-                str += " kuma-cascade-date-form-field"
+                str += " kuma-cascade-date-uxform-field"
             }
             return str;
         }
@@ -88,7 +88,7 @@ class DateFormField extends FormField {
                             return (current.getTime() < from || current.getTime() > to)
                         }}
                         {...others1}/>);
-                arr.push(<span key="split" className="kuma-form-split">-</span>)
+                arr.push(<span key="split" className="kuma-uxform-split">-</span>)
 
                 arr.push(<Calendar 
                         key="calendar2"

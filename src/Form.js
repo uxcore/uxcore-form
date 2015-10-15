@@ -148,8 +148,8 @@ class Form extends React.Component {
             <div className={classnames({
                 [me.props.jsxprefixCls]: true,
                 [me.props.className]: !!me.props.className,
-                "kuma-form-edit-mode": me.props.jsxmode == Constants.MODE.EDIT,
-                "kuma-form-view-mode": me.props.jsxmode == Constants.MODE.VIEW
+                "kuma-uxform-edit-mode": me.props.jsxmode == Constants.MODE.EDIT,
+                "kuma-uxform-view-mode": me.props.jsxmode == Constants.MODE.VIEW
             })}>
                 {!!elements && elements.map(function(child, index) {
                     return React.cloneElement(child, {
@@ -192,7 +192,7 @@ Form.Validators = Validators;
 
 
 Form.defaultProps = {
-    jsxprefixCls: "kuma-form",
+    jsxprefixCls: "kuma-uxform",
     jsxmode: Constants.MODE.EDIT,
     jsxonChange: () => {}
 }

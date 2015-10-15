@@ -38,8 +38,8 @@ class NumberInputFormField extends InputFormField {
 
     addSpecificClass() {
         let me = this;
-        if (me.props.jsxprefixCls == "kuma-form-field") {
-            return me.props.jsxprefixCls + " kuma-number-input-form-field" ;
+        if (me.props.jsxprefixCls == "kuma-uxform-field") {
+            return me.props.jsxprefixCls + " kuma-number-input-uxform-field" ;
         }
         else {
             return me.props.jsxprefixCls

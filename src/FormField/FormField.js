@@ -127,7 +127,7 @@ class FormField extends React.Component {
         let mode = me.props.jsxmode || me.props.mode;
         if (mode != Constants.MODE.EDIT) return;
         if(!!this.props.jsxtips) {
-            return <li className="kuma-form-tips">
+            return <li className="kuma-uxform-tips">
                         <i className="kuma-icon kuma-icon-information"></i>
                         {this.props.jsxtips}
                     </li>
@@ -154,7 +154,7 @@ class FormField extends React.Component {
         let me = this;
         let mode = me.props.jsxmode || me.props.mode;
         if (mode != Constants.MODE.EDIT) return;
-        return  <li className="kuma-form-errormsg">
+        return  <li className="kuma-uxform-errormsg">
                     <i className="kuma-icon kuma-icon-close-hover"></i>
                     {me.state.errMsg}
                 </li>
@@ -188,7 +188,7 @@ class FormField extends React.Component {
             })}>
                 {me.renderLabel()}
                 <ul className={classnames({
-                    "kuma-form-field-content": true,
+                    "kuma-uxform-field-content": true,
                     "view-mode": mode == Constants.MODE.VIEW,
                     "edit-mode": mode == Constants.MODE.EDIT
                 })}>
@@ -219,7 +219,7 @@ FormField.propTypes = {
 FormField.defaultProps = {
     jsxshow: true, // 是否显示该块
     jsxshowLabel: true, // 是否展示 label
-    jsxprefixCls: "kuma-form-field", // 默认类名
+    jsxprefixCls: "kuma-uxform-field", // 默认类名
     jsxflex: 1, // 占 Form 的比例，类似于 css3 中的 flex-box
     jsxname: "", // 表单字段
     jsxplaceholder: "", // 在未选值之前的占位符

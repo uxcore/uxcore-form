@@ -54,7 +54,7 @@ ButtonGroupFormField.propTypes = {
     jsxshow: React.PropTypes.bool
 };
 ButtonGroupFormField.defaultProps = {
-    jsxprefixCls: "kuma-form-field kuma-button-group-form-field", // 默认类名
+    jsxprefixCls: "kuma-uxform-field kuma-button-group-uxform-field", // 默认类名
     jsxflex: 1, // 占 Form 的比例，类似于 css3 中的 flex-box
     jsxshow: true
 };

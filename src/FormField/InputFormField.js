@@ -26,8 +26,8 @@ class InputFormField extends FormField {
 
     addSpecificClass() {
         let me = this;
-        if (me.props.jsxprefixCls == "kuma-form-field") {
-            return me.props.jsxprefixCls + " kuma-input-form-field" ;
+        if (me.props.jsxprefixCls == "kuma-uxform-field") {
+            return me.props.jsxprefixCls + " kuma-input-uxform-field" ;
         }
         else {
             return me.props.jsxprefixCls

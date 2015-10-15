@@ -17,8 +17,8 @@ class RadioGroupFormField extends FormField {
     }
     addSpecificClass() {
         let me = this;
-        if (me.props.jsxprefixCls == "kuma-form-field") {
-            return me.props.jsxprefixCls + " kuma-radio-group-form-field" ;
+        if (me.props.jsxprefixCls == "kuma-uxform-field") {
+            return me.props.jsxprefixCls + " kuma-radio-group-uxform-field" ;
         }
         else {
             return me.props.jsxprefixCls

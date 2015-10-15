@@ -2,7 +2,6 @@ let FormField = require('./FormField');
 let Constants = require("../Constants");
 let assign = require('object-assign');
 let Upload = require("uxcore-uploader");
-let update = React.addons.update;
 
 class UploadFormField extends FormField {
     constructor(props) {
@@ -14,8 +13,8 @@ class UploadFormField extends FormField {
 
     addSpecificClass() {
         let me = this;
-        if (me.props.prefixCls == "kuma-form-field") {
-            return me.props.jsxprefixCls + " kuma-upload-form-field" ;
+        if (me.props.prefixCls == "kuma-uxform-field") {
+            return me.props.jsxprefixCls + " kuma-upload-uxform-field" ;
         }
         else {
             return me.props.jsxprefixCls

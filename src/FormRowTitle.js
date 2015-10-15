@@ -36,7 +36,7 @@ FormRowTitle.propTypes= {
 };
 
 FormRowTitle.defaultProps = {
-    jsxprefixCls: "kuma-form-row-title",
+    jsxprefixCls: "kuma-uxform-row-title",
     jsxtitle: ""
 };
 

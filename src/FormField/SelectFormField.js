@@ -55,16 +55,6 @@ class SelectFormField extends FormField {
             me.fetchData(value);
         }
     }
-    addSpecificClass() {
-        let me = this;
-        if (me.props.jsxprefixCls == "kuma-form-field") {
-            return me.props.jsxprefixCls + " kuma-select-form-field" ;
-        }
-        else {
-            return me.props.jsxprefixCls
-        }
-    }
-
     _processData() {
         let me = this;
         let values = Object.keys(me.state.data);
@@ -82,8 +72,8 @@ class SelectFormField extends FormField {
 
     addSpecificClass() {
         let me = this;
-        if (me.props.jsxprefixCls == "kuma-form-field") {
-            return me.props.jsxprefixCls + " kuma-select-form-field" ;
+        if (me.props.jsxprefixCls == "kuma-uxform-field") {
+            return me.props.jsxprefixCls + " kuma-select-uxform-field" ;
         }
         else {
             return me.props.jsxprefixCls

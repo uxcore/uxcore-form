@@ -63,7 +63,7 @@ class FormRow extends React.Component {
 }
 
 FormRow.defaultProps = {
-    jsxprefixCls: "kuma-form-row" 
+    jsxprefixCls: "kuma-uxform-row" 
 };
 FormRow.propTypes = {
     jsxprefixCls: React.PropTypes.string
