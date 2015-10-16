@@ -157,6 +157,7 @@ class Form extends React.Component {
                 {!!elements && elements.map(function(child, index) {
                     return React.cloneElement(child, {
                         mode: me.props.jsxmode,
+                        instantValidate: me.props.instantValidate,
                         data: me.props.jsxvalues || me.props.passedData || {},
                         key: index,
                         attachFormField: me.attachFormField.bind(me),
@@ -197,6 +198,7 @@ Form.Validators = Validators;
 Form.defaultProps = {
     jsxprefixCls: "kuma-uxform",
     jsxmode: Constants.MODE.EDIT,
+    instantValidate: true,
     jsxonChange: () => {}
 }
 
@@ -206,6 +208,7 @@ Form.propTypes = {
     jsxprefixCls: React.PropTypes.string,
     jsxmode: React.PropTypes.string,
     jsxvalues: React.PropTypes.object,
+    instantValidate: React.PropTypes.bool,
     jsxonChange: React.PropTypes.func
 }
 

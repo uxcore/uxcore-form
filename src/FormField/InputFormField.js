@@ -45,7 +45,7 @@ class InputFormField extends FormField {
                     type="text"
                     key="input"
                     placeholder={me.props.jsxplaceholder}
-                    disabled={me.props.jsxdisabled == "disabled" ? "disabled" : ""}
+                    disabled={(me.props.jsxdisabled == "disabled" || me.props.jsxdisabled == true) ? "disabled" : ""}
                     name={me.props.key}
                     value={me.state.formatValue}
                     onChange={me.handleChange.bind(me)} />);

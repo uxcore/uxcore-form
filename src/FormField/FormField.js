@@ -81,7 +81,14 @@ class FormField extends React.Component {
 
     doValidate () {
         let me = this;
-        if (me.props.jsxrules) {
+        let instant = true;
+        if ('instantValidate' in me.props) {
+            instant = me.props.instantValidate
+        }
+        else {
+            instant = me.props.jsxinstant
+        }
+        if (me.props.jsxrules && instant) {
             let error = me.isDirty();
             me.setState({error: error.isDirty, errMsg: error.errMsg});
             return !error.isDirty;
@@ -203,6 +210,7 @@ class FormField extends React.Component {
 };
 
 FormField.propTypes = {
+    instantValidate: React.PropTypes.bool, // 是否立即校验
     jsxshow: React.PropTypes.bool,
     jsxmode: React.PropTypes.string,
     jsxshowLabel: React.PropTypes.bool,

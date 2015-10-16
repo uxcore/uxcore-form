@@ -44,6 +44,7 @@ class FormRow extends React.Component {
                     let value = me.props.data[child.props.jsxname];
                     return React.cloneElement(child, {
                         mode: me.props.mode,
+                        jsxinstant: me.props.instantValidate,
                         value: value,
                         key: index,
                         style: {width: child.props.jsxflex / me.totalFlex * 100 + '%'},

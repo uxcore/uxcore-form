@@ -42,10 +42,10 @@ class Demo extends React.Component {
             jsxvalues: {
                 test1: "我是测试",
                 fruit: "apple",
-                // city: "nj",
+                city: "nj",
                 textArea: "我是多行文本",
-                date: "2015-09-01",
-                checkbox: [],
+                // date: "2015-09-01",
+                checkbox: ["sea"],
                 dicts:{
                    datas:[
                       {
@@ -226,12 +226,9 @@ class Demo extends React.Component {
             jsxcolumns:columns
         };
 
-        console.log(me.state.jsxvalues);
-
-
         return (
             <div className="demo">
-                <Form ref="form" jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
+                <Form ref="form" instantValidate={false} jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField
@@ -259,13 +256,13 @@ class Demo extends React.Component {
                     </FormRow>
                     <FormRow>
                         <RadioGroupFormField jsxname="fruit" jsxlabel="Radio" jsxflex={1}>
-                                <RadioItem value="apple" text="Apple"/>
-                                <RadioItem value="orange" text="Orange"/>
-                                <RadioItem value="watermelon" text="Watermelon"/>
+                            <RadioItem value="apple" text="Apple"/>
+                            <RadioItem value="orange" text="Orange"/>
+                            <RadioItem value="watermelon" text="Watermelon"/>
                         </RadioGroupFormField>
-                        <CheckboxGroupFormField jsxname="checkbox" jsxlabel="复选框">
-                          <CheckboxItem value="air" text="天空"/>
-                          <CheckboxItem value="sea" text="大海"/>
+                        <CheckboxGroupFormField jsxname="checkbox" jsxlabel="复选框" jsxdisabled={true}>
+                            <CheckboxItem value="air" text="天空"/>
+                            <CheckboxItem value="sea" text="大海"/>
                         </CheckboxGroupFormField>
                     </FormRow>
                     <TextAreaFormField jsxname="textArea" jsxlabel="多行文本框"/>
@@ -283,7 +280,7 @@ class Demo extends React.Component {
                             return data;
                          }}
                          jsxdata={me.state.jsxdata}/>
-                        <DateFormField showTime={true} format="yyyy-MM-dd HH:mm:ss" jsxname="date" jsxlabel="日期"/>
+                        <DateFormField format="yyyy-MM-dd HH:mm:ss" jsxname="date" jsxlabel="日期"/>
                     </FormRow>
                     <FormRow>
                         <SelectFormField
