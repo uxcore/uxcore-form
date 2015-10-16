@@ -62,8 +62,12 @@
   vertical-align: baseline;
   vertical-align: -webkit-baseline-middle;
 }
-.kuma-uxform .kuma-label i {
+.kuma-uxform .kuma-label .required {
   color: Red;
+}
+.kuma-uxform .kuma-label .label-content {
+  display: inline-block;
+  line-height: 14px;
 }
 .kuma-uxform-row-title {
   font-size: 14px;

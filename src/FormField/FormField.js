@@ -164,8 +164,8 @@ class FormField extends React.Component {
         let me = this;
         if (me.props.jsxshowLabel) {
             return  <label className="kuma-label">
-                        <i>{me.props.required ? "*" : ""}</i>
-                        {this.props.jsxlabel}
+                        <span className="required">{me.props.required ? "* " : ""}</span>
+                        <span className="label-content" dangerouslySetInnerHTML={{__html: me.props.jsxlabel}} />
                     </label>
         }
     }
