@@ -1,9 +1,13 @@
-## 1.0.7
+
+
+## 1.1.0
 
 `NEW` FormField can set its own mode different from Form now.
 `NEW` add GridFormField.
 `FIXED` when props jsxvalues change, form cannot handle correctly.
 `FIXED` when props jsxmode change, form cannot handle correctly.
+`CHANGED` update dependency 'react' to 0.14
+`CHANGED` change prefixCls from 'kuma-form' to 'kuma-uxform'
 
 
 ## 1.0.6

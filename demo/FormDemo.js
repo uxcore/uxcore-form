@@ -45,7 +45,7 @@ class Demo extends React.Component {
                 // city: "nj",
                 textArea: "我是多行文本",
                 date: "2015-09-01",
-                checkbox: ["sea"],
+                checkbox: [],
                 dicts:{
                    datas:[
                       {
@@ -81,6 +81,11 @@ class Demo extends React.Component {
         this.refs.form.setState({
            mode:'VIEW'
         })
+    }
+
+    update() {
+        console.log('work')
+        this.forceUpdate();
     }
 
     handleChange(value) {
@@ -221,6 +226,8 @@ class Demo extends React.Component {
             jsxcolumns:columns
         };
 
+        console.log(me.state.jsxvalues);
+
 
         return (
             <div className="demo">
@@ -326,6 +333,7 @@ class Demo extends React.Component {
                         <Button size="medium" type="secondary" action="reset">取消</Button>
                         <Button size="medium" type="secondary" onClick={me.handleValueChange.bind(me)}>修改 props</Button>
                         <Button type="secondary" onClick={me.changeMode.bind(me)}>转变模式</Button>
+                        <Button type="secondary" onClick={me.update.bind(me)}>强制刷新</Button>
                     </ButtonGroupFormField>
                 </Form>
             </div>

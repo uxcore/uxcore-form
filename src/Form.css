@@ -170,25 +170,25 @@
   vertical-align: middle;
   line-height: 36px;
 }
-.kuma-select-uxform-field .kuma-select-selection,
-.kuma-cascade-select-uxform-field .kuma-select-selection {
+.kuma-select-uxform-field .kuma-select2-selection,
+.kuma-cascade-select-uxform-field .kuma-select2-selection {
   min-height: 36px;
 }
-.kuma-select-uxform-field .kuma-select-selection .kuma-select-selection__rendered,
-.kuma-cascade-select-uxform-field .kuma-select-selection .kuma-select-selection__rendered {
+.kuma-select-uxform-field .kuma-select2-selection .kuma-select2-selection__rendered,
+.kuma-cascade-select-uxform-field .kuma-select2-selection .kuma-select2-selection__rendered {
   line-height: 34px;
 }
-.kuma-select-uxform-field .kuma-select-selection .kuma-select-arrow,
-.kuma-cascade-select-uxform-field .kuma-select-selection .kuma-select-arrow {
+.kuma-select-uxform-field .kuma-select2-selection .kuma-select2-arrow,
+.kuma-cascade-select-uxform-field .kuma-select2-selection .kuma-select2-arrow {
   height: 34px;
 }
-.kuma-select-uxform-field .kuma-select {
+.kuma-select-uxform-field .kuma-select2 {
   width: 100%;
 }
-.kuma-select-uxform-field .kuma-select-selection--multiple > ul > li {
+.kuma-select-uxform-field .kuma-select2-selection--multiple > ul > li {
   margin-top: 7px;
 }
-.kuma-cascade-select-uxform-field .kuma-select {
+.kuma-cascade-select-uxform-field .kuma-select2 {
   width: 200px;
 }
 .kuma-grid-uxform-field .kuma-input {

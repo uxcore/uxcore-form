@@ -27,7 +27,6 @@ let Constants = require("./Constants");
 let Validators = require("./Validators");
 
 let classnames = require('classnames');
-let update = React.addons.update;
 
 
 class Form extends React.Component {
@@ -43,6 +42,10 @@ class Form extends React.Component {
 
     componentDidMount() {
         let me = this;
+    }
+
+    _copy(a) {
+        return JSON.parse(JSON.stringify(a));
     }
 
     attachFormField(field) {
@@ -66,7 +69,7 @@ class Form extends React.Component {
         let me = this;
         me.data[field.props.jsxname] = value;
         if (!fromMount) {
-            me.props.jsxonChange(me.data);
+            me.props.jsxonChange(me._copy(me.data));
         }
         // console.log(me.data);
     }
@@ -75,7 +78,7 @@ class Form extends React.Component {
         let me = this;
         let _flag = me.doValidate();
         return {
-            values: me.data,
+            values: me._copy(me.data),
             pass: _flag
         }
     }
