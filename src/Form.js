@@ -27,7 +27,7 @@ let Constants = require("./Constants");
 let Validators = require("./Validators");
 
 let classnames = require('classnames');
-
+let assign = require('object-assign');
 
 class Form extends React.Component {
 
@@ -45,7 +45,7 @@ class Form extends React.Component {
     }
 
     _copy(a) {
-        return JSON.parse(JSON.stringify(a));
+        return assign({}, a)
     }
 
     attachFormField(field) {
@@ -65,18 +65,18 @@ class Form extends React.Component {
         delete this.fields[field.getName()];
     }
 
-    handleDataChange(field, value, fromMount){
+    handleDataChange(field, fieldData, fromMount){
         let me = this;
-        me.data[field.props.jsxname] = value;
+        me.data[field.props.jsxname] = fieldData.value;
         if (!fromMount) {
-            me.props.jsxonChange(me._copy(me.data));
+            me.props.jsxonChange(me._copy(me.data), field.props.jsxname, fieldData.pass);
         }
         // console.log(me.data);
     }
 
-    getValues() {
+    getValues(force) {
         let me = this;
-        let _flag = me.doValidate();
+        let _flag = me.doValidate(force);
         return {
             values: me._copy(me.data),
             pass: _flag
@@ -92,12 +92,12 @@ class Form extends React.Component {
         }
     }
 
-    doValidate() {
+    doValidate(force) {
         let me = this;
         let pass = true;
         let keys = Object.keys(me.fields);
         for (let i = 0; i < keys.length; i++) {
-            let itemPass = me.fields[keys[i]].doValidate();
+            let itemPass = me.fields[keys[i]].doValidate(force);
             me.errors[keys[i]] = !itemPass;
             if (!itemPass) {
                 pass = false;

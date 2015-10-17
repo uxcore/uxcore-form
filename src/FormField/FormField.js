@@ -25,7 +25,23 @@ class FormField extends React.Component {
     componentDidMount() {
         let me = this;
         me.props.attachFormField(me);
-        me.props.handleDataChange(me, me.props.value, true);
+        me.props.handleDataChange(me, {
+            value: me.props.value,
+            pass: true
+        }, true);
+    }
+
+    /*
+     * a simple copy method, the biggest difference from the actual copy is
+     * that it cannot handle value is undefined in an object.
+     * For example, if an object is {a: undefined, b: 1},
+     * it will be {b: 1} aftet _copy.
+     * also it cannot handle 'undefined'
+     */
+
+    _copy(a) {
+        // return JSON.parse(JSON.stringify(a));
+        return a;
     }
 
     componentWillReceiveProps(nextProps) {
@@ -65,11 +81,15 @@ class FormField extends React.Component {
              */ 
             fromReset: fromReset
         }, () => {
+            let pass = true
             if (!fromReset) {
-                me.doValidate();
+                pass = me.doValidate();
             }
+            me.props.handleDataChange(me, {
+                value: value,
+                pass: pass
+            });
         });
-        me.props.handleDataChange(me, value);
         
     }
 
@@ -79,7 +99,7 @@ class FormField extends React.Component {
      * if no rule, it means validate pass.
      */
 
-    doValidate () {
+    doValidate (force) {
         let me = this;
         let instant = true;
         if ('instantValidate' in me.props) {
@@ -88,7 +108,9 @@ class FormField extends React.Component {
         else {
             instant = me.props.jsxinstant
         }
-        if (me.props.jsxrules && instant) {
+        // if force or instant, validate should be done, but if there are not
+        // jsxrules, validate cannot be done.
+        if ((!!force || instant) && me.props.jsxrules) {
             let error = me.isDirty();
             me.setState({error: error.isDirty, errMsg: error.errMsg});
             return !error.isDirty;
@@ -133,7 +155,7 @@ class FormField extends React.Component {
         let me = this;
         let mode = me.props.jsxmode || me.props.mode;
         if (mode != Constants.MODE.EDIT) return;
-        if(!!this.props.jsxtips) {
+        if(!!this.props.jsxtips && !me.state.error) {
             return <li className="kuma-uxform-tips">
                         <i className="kuma-icon kuma-icon-information"></i>
                         {this.props.jsxtips}

@@ -9,6 +9,7 @@
 let classnames = require('classnames');
 let Button = require('uxcore-button');
 
+
 let Form = require('../src');
 let {
     Constants,
@@ -88,8 +89,8 @@ class Demo extends React.Component {
         this.forceUpdate();
     }
 
-    handleChange(value) {
-        console.log(value);
+    handleChange(value, name, pass) {
+        console.log(value, name, pass);
     }
 
     changeMode() {
@@ -228,7 +229,7 @@ class Demo extends React.Component {
 
         return (
             <div className="demo">
-                <Form ref="form" instantValidate={false} jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
+                <Form ref="form" instantValidate={true} jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField
@@ -327,7 +328,7 @@ class Demo extends React.Component {
                     <GridFormField jsxname="dicts" jsxlabel="薪酬字典" {...renderProps}>
                     </GridFormField>
                     <ButtonGroupFormField>
-                        <Button size="medium" action="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
+                        <Button size="medium" action="submit" onClick={me.handleClick.bind(me)}>提交</Button>
                         <Button size="medium" type="secondary" action="reset">取消</Button>
                         <Button size="medium" type="secondary" onClick={me.handleValueChange.bind(me)}>修改 props</Button>
                         <Button type="secondary" onClick={me.changeMode.bind(me)}>转变模式</Button>

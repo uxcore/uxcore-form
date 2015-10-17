@@ -49,7 +49,6 @@ class SelectFormField extends FormField {
         me.handleDataChange(value);
     }
     handleSearch(value, label) {
-        console.log(value, label);
         let me = this;
         if (me.props.jsxfetchUrl) {
             me.fetchData(value);
@@ -94,6 +93,7 @@ class SelectFormField extends FormField {
                 combobox: me.props.jsxcombobox,
                 searchPlaceholder: me.props.jsxsearchPlaceholder,
                 tags: me.props.jsxtags,
+                optionFilterProp: me.props.optionFilterProp,
                 // value: me.state.value || [],
                 showSearch: me.props.jsxshowSearch,
                 placeholder: me.props.jsxplaceholder,
@@ -132,7 +132,8 @@ SelectFormField.propTypes = assign({}, FormField.propTypes, {
     jsxtags: React.PropTypes.bool,
     jsxmultiple: React.PropTypes.bool,
     jsxallowClear: React.PropTypes.bool,
-    jsxsearchPlaceholder: React.PropTypes.string
+    jsxsearchPlaceholder: React.PropTypes.string,
+    optionFilterProp: React.PropTypes.string
 });
 SelectFormField.defaultProps = assign({}, FormField.defaultProps, {
     jsxstyle: {},
@@ -145,7 +146,8 @@ SelectFormField.defaultProps = assign({}, FormField.defaultProps, {
     jsxallowClear: false,
     jsxtags: false,
     jsxmultiple: false,
-    jsxsearchPlaceholder: ""
+    jsxsearchPlaceholder: "",
+    optionFilterProp: "children"
 });
 
 module.exports = SelectFormField;

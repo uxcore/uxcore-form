@@ -350,9 +350,9 @@ http://uxcore.github.io/uxcore/
 
 ### Form
 
-* getValues(data) 获取目前的 values 和 pass（是否通过检测）。  
+* getValues(force) 获取目前的 values 和 pass（是否通过检测）。  
 参数：
-    * data `Object`: 数据格式为 {values: {}, pass: false}。
+    * force `Boolean`: 是否做强制校验，在强制校验的情况下将无视所有 instantValidate 配置。
 
 * resetValues() 重置所有的 FormField，如果有默认值则重置为默认值。
 
@@ -420,6 +420,7 @@ http://uxcore.github.io/uxcore/
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|
 |jsxplaceholder|string|optional|""|占位符|
+|jsxdisabled|boolean|optional|false|disable 状态|
 
 ### TextAreaFormField
 
@@ -458,10 +459,15 @@ http://uxcore.github.io/uxcore/
 |jsxsearchPlaceholder|string|optional|""|搜索框默认文字|
 |jsxcombobox|bool|optional|false|标准搜索模式，在该模式下没有下拉框，通过输入产生提示|
 |jsxplaceholder|string|optional|"请下拉选择"|占位符|
+|jsxdisabled|boolean|optional|false|disable 状态|
 
 see datails in [uxcore-select2](https://www.npmjs.com/package/uxcore-select2)
 
 ### CheckboxGroupFormField
+
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|jsxdisabled|boolean|optional|false|disable 状态|
 
 * Item：通过 CheckboxGroupFormField.Item 取的，有两个 props
     * value

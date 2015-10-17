@@ -1,4 +1,8 @@
+## 1.1.1
 
+`NEW` add props instantValidate to meet the need that one don't want validate instantly
+`NEW` CheckboxFormField add prop jsxdisabled
+`NEW` prop jsxonChange now support 3 params `data` `fieldname` & `pass`
 
 ## 1.1.0
 
