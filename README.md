@@ -367,8 +367,9 @@ http://uxcore.github.io/uxcore/
 |className|string|optional|""|加入额外的类名，在使用 kuma 的基础上进行适当的定制时会用得到|
 |jsxprefixCls|string|optional|"kuma-form"|默认类名，用户可以通过修改此项来完成样式的定制|
 |jsxmode|string|optional|"EDIT"|Form 编辑和只读模式，传值方式见 demo|
-|jsxvalues|object|optional|-|传入表单的初始值，格式见 Usage，每一个 key 与 formField 中的 jsxname 相对应|
+|jsxvalues|object|optional|-|传入表单的初始值，格式见 Usage，每一个 key 与 formField 中的 jsxname 相对应，注意是初始值，不要把 onChange 中的变化同步到这里|
 |jsxonChange|function|optional|noop|当表单中值有变化时触发，传回 values，格式同 jsxvalues|
+|instantValidate|boolean|optional|true|是否开启即时校验|
 
 ### FormRow
 
@@ -391,6 +392,7 @@ http://uxcore.github.io/uxcore/
 |jsxflex|number|optional|1|占 FormRow 宽的比例，类似于 css3 中的 flex-box|
 |jsxtips|string|optional|""|说明文字|
 |jsxrules|object/array|optional|-|validators，具体用法和格式见 Usage，Form 已经提供了一些现成的 validator 供使用。也可以自己编写|
+|instantValidate|boolean|optional|true|是否开启即时校验|
 
 ### Validators 
 

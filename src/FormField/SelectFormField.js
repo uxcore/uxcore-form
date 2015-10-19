@@ -94,6 +94,7 @@ class SelectFormField extends FormField {
                 searchPlaceholder: me.props.jsxsearchPlaceholder,
                 tags: me.props.jsxtags,
                 optionFilterProp: me.props.optionFilterProp,
+                disabled: !!me.props.jsxdisabled,
                 // value: me.state.value || [],
                 showSearch: me.props.jsxshowSearch,
                 placeholder: me.props.jsxplaceholder,

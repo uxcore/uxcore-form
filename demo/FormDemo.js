@@ -272,6 +272,7 @@ class Demo extends React.Component {
                         <SelectFormField
                          jsxlabel="单选"
                          jsxname="city"
+                         jsxdisabled={true}
                          jsxfetchUrl="http://suggest.taobao.com/sug"
                          afterFetch={(obj) => {
                             let data = {};
