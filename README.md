@@ -356,6 +356,10 @@ http://uxcore.github.io/uxcore/
 
 * resetValues() 重置所有的 FormField，如果有默认值则重置为默认值。
 
+* setValues(data) 手动设置各个 FormField 的值，在表单联动时可能会用得到。
+参数：
+    * data `Object`: 和 jsxvalues 的格式相同。
+
 * isDirty() 获取目前的数据是否没有通过检测，返回 true 或 false。
 
 ## props
@@ -370,6 +374,15 @@ http://uxcore.github.io/uxcore/
 |jsxvalues|object|optional|-|传入表单的初始值，格式见 Usage，每一个 key 与 formField 中的 jsxname 相对应，注意是初始值，不要把 onChange 中的变化同步到这里|
 |jsxonChange|function|optional|noop|当表单中值有变化时触发，传回 values，格式同 jsxvalues|
 |instantValidate|boolean|optional|true|是否开启即时校验|
+
+### jsxvalues 的格式
+```javascript
+{
+    jsxname1: value1,
+    jsxname2: value2
+}
+
+```
 
 ### FormRow
 
@@ -423,6 +436,13 @@ http://uxcore.github.io/uxcore/
 |---|---|---|---|---|
 |jsxplaceholder|string|optional|""|占位符|
 |jsxdisabled|boolean|optional|false|disable 状态|
+
+* 插件：Count，通过 InputFormField.Count 取得，一个内置的计数器，用法如下：
+```javascript
+<InputFormField>
+    <Count total="20">
+</InputFormField>
+```
 
 ### TextAreaFormField
 

@@ -185,6 +185,15 @@
 .kuma-radio-group-uxform-field .kuma-uxform-field-content {
   padding-top: 10px;
 }
+.kuma-upload-uxform-field .kuma-uxform-field-content {
+  padding-top: 7px;
+}
+.kuma-upload-uxform-field .kuma-upload-filelist.nwmode {
+  margin-top: 10px;
+}
+.kuma-cascade-date-uxform-field .uxcore {
+  display: inline-block;
+}
 .kuma-cascade-date-uxform-field .kuma-calendar-picker {
   width: 200px;
   display: inline-block;

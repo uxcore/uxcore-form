@@ -31,18 +31,6 @@ class FormField extends React.Component {
         }, true);
     }
 
-    /*
-     * a simple copy method, the biggest difference from the actual copy is
-     * that it cannot handle value is undefined in an object.
-     * For example, if an object is {a: undefined, b: 1},
-     * it will be {b: 1} aftet _copy.
-     * also it cannot handle 'undefined'
-     */
-
-    _copy(a) {
-        // return JSON.parse(JSON.stringify(a));
-        return a;
-    }
 
     componentWillReceiveProps(nextProps) {
         let me = this;

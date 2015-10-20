@@ -79,6 +79,13 @@ class Demo extends React.Component {
         console.log(me.refs.form.getValues());
     }
 
+    handleSetValues() {
+        let me = this;
+        me.refs.form.setValues({
+            test1: "我不是测试"
+        })
+    }
+
     handleFormClick(data) {
         this.refs.form.setState({
            mode:'VIEW'
@@ -316,7 +323,8 @@ class Demo extends React.Component {
                         <UploadFormField
                           jsxname="upload"
                           jsxlabel="上传"
-                          url="http://demo.nwux.taobao.net/file/upload"/>
+                          name="file"
+                          url="http://test.yanbingbing.com/upload.php"/>
                     </FormRow>
                     <FormRowTitle jsxtitle="级联类"/>
                     <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" jsxfrom="2015-10-2" jsxto="2015-10-10"/>
@@ -333,6 +341,7 @@ class Demo extends React.Component {
                     <ButtonGroupFormField>
                         <Button size="medium" action="submit" onClick={me.handleClick.bind(me)}>提交</Button>
                         <Button size="medium" type="secondary" action="reset">取消</Button>
+                        <Button type="secondary" onClick={me.handleSetValues.bind(me)}>手动setValues</Button>
                         <Button size="medium" type="secondary" onClick={me.handleValueChange.bind(me)}>修改 props</Button>
                         <Button type="secondary" onClick={me.changeMode.bind(me)}>转变模式</Button>
                         <Button type="secondary" onClick={me.update.bind(me)}>强制刷新</Button>

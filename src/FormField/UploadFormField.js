@@ -13,7 +13,7 @@ class UploadFormField extends FormField {
 
     addSpecificClass() {
         let me = this;
-        if (me.props.prefixCls == "kuma-uxform-field") {
+        if (me.props.jsxprefixCls == "kuma-uxform-field") {
             return me.props.jsxprefixCls + " kuma-upload-uxform-field" ;
         }
         else {
@@ -23,46 +23,23 @@ class UploadFormField extends FormField {
 
     renderField() {
         let me = this;
-        let options = {
-            // 上传文件字段名称
-            name: me.props.fileName,
-            // 上传目标
-            url: me.props.url,
-            // 上传文件额外参数
-            params: me.props.params,
-            // 上传文件额外头, `flash下不支持`
-            headers: me.props.headers,
-            // 上传文件是否自动附带cookie等信息, `flash下不支持`
-            withCredentials: me.props.withCredentials,
-            // 上传超时
-            timeout: me.props.withCredentials,
-            // 是否允许分片上传, `flash下不支持`
-            chunkEnable: me.props.chunkEnable,
-            // 文件分片大小, 默认单位b，0不分片
-            chunkSize: me.props.chunkSize,
-            // 文件分片上传重试次数
-            chunkRetries: me.props.chunkRetries,
-            // 分片上传并发数
-            chunkProcessThreads: me.props.chunkProcessThreads,
-            // 文件上传并发数
-            processThreads: me.props.processThreads,
-            // 是否选择后自动等待上传
-            autoPending: me.props.autoPending,
-            // 队列容量，0无限
-            queueCapcity: me.props.queueCapcity,
-            // 是否多选
-            multiple: me.props.multiple,
-            // 允许文件类型
-            accept: me.props.accept,
-            // 文件大小限制
-            fileSizeLimit: me.props.fileSizeLimit,
-            // 是否防止文件重复
-            preventDuplicate: me.props.preventDuplicate,
-            // 过滤器
-            filters:me.props.filters
-        }
-        return <Upload {...options}/>
 
+        let {
+            jsxflex,
+            jsxinstant,
+            jsxlabel,
+            jsxname,
+            jsxplaceholder,
+            jsxprefixCls,
+            jsxshow,
+            jsxshowLabel,
+            jsxtips,
+            jsxtype,
+            mode,
+            style,
+            ...options
+        } = me.props;
+        return <Upload {...options}/>
     }
 }
 
