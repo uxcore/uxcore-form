@@ -221,7 +221,7 @@ class FormField extends React.Component {
                     "view-mode": mode == Constants.MODE.VIEW,
                     "edit-mode": mode == Constants.MODE.EDIT
                 })}>
-                    <li>{me.renderField()}</li>
+                    <li className="kuma-uxform-field-core">{me.renderField()}</li>
                     {me.renderTips()}
                     {!!me.state.error && me.renderErrorMsg()}
                 </ul>

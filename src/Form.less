@@ -70,6 +70,8 @@
         line-height: 14px;
     }
 }
+
+
     
 .kuma-uxform {
     zoom: 1;
@@ -140,9 +142,36 @@
         vertical-align: middle;
         *vertical-align: -5px;
         height: 36px;
+        &.kuma-uxform-input-has-right {
+            border-right: none;
+        }
+        &.kuma-uxform-input-has-left {
+            border-left: none;
+        }
     }
 }
 
+.kuma-uxform-count {
+    display: table-cell;
+    width: 35px;
+    text-align: center;
+    border: 1px solid @input-border;
+    border-left: none;
+}
+
+.kuma-input:focus + .kuma-uxform-count {
+    border: 1px @input-border-focus solid;
+    border-left: none;
+    color: @input-color;
+    outline: none;
+}
+
+.kuma-uxform-field-core {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+
+}
 .kuma-uxform-field-content {
     font-size: 12px;
     color: @input-color-explain;

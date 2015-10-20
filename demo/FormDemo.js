@@ -237,7 +237,6 @@ class Demo extends React.Component {
                          required={true}
                          jsxname="test1"
                          jsxlabel="普通输入框"
-                         jsxmode={Constants.MODE.VIEW}
                          jsxtips="请输入数字"
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}>
                             <Count total={20}/>

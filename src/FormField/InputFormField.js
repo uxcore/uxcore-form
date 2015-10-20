@@ -9,6 +9,7 @@ class FormCount extends React.Component {
     }
 
     render() {
+        let me = this;
         return (
             <div className="kuma-uxform-count">{me.props.length + "/" + me.props.total}</div>
         );
@@ -58,15 +59,34 @@ class InputFormField extends FormField {
         }
     }
 
+    renderCount() {
+        let me = this;
+        let children = me.props.children;
+        let element;
+        React.Children.map(children, (child) => {
+            if (child && typeof child.type == 'function' && child.type.displayName == 'FormCount' ) {
+                element = child;
+            }
+        });
+        if (!!element) {
+            return React.cloneElement(element, {
+                length: !!me.state.value ? me.state.value.length : 0
+            })
+        }
+    }
+
     renderField() {
         let me = this;
         let arr = [];
         let mode = me.props.jsxmode || me.props.mode;
+        let count = me.renderCount()
         let children = me.props.children;
-        console.log("");
         if (mode == Constants.MODE.EDIT) {
             arr.push(<input
-                    className="kuma-input"
+                    className={classnames({
+                        "kuma-input": true,
+                        'kuma-uxform-input-has-right': !!count
+                    })}
                     ref="root"
                     type="text"
                     key="input"
@@ -75,6 +95,7 @@ class InputFormField extends FormField {
                     name={me.props.key}
                     value={me.state.formatValue}
                     onChange={me.handleChange.bind(me)} />);
+            arr.push(count);
         }
         else if (mode == Constants.MODE.VIEW) {
             arr.push(<span key="text">{me.state.formatValue}</span>)
