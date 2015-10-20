@@ -34,6 +34,7 @@ let {
 
 let CheckboxItem = CheckboxGroupFormField.Item;
 let RadioItem = RadioGroupFormField.Item;
+let Count = InputFormField.Count;
 
 class Demo extends React.Component {
 
@@ -238,7 +239,9 @@ class Demo extends React.Component {
                          jsxlabel="普通输入框"
                          jsxmode={Constants.MODE.VIEW}
                          jsxtips="请输入数字"
-                         jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}/>
+                         jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}>
+                            <Count total={20}/>
+                        </InputFormField>
                          <NumberInputFormField
                           jsxname="number"
                           jsxlabel="数字输入框"

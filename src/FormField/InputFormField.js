@@ -2,6 +2,30 @@ let FormField = require('./FormField');
 let Constants = require("../Constants");
 let classnames = require('classnames');
 
+
+class FormCount extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div className="kuma-uxform-count">{me.props.length + "/" + me.props.total}</div>
+        );
+    }
+
+}
+
+FormCount.defaultProps = {};
+FormCount.propTypes = {
+    length: React.PropTypes.number,
+    total: React.PropTypes.number
+};
+
+FormCount.displayName = "FormCount";
+
+
+
 /**
  * extend FormField, rewrite renderField method
  **/
@@ -38,6 +62,8 @@ class InputFormField extends FormField {
         let me = this;
         let arr = [];
         let mode = me.props.jsxmode || me.props.mode;
+        let children = me.props.children;
+        console.log("");
         if (mode == Constants.MODE.EDIT) {
             arr.push(<input
                     className="kuma-input"
@@ -57,6 +83,7 @@ class InputFormField extends FormField {
     }
 }
 
+InputFormField.Count = FormCount;
 InputFormField.propTypes = FormField.propTypes;
 InputFormField.defaultProps = FormField.defaultProps;
 InputFormField.displayName = "InputFormField";
