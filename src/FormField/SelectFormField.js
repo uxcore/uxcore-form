@@ -79,9 +79,22 @@ class SelectFormField extends FormField {
         }
     }
 
+    hasDeprecatedProps() {
+        let arr = ['jsxstyle', 'jsxmultiple', 'jsxallowClear', 'jsxcombobox', 'jsxsearchPlaceholder', 'jsxtags', 'jsxdisabled', 'jsxshowSearch', 'jsxplaceholder'];
+        let me = this;
+        let keys = Object.keys(me.props);
+        let hasDeprecated = keys.some((item, index) => {
+            return arr.indexOf(item) != -1
+        });
+        if (hasDeprecated) {
+            console.warn("SelectFormField: props same as uxcore-select2 can be passed without prefix 'jsx' now (exclude style). we will remove the support of the props mentioned above with prefix 'jsx' at uxcore-form@1.3.0 .");
+        }
+    }
+
     renderField() {
         let me = this;
         let arr = [];
+        me.hasDeprecatedProps();
         if (me.props.mode == Constants.MODE.EDIT) {
             let options = {
                 ref: "el",
@@ -101,6 +114,12 @@ class SelectFormField extends FormField {
                 onChange: me.handleChange.bind(me),
                 onSearch: me.handleSearch.bind(me)
             };
+
+            ['multiple', 'allowClear', 'combobox', 'searchPlaceholder', 'tags', 'disabled', 'showSearch', 'placeholder'].forEach((item, index) => {
+                if (item in me.props) {
+                    options[item] = me.props[item];
+                }
+            });
 
             if (!me.props.jsxmultiple || me.state.fromReset) {
                 options.value = me.state.value || [];

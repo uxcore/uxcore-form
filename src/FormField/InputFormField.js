@@ -70,7 +70,8 @@ class InputFormField extends FormField {
         });
         if (!!element) {
             return React.cloneElement(element, {
-                length: !!me.state.value ? me.state.value.length : 0
+                length: !!me.state.value ? me.state.value.length : 0,
+                key: "count"
             })
         }
     }

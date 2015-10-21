@@ -7,4 +7,4 @@
  */
 
  var Demo = require('./FormDemo');
- React.render(<Demo/>, document.getElementById('UXCoreDemo'));
+ ReactDOM.render(<Demo/>, document.getElementById('UXCoreDemo'));

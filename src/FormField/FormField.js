@@ -1,11 +1,3 @@
-/**
- *  1:  每个field需要单独的validate, 这样才能保证单个的field输入时候的validate, 使用state.error来决定验证是否通过，是否显示
- *      error信息
- *  2:  Form的save Action，需要对每个field做validate, 如果验证通过，保存成功后，mode 还需要改变
- *  3:  刚开始的纠结点在，item2 会重新render所有form field, 感觉是要render 2次，一次在validate的时候，一次在save后，改变mode
- *      但仔细想，这两个不可能同时发生
- */
-
 let Constants = require("../Constants");
 let classnames = require("classnames");
 let assign = require("object-assign");
