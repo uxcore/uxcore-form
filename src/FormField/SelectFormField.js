@@ -57,8 +57,12 @@ class SelectFormField extends FormField {
     _processData() {
         let me = this;
         let values = Object.keys(me.state.data);
+        let children = me.props.children;
         if (!values.length) {
             // console.warn("You need to pass data to initialize Select.");
+            if (!!children) {
+                return children;
+            }
         }
         else {
             let arr = values.map(function(value, index) {
@@ -140,6 +144,7 @@ class SelectFormField extends FormField {
     }
 }
 
+SelectFormField.Option = Option;
 SelectFormField.displayName = "SelectFormField";
 SelectFormField.propTypes = assign({}, FormField.propTypes, {
     jsxstyle: React.PropTypes.object,

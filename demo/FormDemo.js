@@ -35,6 +35,7 @@ let {
 let CheckboxItem = CheckboxGroupFormField.Item;
 let RadioItem = RadioGroupFormField.Item;
 let Count = InputFormField.Count;
+let Option = SelectFormField.Option;
 
 class Demo extends React.Component {
 
