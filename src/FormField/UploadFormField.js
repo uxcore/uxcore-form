@@ -1,5 +1,5 @@
 let FormField = require('./FormField');
-let Constants = require("../Constants");
+let Constants = require("uxcore-const");
 let assign = require('object-assign');
 let Upload = require("uxcore-uploader");
 

@@ -2,10 +2,10 @@
  * Created by xy on 15/4/13.
  */
 let FormField = require('./FormField');
-let Constants = require("../Constants");
+let Constants = require("uxcore-const");
 
 class TextAreaFormField extends FormField {
-    
+
     constructor(props) {
         super(props);
     }
@@ -26,15 +26,15 @@ class TextAreaFormField extends FormField {
         }
     }
 
-    
+
     renderField() {
         let me = this;
         if (me.props.mode == Constants.MODE.EDIT) {
-            return  <textarea 
+            return  <textarea
                      disabled={me.props.jsxdisabled}
-                     placeholder={me.props.jsxplaceholder} 
-                     className="kuma-textarea" 
-                     ref="root" 
+                     placeholder={me.props.jsxplaceholder}
+                     className="kuma-textarea"
+                     ref="root"
                      value={me.state.value}
                      onChange={me.handleChange.bind(me)}/>
         }

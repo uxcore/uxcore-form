@@ -3,7 +3,7 @@
  * @time: 8/7 2015
  * Form Row Title
  */
-let Constants = require("./Constants");
+let Constants = require("uxcore-const");
 let classnames = require("classnames");
 
 class FormRowTitle extends React.Component {

@@ -1,5 +1,5 @@
 let FormField = require('./FormField');
-let Constants = require("../Constants");
+let Constants = require("uxcore-const");
 let Select = require('uxcore-select2');
 let {Option} = Select;
 let assign = require('object-assign');
@@ -39,7 +39,7 @@ class CascadeSelectFormField extends FormField {
     }
 
     renderField() {
-        let me = this;  
+        let me = this;
         let length = me.getDataLength();
         let arr = [];
         let data = {};
@@ -51,7 +51,7 @@ class CascadeSelectFormField extends FormField {
                 console.warn(e.message)
                 return;
             }
-            
+
             /*
              * 如果 value 存在相应的值，则填充下一级的选择，
              * 如果 value 不存在，则填充空数组，
@@ -64,7 +64,7 @@ class CascadeSelectFormField extends FormField {
                 });
 
                 let selectOptions = {
-                    ref: "el", 
+                    ref: "el",
                     key: "select",
                     optionLabelProp: "children",
                     style: me.props.jsxstyle,

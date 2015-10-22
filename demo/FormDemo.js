@@ -259,7 +259,7 @@ class Demo extends React.Component {
                             {validator: Validators.isNotEmpty, errMsg: "不能为空"},
                             {validator: Validators.isNum, errMsg: "请输入数字"}
                          ]}/>
-                        
+
                         <ButtonGroupFormField jsxshow={false}>
                             <Button size="medium" type="primary" action="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
                             <Button size="medium" type="secondary" action="reset">取消</Button>

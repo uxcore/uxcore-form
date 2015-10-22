@@ -1,5 +1,5 @@
 let FormField = require('./FormField');
-let Constants = require("../Constants");
+let Constants = require("uxcore-const");
 let CheckboxGroup = require("uxcore-checkbox-group");
 let Item = CheckboxGroup.Item;
 
