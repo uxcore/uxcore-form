@@ -87,7 +87,9 @@ class Form extends React.Component {
         let me = this;
         let keys = Object.keys(me.fields);
         let data = me.props.jsxvalues || me.props.passedData || {};
-        me.setValues(data);
+        for (let i = 0; i < keys.length; i++) {
+            me.fields[keys[i]].handleDataChange(data[keys[i]] == undefined ? null : data[keys[i]], true)
+        }
     }
 
 
