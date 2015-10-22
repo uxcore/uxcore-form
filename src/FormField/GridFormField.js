@@ -47,8 +47,6 @@ class GridFormField extends FormField {
             jsxdata: this.state.value
         };
 
-        console.log("mode:",this.props.mode);
-
         let {className, jsxprefixCls, ...passedProps} = me.props;
         $.extend(renderGridProp, passedProps);
         if (me.props.mode == Constants.MODE.EDIT) {

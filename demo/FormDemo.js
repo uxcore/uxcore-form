@@ -83,7 +83,20 @@ class Demo extends React.Component {
     handleSetValues() {
         let me = this;
         me.refs.form.setValues({
-            test1: "我不是测试"
+            test1: "我不是测试",
+            dicts:{
+                   datas:[
+                      {
+                        city: "hz",
+                        email: "手动设置value",
+                        name: "手动设置33"
+                      }, {
+                        city: "hz",
+                        email: "手动设置33322",
+                        name: "手动设置3322"
+                      }
+                   ]
+                }
         })
     }
 
