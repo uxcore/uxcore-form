@@ -91,7 +91,7 @@ class SelectFormField extends FormField {
             return arr.indexOf(item) != -1
         });
         if (hasDeprecated) {
-            console.warn("SelectFormField: props same as uxcore-select2 can be passed without prefix 'jsx' now (exclude style). we will remove the support of the props mentioned above with prefix 'jsx' at uxcore-form@1.3.0 .");
+            // console.warn("SelectFormField: props same as uxcore-select2 can be passed without prefix 'jsx' now (exclude style). we will remove the support of the props mentioned above with prefix 'jsx' at uxcore-form@1.3.0 .");
         }
     }
 
