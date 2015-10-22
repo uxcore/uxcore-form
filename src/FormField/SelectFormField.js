@@ -119,7 +119,7 @@ class SelectFormField extends FormField {
                 onSearch: me.handleSearch.bind(me)
             };
 
-            ['multiple', 'allowClear', 'combobox', 'searchPlaceholder', 'tags', 'disabled', 'showSearch', 'placeholder'].forEach((item, index) => {
+            ['multiple', 'filterOption', 'allowClear', 'combobox', 'searchPlaceholder', 'tags', 'disabled', 'showSearch', 'placeholder', 'optionLabelProp'].forEach((item, index) => {
                 if (item in me.props) {
                     options[item] = me.props[item];
                 }
