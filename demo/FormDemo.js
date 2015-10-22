@@ -271,7 +271,7 @@ class Demo extends React.Component {
                             <RadioItem value="orange" text="Orange"/>
                             <RadioItem value="watermelon" text="Watermelon"/>
                         </RadioGroupFormField>
-                        <CheckboxGroupFormField jsxname="checkbox" jsxlabel="复选框" jsxdisabled={true}>
+                        <CheckboxGroupFormField jsxname="checkbox" jsxlabel="复选框">
                             <CheckboxItem value="air" text="天空"/>
                             <CheckboxItem value="sea" text="大海"/>
                         </CheckboxGroupFormField>
@@ -282,7 +282,7 @@ class Demo extends React.Component {
                         <SelectFormField
                          jsxlabel="单选"
                          jsxname="city"
-                         jsxdisabled={true}
+                         disabled={true}
                          jsxfetchUrl="http://suggest.taobao.com/sug"
                          afterFetch={(obj) => {
                             let data = {};
@@ -299,7 +299,7 @@ class Demo extends React.Component {
                          jsxlabel="单选 combo 模式"
                          jsxname="goods"
                          jsxfetchUrl="http://suggest.taobao.com/sug"
-                         jsxcombobox={true}
+                         combobox={true}
                          afterFetch={(obj) => {
                             let data = {};
                             obj.result.forEach((item, index) => {
@@ -310,7 +310,7 @@ class Demo extends React.Component {
                          <SelectFormField
                          jsxlabel="多选模式"
                          jsxname="goods2"
-                         jsxmultiple={true}
+                         multiple={true}
                          jsxfetchUrl="http://suggest.taobao.com/sug"
                          afterFetch={(obj) => {
                             let data = {};
@@ -326,6 +326,13 @@ class Demo extends React.Component {
                           jsxlabel="上传"
                           name="file"
                           url="http://test.yanbingbing.com/upload.php"/>
+                        <SelectFormField
+                            jsxname="option"
+                            jsxlabel="传 option">
+                            <Option value="1">1</Option>
+                            <Option value="2">2</Option>
+                            <Option value="3">3</Option>
+                        </SelectFormField>
                     </FormRow>
                     <FormRowTitle jsxtitle="级联类"/>
                     <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" jsxfrom="2015-10-2" jsxto="2015-10-10"/>
