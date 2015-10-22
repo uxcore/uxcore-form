@@ -30,16 +30,6 @@ gulp.task('pack_demo', function(cb) {
     });
 });
 
-gulp.task('less_component', function(cb) {
-    gulp.src(['./src/**/*.less'])
-        .pipe(sourcemaps.init())
-        .pipe(less())
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('./src'));
-    console.info('###### less_component done ######');
-    cb();
-});
-
 gulp.task('less_demo', function(cb) {
     gulp.src(['./tingle/**/src/*.css','./demo/**/*.less'])
         .pipe(sourcemaps.init())
@@ -69,7 +59,6 @@ gulp.task('reload_by_demo_css', ['less_demo'], function () {
 
 gulp.task('server', [
     'pack_demo',
-    'less_component',
     'less_demo'
 ], function() {
     browserSync({
@@ -81,12 +70,8 @@ gulp.task('server', [
 
     gulp.watch(['src/**/*.js', 'demo/**/*.js'], ['reload_by_js']);
 
-    gulp.watch('src/**/*.less', ['reload_by_component_css']);
+    gulp.watch('src/**/*.less', ['reload_by_demo_css']);
 
     gulp.watch('demo/**/*.less', ['reload_by_demo_css']);
 
-});
-
-gulp.task('ups', function() {
-    
 });
