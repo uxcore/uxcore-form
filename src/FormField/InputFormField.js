@@ -59,7 +59,7 @@ class InputFormField extends FormField {
         }
     }
 
-    renderCount() {
+    getCount() {
         let me = this;
         let children = me.props.children;
         let element;
@@ -69,10 +69,16 @@ class InputFormField extends FormField {
             }
         });
         if (!!element) {
-            return React.cloneElement(element, {
+            let total = element.props.total;
+            let Count = React.cloneElement(element, {
                 length: !!me.state.value ? me.state.value.length : 0,
                 key: "count"
-            })
+            });
+
+            return {
+                element: Count,
+                total: total
+            };
         }
     }
 
@@ -80,9 +86,13 @@ class InputFormField extends FormField {
         let me = this;
         let arr = [];
         let mode = me.props.jsxmode || me.props.mode;
-        let count = me.renderCount()
+        let count = me.getCount();
         let children = me.props.children;
         if (mode == Constants.MODE.EDIT) {
+            let otherOptions = {};
+            if (!!count) {
+                otherOptions.maxLength = count.total + "";
+            }
             arr.push(<input
                     className={classnames({
                         "kuma-input": true,
@@ -95,8 +105,12 @@ class InputFormField extends FormField {
                     disabled={(me.props.jsxdisabled == "disabled" || me.props.jsxdisabled == true) ? "disabled" : ""}
                     name={me.props.key}
                     value={me.state.formatValue}
-                    onChange={me.handleChange.bind(me)} />);
-            arr.push(count);
+                    onChange={me.handleChange.bind(me)} 
+                    {...otherOptions} />);
+            
+            if (!!count) {
+                arr.push(count.element);
+            }
         }
         else if (mode == Constants.MODE.VIEW) {
             arr.push(<span key="text">{me.state.formatValue}</span>)
