@@ -2,6 +2,8 @@ let FormField = require('./FormField');
 let Constants = require("uxcore-const");
 let assign = require('object-assign');
 let Upload = require("uxcore-uploader");
+let {Status} = Upload;
+let deepcopy = require('deepcopy');
 
 class UploadFormField extends FormField {
     constructor(props) {
@@ -9,6 +11,7 @@ class UploadFormField extends FormField {
         this.state = {
             files: []
         }
+        this.uploadData = [];
     }
 
     addSpecificClass() {
@@ -18,6 +21,13 @@ class UploadFormField extends FormField {
         }
         else {
             return me.props.jsxprefixCls
+        }
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        if (nextState.fromReset) {
+            this.uploadData = [];
+            this.refs.upload.reset();
         }
     }
 
@@ -37,17 +47,19 @@ class UploadFormField extends FormField {
             jsxtype,
             mode,
             style,
-            onfileuploadcompleted,
+            onfileuploadsuccess,
             ...options
         } = me.props;
 
         assign(options, {
-            onfileuploadcompleted: (file, status) => {
-                console.log(file);
+            onfileuploadsuccess: (file, status) => {
+                let data = file.response.getJson();
+                me.uploadData.push(deepcopy(data));
+                me.handleDataChange(me.uploadData)
             }
         });
 
-        return <Upload {...options}/>
+        return <Upload ref="upload" {...options}/>
     }
 }
 
@@ -63,7 +75,7 @@ UploadFormField.defaultProps = assign({}, FormField.defaultProps, {
     // 上传文件额外头, `flash下不支持`
     headers: [],
     // 上传文件是否自动附带cookie等信息, `flash下不支持`
-    withCredentials: true,
+    withCredentials: false,
     // 上传超时
     timeout: 0,
     // 是否允许分片上传, `flash下不支持`

@@ -25,7 +25,24 @@ FormCount.propTypes = {
 
 FormCount.displayName = "FormCount";
 
+class LeftAddon extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
+    render() {
+        let me = this;
+        return (
+            <div className="kuma-uxform-left-icon">
+                {me.props.children}
+            </div>
+        );
+    }
+}
+
+LeftAddon.defaultProps = {};
+LeftAddon.propTypes = {};
+LeftAddon.displayName = "LeftAddon";
 
 /**
  * extend FormField, rewrite renderField method
