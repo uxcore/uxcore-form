@@ -30,7 +30,7 @@
 .kuma-textarea {
     line-height: 20px;
     border: 1px @input-border solid;
-    padding: 8px 10px;
+    padding: 7px 10px;
     overflow: auto;
     font-family: Arial;
     font-size: @font-size-small;
@@ -84,6 +84,12 @@
         clear: both;
         height: 0;
     }
+    .kuma-mention:focus {
+        border: 1px @input-border-focus solid;
+        color: @input-color;
+        outline: none;
+        padding: 7px 10px;
+    }
     
     
 }
@@ -114,7 +120,7 @@
     padding: 0 5px 15px 0px;
     *zoom: 1;
     .kuma-label {
-        padding-top: 10px;
+        padding-top: 9px;
     }
     &:after { 
         clear: both;

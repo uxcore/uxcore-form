@@ -1,6 +1,7 @@
 let FormField = require('./FormField');
 let Constants = require("uxcore-const");
 let classnames = require('classnames');
+let assign = require('object-assign');
 let Mention = require('uxcore-mention');
 
 /**
@@ -253,8 +254,7 @@ class MentionFormField extends FormField {
         let mode = me.props.jsxmode || me.props.mode;
         if (mode == Constants.MODE.EDIT) {
             arr.push(<Mention
-                        width="400"
-                        height="200"
+                        width={me.props.width}
                         matchRange={[2, 6]}
                         source={me.getPersonData}
                         formatter={me.personDataFormatter}
@@ -267,7 +267,9 @@ class MentionFormField extends FormField {
  }
 
 MentionFormField.propTypes = FormField.propTypes;
-MentionFormField.defaultProps = FormField.defaultProps;
+MentionFormField.defaultProps = assign({}, FormField.defaultProps, {
+    width: "100%"
+});
 MentionFormField.displayName = "MentionFormField";
 module.exports = MentionFormField;
 
