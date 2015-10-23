@@ -8,6 +8,27 @@ class EditorFormField extends FormField {
         super(props)
     }
 
+    componentWillReceiveProps(nextProps) {
+        let me = this;
+        if (!me._isEqual(nextProps.value, me.props.value)) {
+            me.handleDataChange(nextProps.value, true);
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        let me = this;
+        let prevMode = prevProps.jsxmode || prevProps.mode;
+        let mode = me.props.jsxmode || me.props.mode;
+        if (prevMode == Constants.MODE.VIEW && mode == Constants.MODE.EDIT) {
+            me.refs.tinymce.resetValue(me.state.value);
+        }
+    }
+
+    _isEqual(a, b) {
+        return JSON.stringify(a) == JSON.stringify(b);
+    }
+
+
     handleChange(e, editor) {
         let me = this;
         me.handleDataChange(editor.getContent())
@@ -30,14 +51,20 @@ class EditorFormField extends FormField {
 
     renderField() {
         let me = this;
+        let mode = me.props.jsxmode || me.props.mode;
         if (me.state.fromReset) {
             me.refs.tinymce.resetValue(me.props.jsxcontent);
         }
-        return <Tinymce ref="tinymce"
-                        config={me.props.jsxconfig}
-                        content={me.props.jsxcontent}
-                        onChange={me.handleChange.bind(me)}
-                        onKeyup={me.handleKeyup.bind(me)}/>
+        if (mode == Constants.MODE.EDIT) {
+            return <Tinymce ref="tinymce"
+                            config={me.props.jsxconfig}
+                            content={me.props.jsxcontent}
+                            onChange={me.handleChange.bind(me)}
+                            onKeyup={me.handleKeyup.bind(me)}/>
+        }
+        else {
+            return <span key="text" dangerouslySetInnerHTML={{__html: me.state.value}}></span>
+        }
     }
 
 }

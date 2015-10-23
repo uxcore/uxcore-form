@@ -333,19 +333,19 @@ class Demo extends React.Component {
                             return data;
                          }}/>
                     </FormRow>
+                    <SelectFormField
+                        jsxname="option"
+                        jsxlabel="传 option">
+                        <Option value="1">1</Option>
+                        <Option value="2">2</Option>
+                        <Option value="3">3</Option>
+                    </SelectFormField>
                     <FormRow>
                         <UploadFormField
                           jsxname="upload"
                           jsxlabel="上传"
                           name="file"
                           url="http://test.yanbingbing.com/upload.php"/>
-                        <SelectFormField
-                            jsxname="option"
-                            jsxlabel="传 option">
-                            <Option value="1">1</Option>
-                            <Option value="2">2</Option>
-                            <Option value="3">3</Option>
-                        </SelectFormField>
                     </FormRow>
                     <FormRowTitle jsxtitle="级联类"/>
                     <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" jsxfrom="2015-10-2" jsxto="2015-10-10"/>

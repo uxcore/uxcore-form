@@ -37,8 +37,16 @@ class UploadFormField extends FormField {
             jsxtype,
             mode,
             style,
+            onfileuploadcompleted,
             ...options
         } = me.props;
+
+        assign(options, {
+            onfileuploadcompleted: (file, status) => {
+                console.log(file);
+            }
+        });
+
         return <Upload {...options}/>
     }
 }
