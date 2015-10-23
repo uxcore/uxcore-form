@@ -1,5 +1,5 @@
 let FormField = require('./FormField');
-let Constants = require('../Constants');
+let Constants = require('uxcore-const');
 let classnames = require('classnames');
 let Calendar = require('uxcore-calendar');
 let assign = require('object-assign');
@@ -49,7 +49,7 @@ class DateFormField extends FormField {
         let to = !!jsxto ? new Date(jsxto).getTime() : Infinity;
         if (me.props.mode == Constants.MODE.EDIT) {
             if (jsxtype == "single") {
-                return <Calendar 
+                return <Calendar
                         value={me.state.value}
                         onSelect={me.handleChange.bind(me)}
                         disabledDate={(current, value) => {
@@ -81,7 +81,7 @@ class DateFormField extends FormField {
                         value: null
                     });
                 }
-                arr.push(<Calendar 
+                arr.push(<Calendar
                         key="calendar1"
                         onSelect={me.handleCascadeChange.bind(me, 0)}
                         disabledDate={(current, value) => {
@@ -90,7 +90,7 @@ class DateFormField extends FormField {
                         {...others1}/>);
                 arr.push(<span key="split" className="kuma-uxform-split">-</span>)
 
-                arr.push(<Calendar 
+                arr.push(<Calendar
                         key="calendar2"
                         onSelect={me.handleCascadeChange.bind(me, 1)}
                         disabledDate={(current, value) => {

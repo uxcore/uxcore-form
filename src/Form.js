@@ -23,7 +23,7 @@ let ButtonGroupFormField = require("./FormField/ButtonGroupFormField");
 let EditorFormField = require("./FormField/EditorFormField");
 let GridFormField = require("./FormField/GridFormField");
 // let MentionFormField = require("./FormField/MentionFormField");
-let Constants = require("./Constants");
+let Constants = require("uxcore-const");
 let Validators = require("./Validators");
 
 let classnames = require('classnames');

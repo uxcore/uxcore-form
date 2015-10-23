@@ -83,7 +83,20 @@ class Demo extends React.Component {
     handleSetValues() {
         let me = this;
         me.refs.form.setValues({
-            test1: "我不是测试"
+            test1: "我不是测试",
+            dicts:{
+                   datas:[
+                      {
+                        city: "hz",
+                        email: "手动设置value",
+                        name: "手动设置33"
+                      }, {
+                        city: "hz",
+                        email: "手动设置33322",
+                        name: "手动设置3322"
+                      }
+                   ]
+                }
         })
     }
 
@@ -259,7 +272,7 @@ class Demo extends React.Component {
                             {validator: Validators.isNotEmpty, errMsg: "不能为空"},
                             {validator: Validators.isNum, errMsg: "请输入数字"}
                          ]}/>
-                        
+
                         <ButtonGroupFormField jsxshow={false}>
                             <Button size="medium" type="primary" action="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
                             <Button size="medium" type="secondary" action="reset">取消</Button>

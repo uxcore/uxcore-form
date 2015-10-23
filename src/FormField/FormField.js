@@ -1,4 +1,4 @@
-let Constants = require("../Constants");
+let Constants = require("uxcore-const");
 let classnames = require("classnames");
 let assign = require("object-assign");
 
@@ -58,7 +58,7 @@ class FormField extends React.Component {
             /*
              * why set state fromReset? some field like editor cannot be reset in the common way
              * so set this state to tell the field that you need to reset by yourself.
-             */ 
+             */
             fromReset: fromReset
         }, () => {
             let pass = true
@@ -70,7 +70,7 @@ class FormField extends React.Component {
                 pass: pass
             });
         });
-        
+
     }
 
 
@@ -101,12 +101,12 @@ class FormField extends React.Component {
     }
 
     /*
-     * rule can be an object, containing errMsg & validator, 
+     * rule can be an object, containing errMsg & validator,
      * and rule can also be an array containing such objects.
-     * this func will check them one by one, and return false 
+     * this func will check them one by one, and return false
      * unless all rules pass
      */
-    
+
     isDirty() {
         let me = this;
         let rules = me.props.jsxrules;
@@ -150,11 +150,11 @@ class FormField extends React.Component {
     formatValue(value) {
         return value;
     }
-    
-    /* 
+
+    /*
      * You should rewrite this method, when you are developing a new type of form field.
      */
-     
+
     renderField() {
 
     }
@@ -182,7 +182,7 @@ class FormField extends React.Component {
     addSpecificClass(classname) {
        return this.props.jsxprefixCls;
     }
-    
+
     render() {
         let me = this;
         let specificCls = me.addSpecificClass();

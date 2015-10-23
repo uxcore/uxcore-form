@@ -1,5 +1,14 @@
+/**
+ * GridFormField Component for uxcore
+ * @author zhouquan.yezq
+ *
+ * Copyright 2014-2015, Uxcore Team, Alinw.
+ * All rights reserved.
+ */
+
+
 let FormField = require('./FormField');
-let Constants = require("../Constants");
+let Constants = require("uxcore-const");
 let classnames = require('classnames');
 let assign = require('object-assign');
 let Grid = require("uxcore-grid");
@@ -31,11 +40,13 @@ class GridFormField extends FormField {
     }
 
     renderField() {
+
         let me = this;
         let arr = [],renderGridProp={
             mode: this.props.mode,
             jsxdata: this.state.value
         };
+
         let {className, jsxprefixCls, ...passedProps} = me.props;
         $.extend(renderGridProp, passedProps);
         if (me.props.mode == Constants.MODE.EDIT) {

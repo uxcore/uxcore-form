@@ -2,7 +2,7 @@
  * Created by xy on 15/4/13.
  */
 let FormField = require('./FormField');
-let Constants = require("../Constants");
+let Constants = require("uxcore-const");
 let RadioGroup = require('uxcore-radiogroup');
 let Item = RadioGroup.Item;
 
@@ -28,10 +28,10 @@ class RadioGroupFormField extends FormField {
         let me = this;
         let arr = [];
         if (me.props.mode == Constants.MODE.EDIT) {
-            arr.push(<RadioGroup 
-                    ref="el" 
+            arr.push(<RadioGroup
+                    ref="el"
                     key="radiogroup"
-                    value={me.state.value} 
+                    value={me.state.value}
                     onChange={me.handleChange.bind(me)}>
                         {me.props.children}
                     </RadioGroup>);
