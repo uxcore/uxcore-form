@@ -227,6 +227,10 @@ class MentionFormField extends FormField {
         super(props);
     }
 
+    handleChange(e) {
+        console.log(e.target.innerHTML);
+    }
+
     getPersonData(keyword, next) {
         setTimeout(function(){
             next(mockData);
@@ -259,7 +263,8 @@ class MentionFormField extends FormField {
                         source={me.getPersonData}
                         formatter={me.personDataFormatter}
                         panelFormatter={me.personPanelFormatter}
-                        mentionFormatter={me.personMentionFormatter}>
+                        mentionFormatter={me.personMentionFormatter}
+                        onChange={me.handleChange.bind(me)}>
                     </Mention>);
         }
         return arr;

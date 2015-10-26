@@ -99,16 +99,33 @@ class InputFormField extends FormField {
         }
     }
 
+    renderLeftAddon() {
+        let me = this;
+        let children = me.props.children;
+        let element;
+        React.Children.map(children, (child) => {
+            if (child && typeof child.type == 'function' && child.type.displayName == 'LeftAddon' ) {
+                element = child;
+            }
+        })
+
+        return element;
+    }
+
     renderField() {
         let me = this;
         let arr = [];
         let mode = me.props.jsxmode || me.props.mode;
         let count = me.getCount();
+        let leftAddon = me.renderLeftAddon();
         let children = me.props.children;
         if (mode == Constants.MODE.EDIT) {
             let otherOptions = {};
             if (!!count) {
                 otherOptions.maxLength = count.total + "";
+            }
+            if (!!leftAddon) {
+                arr.push(leftAddon);
             }
             arr.push(<input
                     className={classnames({
@@ -137,6 +154,7 @@ class InputFormField extends FormField {
 }
 
 InputFormField.Count = FormCount;
+InputFormField.LeftAddon = LeftAddon;
 InputFormField.propTypes = FormField.propTypes;
 InputFormField.defaultProps = FormField.defaultProps;
 InputFormField.displayName = "InputFormField";

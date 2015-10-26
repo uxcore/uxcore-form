@@ -22,7 +22,7 @@ let OtherFormField = require("./FormField/OtherFormField");
 let ButtonGroupFormField = require("./FormField/ButtonGroupFormField");
 let EditorFormField = require("./FormField/EditorFormField");
 let GridFormField = require("./FormField/GridFormField");
-// let MentionFormField = require("./FormField/MentionFormField");
+let MentionFormField = require("./FormField/MentionFormField");
 let Constants = require("uxcore-const");
 let Validators = require("./Validators");
 
@@ -205,7 +205,7 @@ Form.OtherFormField = OtherFormField;
 Form.ButtonGroupFormField = ButtonGroupFormField;
 Form.EditorFormField = EditorFormField;
 Form.GridFormField = GridFormField;
-// Form.MentionFormField = MentionFormField;
+Form.MentionFormField = MentionFormField;
 Form.Constants = Constants;
 Form.Validators = Validators;
 

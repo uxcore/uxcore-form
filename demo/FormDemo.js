@@ -35,7 +35,7 @@ let {
 
 let CheckboxItem = CheckboxGroupFormField.Item;
 let RadioItem = RadioGroupFormField.Item;
-let Count = InputFormField.Count;
+let {Count, LeftAddon} = InputFormField;
 let Option = SelectFormField.Option;
 
 class Demo extends React.Component {
@@ -103,7 +103,7 @@ class Demo extends React.Component {
 
     handleFormClick(data) {
         this.refs.form.setState({
-           mode:'VIEW'
+           mode: Constants.MODE.VIEW
         })
     }
 
@@ -113,7 +113,7 @@ class Demo extends React.Component {
     }
 
     handleChange(value, name, pass) {
-        console.log(value, name, pass);
+        // console.log(value, name, pass);
     }
 
     changeMode() {
@@ -254,7 +254,6 @@ class Demo extends React.Component {
             <div className="demo">
                 <Form ref="form" instantValidate={true} jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
-                    <MentionFormField jsxname="mention" jsxlabel="@人"/>
                     <FormRow>
                         <InputFormField
                          required={true}
@@ -262,6 +261,9 @@ class Demo extends React.Component {
                          jsxlabel="普通输入框"
                          jsxtips="请输入数字"
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}>
+                            <LeftAddon>
+                                <i className="kuma-icon kuma-icon-phone"></i>
+                            </LeftAddon>
                         </InputFormField>
                          <NumberInputFormField
                           jsxname="number"
@@ -291,6 +293,7 @@ class Demo extends React.Component {
                         </CheckboxGroupFormField>
                     </FormRow>
                     <TextAreaFormField jsxname="textArea" jsxlabel="多行文本框"/>
+                    <MentionFormField jsxname="mention" jsxlabel="@人"/>
                     <FormRowTitle jsxtitle="我是行标题2"/>
                     <FormRow>
                         <SelectFormField
