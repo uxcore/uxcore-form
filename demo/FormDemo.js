@@ -264,6 +264,7 @@ class Demo extends React.Component {
                             <LeftAddon>
                                 <i className="kuma-icon kuma-icon-phone"></i>
                             </LeftAddon>
+                            <Count total="20"/>
                         </InputFormField>
                          <NumberInputFormField
                           jsxname="number"

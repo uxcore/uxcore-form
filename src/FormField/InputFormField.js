@@ -130,7 +130,8 @@ class InputFormField extends FormField {
             arr.push(<input
                     className={classnames({
                         "kuma-input": true,
-                        'kuma-uxform-input-has-right': !!count
+                        'kuma-uxform-input-has-right': !!count,
+                        "kuma-uxform-input-has-left": !!leftAddon
                     })}
                     ref="root"
                     type="text"
