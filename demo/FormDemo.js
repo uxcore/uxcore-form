@@ -254,7 +254,6 @@ class Demo extends React.Component {
             <div className="demo">
                 <Form ref="form" instantValidate={true} jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
-                    <MentionFormField jsxname="mention" jsxlabel="@人"/>
                     <FormRow>
                         <InputFormField
                          required={true}
