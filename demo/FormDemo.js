@@ -256,6 +256,7 @@ class Demo extends React.Component {
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField
+                         jsxmode={Constants.MODE.VIEW}
                          required={true}
                          jsxname="test1"
                          jsxlabel="普通输入框"

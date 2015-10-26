@@ -48,10 +48,11 @@ class GridFormField extends FormField {
         };
 
         let {className, jsxprefixCls, ...passedProps} = me.props;
+        let mode = me.props.jsxmode || me.props.mode;
         $.extend(renderGridProp, passedProps);
-        if (me.props.mode == Constants.MODE.EDIT) {
+        if (mode == Constants.MODE.EDIT) {
              arr.push(<div key="grid" onBlur={this.onBlur.bind(this)}><Grid {...renderGridProp} ref="grid" /></div>);
-        }else if (me.props.mode == Constants.MODE.VIEW) {
+        }else if (mode == Constants.MODE.VIEW) {
              arr.push(<Grid key="grid" {...renderGridProp} />);
         }
         return arr;

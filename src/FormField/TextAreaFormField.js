@@ -29,7 +29,8 @@ class TextAreaFormField extends FormField {
 
     renderField() {
         let me = this;
-        if (me.props.mode == Constants.MODE.EDIT) {
+        let mode = me.props.jsxmode || me.props.mode;
+        if (mode == Constants.MODE.EDIT) {
             return  <textarea
                      disabled={me.props.jsxdisabled}
                      placeholder={me.props.jsxplaceholder}
@@ -38,7 +39,7 @@ class TextAreaFormField extends FormField {
                      value={me.state.value}
                      onChange={me.handleChange.bind(me)}/>
         }
-        else if (me.props.mode == Constants.MODE.VIEW) {
+        else if (mode == Constants.MODE.VIEW) {
             return <span>{me.state.value}</span>
         }
     }

@@ -27,7 +27,8 @@ class RadioGroupFormField extends FormField {
     renderField() {
         let me = this;
         let arr = [];
-        if (me.props.mode == Constants.MODE.EDIT) {
+        let mode = me.props.jsxmode || me.props.mode;
+        if (mode == Constants.MODE.EDIT) {
             arr.push(<RadioGroup
                     ref="el"
                     key="radiogroup"
