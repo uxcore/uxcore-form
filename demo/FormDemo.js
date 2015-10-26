@@ -35,7 +35,7 @@ let {
 
 let CheckboxItem = CheckboxGroupFormField.Item;
 let RadioItem = RadioGroupFormField.Item;
-let {Count, LeftAddon} = InputFormField;
+let {Count, LeftAddon, RightAddon} = InputFormField;
 let Option = SelectFormField.Option;
 
 class Demo extends React.Component {
@@ -264,6 +264,9 @@ class Demo extends React.Component {
                             <LeftAddon>
                                 <i className="kuma-icon kuma-icon-phone"></i>
                             </LeftAddon>
+                            <RightAddon>
+                                <span>元</span>
+                            </RightAddon>
                             <Count total="20"/>
                         </InputFormField>
                          <NumberInputFormField

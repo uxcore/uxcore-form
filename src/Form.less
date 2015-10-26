@@ -155,6 +155,7 @@
         }
         &.kuma-uxform-input-has-left {
             border-left: none;
+            padding-left: 0px;
         }
     }
 }
@@ -169,12 +170,26 @@
 
 .kuma-uxform-left-icon {
     display: table-cell;
-    width: 20px;
+    width: 30px;
     border: 1px solid @input-border;
     border-right: none;
     text-align: center;
 }
 
+.kuma-uxform-left-icon-focus {
+    border-color: @input-border-focus;
+    outline: none;
+}
+
+.kuma-uxform-right-icon {
+    display: table-cell;
+    width: 30px;
+    border: 1px solid @input-border;
+    border-left: none;
+    text-align: center;
+}
+
+.kuma-input:focus + .kuma-uxform-right-icon,
 .kuma-input:focus + .kuma-uxform-count {
     border: 1px @input-border-focus solid;
     border-left: none;

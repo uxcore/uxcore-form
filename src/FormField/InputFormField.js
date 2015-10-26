@@ -33,7 +33,10 @@ class LeftAddon extends React.Component {
     render() {
         let me = this;
         return (
-            <div className="kuma-uxform-left-icon">
+            <div className={classnames({
+                "kuma-uxform-left-icon": true,
+                "kuma-uxform-left-icon-focus": !!me.props.focus
+            })}>
                 {me.props.children}
             </div>
         );
@@ -43,6 +46,27 @@ class LeftAddon extends React.Component {
 LeftAddon.defaultProps = {};
 LeftAddon.propTypes = {};
 LeftAddon.displayName = "LeftAddon";
+
+
+class RightAddon extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        let me = this;
+        return (
+            <div className="kuma-uxform-right-icon ">
+                {me.props.children}
+            </div>
+        );
+    }
+}
+
+RightAddon.defaultProps = {};
+RightAddon.propTypes = {};
+RightAddon.displayName = "RightAddon";
+
 
 /**
  * extend FormField, rewrite renderField method
@@ -60,6 +84,18 @@ class InputFormField extends FormField {
         let me = this;
         let value = e.currentTarget.value;
         me.handleDataChange(me.deFormatValue(value));
+    }
+
+    handleFocus(e) {
+        this.setState({
+            focus: true
+        });
+    }
+
+    handleBlur(e) {
+        this.setState({
+            focus: false
+        })
     }
 
     deFormatValue(value) {
@@ -108,8 +144,26 @@ class InputFormField extends FormField {
                 element = child;
             }
         })
+        if (!!element) {
+            return React.cloneElement(element, {
+                focus: !!me.state.focus
+            });
+        }
+    }
 
-        return element;
+    renderRightAddon() {
+        let me = this;
+        let children = me.props.children;
+        let element;
+        React.Children.map(children, (child) => {
+            if (child && typeof child.type == 'function' && child.type.displayName == 'RightAddon' ) {
+                element = child;
+            }
+        })
+
+        if (!!element) {
+            return element;
+        }
     }
 
     renderField() {
@@ -118,19 +172,20 @@ class InputFormField extends FormField {
         let mode = me.props.jsxmode || me.props.mode;
         let count = me.getCount();
         let leftAddon = me.renderLeftAddon();
+        let rightAddon = me.renderRightAddon();
         let children = me.props.children;
         if (mode == Constants.MODE.EDIT) {
             let otherOptions = {};
-            if (!!count) {
-                otherOptions.maxLength = count.total + "";
-            }
+            // if (!!count) {
+            //     otherOptions.maxLength = count.total + "";
+            // }
             if (!!leftAddon) {
                 arr.push(leftAddon);
             }
             arr.push(<input
                     className={classnames({
                         "kuma-input": true,
-                        'kuma-uxform-input-has-right': !!count,
+                        'kuma-uxform-input-has-right': !!count || !!rightAddon,
                         "kuma-uxform-input-has-left": !!leftAddon
                     })}
                     ref="root"
@@ -140,10 +195,15 @@ class InputFormField extends FormField {
                     disabled={(me.props.jsxdisabled == "disabled" || me.props.jsxdisabled == true) ? "disabled" : ""}
                     name={me.props.key}
                     value={me.state.formatValue}
+                    onFocus={me.handleFocus.bind(me)}
+                    onBlur={me.handleBlur.bind(me)}
                     onChange={me.handleChange.bind(me)} 
                     {...otherOptions} />);
             
-            if (!!count) {
+            if (!!rightAddon) {
+                arr.push(rightAddon);
+            }
+            else if (!!count) {
                 arr.push(count.element);
             }
         }
@@ -156,6 +216,7 @@ class InputFormField extends FormField {
 
 InputFormField.Count = FormCount;
 InputFormField.LeftAddon = LeftAddon;
+InputFormField.RightAddon = RightAddon;
 InputFormField.propTypes = FormField.propTypes;
 InputFormField.defaultProps = FormField.defaultProps;
 InputFormField.displayName = "InputFormField";
