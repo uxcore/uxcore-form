@@ -55,7 +55,8 @@ class UploadFormField extends FormField {
             onfileuploadsuccess: (file, status) => {
                 let data = file.response.getJson();
                 me.uploadData.push(deepcopy(data));
-                me.handleDataChange(me.uploadData)
+                me.handleDataChange(me.uploadData);
+                !!me.props.onfileuploadsuccess && me.props.onfileuploadsuccess(file, status);
             }
         });
 

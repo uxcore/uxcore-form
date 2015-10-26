@@ -98,8 +98,9 @@ class SelectFormField extends FormField {
     renderField() {
         let me = this;
         let arr = [];
+        let mode = me.props.jsxmode || me.props.mode;
         me.hasDeprecatedProps();
-        if (me.props.mode == Constants.MODE.EDIT) {
+        if (mode == Constants.MODE.EDIT) {
             let options = {
                 ref: "el",
                 key: "select",
@@ -137,7 +138,7 @@ class SelectFormField extends FormField {
                         {me._processData()}
                     </Select>);
         }
-        else if (me.props.mode == Constants.MODE.VIEW){
+        else if (mode == Constants.MODE.VIEW){
             arr.push(<span key="select">{me.state.data[me.state.value]}</span>);
         }
         return arr;

@@ -1,5 +1,3 @@
-
-
 //基于variables->form.less
 
 
@@ -30,7 +28,7 @@
 .kuma-textarea {
     line-height: 20px;
     border: 1px @input-border solid;
-    padding: 8px 10px;
+    padding: 7px 10px;
     overflow: auto;
     font-family: Arial;
     font-size: @font-size-small;
@@ -84,6 +82,15 @@
         clear: both;
         height: 0;
     }
+    .kuma-mention:focus {
+        border: 1px @input-border-focus solid;
+        color: @input-color;
+        outline: none;
+        padding: 7px 10px;
+    }
+    .kuma-mention-panel {
+        z-index: 1;
+    }
     
     
 }
@@ -114,7 +121,7 @@
     padding: 0 5px 15px 0px;
     *zoom: 1;
     .kuma-label {
-        padding-top: 10px;
+        padding-top: 9px;
     }
     &:after { 
         clear: both;
@@ -148,6 +155,7 @@
         }
         &.kuma-uxform-input-has-left {
             border-left: none;
+            padding-left: 0px;
         }
     }
 }
@@ -160,6 +168,28 @@
     border-left: none;
 }
 
+.kuma-uxform-left-icon {
+    display: table-cell;
+    width: 30px;
+    border: 1px solid @input-border;
+    border-right: none;
+    text-align: center;
+}
+
+.kuma-uxform-left-icon-focus {
+    border-color: @input-border-focus;
+    outline: none;
+}
+
+.kuma-uxform-right-icon {
+    display: table-cell;
+    width: 30px;
+    border: 1px solid @input-border;
+    border-left: none;
+    text-align: center;
+}
+
+.kuma-input:focus + .kuma-uxform-right-icon,
 .kuma-input:focus + .kuma-uxform-count {
     border: 1px @input-border-focus solid;
     border-left: none;

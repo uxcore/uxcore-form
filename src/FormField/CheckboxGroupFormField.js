@@ -25,7 +25,8 @@ class CheckboxGroupFormField extends FormField {
 
     renderField() {
         let me = this;
-        if (me.props.mode == Constants.MODE.EDIT) {
+        let mode = me.props.jsxmode || me.props.mode;
+        if (mode == Constants.MODE.EDIT) {
             return <CheckboxGroup disabled={!!me.props.jsxdisabled} onChange={me.handleChange.bind(me)} value={me.state.value || []}>
                         {me.props.children}
                    </CheckboxGroup>

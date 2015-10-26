@@ -43,7 +43,8 @@ class CascadeSelectFormField extends FormField {
         let length = me.getDataLength();
         let arr = [];
         let data = {};
-        if (me.props.mode == Constants.MODE.EDIT) {
+        let mode = me.props.jsxmode || me.props.mode;
+        if (mode == Constants.MODE.EDIT) {
             try {
                 data = me.props.jsxdata.contents;
             }
@@ -91,7 +92,7 @@ class CascadeSelectFormField extends FormField {
                 }
             }
         }
-        else if (me.props.mode == Constants.MODE.VIEW) {
+        else if (mode == Constants.MODE.VIEW) {
             if (me.state.value instanceof Array) {
                 let data = me.props.jsxdata;
                 let textArr = me.state.value.map((item, index) => {

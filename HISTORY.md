@@ -1,3 +1,11 @@
+## 1.1.2
+
+`NEW` add InputFormField plugin Count/LeftAddon/rightAddon.
+`NEW` uploadFormFiled can be used.
+`NEW` add new API setValues.
+`NEW` label now support rich text.
+`FIX` fix github issue #28.
+
 ## 1.1.1
 
 `NEW` add props instantValidate to meet the need that one don't want validate instantly

@@ -52,13 +52,13 @@ class EditorFormField extends FormField {
     renderField() {
         let me = this;
         let mode = me.props.jsxmode || me.props.mode;
-        if (me.state.fromReset) {
+        if (me.state.fromReset && mode == Constants.MODE.EDIT) {
             me.refs.tinymce.resetValue(me.props.jsxcontent);
         }
         if (mode == Constants.MODE.EDIT) {
             return <Tinymce ref="tinymce"
                             config={me.props.jsxconfig}
-                            content={me.props.jsxcontent}
+                            content={me.state.value}
                             onChange={me.handleChange.bind(me)}
                             onKeyup={me.handleKeyup.bind(me)}/>
         }

@@ -437,10 +437,22 @@ http://uxcore.github.io/uxcore/
 |jsxplaceholder|string|optional|""|占位符|
 |jsxdisabled|boolean|optional|false|disable 状态|
 
-* 插件：Count，通过 InputFormField.Count 取得，一个内置的计数器，用法如下：
+* 插件：
+    * Count，通过 InputFormField.Count 取得，一个内置的计数器，用法如下：
 ```javascript
 <InputFormField>
     <Count total="20">
+</InputFormField>
+```
+    * LeftAddon/RightAddon，通过 InputFormField.LeftAddon/InputFormField.RightAddon 取得，给 input 左侧加入自定义的图标或文字，用法如下：
+```javascript
+<InputFormField>
+    <LeftAddon>
+        <i className="kuma-icon kuma-icon-phone"></i>
+    </LeftAddon>
+    <RightAddon>
+        <span>元</span>
+    </RightAddon>
 </InputFormField>
 ```
 
@@ -474,14 +486,16 @@ http://uxcore.github.io/uxcore/
 |jsxstyle|obj|optional|-|与 react 传入 style 的方式相同，修改选择框的样式|
 |beforeFetch|func|optional|-|会传入 {q: value}， value 为搜索框中变化的值，在发出 ajax 请求之前，将数据处理为应该发送的格式，并需返回该数据。|
 |afterFetch|func|optional|-|会传入返回的数据， 将其处理为 jsxdata 的格式并返回|
-|jsxshowSearch|func|optional|true|是否显示搜索栏|
-|jsxtags|bool|optional|false|是否启用 tag 模式|
-|jsxmultiple|bool|optional|false|是否启用 multiple 模式|
-|jsxallowClear|bool|optional|false|是否显示清除按钮|
-|jsxsearchPlaceholder|string|optional|""|搜索框默认文字|
-|jsxcombobox|bool|optional|false|标准搜索模式，在该模式下没有下拉框，通过输入产生提示|
-|jsxplaceholder|string|optional|"请下拉选择"|占位符|
-|jsxdisabled|boolean|optional|false|disable 状态|
+|showSearch|func|optional|true|是否显示搜索栏|
+|tags|bool|optional|false|是否启用 tag 模式|
+|multiple|bool|optional|false|是否启用 multiple 模式|
+|allowClear|bool|optional|false|是否显示清除按钮|
+|searchPlaceholder|string|optional|""|搜索框默认文字|
+|combobox|bool|optional|false|标准搜索模式，在该模式下没有下拉框，通过输入产生提示|
+|placeholder|string|optional|"请下拉选择"|占位符|
+|disabled|boolean|optional|false|disable 状态|
+|optionLabelProp|string|optional|'children'|选择 Option 的哪个 prop 作为选择框中的显示。|
+|optionFilterProp|string|optional|-|输入项过滤对应的 option 属性|
 
 see datails in [uxcore-select2](https://www.npmjs.com/package/uxcore-select2)
 
@@ -494,10 +508,11 @@ see datails in [uxcore-select2](https://www.npmjs.com/package/uxcore-select2)
 * Item：通过 CheckboxGroupFormField.Item 取的，有两个 props
     * value
     * text：显示的值
+    * disabled：该 Item 的 disable 状态。
 * 使用方式：
 ```
 <CheckboxGroupFormField>
-    <Item value="1" text="a">
+    <Item value="1" text="a" disabled={true}>
     <Item value="2" text="b">
     <Item value="3" text="c">
 </CheckboxGroupFormField>

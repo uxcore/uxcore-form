@@ -47,7 +47,8 @@ class DateFormField extends FormField {
         let {onSelect, style, prefixCls, value, jsxtype, jsxfrom, jsxto, disabledDate, ...others} = me.props;
         let from = !!jsxfrom ? new Date(jsxfrom).getTime() : 0;
         let to = !!jsxto ? new Date(jsxto).getTime() : Infinity;
-        if (me.props.mode == Constants.MODE.EDIT) {
+        let mode = me.props.jsxmode || me.props.mode;
+        if (mode == Constants.MODE.EDIT) {
             if (jsxtype == "single") {
                 return <Calendar
                         value={me.state.value}
@@ -103,7 +104,7 @@ class DateFormField extends FormField {
                 return arr;
             }
         }
-        else if (me.props.mode == Constants.MODE.VIEW) {
+        else if (mode == Constants.MODE.VIEW) {
             return <span>{me.state.value}</span>
         }
     }
