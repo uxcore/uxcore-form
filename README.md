@@ -372,7 +372,7 @@ http://uxcore.github.io/uxcore/
 |jsxprefixCls|string|optional|"kuma-form"|默认类名，用户可以通过修改此项来完成样式的定制|
 |jsxmode|string|optional|"EDIT"|Form 编辑和只读模式，传值方式见 demo|
 |jsxvalues|object|optional|-|传入表单的初始值，格式见 Usage，每一个 key 与 formField 中的 jsxname 相对应，注意是初始值，不要把 onChange 中的变化同步到这里|
-|jsxonChange|function|optional|noop|当表单中值有变化时触发，传回 values，格式同 jsxvalues|
+|jsxonChange|function(values, name, pass)|optional|noop|当表单中值有变化时触发，传回 values，格式同 jsxvalues，同时传回发生变化的表单域的 name，以及该表单域是否通过校验|
 |instantValidate|boolean|optional|true|是否开启即时校验|
 
 ### jsxvalues 的格式
