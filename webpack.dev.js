@@ -1,11 +1,11 @@
 var fs = require('fs');
 var webpack = require('webpack');
 
-// 扫描tingle目录下的所有module
+// 扫描uxcore组件目录下的所有module
 function getUxcoreModuleAlias() {
     var alias = {};
 
-    // 判断是否存在tingle目录
+    // 判断是否存在uxcore目录
     if (!fs.existsSync('./uxcore')) return alias;
 
     var modules = fs.readdirSync('./uxcore');
@@ -29,26 +29,24 @@ module.exports = {
     module: {
         loaders: [
             {
+
                 test: /\.js(x)*$/,
                 // uxcore以外的modules都不需要经过babel解析
                 exclude: function (path) {
                     var isNpmModule = !!path.match(/node_modules/);
-                    var isUxcore = !!path.match(/node_modules\/uxcore/);
+                    var isUxcore = !!path.match(/node_modules\/uxcore/) || !!path.match(/node_modules\/@ali\/uxcore/);
                     return isNpmModule & !isUxcore;
                 },
                 loader: 'babel-loader?stage=1'
-            },
-            {
-                test: /\.css$/,
-                loader: 'style-loader!raw'
             }
         ]
     },
     resolve: {
-        alias: getUxcoreModuleAlias()
+       alias: getUxcoreModuleAlias()
     },
     externals: {
-        react: 'var React' // 相当于把全局的React作为模块的返回 module.exports = React;
+        react: 'var React', // 相当于把全局的React作为模块的返回 module.exports = React;
+        'react-dom': 'var ReactDOM'
     },
     plugins: [
         new webpack.DefinePlugin({

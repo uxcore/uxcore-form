@@ -29,7 +29,7 @@ let {
     OtherFormField,
     ButtonGroupFormField,
     EditorFormField,
-    GridFormField,
+    TableFormField,
     MentionFormField
 } = Form;
 
@@ -114,6 +114,16 @@ class Demo extends React.Component {
 
     handleChange(value, name, pass) {
         // console.log(value, name, pass);
+        if (name == 'a') {
+            this.setState({
+                a: value[name]
+            })
+        }
+        else if (name == "b") {
+            this.setState({
+                b: value[name]
+            })
+        }
     }
 
     changeMode() {
@@ -256,6 +266,26 @@ class Demo extends React.Component {
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField
+                            jsxlabel="最小值"
+                            jsxname="a"
+                            jsxrules={{
+                                validator: function(value) {
+                                     return (value + 0) <= (parseInt(me.state.b) || Infinity);
+                                },
+                                errMsg: "不能大于最大值"
+                            }}/>
+                        <InputFormField
+                            jsxlabel="最大值"
+                            jsxname="b"
+                            jsxrules={{
+                                validator: function(value) {
+                                     return parseInt(value) >= (parseInt(me.state.a) || -Infinity);
+                                },
+                                errMsg: "不能小于最小值"
+                            }}/>
+                    </FormRow>
+                    <FormRow>
+                        <InputFormField
                          jsxmode={Constants.MODE.VIEW}
                          required={true}
                          jsxname="test1"
@@ -366,8 +396,8 @@ class Demo extends React.Component {
                                      jsxlabel="富文本编辑器"
                                      jsxcontent="1"/>
 
-                    <GridFormField jsxname="dicts" jsxlabel="薪酬字典" {...renderProps}>
-                    </GridFormField>
+                    <TableFormField jsxname="dicts" jsxlabel="薪酬字典" {...renderProps}>
+                    </TableFormField>
                     <ButtonGroupFormField>
                         <Button size="medium" action="submit" onClick={me.handleClick.bind(me)}>提交</Button>
                         <Button size="medium" type="secondary" action="reset">取消</Button>

@@ -1,5 +1,5 @@
 /**
- * GridFormField Component for uxcore
+ * TableFormField Component for uxcore
  * @author zhouquan.yezq
  *
  * Copyright 2014-2015, Uxcore Team, Alinw.
@@ -11,24 +11,24 @@ let FormField = require('./FormField');
 let Constants = require("uxcore-const");
 let classnames = require('classnames');
 let assign = require('object-assign');
-let Grid = require("uxcore-grid");
+let Table = require("uxcore-table");
 
 /**
  * extend FormField, rewrite renderField method
  **/
-class GridFormField extends FormField {
+class TableFormField extends FormField {
     constructor(props) {
         super(props);
     }
 
     getValue()  {
-        return this.refs.grid.getData();
+        return this.refs.table.getData();
     }
 
     addSpecificClass() {
         let me = this;
         if (me.props.jsxprefixCls == "kuma-uxform-field") {
-            return me.props.jsxprefixCls + " kuma-grid-uxform-field" ;
+            return me.props.jsxprefixCls + " kuma-table-uxform-field" ;
         }
         else {
             return me.props.jsxprefixCls
@@ -42,26 +42,26 @@ class GridFormField extends FormField {
     renderField() {
 
         let me = this;
-        let arr = [],renderGridProp={
+        let arr = [],renderTableProp={
             mode: this.props.mode,
             jsxdata: this.state.value
         };
 
         let {className, jsxprefixCls, ...passedProps} = me.props;
         let mode = me.props.jsxmode || me.props.mode;
-        $.extend(renderGridProp, passedProps);
+        $.extend(renderTableProp, passedProps);
         if (mode == Constants.MODE.EDIT) {
-             arr.push(<div key="grid" onBlur={this.onBlur.bind(this)}><Grid {...renderGridProp} ref="grid" /></div>);
+             arr.push(<div key="table" onBlur={this.onBlur.bind(this)}><Table {...renderTableProp} ref="table" /></div>);
         }else if (mode == Constants.MODE.VIEW) {
-             arr.push(<Grid key="grid" {...renderGridProp} />);
+             arr.push(<Table key="table" {...renderTableProp} />);
         }
         return arr;
     }
 }
 
-GridFormField.propTypes = FormField.propTypes;
-GridFormField.defaultProps = assign({}, FormField.defaultProps, {
+TableFormField.propTypes = FormField.propTypes;
+TableFormField.defaultProps = assign({}, FormField.defaultProps, {
     width: "100%"
 });
-GridFormField.displayName = "GridFormField";
-module.exports = GridFormField;
+TableFormField.displayName = "TableFormField";
+module.exports = TableFormField;
