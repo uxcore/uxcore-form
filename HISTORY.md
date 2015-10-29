@@ -1,3 +1,7 @@
+## 1.2.0
+
+`CHANGED` change gridFormField to TableFormField
+
 ## 1.1.2
 
 `NEW` add InputFormField plugin Count/LeftAddon/rightAddon.
