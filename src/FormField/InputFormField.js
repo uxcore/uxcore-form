@@ -146,7 +146,8 @@ class InputFormField extends FormField {
         })
         if (!!element) {
             return React.cloneElement(element, {
-                focus: !!me.state.focus
+                focus: !!me.state.focus,
+                key: "left"
             });
         }
     }
@@ -162,7 +163,9 @@ class InputFormField extends FormField {
         })
 
         if (!!element) {
-            return element;
+            return React.cloneElement(element, {
+                key: "right"
+            });
         }
     }
 

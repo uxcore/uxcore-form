@@ -266,27 +266,6 @@ class Demo extends React.Component {
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField
-                            jsxlabel="最小值"
-                            jsxname="a"
-                            jsxrules={{
-                                validator: function(value) {
-                                     return (value + 0) <= (parseInt(me.state.b) || Infinity);
-                                },
-                                errMsg: "不能大于最大值"
-                            }}/>
-                        <InputFormField
-                            jsxlabel="最大值"
-                            jsxname="b"
-                            jsxrules={{
-                                validator: function(value) {
-                                     return parseInt(value) >= (parseInt(me.state.a) || -Infinity);
-                                },
-                                errMsg: "不能小于最小值"
-                            }}/>
-                    </FormRow>
-                    <FormRow>
-                        <InputFormField
-                         jsxmode={Constants.MODE.VIEW}
                          required={true}
                          jsxname="test1"
                          jsxlabel="普通输入框"
@@ -298,7 +277,7 @@ class Demo extends React.Component {
                             <RightAddon>
                                 <span>元</span>
                             </RightAddon>
-                            <Count total="20"/>
+                            <Count total={20}/>
                         </InputFormField>
                          <NumberInputFormField
                           jsxname="number"
@@ -328,7 +307,6 @@ class Demo extends React.Component {
                         </CheckboxGroupFormField>
                     </FormRow>
                     <TextAreaFormField jsxname="textArea" jsxlabel="多行文本框"/>
-                    <MentionFormField jsxname="mention" jsxlabel="@人"/>
                     <FormRowTitle jsxtitle="我是行标题2"/>
                     <FormRow>
                         <SelectFormField

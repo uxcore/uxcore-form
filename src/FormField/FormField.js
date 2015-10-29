@@ -164,16 +164,17 @@ class FormField extends React.Component {
         let mode = me.props.jsxmode || me.props.mode;
         if (mode != Constants.MODE.EDIT) return;
         return  <li className="kuma-uxform-errormsg">
-                    <i className="kuma-icon kuma-icon-close-hover"></i>
+                    <i className="kuma-icon kuma-icon-error"></i>
                     {me.state.errMsg}
                 </li>
     }
 
     renderLabel() {
         let me = this;
+        let mode = me.props.jsxmode || me.props.mode;
         if (me.props.jsxshowLabel) {
             return  <label className="kuma-label">
-                        <span className="required">{me.props.required ? "* " : ""}</span>
+                        <span className="required">{(me.props.required && mode == Constants.MODE.EDIT) ? "* " : ""}</span>
                         <span className="label-content" dangerouslySetInnerHTML={{__html: me.props.jsxlabel}} />
                     </label>
         }

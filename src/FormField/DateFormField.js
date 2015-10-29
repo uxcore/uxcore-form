@@ -105,7 +105,12 @@ class DateFormField extends FormField {
             }
         }
         else if (mode == Constants.MODE.VIEW) {
-            return <span>{me.state.value}</span>
+            if (jsxtype == "single") {
+                return <span>{me.state.value}</span>
+            }
+            else {
+                return <span>{me.state.value.join(" - ")}</span>
+            }
         }
     }
 }
