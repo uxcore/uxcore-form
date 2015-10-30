@@ -109,7 +109,7 @@ class DateFormField extends FormField {
                 return <span>{me.state.value}</span>
             }
             else {
-                return <span>{me.state.value.join(" - ")}</span>
+                return <span>{!!me.state.value ? me.state.value.join(" - ") : ""}</span>
             }
         }
     }
