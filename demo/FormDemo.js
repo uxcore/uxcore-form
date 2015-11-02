@@ -8,6 +8,8 @@
 
 let classnames = require('classnames');
 let Button = require('uxcore-button');
+let Layout = require('uxcore-layout');
+console.log(Layout);
 
 
 let Form = require('../src');
