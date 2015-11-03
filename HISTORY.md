@@ -1,3 +1,8 @@
+## 1.2.1
+
+`CHANGED` add error border color
+`CHANGED` some little style change
+
 ## 1.2.0
 
 `CHANGED` change gridFormField to TableFormField

@@ -48,7 +48,7 @@ class Demo extends React.Component {
             jsxvalues: {
                 test1: "我是测试",
                 fruit: "apple",
-                city: "nj",
+                // city: "nj",
                 textArea: "我是多行文本",
                 // date: "2015-09-01",
                 checkbox: ["sea"],
@@ -308,13 +308,14 @@ class Demo extends React.Component {
                             <CheckboxItem value="sea" text="大海"/>
                         </CheckboxGroupFormField>
                     </FormRow>
-                    <TextAreaFormField jsxname="textArea" jsxlabel="多行文本框"/>
+                    <TextAreaFormField jsxname="textArea" jsxlabel="多行文本框" jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}/>
                     <FormRowTitle jsxtitle="我是行标题2"/>
                     <FormRow>
                         <SelectFormField
                          jsxlabel="单选"
                          jsxname="city"
-                         disabled={true}
+                         jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}
+                         disabled={false}
                          jsxfetchUrl="http://suggest.taobao.com/sug"
                          afterFetch={(obj) => {
                             let data = {};
@@ -367,7 +368,7 @@ class Demo extends React.Component {
                           url="http://test.yanbingbing.com/upload.php"/>
                     </FormRow>
                     <FormRowTitle jsxtitle="级联类"/>
-                    <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" jsxfrom="2015-10-2" jsxto="2015-10-10"/>
+                    <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期"/>
                     <CascadeSelectFormField
                      jsxdata={casData}
                      jsxname="cascade"
@@ -376,7 +377,7 @@ class Demo extends React.Component {
                                      jsxlabel="富文本编辑器"
                                      jsxcontent="1"/>
 
-                    <TableFormField jsxname="dicts" jsxlabel="薪酬字典" {...renderProps}>
+                    <TableFormField jsxname="dicts" jsxlabel="薪酬字典" {...renderProps} jsxrules={{validator:() => {return false}, errMsg: "测试"}}>
                     </TableFormField>
                     <ButtonGroupFormField>
                         <Button size="medium" action="submit" onClick={me.handleClick.bind(me)}>提交</Button>
