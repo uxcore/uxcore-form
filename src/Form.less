@@ -1,55 +1,4 @@
 //基于variables->form.less
-
-
-.kuma-input {
-    padding: 5px 10px;
-    height: 28px;
-    line-height: 28px;
-    border: 1px solid @input-border;
-    color: @input-color;
-    font-size: @font-size-small;
-    width: 100%;
-}
-
-.kuma-input:hover,
-.kuma-textarea:hover,
-.kuma-input-hover {
-    border: 1px @input-border solid;
-}
-
-.kuma-input:focus,
-.kuma-textarea:focus,
-.kuma-input-focus {
-    border: 1px @brand-primary solid;
-    color: @input-color;
-    outline: none;
-}
-
-.kuma-textarea {
-    line-height: 20px;
-    border: 1px @input-border solid;
-    padding: 7px 10px;
-    overflow: auto;
-    font-family: Arial;
-    font-size: @font-size-small;
-    color: @input-color;
-    width:100%;
-    resize: vertical;
-}
-
-.kuma-input[disabled],
-.kuma-textarea[disabled] {
-    border: 1px solid @input-border;
-    background: @input-bg-disabled;
-}
-
-.kuma-input:disabled,
-.kuma-textarea:disabled {
-    border: 1px solid @input-border;
-    background: @input-bg-disabled;
-}
-
-
 .kuma-label {
     float: none;
     width: 100px;
@@ -58,21 +7,61 @@
     padding-right:0px;
     text-align: right;
     color: @label-color;
-    display:table-cell;
+    display: table-cell;
     vertical-align: baseline;
     vertical-align: -webkit-baseline-middle;
     .required {
-       color: Red; 
-       font-family: Simsun;
+        color: Red;
+        font-family: Simsun;
     }
     .label-content {
         display: inline-block;
         line-height: 14px;
     }
 }
+.kuma-input {
+    padding: 5px 10px;
+    height: 30px;
+    line-height: 30px;
+}
+.kuma-textarea {
+    line-height: 20px;
+    padding: 7px 10px;
+    overflow: auto;
+    font-family: Arial;
+    resize: vertical;
+}
 
+.kuma-input, .kuma-textarea {
+    width: 100%;
+    border: 1px solid @input-border;
+    font-size: @font-size-small;
+    color: @input-color;
+    border-radius: @input-radius;
+    &[disabled], &:disabled {
+        border: 1px solid @input-border;
+        background: @input-bg-disabled;
+    }
+    &:hover {
+        border: 1px @input-border solid;
+    }
+    &:focus {
+        border: 1px @brand-primary solid;
+        color: @input-color;
+        outline: none;
+    }
+}
 
-    
+.kuma-input-hover {
+    border: 1px @input-border solid;
+}
+
+.kuma-input-focus {
+    border: 1px @brand-primary solid;
+    color: @input-color;
+    outline: none;
+}
+
 .kuma-uxform {
     zoom: 1;
     &:after {
@@ -92,13 +81,11 @@
     .kuma-mention-panel {
         z-index: 1;
     }
-    
-    
 }
 
 .kuma-uxform-row-title {
-    font-size: 14px;
     padding: 15px 0 20px;
+    font-size: 14px;
     line-height: 14px;
     font-weight: bold;
     clear: both;
@@ -119,20 +106,20 @@
     display: table;
     float: left;
     width: 100%;
-    padding: 0 5px 15px 0px;
+    padding: 0 5px 12px 0px;
     *zoom: 1;
     .kuma-label {
         padding-top: 9px;
         padding-right: 20px;
     }
-    &:after { 
+    &:after {
         clear: both;
         content: '.';
         display: block;
         height: 0;
         visibility: hidden;
     }
-    select { 
+    select {
         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAWCAYAAADwza0nAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODBFQkMyNkZDRUJFMTFFNEIzQzZGOUUwMjFDMTZDRkQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODBFQkMyNzBDRUJFMTFFNEIzQzZGOUUwMjFDMTZDRkQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4MEVCQzI2RENFQkUxMUU0QjNDNkY5RTAyMUMxNkNGRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4MEVCQzI2RUNFQkUxMUU0QjNDNkY5RTAyMUMxNkNGRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkYdGT4AAADNSURBVHjaYuzp6WHAASqgdAc2SRYcmvyAuAWImYD4OhBvRFfAhEWTORAvB2JmIGYE4mVQMbwaVYB4MxBzIYlxQcVUcGkUBeLtUBodYMgx4TMVn2uYoH5Zjs0f+PwP0jgZGorEApDayaDoyIJikgATA5lgpGicBsT/ScTTQBpzgXgTCZaB1OaCNP4F4kggPkmEppNQtX9hfvwGxL5AfAePpjtQNd/QA+c1EHtCaXSAIceEz1R8rmHC449/0BCMxuZ/FjwhVw1lb8CmACDAABlpNwXghNgSAAAAAElFTkSuQmCC");
         background-position: center right -15px;
         background-repeat: no-repeat;
@@ -148,16 +135,19 @@
         vertical-align: middle;
     }
     .kuma-input {
-        color: @input-color;
+        height: 34px;
         vertical-align: middle;
         *vertical-align: -5px;
-        height: 36px;
         &.kuma-uxform-input-has-right {
             border-right: none;
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
         }
         &.kuma-uxform-input-has-left {
+            padding-left: 0;
             border-left: none;
-            padding-left: 0px;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
         }
     }
 }
@@ -176,6 +166,8 @@
     border: 1px solid @input-border;
     border-right: none;
     text-align: center;
+    border-bottom-left-radius: @input-radius;
+    border-top-left-radius: @input-radius;
 }
 
 .kuma-uxform-left-icon-focus {
@@ -189,6 +181,8 @@
     border: 1px solid @input-border;
     border-left: none;
     text-align: center;
+    border-bottom-right-radius: @input-radius;
+    border-top-right-radius: @input-radius;
 }
 
 .kuma-input:focus + .kuma-uxform-right-icon,
@@ -211,10 +205,10 @@
     width: 100%;
     .kuma-uxform-tips {
         padding-top: 8px;
-        color: #999999;
+        color: #999;
         .kuma-icon {
-            color: #39bffc;
             margin-right: 4px;
+            color: #39bffc;
         }
     }
     .kuma-uxform-errormsg {
@@ -272,7 +266,7 @@
         width: 200px;
         display: inline-block;
         .kuma-icon-calender {
-            top: 9px;
+            top: 7px;
         }
     }
 }
@@ -281,18 +275,21 @@
     display: inline-block;
     margin: 0 10px;
     vertical-align: middle;
-    line-height: 36px;
+    line-height: 34px;
 }
 
 .kuma-select-uxform-field,
 .kuma-cascade-select-uxform-field {
     .kuma-select2-selection {
-        min-height: 36px;
+        min-height: 34px;
         .kuma-select2-selection__rendered {
             line-height: 34px;
         }
         .kuma-select2-arrow {
             height: 34px;
+        }
+        .kuma-select2-search__field {
+            vertical-align: top;
         }
     }
 }
@@ -311,11 +308,3 @@
         width: 200px;
     }
 }
-
-
-
-
-
-
-
-
