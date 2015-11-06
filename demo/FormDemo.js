@@ -49,7 +49,7 @@ class Demo extends React.Component {
                 test1: "我是测试",
                 fruit: "apple",
                 // city: "nj",
-                textArea: "我是多行文本",
+                // textArea: "我是多行文本",
                 // date: "2015-09-01",
                 checkbox: ["sea"],
                 dicts:{
@@ -368,7 +368,7 @@ class Demo extends React.Component {
                           url="http://test.yanbingbing.com/upload.php"/>
                     </FormRow>
                     <FormRowTitle jsxtitle="级联类"/>
-                    <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期"/>
+                    <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" format="yyyy/MM/dd"/>
                     <CascadeSelectFormField
                      jsxdata={casData}
                      jsxname="cascade"

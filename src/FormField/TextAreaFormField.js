@@ -36,7 +36,7 @@ class TextAreaFormField extends FormField {
                      placeholder={me.props.jsxplaceholder}
                      className="kuma-textarea"
                      ref="root"
-                     value={me.state.value}
+                     value={me.state.value || ""}
                      onChange={me.handleChange.bind(me)}/>
         }
         else if (mode == Constants.MODE.VIEW) {
