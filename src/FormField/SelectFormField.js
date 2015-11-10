@@ -30,9 +30,9 @@ class SelectFormField extends FormField {
 
     fetchData(value) {
         let me = this;
-        $.ajax({
+        let ajaxOptions = {
             url: me.props.jsxfetchUrl,
-            dataType: "jsonp",
+            dataType: me.props.dataType || 'json',
             data: me.props.beforeFetch({q: value}),
             success: (data) => {
                 me.setState({
@@ -42,8 +42,13 @@ class SelectFormField extends FormField {
             fail: () => {
                 console.log("Fetch Data failed");
             }
-        })
+        }
+        if (/\.jsonp/.test(me.props.jsxfetchUrl)) {
+            ajaxOptions.dataType = "jsonp"
+        }
+        $.ajax(ajaxOptions);
     }
+
     handleChange(value) {
         let me = this;
         me.handleDataChange(value);
