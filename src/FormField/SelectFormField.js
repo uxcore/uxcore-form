@@ -28,6 +28,13 @@ class SelectFormField extends FormField {
         }
     }
 
+    componentWillMount() {
+        let me = this;
+        if (me.props.jsxfetchUrl) {
+            me.fetchData();
+        }
+    }
+
     fetchData(value) {
         let me = this;
         let ajaxOptions = {
@@ -131,7 +138,7 @@ class SelectFormField extends FormField {
                 }
             });
 
-            if (!me.props.jsxmultiple || me.state.fromReset) {
+            if (!me.props.jsxmultiple && !me.props.multiple || me.state.fromReset) {
                 options.value = me.state.value || [];
             }
 

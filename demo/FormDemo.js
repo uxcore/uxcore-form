@@ -316,7 +316,6 @@ class Demo extends React.Component {
                          jsxname="city"
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}
                          disabled={false}
-                         jsxfetchUrl="http://suggest.taobao.com/sug"
                          afterFetch={(obj) => {
                             let data = {};
                             obj.result.forEach((item, index) => {
@@ -332,6 +331,7 @@ class Demo extends React.Component {
                          jsxlabel="单选 combo 模式"
                          jsxname="goods"
                          jsxfetchUrl="http://suggest.taobao.com/sug"
+                         dataType="jsonp"
                          combobox={true}
                          afterFetch={(obj) => {
                             let data = {};
@@ -345,6 +345,15 @@ class Demo extends React.Component {
                          jsxname="goods2"
                          multiple={true}
                          jsxfetchUrl="http://suggest.taobao.com/sug"
+                         dataType="jsonp"
+                         beforeFetch={function(data) {
+                            console.log(data);
+                            if (data.q == undefined) {
+                                data.q = "a"
+                            }
+                            return data;
+                         }}
+                         dataType="jsonp"
                          afterFetch={(obj) => {
                             let data = {};
                             obj.result.forEach((item, index) => {

@@ -55,9 +55,6 @@ class Form extends React.Component {
             console.warn("Each field needs a name to identify itself");
         }
         else {
-            if(name=='grid') {
-                debugger;
-            }
             this.fields[name] = field
         }
     }
