@@ -1,3 +1,7 @@
+## 1.2.2
+
+`FIX` fix issue #36 #37
+
 ## 1.2.1
 
 `CHANGED` add error border color
