@@ -4,6 +4,7 @@ let classnames = require('classnames');
 let Calendar = require('uxcore-calendar');
 let assign = require('object-assign');
 let update = React.addons.update;
+let deepcopy = require('deepcopy');
 
 class DateFormField extends FormField {
     constructor(props) {
@@ -17,13 +18,13 @@ class DateFormField extends FormField {
 
     handleCascadeChange(i, value) {
         let me = this;
-        let values = update(me.state.value, {}) || [];
-        if (!!values[i]) {
-            values = values.slice(0, i);
-            values.push(new Date(value).toJSON());
+        let values = deepcopy(me.state.value) || [];
+        values[i] = new Date(value).toJSON();
+        if (i == 0 && !!values[1] && new Date(value).getTime() > new Date(values[1]).getTime()) {
+            values.pop();
         }
-        else {
-            values[i] = new Date(value).toJSON();
+        if (i == 1 && !!values[0] && new Date(value).getTime() < new Date(values[0]).getTime()) {
+            values[0] = undefined;
         }
         me.handleDataChange(values);
     }
