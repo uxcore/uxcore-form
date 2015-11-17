@@ -7,7 +7,7 @@ class NumberInputFormField extends InputFormField {
     }
 
     formatValue(value) {
-        if (!value) return "";
+        if (value === undefined || value === null) return "";
         let me = this;
         value = value + "";
         if (me.props.jsxtype == "money") {
