@@ -35,6 +35,31 @@ class SelectFormField extends FormField {
         }
     }
 
+    handleDataChange(value, fromReset, label) {
+        let me = this;
+        me.setState({
+            value: value,
+            label: label || [],
+            formatValue: me.formatValue(value),
+            error: !!fromReset ? false: me.state.error,
+            /*
+             * why set state fromReset? some field like editor cannot be reset in the common way
+             * so set this state to tell the field that you need to reset by yourself.
+             */
+            fromReset: fromReset
+        }, () => {
+            let pass = true
+            if (!fromReset) {
+                pass = me.doValidate();
+            }
+            me.props.handleDataChange(me, {
+                value: value,
+                pass: pass
+            });
+        });
+
+    }
+
     fetchData(value) {
         let me = this;
         let ajaxOptions = {
@@ -56,11 +81,11 @@ class SelectFormField extends FormField {
         $.ajax(ajaxOptions);
     }
 
-    handleChange(value) {
+    handleChange(value, label) {
         let me = this;
-        me.handleDataChange(value);
+        me.handleDataChange(value, false, label);
     }
-    handleSearch(value, label) {
+    handleSearch(value) {
         let me = this;
         if (me.props.jsxfetchUrl) {
             me.fetchData(value);
@@ -117,6 +142,7 @@ class SelectFormField extends FormField {
                 ref: "el",
                 key: "select",
                 optionLabelProp: "children",
+                label: me.state.label || [],
                 style: me.props.jsxstyle,
                 multiple: me.props.jsxmultiple,
                 allowClear: me.props.jsxallowClear,
@@ -138,7 +164,7 @@ class SelectFormField extends FormField {
                 }
             });
 
-            if (!me.props.jsxmultiple && !me.props.multiple || me.state.fromReset) {
+            if (!me.props.combobox || me.state.fromReset) {
                 options.value = me.state.value || [];
             }
 

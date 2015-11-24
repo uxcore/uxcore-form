@@ -69,7 +69,6 @@ class Form extends React.Component {
         if (!fromMount) {
             me.props.jsxonChange(me._copy(me.data), field.props.jsxname, fieldData.pass);
         }
-        // console.log(me.data);
     }
 
     getValues(force) {

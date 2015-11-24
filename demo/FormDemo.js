@@ -9,6 +9,7 @@
 let classnames = require('classnames');
 let Button = require('uxcore-button');
 let Layout = require('uxcore-layout');
+let Select = require('uxcore-select2');
 console.log(Layout);
 
 
@@ -48,7 +49,7 @@ class Demo extends React.Component {
             jsxvalues: {
                 test1: "我是测试",
                 fruit: "apple",
-                number: 0,
+                number: 1,
                 // city: "nj",
                 // textArea: "我是多行文本",
                 // date: "2015-09-01",
@@ -248,10 +249,15 @@ class Demo extends React.Component {
             }},
             { dataKey: 'name',title:"姓名",width: 200,type:"text"},
             { dataKey: 'email',title:"Email",width: 200,type:"text"},
-            { dataKey: 'action1', title:'操作1', width:100, type:"action",items:[
-              {title:'增加', type:"addRow", cb: function(rowData){console.info(rowData)}},
-              {title:'删除', type:"delRow", cb: function(rowData){console.info(rowData)}}
-            ]}
+            { dataKey: 'action1', title:'操作1', width:100, type:"action",actions:{
+                "增加": function(rowData) {
+                    me.refs.grid.addEmptyRow();
+                },
+                "删除": function(rowData) {
+                    me.refs.grid.delRow(rowData);
+                }
+              }
+            }
         ];
 
 
@@ -313,13 +319,6 @@ class Demo extends React.Component {
                          jsxname="city"
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}
                          disabled={false}
-                         afterFetch={(obj) => {
-                            let data = {};
-                            obj.result.forEach((item, index) => {
-                                data[item[1]] = item[0];
-                            });
-                            return data;
-                         }}
                          jsxdata={me.state.jsxdata}/>
                         <DateFormField format="yyyy-MM-dd HH:mm:ss" jsxname="date" jsxlabel="日期"/>
                     </FormRow>
@@ -362,9 +361,9 @@ class Demo extends React.Component {
                     <SelectFormField
                         jsxname="option"
                         jsxlabel="传 option">
-                        <Option value="1">1</Option>
-                        <Option value="2">2</Option>
-                        <Option value="3">3</Option>
+                        <Option value="1">第一个选项</Option>
+                        <Option value="2">第二个选项</Option>
+                        <Option value="3">第三个选项</Option>
                     </SelectFormField>
                     <FormRow>
                         <UploadFormField
@@ -383,7 +382,7 @@ class Demo extends React.Component {
                                      jsxlabel="富文本编辑器"
                                      jsxcontent="1"/>
 
-                    <TableFormField jsxname="dicts" jsxlabel="薪酬字典" {...renderProps} jsxrules={{validator:() => {return false}, errMsg: "测试"}}>
+                    <TableFormField jsxname="dicts" jsxlabel="薪酬字典" {...renderProps} >
                     </TableFormField>
                     <ButtonGroupFormField>
                         <Button size="medium" action="submit" onClick={me.handleClick.bind(me)}>提交</Button>

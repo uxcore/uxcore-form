@@ -43,18 +43,19 @@ class TableFormField extends FormField {
 
         let me = this;
         let arr = [],renderTableProp={
-            mode: this.props.mode,
+            // mode: this.props.mode,
             jsxdata: this.state.value
         };
 
         let {className, jsxprefixCls, ...passedProps} = me.props;
         let mode = me.props.jsxmode || me.props.mode;
         $.extend(renderTableProp, passedProps);
-        if (mode == Constants.MODE.EDIT) {
-             arr.push(<div key="table" onBlur={this.onBlur.bind(this)}><Table {...renderTableProp} ref="table" /></div>);
-        }else if (mode == Constants.MODE.VIEW) {
-             arr.push(<Table key="table" {...renderTableProp} />);
-        }
+        // if (mode == Constants.MODE.EDIT) {
+        //      arr.push(<div key="table" onBlur={this.onBlur.bind(this)}><Table {...renderTableProp} ref="table" /></div>);
+        // }else if (mode == Constants.MODE.VIEW) {
+        //      arr.push(<Table key="table" {...renderTableProp} />);
+        // }
+        arr.push(<Table key="table" {...renderTableProp} />);
         return arr;
     }
 }
