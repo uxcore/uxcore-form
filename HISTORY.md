@@ -1,3 +1,8 @@
+## 1.2.3
+
+`FIX` fix issue #35 #38 #42 #44
+`CHANED` small style change with uxcore-select2
+
 ## 1.2.2
 
 `FIX` fix issue #36 #37
