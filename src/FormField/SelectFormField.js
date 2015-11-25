@@ -67,8 +67,12 @@ class SelectFormField extends FormField {
             dataType: me.props.dataType || 'json',
             data: me.props.beforeFetch({q: value}),
             success: (data) => {
+                let fetchData = me.props.afterFetch(data);
+                if (!!me.props.jsxdata) {
+                    fetchData = assign({}, fetchData, me.props.jsxdata);
+                }
                 me.setState({
-                    data: me.props.afterFetch(data)
+                    data: fetchData
                 });
             },
             fail: () => {

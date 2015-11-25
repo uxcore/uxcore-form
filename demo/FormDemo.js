@@ -342,6 +342,10 @@ class Demo extends React.Component {
                          multiple={true}
                          jsxfetchUrl="http://suggest.taobao.com/sug"
                          dataType="jsonp"
+                         jsxdata={{
+                            "a": "选项1",
+                            "b": "选项2"
+                         }}
                          beforeFetch={function(data) {
                             console.log(data);
                             if (data.q == undefined) {
