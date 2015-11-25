@@ -6,6 +6,7 @@ let Constants = require("uxcore-const");
 let Select = require('uxcore-select2');
 let assign = require('object-assign');
 let {Option} = Select;
+let selectOptions = ['multiple', 'filterOption', 'allowClear', 'combobox', 'searchPlaceholder', 'tags', 'disabled', 'showSearch', 'placeholder', 'optionLabelProp', 'maxTagTextLength', 'dropdownMatchSelectWidth', 'dropdownClassName', 'notFoundContent'];
 
 class SelectFormField extends FormField {
     constructor(props) {
@@ -33,6 +34,16 @@ class SelectFormField extends FormField {
         if (me.props.jsxfetchUrl) {
             me.fetchData();
         }
+    }
+
+    componentDidMount() {
+        let me = this;
+        me.props.attachFormField(me);
+        me.props.handleDataChange(me, {
+            value: me.props.value,
+            pass: true
+        }, true);
+        me.hasDeprecatedProps();
     }
 
     handleDataChange(value, fromReset, label) {
@@ -64,7 +75,7 @@ class SelectFormField extends FormField {
         let me = this;
         let ajaxOptions = {
             url: me.props.jsxfetchUrl,
-            dataType: me.props.dataType || 'json',
+            dataType: me.props.dataType,
             data: me.props.beforeFetch({q: value}),
             success: (data) => {
                 let fetchData = me.props.afterFetch(data);
@@ -94,6 +105,9 @@ class SelectFormField extends FormField {
         if (me.props.jsxfetchUrl) {
             me.fetchData(value);
         }
+        else {
+            me.props.onSearch(value);
+        }
     }
     _processData() {
         let me = this;
@@ -107,7 +121,7 @@ class SelectFormField extends FormField {
         }
         else {
             let arr = values.map(function(value, index) {
-                return <Option key={value}>{me.state.data[value]}</Option>
+                return <Option key={value} title={me.state.data[value]}>{me.state.data[value]}</Option>
             });
             return arr;
         }
@@ -132,7 +146,7 @@ class SelectFormField extends FormField {
             return arr.indexOf(item) != -1
         });
         if (hasDeprecated) {
-            // console.warn("SelectFormField: props same as uxcore-select2 can be passed without prefix 'jsx' now (exclude style). we will remove the support of the props mentioned above with prefix 'jsx' at uxcore-form@1.3.0 .");
+            console.warn("SelectFormField: props same as uxcore-select2 can be passed without prefix 'jsx' now (exclude style). we will remove the support of the props mentioned above with prefix 'jsx' at uxcore-form@1.3.0 .");
         }
     }
 
@@ -140,7 +154,7 @@ class SelectFormField extends FormField {
         let me = this;
         let arr = [];
         let mode = me.props.jsxmode || me.props.mode;
-        me.hasDeprecatedProps();
+        
         if (mode == Constants.MODE.EDIT) {
             let options = {
                 ref: "el",
@@ -162,7 +176,7 @@ class SelectFormField extends FormField {
                 onSearch: me.handleSearch.bind(me)
             };
 
-            ['multiple', 'filterOption', 'allowClear', 'combobox', 'searchPlaceholder', 'tags', 'disabled', 'showSearch', 'placeholder', 'optionLabelProp'].forEach((item, index) => {
+            selectOptions.forEach((item, index) => {
                 if (item in me.props) {
                     options[item] = me.props[item];
                 }
@@ -201,7 +215,8 @@ SelectFormField.propTypes = assign({}, FormField.propTypes, {
     jsxmultiple: React.PropTypes.bool,
     jsxallowClear: React.PropTypes.bool,
     jsxsearchPlaceholder: React.PropTypes.string,
-    optionFilterProp: React.PropTypes.string
+    optionFilterProp: React.PropTypes.string,
+    dataType: React.PropTypes.string
 });
 SelectFormField.defaultProps = assign({}, FormField.defaultProps, {
     jsxstyle: {},
@@ -215,7 +230,8 @@ SelectFormField.defaultProps = assign({}, FormField.defaultProps, {
     jsxtags: false,
     jsxmultiple: false,
     jsxsearchPlaceholder: "",
-    optionFilterProp: "children"
+    optionFilterProp: "children",
+    dataType: 'json'
 });
 
 module.exports = SelectFormField;

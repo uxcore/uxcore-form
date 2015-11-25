@@ -160,22 +160,13 @@ $ gulp server
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|
 |jsxdata|object|optional|-|传入用于生成列表的数据，格式为{value: text}|
-|jsxfetchUrl|string|optional|-|如果 Select 是通过搜索异步获取选项，则需要填入此项，目前指支持 jsonp。|
+|jsxfetchUrl|string|optional|-|如果 Select 是通过搜索异步获取选项，则需要填入此项|
 |jsxstyle|obj|optional|-|与 react 传入 style 的方式相同，修改选择框的样式|
 |beforeFetch|func|optional|-|会传入 {q: value}， value 为搜索框中变化的值，在发出 ajax 请求之前，将数据处理为应该发送的格式，并需返回该数据。|
 |afterFetch|func|optional|-|会传入返回的数据， 将其处理为 jsxdata 的格式并返回|
-|showSearch|func|optional|true|是否显示搜索栏|
-|tags|bool|optional|false|是否启用 tag 模式|
-|multiple|bool|optional|false|是否启用 multiple 模式|
-|allowClear|bool|optional|false|是否显示清除按钮|
-|searchPlaceholder|string|optional|""|搜索框默认文字|
-|combobox|bool|optional|false|标准搜索模式，在该模式下没有下拉框，通过输入产生提示|
-|placeholder|string|optional|"请下拉选择"|占位符|
-|disabled|boolean|optional|false|disable 状态|
-|optionLabelProp|string|optional|'children'|选择 Option 的哪个 prop 作为选择框中的显示。|
-|optionFilterProp|string|optional|-|输入项过滤对应的 option 属性|
+|dataType|string|optional|'json'|发送 ajax 请求的类型|
 
-see datails in [uxcore-select2](https://www.npmjs.com/package/uxcore-select2)
+此外，SelectFormField 还支持 [uxcore-select2](https://www.npmjs.com/package/uxcore-select2) 除 onSelect/onDeselect 外的全部属性。
 
 ### CheckboxGroupFormField
 
