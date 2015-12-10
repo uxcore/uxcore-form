@@ -160,7 +160,6 @@ class SelectFormField extends FormField {
                 ref: "el",
                 key: "select",
                 optionLabelProp: "children",
-                label: me.state.label || [],
                 style: me.props.jsxstyle,
                 multiple: me.props.jsxmultiple,
                 allowClear: me.props.jsxallowClear,
@@ -176,11 +175,18 @@ class SelectFormField extends FormField {
                 onSearch: me.handleSearch.bind(me)
             };
 
+
             selectOptions.forEach((item, index) => {
                 if (item in me.props) {
                     options[item] = me.props[item];
                 }
             });
+
+
+            // only jsxfetchUrl mode need pass label, for the options always change.
+            if (!!me.props.jsxfetchUrl) {
+                options.label = me.state.label || [];
+            }
 
             if (!me.props.combobox || me.state.fromReset) {
                 options.value = me.state.value || [];
