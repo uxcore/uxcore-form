@@ -1,3 +1,7 @@
+## 1.2.4
+
+`FIX` fix issue #47 selectFormField does not show the default value.
+
 ## 1.2.3
 
 `FIX` fix issue #35 #38 #42 #44
