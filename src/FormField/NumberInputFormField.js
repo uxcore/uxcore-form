@@ -1,4 +1,5 @@
 let InputFormField = require('./InputFormField');
+let Formatter = require("uxcore-formatter");
 let assign = require('object-assign');
 
 class NumberInputFormField extends InputFormField {
@@ -11,15 +12,18 @@ class NumberInputFormField extends InputFormField {
         let me = this;
         value = value + "";
         if (me.props.jsxtype == "money") {
-            return value.replace(/(\d{3})(?!$)/g, function(match, $1) {
-                return $1 + " ";
-            });
+            if (value.match(/\.(\d+)/) && value.match(/\.(\d+)/)[1].length > me.props.fixedNum) {
+                return Formatter.money(value, me.props.delimiter, me.props.fixedNum)
+            }
+            else {
+                return Formatter.money(value, me.props.delimiter)
+            }
         }
         else if (me.props.jsxtype == "cnmobile") {
-            return value.replace(/^(\+?0?86)(?!$)/, "$1 ").replace(/(\d{4})(?!$)/g, "$1 ");
+            return Formatter.cnmobile(value, me.props.delimiter);
         }
         else if (me.props.jsxtype == "card") {
-            return value.replace(/(\d{4})(?!$)/g, "$1 ");
+            return Formatter.card(value, me.props.delimiter);
         }
         else {
             return value;
@@ -29,7 +33,7 @@ class NumberInputFormField extends InputFormField {
     deFormatValue(value) {
         let me = this;
         if (me.props.jsxtype == "money" || me.props.jsxtype == "cnmobile" || me.props.jsxtype == "card") {
-            return value.split(" ").join("");
+            return value.split(me.props.delimiter).join("");
         }
         else {
             return value;
@@ -50,10 +54,13 @@ class NumberInputFormField extends InputFormField {
 
 NumberInputFormField.displayName = "NumberInputFormField";
 NumberInputFormField.propTypes = assign({}, InputFormField.propTypes, {
-    jsxtype: React.PropTypes.string
+    jsxtype: React.PropTypes.string,
+    delimiter: React.PropTypes.string,
+    fixedNum: React.PropTypes.number
 });
 NumberInputFormField.defaultProps = assign({}, InputFormField.defaultProps, {
-    jsxtype: ''
+    jsxtype: '',
+    delimiter: ' '
 });
 
 module.exports = NumberInputFormField;
