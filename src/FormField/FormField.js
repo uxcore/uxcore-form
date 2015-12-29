@@ -110,7 +110,7 @@ class FormField extends React.Component {
     isDirty() {
         let me = this;
         let rules = me.props.jsxrules;
-        let isDirty = false;
+        var isDirty = false;
         let errMsg = "";
         if (typeof rules == "object" && !Array.isArray(rules)) {
             isDirty = !rules.validator(me.state.value);
