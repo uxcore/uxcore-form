@@ -97,7 +97,7 @@ class CascadeSelectFormField extends FormField {
                 let data = me.props.jsxdata;
                 let textArr = me.state.value.map((item, index) => {
                     data = data.contents.filter((ele, i) => {
-                        return ele.value = item
+                        return ele.value == item
                     })[0];
                     return data.text;
 

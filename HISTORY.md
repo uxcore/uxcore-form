@@ -1,3 +1,7 @@
+## 1.2.5
+
+`CHANGED` remove TableFormField and dependency uxcore-table
+
 ## 1.2.4
 
 `FIX` fix issue #47 selectFormField does not show the default value.
