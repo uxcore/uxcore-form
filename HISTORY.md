@@ -1,6 +1,10 @@
-## 1.2.5
+## 1.2.6
 
 `CHANGED` remove TableFormField and dependency uxcore-table
+
+## 1.2.5
+
+`CHANGED` fix bug when using babel 6
 
 ## 1.2.4
 
