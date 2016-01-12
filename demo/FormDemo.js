@@ -396,7 +396,10 @@ class Demo extends React.Component {
                         <Button type="secondary" onClick={me.update.bind(me)}>强制刷新</Button>
                     </ButtonGroupFormField>
                 </Form>
-                <InputFormField jsxlabel="测试" />
+                <InputFormField jsxlabel="测试" standalone={true} message={{
+                    type: 'tip',
+                    message: '非空'
+                }}/>
             </div>
         );
     }

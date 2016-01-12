@@ -16,11 +16,13 @@ class FormField extends React.Component {
 
     componentDidMount() {
         let me = this;
-        me.props.attachFormField(me);
-        me.props.handleDataChange(me, {
-            value: me.props.value,
-            pass: true
-        }, true);
+        if (!me.props.standalone) {
+          me.props.attachFormField(me);
+          me.props.handleDataChange(me, {
+              value: me.props.value,
+              pass: true
+          }, true);
+        }
     }
 
 
@@ -36,7 +38,10 @@ class FormField extends React.Component {
     }
 
     componentWillUnmount () {
-        this.props.detachFormField(this);
+        let me = this;
+        if (!me.props.standalone) {
+            this.props.detachFormField(this);
+        }
     }
 
     getName() {
@@ -59,13 +64,13 @@ class FormField extends React.Component {
              * why set state fromReset? some field like editor cannot be reset in the common way
              * so set this state to tell the field that you need to reset by yourself.
              */
-            fromReset: fromReset
+            fromReset: !!fromReset
         }, () => {
             let pass = true
-            if (!fromReset) {
+            if (!fromReset && !me.props.standalone) {
                 pass = me.doValidate();
             }
-            me.props.handleDataChange(me, {
+            !!me.props.handleDataChange && me.props.handleDataChange(me, {
                 value: value,
                 pass: pass
             });
@@ -135,7 +140,13 @@ class FormField extends React.Component {
         let me = this;
         let mode = me.props.jsxmode || me.props.mode;
         if (mode != Constants.MODE.EDIT) return;
-        if(!!this.props.jsxtips && !me.state.error) {
+        if (me.props.standalone && me.props.message && me.props.message.type == "tip") {
+            return <li className="kuma-uxform-tips">
+                        <i className="kuma-icon kuma-icon-information"></i>
+                        {me.props.message.message}
+                    </li>
+        }
+        if (!!this.props.jsxtips && !me.state.error) {
             return <li className="kuma-uxform-tips">
                         <i className="kuma-icon kuma-icon-information"></i>
                         {this.props.jsxtips}
@@ -163,10 +174,18 @@ class FormField extends React.Component {
         let me = this;
         let mode = me.props.jsxmode || me.props.mode;
         if (mode != Constants.MODE.EDIT) return;
-        return  <li className="kuma-uxform-errormsg">
-                    <i className="kuma-icon kuma-icon-error"></i>
-                    {me.state.errMsg}
-                </li>
+        if (me.props.standalone && me.props.message && me.props.message.type == "error") {
+            return <li className="kuma-uxform-errormsg">
+                        <i className="kuma-icon kuma-icon-error"></i>
+                        {me.props.message.message}
+                    </li>
+        }
+        if (!!me.state.error) {
+            return  <li className="kuma-uxform-errormsg">
+                        <i className="kuma-icon kuma-icon-error"></i>
+                        {me.state.errMsg}
+                    </li>
+        }
     }
 
     renderLabel() {
@@ -205,7 +224,7 @@ class FormField extends React.Component {
                 })}>
                     <li className="kuma-uxform-field-core">{me.renderField()}</li>
                     {me.renderTips()}
-                    {!!me.state.error && me.renderErrorMsg()}
+                    {me.renderErrorMsg()}
                 </ul>
             </div>
         );
@@ -225,6 +244,7 @@ FormField.propTypes = {
     jsxlabel: React.PropTypes.string,
     jsxtips: React.PropTypes.string,
     jsxrules: React.PropTypes.oneOfType([React.PropTypes.object, React.PropTypes.array]),
+    standalone: React.PropTypes.bool,
     required: React.PropTypes.bool
 };
 
@@ -237,6 +257,8 @@ FormField.defaultProps = {
     jsxplaceholder: "", // 在未选值之前的占位符
     jsxlabel: "", // 左侧表单域标题
     jsxtips: "", // 提醒
+    standalone: false, // 是否处于独立使用模式
+    mode: Constants.MODE.EDIT,
     required: false
 };
 

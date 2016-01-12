@@ -1,3 +1,7 @@
+## 1.2.8
+
+`NEW` add standalone mode for formField
+
 ## 1.2.6
 
 `CHANGED` remove TableFormField and dependency uxcore-table

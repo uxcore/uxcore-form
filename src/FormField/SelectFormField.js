@@ -38,11 +38,13 @@ class SelectFormField extends FormField {
 
     componentDidMount() {
         let me = this;
-        me.props.attachFormField(me);
-        me.props.handleDataChange(me, {
-            value: me.props.value,
-            pass: true
-        }, true);
+        if (!me.props.standalone) {
+            me.props.attachFormField(me);
+            me.props.handleDataChange(me, {
+                value: me.props.value,
+                pass: true
+            }, true);
+        }
         me.hasDeprecatedProps();
     }
 
@@ -154,7 +156,7 @@ class SelectFormField extends FormField {
         let me = this;
         let arr = [];
         let mode = me.props.jsxmode || me.props.mode;
-        
+
         if (mode == Constants.MODE.EDIT) {
             let options = {
                 ref: "el",
