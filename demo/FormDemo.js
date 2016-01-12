@@ -400,6 +400,13 @@ class Demo extends React.Component {
                     type: 'tip',
                     message: '非空'
                 }}/>
+                <SelectFormField
+                        jsxname="option"
+                        jsxlabel="传 option">
+                        <Option value="1">第一个选项</Option>
+                        <Option value="2">第二个选项</Option>
+                        <Option value="3">第三个选项</Option>
+                    </SelectFormField>
             </div>
         );
     }
