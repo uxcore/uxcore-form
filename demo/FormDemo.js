@@ -10,8 +10,6 @@ let classnames = require('classnames');
 let Button = require('uxcore-button');
 let Layout = require('uxcore-layout');
 let Select = require('uxcore-select2');
-console.log(Layout);
-
 
 let Form = require('../src');
 let {
@@ -314,6 +312,10 @@ class Demo extends React.Component {
                             <CheckboxItem value="sea" text="大海"/>
                         </CheckboxGroupFormField>
                     </FormRow>
+                    <CheckboxGroupFormField jsxname="checkbox2" jsxlabel="复选框">
+                        <CheckboxItem value="air" text="天空"/>
+                        <CheckboxItem value="sea" text="大海"/>
+                    </CheckboxGroupFormField>
                     <TextAreaFormField jsxname="textArea" jsxlabel="多行文本框" jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}/>
                     <FormRowTitle jsxtitle="我是行标题2"/>
                     <FormRow>
@@ -385,8 +387,6 @@ class Demo extends React.Component {
                                      jsxlabel="富文本编辑器"
                                      jsxcontent="1"/>
 
-                    <TableFormField jsxname="dicts" jsxlabel="薪酬字典" {...renderProps} >
-                    </TableFormField>
                     <ButtonGroupFormField>
                         <Button size="medium" action="submit" onClick={me.handleClick.bind(me)}>提交</Button>
                         <Button size="medium" type="secondary" action="reset">取消</Button>
@@ -396,6 +396,7 @@ class Demo extends React.Component {
                         <Button type="secondary" onClick={me.update.bind(me)}>强制刷新</Button>
                     </ButtonGroupFormField>
                 </Form>
+                <InputFormField jsxlabel="测试" />
             </div>
         );
     }

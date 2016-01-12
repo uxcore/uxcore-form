@@ -143,9 +143,10 @@ class Form extends React.Component {
                                     {child}
                                   </FormRow>);
                 }
-                else {
-                    elements.push(child);
+                else if (/FormRow/.test(child.type.displayName)) {
+                  elements.push(child);
                 }
+
             }
 
         });
