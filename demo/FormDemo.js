@@ -397,7 +397,7 @@ class Demo extends React.Component {
                     </ButtonGroupFormField>
                 </Form>
                 <InputFormField jsxlabel="测试" standalone={true} message={{
-                    type: 'tip',
+                    type: 'error',
                     message: '非空'
                 }}/>
                 <SelectFormField

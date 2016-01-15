@@ -233,6 +233,7 @@ SelectFormField.defaultProps = assign({}, FormField.defaultProps, {
     jsxdata: {},
     beforeFetch: (obj) => {return obj},
     afterFetch: (obj) => {return obj},
+    onSearch: () => {},
     jsxshowSearch: true,
     jsxallowClear: false,
     jsxtags: false,

@@ -169,7 +169,7 @@ class Form extends React.Component {
                     return React.cloneElement(child, {
                         mode: me.props.jsxmode,
                         instantValidate: me.props.instantValidate,
-                        data: me.props.jsxvalues || me.props.passedData || {},
+                        data: deepcopy(me.props.jsxvalues || me.props.passedData || {}),
                         key: index,
                         attachFormField: me.attachFormField.bind(me),
                         detachFormField: me.detachFormField.bind(me),
