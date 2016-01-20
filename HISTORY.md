@@ -1,3 +1,7 @@
+## 1.2.9
+
+`FIX` fix issue #52 #53 #59
+
 ## 1.2.8
 
 `NEW` add standalone mode for formField
