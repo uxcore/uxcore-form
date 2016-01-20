@@ -59,7 +59,10 @@ class Form extends React.Component {
     }
 
     detachFormField(field) {
-        delete this.fields[field.getName()];
+        let name = field.getName();
+        delete this.fields[name];
+        delete this.data[name];
+
     }
 
     handleDataChange(field, fieldData, fromMount){

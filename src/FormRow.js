@@ -46,7 +46,7 @@ class FormRow extends React.Component {
                         mode: me.props.mode,
                         jsxinstant: me.props.instantValidate,
                         value: value,
-                        key: index,
+                        key: child.props.jsxname || index,
                         style: {width: child.props.jsxflex / me.totalFlex * 100 + '%'},
                         attachFormField: me.props.attachFormField,
                         detachFormField: me.props.detachFormField,
@@ -64,7 +64,7 @@ class FormRow extends React.Component {
 }
 
 FormRow.defaultProps = {
-    jsxprefixCls: "kuma-uxform-row" 
+    jsxprefixCls: "kuma-uxform-row"
 };
 FormRow.propTypes = {
     jsxprefixCls: React.PropTypes.string
