@@ -274,6 +274,7 @@ class Demo extends React.Component {
                          jsxname="test1"
                          jsxlabel="普通输入框"
                          jsxtips="请输入数字"
+                         validateOnBlur={true}
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}>
                             <LeftAddon>
                                 <i className="kuma-icon kuma-icon-phone"></i>
@@ -396,17 +397,6 @@ class Demo extends React.Component {
                         <Button type="secondary" onClick={me.update.bind(me)}>强制刷新</Button>
                     </ButtonGroupFormField>
                 </Form>
-                <InputFormField jsxlabel="测试" standalone={true} message={{
-                    type: 'error',
-                    message: '非空'
-                }}/>
-                <SelectFormField
-                        jsxname="option"
-                        jsxlabel="传 option">
-                        <Option value="1">第一个选项</Option>
-                        <Option value="2">第二个选项</Option>
-                        <Option value="3">第三个选项</Option>
-                    </SelectFormField>
             </div>
         );
     }

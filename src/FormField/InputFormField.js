@@ -95,10 +95,15 @@ class InputFormField extends FormField {
     }
 
     handleBlur(e) {
-        this.setState({
+        let me = this;
+        me.setState({
             focus: false
-        })
-        this.props.onBlur(e);
+        });
+        let pass = true
+        if (me.props.validateOnBlur) {
+            pass = me.doValidate();
+        }
+        me.props.onBlur(e, pass);
     }
 
     deFormatValue(value) {

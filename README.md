@@ -107,10 +107,13 @@ $ gulp server
 
 ### InputFormField
 
-| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
-|---|---|---|---|---|
-|jsxplaceholder|string|optional|""|占位符|
-|jsxdisabled|boolean|optional|false|disable 状态|
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 | 版本 |
+|---|---|---|---|---|---|
+|jsxplaceholder|string|optional|""|占位符|-|
+|jsxdisabled|boolean|optional|false|disable 状态|-|
+|validateOnBlur|boolean|optional|false|验证是否是在 blur 的时候出发，默认情况是在 change 时触发，此项为 true 后，onChange 的 pass 永远为 true，相对应的 onBlur 的 pass 会随之变化|
+|onBlur|function(e, pass)|optional|noop|输入框 blur 时触发，第二个参数为验证是否通过，若 validateOnBlur 为 false，则 pass 永远为 true|
+|onFocus|function(e)|optional|noop|输入框获取焦点时触发|
 
 * 插件：
     * Count，通过 InputFormField.Count 取得，一个内置的计数器，用法如下：
