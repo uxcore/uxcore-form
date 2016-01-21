@@ -52,6 +52,7 @@ class Demo extends React.Component {
                 option: "1",
                 // textArea: "我是多行文本",
                 // date: "2015-09-01",
+                // goods2: ["a"],
                 checkbox: ["sea"],
                 dicts:{
                    datas:[
@@ -347,6 +348,10 @@ class Demo extends React.Component {
                          jsxname="goods2"
                          multiple={true}
                          jsxfetchUrl="http://suggest.taobao.com/sug"
+                         jsxdata={{
+                            "a": "A",
+                            'b': "B"
+                         }}
                          dataType="jsonp"
                          beforeFetch={function(data) {
                             console.log(data);

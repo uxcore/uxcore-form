@@ -186,7 +186,7 @@ class SelectFormField extends FormField {
 
 
             // only jsxfetchUrl mode need pass label, for the options always change.
-            if (!!me.props.jsxfetchUrl) {
+            if (!!me.props.jsxfetchUrl && !!me.state.label && me.state.label.length !== 0) {
                 options.label = me.state.label || [];
             }
 
