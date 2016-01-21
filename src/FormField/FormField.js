@@ -66,7 +66,7 @@ class FormField extends React.Component {
              */
             fromReset: !!fromReset
         }, () => {
-            let pass = true
+            let pass = true;
             if (!fromReset && !me.props.standalone) {
                 pass = me.doValidate();
             }

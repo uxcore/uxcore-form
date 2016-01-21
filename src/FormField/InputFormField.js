@@ -1,7 +1,7 @@
 let FormField = require('./FormField');
 let Constants = require("uxcore-const");
 let classnames = require('classnames');
-
+let assign = require('object-assign');
 
 class FormCount extends React.Component {
     constructor(props) {
@@ -90,12 +90,15 @@ class InputFormField extends FormField {
         this.setState({
             focus: true
         });
+        this.props.onFocus(e);
+
     }
 
     handleBlur(e) {
         this.setState({
             focus: false
         })
+        this.props.onBlur(e);
     }
 
     deFormatValue(value) {
@@ -200,9 +203,9 @@ class InputFormField extends FormField {
                     value={me.state.formatValue}
                     onFocus={me.handleFocus.bind(me)}
                     onBlur={me.handleBlur.bind(me)}
-                    onChange={me.handleChange.bind(me)} 
+                    onChange={me.handleChange.bind(me)}
                     {...otherOptions} />);
-            
+
             if (!!rightAddon) {
                 arr.push(rightAddon);
             }
@@ -220,7 +223,15 @@ class InputFormField extends FormField {
 InputFormField.Count = FormCount;
 InputFormField.LeftAddon = LeftAddon;
 InputFormField.RightAddon = RightAddon;
-InputFormField.propTypes = FormField.propTypes;
-InputFormField.defaultProps = FormField.defaultProps;
+InputFormField.propTypes = assign({}, FormField.propTypes, {
+    onBlur: React.PropTypes.func,
+    onFocus: React.PropTypes.func,
+    validateOnBlur: React.PropTypes.bool
+});
+InputFormField.defaultProps = assign({}, FormField.defaultProps, {
+    onBlur: () => {},
+    onFocus: () => {},
+    validateOnBlur: false
+});
 InputFormField.displayName = "InputFormField";
 module.exports = InputFormField;
