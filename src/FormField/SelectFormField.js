@@ -152,6 +152,17 @@ class SelectFormField extends FormField {
         }
     }
 
+    getValuePropValue(child) {
+        let key = "";
+        if ('value' in child.props) {
+            key = child.props.value;
+        }
+        else {
+            key = child.key;
+        }
+        return key;
+    }
+
     renderField() {
         let me = this;
         let arr = [];
@@ -161,7 +172,7 @@ class SelectFormField extends FormField {
             let options = {
                 ref: "el",
                 key: "select",
-                optionLabelProp: "children",
+                optionLabelProp: me.props.optionLabelProp,
                 style: me.props.jsxstyle,
                 multiple: me.props.jsxmultiple,
                 allowClear: me.props.jsxallowClear,
@@ -186,6 +197,7 @@ class SelectFormField extends FormField {
 
 
             // only jsxfetchUrl mode need pass label, for the options always change.
+            // when mount, state.label is undefined, which cause defalutValue cannot be used.
             if (!!me.props.jsxfetchUrl && !!me.state.label && me.state.label.length !== 0) {
                 options.label = me.state.label || [];
             }
@@ -203,7 +215,32 @@ class SelectFormField extends FormField {
                     </Select>);
         }
         else if (mode == Constants.MODE.VIEW){
-            arr.push(<span key="select">{me.state.data[me.state.value]}</span>);
+            let str = '';
+            let values = typeof me.state.value == 'string' ? [me.state.value] : me.state.value;
+
+            if (me.state.label && me.state.label.length > 0) {
+                str = me.state.label;
+            }
+            else {
+                // if in jsxdata or jsxfetchUrl mode
+                if (Object.keys(me.state.data).length > 0) {
+                    values.forEach((value, index) => {
+                        str += me.state.data[value] + " ";
+                    });
+                }
+                // else in <Option> Mode
+                else {
+                    me.props.children && me.props.children.forEach((child, index) => {
+                        let valuePropValue = me.getValuePropValue(child);
+                        if (values.indexOf(valuePropValue) !== -1) {
+                            str += child.props[me.props.optionLabelProp] + " ";
+                        }
+                    })
+
+                }
+            }
+
+            arr.push(<span key="select">{str}</span>);
         }
         return arr;
     }
@@ -240,6 +277,7 @@ SelectFormField.defaultProps = assign({}, FormField.defaultProps, {
     jsxmultiple: false,
     jsxsearchPlaceholder: "",
     optionFilterProp: "children",
+    optionLabelProp: "children",
     dataType: 'json'
 });
 

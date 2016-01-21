@@ -52,7 +52,7 @@ class Demo extends React.Component {
                 option: "1",
                 // textArea: "我是多行文本",
                 // date: "2015-09-01",
-                // goods2: ["a"],
+                goods2: ["a", "b"],
                 checkbox: ["sea"],
                 dicts:{
                    datas:[
