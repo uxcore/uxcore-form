@@ -324,6 +324,7 @@ class Demo extends React.Component {
                         <SelectFormField
                          jsxlabel="单选"
                          jsxname="city"
+                         allowClear={true}
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}
                          disabled={false}
                          jsxdata={me.state.jsxdata}/>
