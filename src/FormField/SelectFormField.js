@@ -6,7 +6,7 @@ let Constants = require("uxcore-const");
 let Select = require('uxcore-select2');
 let assign = require('object-assign');
 let {Option} = Select;
-let selectOptions = ['multiple', 'filterOption', 'allowClear', 'combobox', 'searchPlaceholder', 'tags', 'disabled', 'showSearch', 'placeholder', 'optionLabelProp', 'maxTagTextLength', 'dropdownMatchSelectWidth', 'dropdownClassName', 'notFoundContent'];
+let selectOptions = ['getPopupContainer', 'multiple', 'filterOption', 'allowClear', 'combobox', 'searchPlaceholder', 'tags', 'disabled', 'showSearch', 'placeholder', 'optionLabelProp', 'maxTagTextLength', 'dropdownMatchSelectWidth', 'dropdownClassName', 'notFoundContent'];
 
 class SelectFormField extends FormField {
     constructor(props) {
