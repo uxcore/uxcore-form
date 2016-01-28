@@ -84,20 +84,7 @@ class Demo extends React.Component {
     handleSetValues() {
         let me = this;
         me.refs.form.setValues({
-            test1: "我不是测试",
-            dicts:{
-                   datas:[
-                      {
-                        city: "hz",
-                        email: "手动设置value",
-                        name: "手动设置33"
-                      }, {
-                        city: "hz",
-                        email: "手动设置33322",
-                        name: "手动设置3322"
-                      }
-                   ]
-                }
+            test1: "我不是测试"
         })
     }
 
@@ -273,6 +260,7 @@ class Demo extends React.Component {
                         <InputFormField
                          required={true}
                          jsxname="test1"
+                         jsxdisabled={true}
                          jsxlabel="普通输入框"
                          jsxtips="请输入数字"
                          validateOnBlur={true}
@@ -333,6 +321,7 @@ class Demo extends React.Component {
                     <FormRow>
                         <SelectFormField
                          jsxlabel="单选 combo 模式"
+                         disabled={true}
                          jsxname="goods"
                          jsxfetchUrl="http://suggest.taobao.com/sug"
                          dataType="jsonp"

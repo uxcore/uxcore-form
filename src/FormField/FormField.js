@@ -1,6 +1,7 @@
 let Constants = require("uxcore-const");
 let classnames = require("classnames");
 let assign = require("object-assign");
+let deepequal = require("deep-equal");
 
 class FormField extends React.Component {
 
@@ -34,7 +35,7 @@ class FormField extends React.Component {
     }
 
     _isEqual(a, b) {
-        return JSON.stringify(a) == JSON.stringify(b);
+        return deepequal(a, b);
     }
 
     componentWillUnmount () {
