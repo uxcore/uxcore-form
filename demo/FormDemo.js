@@ -78,7 +78,7 @@ class Demo extends React.Component {
 
     handleClick() {
         let me = this;
-        console.log(me.refs.form.getValues());
+        console.log(JSON.stringify(me.refs.form.getValues()));
     }
 
     handleSetValues() {
@@ -111,6 +111,10 @@ class Demo extends React.Component {
                 b: value[name]
             })
         }
+    }
+
+    handleTextAreaBlur(e, pass) {
+        console.log(e, pass);
     }
 
     changeMode() {
@@ -306,7 +310,12 @@ class Demo extends React.Component {
                         <CheckboxItem value="air" text="天空"/>
                         <CheckboxItem value="sea" text="大海"/>
                     </CheckboxGroupFormField>
-                    <TextAreaFormField jsxname="textArea" jsxlabel="多行文本框" jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}/>
+                    <TextAreaFormField jsxname="textArea" 
+                                        jsxlabel="多行文本框" 
+                                        jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}} 
+                                        jsxplaceholder="测试" 
+                                        validateOnBlur={true}
+                                        onBlur={me.handleTextAreaBlur.bind(me)}/>
                     <FormRowTitle jsxtitle="我是行标题2"/>
                     <FormRow>
                         <SelectFormField
@@ -342,7 +351,6 @@ class Demo extends React.Component {
                             "a": "A",
                             'b': "B"
                          }}
-                         dataType="jsonp"
                          beforeFetch={function(data) {
                             console.log(data);
                             if (data.q == undefined) {

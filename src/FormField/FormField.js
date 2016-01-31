@@ -68,7 +68,7 @@ class FormField extends React.Component {
             fromReset: !!fromReset
         }, () => {
             let pass = true;
-            // validateOnBlur only support InputFormField now
+            // validateOnBlur only support InputFormField & TextAraeFormField now
             if (!fromReset && !me.props.standalone && !me.props.validateOnBlur) {
                 pass = me.doValidate();
             }

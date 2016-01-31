@@ -1,3 +1,7 @@
+## 1.2.11
+
+`NEW` TextAreaFormField support onBlur onFocus & validateOnBlur
+
 ## 1.2.10
 
 `FIX` fix issue #52 #53 #55 #58 #59

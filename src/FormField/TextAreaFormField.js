@@ -3,6 +3,7 @@
  */
 let FormField = require('./FormField');
 let Constants = require("uxcore-const");
+let assign = require('object-assign');
 
 class TextAreaFormField extends FormField {
 
@@ -26,6 +27,19 @@ class TextAreaFormField extends FormField {
         }
     }
 
+    handleFocus(e) {
+        this.props.onFocus(e);
+    }
+
+    handleBlur(e) {
+        let me = this;
+        let pass = true
+        if (me.props.validateOnBlur) {
+            pass = me.doValidate();
+        }
+        me.props.onBlur(e, pass);
+    }
+
 
     renderField() {
         let me = this;
@@ -37,7 +51,9 @@ class TextAreaFormField extends FormField {
                      className="kuma-textarea"
                      ref="root"
                      value={me.state.value || ""}
-                     onChange={me.handleChange.bind(me)}/>
+                     onChange={me.handleChange.bind(me)}
+                     onFocus={me.handleFocus.bind(me)}
+                     onBlur={me.handleBlur.bind(me)}/>
         }
         else if (mode == Constants.MODE.VIEW) {
             return <span>{me.state.value}</span>
@@ -46,6 +62,14 @@ class TextAreaFormField extends FormField {
 }
 
 TextAreaFormField.displayName = "TextAreaFormField";
-TextAreaFormField.propTypes = FormField.propTypes;
-TextAreaFormField.defaultProps = FormField.defaultProps;
+TextAreaFormField.propTypes = assign({}, FormField.propTypes, {
+    onBlur: React.PropTypes.func,
+    onFocus: React.PropTypes.func,
+    validateOnBlur: React.PropTypes.bool
+});
+TextAreaFormField.defaultProps = assign({}, FormField.defaultProps, {
+    onBlur: () => {},
+    onFocus: () => {},
+    validateOnBlur: false
+});
 module.exports = TextAreaFormField;
