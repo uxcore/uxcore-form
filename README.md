@@ -114,6 +114,7 @@ $ gulp server
 |validateOnBlur|boolean|optional|false|验证是否是在 blur 的时候出发，默认情况是在 change 时触发，此项为 true 后，onChange 的 pass 永远为 true，相对应的 onBlur 的 pass 会随之变化|1.2.10|
 |onBlur|function(e, pass)|optional|noop|输入框 blur 时触发，第二个参数为验证是否通过，若 validateOnBlur 为 false，则 pass 永远为 true|1.2.10|
 |onFocus|function(e)|optional|noop|输入框获取焦点时触发|1.2.10|
+|autoTrim|boolean|optional|自动去除值两端的空格|1.2.12|
 
 * 插件：
     * Count，通过 InputFormField.Count 取得，一个内置的计数器，用法如下：
@@ -144,6 +145,7 @@ $ gulp server
 |validateOnBlur|boolean|optional|false|验证是否是在 blur 的时候出发，默认情况是在 change 时触发，此项为 true 后，onChange 的 pass 永远为 true，相对应的 onBlur 的 pass 会随之变化|1.2.11|
 |onBlur|function(e, pass)|optional|noop|输入框 blur 时触发，第二个参数为验证是否通过，若 validateOnBlur 为 false，则 pass 永远为 true|1.2.11|
 |onFocus|function(e)|optional|noop|输入框获取焦点时触发|1.2.11|
+|autoTrim|boolean|optional|自动去除值两端的空格|1.2.12|
 
 
 ### RadioGroupFormField
@@ -231,11 +233,6 @@ $ gulp server
 |jsxcontent|string|optional|""|由于 tinymce 的默认值传法的特殊性，EditorFormField 的默认值通过此 prop 传入|
 |jsxconfig|object|optional|{}|用户自定义的配置项，tinyMCE 的配置项，官方文档中所有 init 部分的配置在这里完成，详细见 http://www.tinymce.com/wiki.php/Configuration|
 
-
-### GridFormField
-
-> 支持 uxcore-grid 的全部配置项，在 Form 中通常只需要传入 column 来生成配置项，见 Usage 中的使用。
-> 具体说明参考：https://github.com/uxcore/uxcore-grid
 
 ### OtherFormField
 

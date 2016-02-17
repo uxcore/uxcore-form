@@ -1,3 +1,7 @@
+## 1.2.12
+
+`CHANGED` InputFormField & TextAreaFormField support new props `autoTrim`
+
 ## 1.2.11
 
 `NEW` TextAreaFormField support onBlur onFocus & validateOnBlur

@@ -70,7 +70,7 @@ RightAddon.displayName = "RightAddon";
 
 /**
  * extend FormField, rewrite renderField method
- **/
+ */
 class InputFormField extends FormField {
     constructor(props) {
         super(props);
@@ -82,8 +82,16 @@ class InputFormField extends FormField {
 
     handleChange(e) {
         let me = this;
+        let {autoTrim} = me.props;
         let value = e.currentTarget.value;
+        if (autoTrim) {
+            value = me.trim(value);
+        }
         me.handleDataChange(me.deFormatValue(value));
+    }
+
+    trim(str) {
+        return str.replace(/(^\s+|\s+$)/g, "");
     }
 
     handleFocus(e) {
@@ -231,7 +239,8 @@ InputFormField.RightAddon = RightAddon;
 InputFormField.propTypes = assign({}, FormField.propTypes, {
     onBlur: React.PropTypes.func,
     onFocus: React.PropTypes.func,
-    validateOnBlur: React.PropTypes.bool
+    validateOnBlur: React.PropTypes.bool,
+    autoTrim: React.PropTypes.bool
 });
 InputFormField.defaultProps = assign({}, FormField.defaultProps, {
     onBlur: () => {},

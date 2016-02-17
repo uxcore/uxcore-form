@@ -264,7 +264,8 @@ class Demo extends React.Component {
                         <InputFormField
                          required={true}
                          jsxname="test1"
-                         jsxdisabled={true}
+                         jsxdisabled={false}
+                         autoTrim={false}
                          jsxlabel="普通输入框"
                          jsxtips="请输入数字"
                          validateOnBlur={true}
@@ -325,12 +326,12 @@ class Demo extends React.Component {
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}
                          disabled={false}
                          jsxdata={me.state.jsxdata}/>
-                        <DateFormField format="yyyy-MM-dd HH:mm:ss" jsxname="date" jsxlabel="日期"/>
+                        <DateFormField format="yyyy-MM-dd HH:mm:ss" jsxname="date" jsxlabel="日期" jsxto={new Date().setDate(new Date().getDate() + 1)} locale="en-us" />
                     </FormRow>
                     <FormRow>
                         <SelectFormField
                          jsxlabel="单选 combo 模式"
-                         disabled={true}
+                         disabled={false}
                          jsxname="goods"
                          jsxfetchUrl="http://suggest.taobao.com/sug"
                          dataType="jsonp"
@@ -382,7 +383,7 @@ class Demo extends React.Component {
                           url="http://test.yanbingbing.com/upload.php"/>
                     </FormRow>
                     <FormRowTitle jsxtitle="级联类"/>
-                    <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" format="yyyy/MM/dd"/>
+                    <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" format="yyyy/MM/dd" />
                     <CascadeSelectFormField
                      jsxdata={casData}
                      jsxname="cascade"
