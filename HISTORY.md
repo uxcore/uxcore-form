@@ -1,6 +1,7 @@
 ## 1.2.12
 
 `CHANGED` InputFormField & TextAreaFormField support new props `autoTrim`
+`CHANGED` remove UploadFormField & PersonFormField
 
 ## 1.2.11
 
