@@ -1,10 +1,10 @@
 {
   "name": "uxcore-form",
-  "version": "1.2.12",
+  "version": "1.2.13",
   "description": "form component for uxcore",
   "repository": "https://github.com/uxcore/uxcore-form.git",
   "author": "eternalsky",
-  "main": "src/index.js",
+  "main": "build/index.js",
   "scripts": {
     "dev": "gulp server"
   },
@@ -18,19 +18,25 @@
     "Form"
   ],
   "devDependencies": {
-    "babel-core": "^5.6.18",
-    "babel-loader": "^5.3.1",
-    "browser-sync": "~2.8.2",
+    "babel": "~6.3.26",
+    "babel-core": "~6.4.0",
+    "babel-loader": "~6.2.1",
+    "babel-plugin-add-module-exports": "~0.1.2",
+    "babel-preset-es2015": "~6.3.13",
+    "babel-preset-react": "~6.3.13",
+    "babel-preset-stage-1": "~6.3.13",
+    "browser-sync": "~2.11.0",
     "console-polyfill": "~0.2.1",
     "es5-shim": "~4.1.10",
     "gulp": "~3.9.0",
+    "gulp-babel": "~6.1.1",
     "gulp-concat": "~2.6.0",
     "gulp-just-replace": "~1.0.2",
     "gulp-less": "~3.0.3",
     "gulp-sourcemaps": "~1.5.2",
-    "webpack": "^1.10.5",
     "react": "^0.14.0",
-    "uxcore-kuma": "~1.2.0"
+    "uxcore-kuma": "~1.2.0",
+    "webpack": "^1.10.5"
   },
   "dependencies": {
     "classnames": "^2.1.2",

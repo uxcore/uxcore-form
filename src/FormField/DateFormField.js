@@ -119,8 +119,6 @@ class DateFormField extends FormField {
 DateFormField.displayName = "DateFormField";
 DateFormField.propTypes = assign(FormField.propTypes, {
     jsxtype: React.PropTypes.string,
-    jsxfrom: React.PropTypes.string,
-    jsxto: React.PropTypes.string
 });
 DateFormField.defaultProps = assign(FormField.defaultProps, {
     locale: 'zh-cn',

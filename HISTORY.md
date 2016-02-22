@@ -1,3 +1,7 @@
+## 1.2.13
+
+`CHANGED` update scaffold 
+
 ## 1.2.12
 
 `CHANGED` InputFormField & TextAreaFormField support new props `autoTrim`

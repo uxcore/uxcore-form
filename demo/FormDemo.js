@@ -26,7 +26,6 @@ let {
     DateFormField,
     CheckboxGroupFormField,
     CascadeSelectFormField,
-    UploadFormField,
     OtherFormField,
     ButtonGroupFormField,
     EditorFormField,
@@ -375,13 +374,6 @@ class Demo extends React.Component {
                         <Option value="2">第二个选项</Option>
                         <Option value="3">第三个选项</Option>
                     </SelectFormField>
-                    <FormRow>
-                        <UploadFormField
-                          jsxname="upload"
-                          jsxlabel="上传"
-                          name="file"
-                          url="http://test.yanbingbing.com/upload.php"/>
-                    </FormRow>
                     <FormRowTitle jsxtitle="级联类"/>
                     <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" format="yyyy/MM/dd" />
                     <CascadeSelectFormField
