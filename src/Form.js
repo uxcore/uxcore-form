@@ -27,6 +27,7 @@ let Validators = require("./Validators");
 let classnames = require('classnames');
 let assign = require('object-assign');
 let deepcopy = require('deepcopy');
+let deepEqual = require('deep-equal');
 
 class Form extends React.Component {
 
@@ -98,9 +99,12 @@ class Form extends React.Component {
     setValues(data) {
         if (typeof data != 'object') return;
         let me = this;
+        let savedData = me.data;
         let keys = Object.keys(data);
         for (let i = 0; i < keys.length; i++) {
-            me.fields[keys[i]].handleDataChange(data[keys[i]] == undefined ? null : data[keys[i]], true)
+            if (!deepEqual( data[keys[i]], savedData[keys[i]]) ) {
+                me.fields[keys[i]].handleDataChange(data[keys[i]] == undefined ? null : data[keys[i]], true)
+            }
         }
     }
 

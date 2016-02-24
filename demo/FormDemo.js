@@ -100,14 +100,10 @@ class Demo extends React.Component {
 
     handleChange(value, name, pass) {
         // console.log(value, name, pass);
-        if (name == 'a') {
-            this.setState({
-                a: value[name]
-            })
-        }
-        else if (name == "b") {
-            this.setState({
-                b: value[name]
+        let me = this;
+        if (name == 'number') {
+            me.refs.form.setValues({
+                number: 1
             })
         }
     }
