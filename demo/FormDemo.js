@@ -8,7 +8,6 @@
 
 let classnames = require('classnames');
 let Button = require('uxcore-button');
-let Layout = require('uxcore-layout');
 let Select = require('uxcore-select2');
 
 let Form = require('../src');
@@ -67,7 +66,7 @@ class Demo extends React.Component {
             },
             jsxdata: {
                 "bj": "北京",
-                "nj": "南京",
+                "nj": "南京南京南京南京南京南京南京南京南京南京南京南京南京南京",
                 "dj": "东京",
                 "xj": "西京"
             },

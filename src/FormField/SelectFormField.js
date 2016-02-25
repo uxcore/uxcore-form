@@ -123,7 +123,14 @@ class SelectFormField extends FormField {
         }
         else {
             let arr = values.map(function(value, index) {
-                return <Option key={value} title={me.state.data[value]}>{me.state.data[value]}</Option>
+                let content = ""
+                if (me.props.multiple == true || me.props.jsxmultiple === true) {
+                    content = me.state.data[value];
+                }
+                else {
+                    content = <span title={me.state.data[value]}>{me.state.data[value]}</span>;
+                }
+                return <Option key={value} title={me.state.data[value]}>{content}</Option>
             });
             return arr;
         }
