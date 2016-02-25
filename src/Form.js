@@ -6,6 +6,8 @@
  * All rights reserved.
  */
 
+let React = require('react');
+let ReactDOM = require('react-dom');
 let FormRow = require("./FormRow");
 let FormRowTitle = require("./FormRowTitle");
 let FormField = require("./FormField/FormField");

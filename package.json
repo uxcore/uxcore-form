@@ -1,6 +1,6 @@
 {
   "name": "uxcore-form",
-  "version": "1.2.14",
+  "version": "1.2.16",
   "description": "form component for uxcore",
   "repository": "https://github.com/uxcore/uxcore-form.git",
   "author": "eternalsky",
@@ -34,7 +34,8 @@
     "gulp-just-replace": "~1.0.2",
     "gulp-less": "~3.0.3",
     "gulp-sourcemaps": "~1.5.2",
-    "react": "^0.14.0",
+    "react": "~0.14.0",
+    "react-dom": "~0.14.0",
     "uxcore-kuma": "~1.2.0",
     "webpack": "^1.10.5"
   },

@@ -3,6 +3,8 @@
  * @time: 8/7 2015
  * Form Row Title
  */
+let React = require('react');
+let ReactDOM = require('react-dom');
 let Constants = require("uxcore-const");
 let classnames = require("classnames");
 
