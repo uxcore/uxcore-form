@@ -1,6 +1,6 @@
 {
  "name": "uxcore-form",
- "version": "1.2.18",
+ "version": "1.2.19",
  "description": "form component for uxcore",
  "repository": "https://github.com/uxcore/uxcore-form.git",
  "author": "eternalsky",
@@ -22,7 +22,6 @@
   "babel-core": "~6.4.0",
   "babel-loader": "~6.2.1",
   "babel-plugin-add-module-exports": "~0.1.2",
-  "babel-preset-es2015": "~6.3.13",
   "babel-preset-es2015-loose": "~7.0.0",
   "babel-preset-react": "~6.3.13",
   "babel-preset-stage-1": "~6.3.13",

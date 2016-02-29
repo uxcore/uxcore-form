@@ -1,3 +1,7 @@
+## 1.2.19
+
+`CHANGED` update scaffold 
+
 ## 1.2.18
 
 `CHANGED` selectFormField support onSelect & onDeselect
