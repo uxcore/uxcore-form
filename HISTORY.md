@@ -1,4 +1,4 @@
-## 1.2.17
+## 1.2.18
 
 `CHANGED` selectFormField support onSelect & onDeselect
 `CHANGED` fix bug #68
