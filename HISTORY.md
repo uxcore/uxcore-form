@@ -1,3 +1,6 @@
+## 1.2.20
+`CHANGED` update dependency `uxcore-calendar` to `~0.2.0`
+
 ## 1.2.19
 
 `CHANGED` update scaffold 

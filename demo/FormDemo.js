@@ -320,7 +320,7 @@ class Demo extends React.Component {
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}
                          disabled={false}
                          jsxdata={me.state.jsxdata}/>
-                        <DateFormField format="yyyy-MM-dd HH:mm:ss" jsxname="date" jsxlabel="日期" jsxto={new Date().setDate(new Date().getDate() + 1)} locale="en-us" />
+                        <DateFormField format="yyyy-MM-dd HH:mm:ss" jsxname="date" jsxlabel="日期" jsxto={new Date().setDate(new Date().getDate() + 1)} locale="zh-cn" />
                     </FormRow>
                     <FormRow>
                         <SelectFormField

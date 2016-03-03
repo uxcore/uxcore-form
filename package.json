@@ -1,6 +1,6 @@
 {
  "name": "uxcore-form",
- "version": "1.2.19",
+ "version": "1.2.20",
  "description": "form component for uxcore",
  "repository": "https://github.com/uxcore/uxcore-form.git",
  "author": "eternalsky",
@@ -51,7 +51,7 @@
   "deepcopy": "~0.5.0",
   "object-assign": "^4.0.0",
   "uxcore-button": "~0.3.0",
-  "uxcore-calendar": "~0.1.5",
+  "uxcore-calendar": "~0.2.0",
   "uxcore-checkbox-group": "~1.0.0",
   "uxcore-const": "~0.0.1",
   "uxcore-formatter": "~0.1.1",
