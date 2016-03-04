@@ -202,6 +202,9 @@ class SelectFormField extends FormField {
                 }
             });
 
+            if (Object.keys(me.props.jsxdata).length > 0) {
+                options.optionFilterProp = 'title';
+            }
 
             // only jsxfetchUrl mode need pass label, for the options always change.
             // when mount, state.label is undefined, which cause defalutValue cannot be used.
