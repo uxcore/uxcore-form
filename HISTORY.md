@@ -1,4 +1,5 @@
 ## 1.2.21
+`FIXED` fix issue #70 #73 #74
 
 ## 1.2.20
 `CHANGED` update dependency `uxcore-calendar` to `~0.2.0`
