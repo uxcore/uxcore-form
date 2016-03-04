@@ -252,7 +252,7 @@ class Demo extends React.Component {
 
         return (
             <div className="demo">
-                <Form ref="form" instantValidate={true} jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
+                <Form ref="form" instantValidate={true} jsxmode={me.state.mode} jsxvalues={{} || me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField

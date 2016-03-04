@@ -223,30 +223,31 @@ class SelectFormField extends FormField {
         }
         else if (mode == Constants.MODE.VIEW){
             let str = '';
-            let values = typeof me.state.value == 'string' ? [me.state.value] : me.state.value;
+            if (me.state.value) {
+                let values = typeof me.state.value == 'string' ? [me.state.value] : me.state.value;
 
-            if (me.state.label && me.state.label.length > 0) {
-                str = me.state.label;
-            }
-            else {
-                // if in jsxdata or jsxfetchUrl mode
-                if (Object.keys(me.state.data).length > 0) {
-                    values.forEach((value, index) => {
-                        str += me.state.data[value] + " ";
-                    });
+                if (me.state.label && me.state.label.length > 0) {
+                    str = me.state.label;
                 }
-                // else in <Option> Mode
                 else {
-                    me.props.children && me.props.children.forEach((child, index) => {
-                        let valuePropValue = me.getValuePropValue(child);
-                        if (values.indexOf(valuePropValue) !== -1) {
-                            str += child.props[me.props.optionLabelProp] + " ";
-                        }
-                    })
+                    // if in jsxdata or jsxfetchUrl mode
+                    if (Object.keys(me.state.data).length > 0) {
+                        values.forEach((value, index) => {
+                            str += me.state.data[value] + " ";
+                        });
+                    }
+                    // else in <Option> Mode
+                    else {
+                        me.props.children && me.props.children.forEach((child, index) => {
+                            let valuePropValue = me.getValuePropValue(child);
+                            if (values.indexOf(valuePropValue) !== -1) {
+                                str += child.props[me.props.optionLabelProp] + " ";
+                            }
+                        })
 
+                    }
                 }
             }
-
             arr.push(<span key="select">{str}</span>);
         }
         return arr;
