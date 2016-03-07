@@ -124,7 +124,8 @@ class SelectFormField extends FormField {
         else {
             let arr = values.map(function(value, index) {
                 let content = ""
-                if (me.props.multiple == true || me.props.jsxmultiple === true) {
+                let {multiple, jsxmultiple, combobox, jsxcombobox} = me.props;
+                if (multiple == true || jsxmultiple == true || combobox == true || jsxcombobox == true) {
                     content = me.state.data[value];
                 }
                 else {
