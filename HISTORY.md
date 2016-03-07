@@ -1,3 +1,6 @@
+## 1.2.22
+`FIXED` fix issue #75
+
 ## 1.2.21
 `FIXED` fix issue #70 #73 #74
 
