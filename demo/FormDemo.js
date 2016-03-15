@@ -107,6 +107,12 @@ class Demo extends React.Component {
         }
     }
 
+    handleKeyDown(e) {
+        if (e.keyCode == Form.KeyCode.Enter) {
+            console.log('enter');
+        }
+    }
+
     handleTextAreaBlur(e, pass) {
         console.log(e, pass);
     }
@@ -263,6 +269,7 @@ class Demo extends React.Component {
                          jsxlabel="普通输入框普通输入框"
                          jsxtips="请输入数字"
                          validateOnBlur={false}
+                         onKeyDown={me.handleKeyDown.bind(me)}
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}>
                             <LeftAddon>
                                 <i className="kuma-icon kuma-icon-phone"></i>

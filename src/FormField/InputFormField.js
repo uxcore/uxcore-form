@@ -116,6 +116,11 @@ class InputFormField extends FormField {
         me.props.onBlur(e, pass);
     }
 
+    handleKeyDown(e) {
+        let me = this;
+        me.props.onKeyDown(e);
+    }
+
     deFormatValue(value) {
         return value;
     }
@@ -219,6 +224,7 @@ class InputFormField extends FormField {
                     onFocus={me.handleFocus.bind(me)}
                     onBlur={me.handleBlur.bind(me)}
                     onChange={me.handleChange.bind(me)}
+                    onKeyDown={me.handleKeyDown.bind(me)}
                     {...otherOptions} />);
 
             if (!!rightAddon) {
@@ -241,12 +247,14 @@ InputFormField.RightAddon = RightAddon;
 InputFormField.propTypes = assign({}, FormField.propTypes, {
     onBlur: React.PropTypes.func,
     onFocus: React.PropTypes.func,
+    onKeyDown: React.PropTypes.func,
     validateOnBlur: React.PropTypes.bool,
     autoTrim: React.PropTypes.bool
 });
 InputFormField.defaultProps = assign({}, FormField.defaultProps, {
     onBlur: () => {},
     onFocus: () => {},
+    onKeyDown: () => {},
     validateOnBlur: false
 });
 InputFormField.displayName = "InputFormField";

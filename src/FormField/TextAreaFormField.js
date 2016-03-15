@@ -48,6 +48,11 @@ class TextAreaFormField extends FormField {
         me.props.onBlur(e, pass);
     }
 
+    handleKeyDown(e) {
+        let me = this;
+        me.props.onKeyDown(e);
+    }
+
 
     renderField() {
         let me = this;
@@ -61,7 +66,8 @@ class TextAreaFormField extends FormField {
                      value={me.state.value || ""}
                      onChange={me.handleChange.bind(me)}
                      onFocus={me.handleFocus.bind(me)}
-                     onBlur={me.handleBlur.bind(me)}/>
+                     onBlur={me.handleBlur.bind(me)}
+                     onKeyDown={me.handleKeyDown.bind(me)}/>
         }
         else if (mode == Constants.MODE.VIEW) {
             return <span>{me.state.value}</span>
@@ -73,12 +79,14 @@ TextAreaFormField.displayName = "TextAreaFormField";
 TextAreaFormField.propTypes = assign({}, FormField.propTypes, {
     onBlur: React.PropTypes.func,
     onFocus: React.PropTypes.func,
+    onKeyDown: React.PropTypes.func,
     validateOnBlur: React.PropTypes.bool,
     autoTrim: React.PropTypes.bool
 });
 TextAreaFormField.defaultProps = assign({}, FormField.defaultProps, {
     onBlur: () => {},
     onFocus: () => {},
+    onKeyDown: () => {},
     validateOnBlur: false
 });
 module.exports = TextAreaFormField;

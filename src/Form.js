@@ -25,6 +25,7 @@ let EditorFormField = require("./FormField/EditorFormField");
 // let MentionFormField = require("./FormField/MentionFormField");
 let Constants = require("uxcore-const");
 let Validators = require("./Validators");
+let KeyCode = require('./KeyCode');
 
 let classnames = require('classnames');
 let assign = require('object-assign');
@@ -210,6 +211,7 @@ Form.EditorFormField = EditorFormField;
 // Form.MentionFormField = MentionFormField;
 Form.Constants = Constants;
 Form.Validators = Validators;
+Form.KeyCode = KeyCode;
 
 
 Form.defaultProps = {
