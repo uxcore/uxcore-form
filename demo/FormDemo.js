@@ -27,10 +27,9 @@ let {
     CascadeSelectFormField,
     OtherFormField,
     ButtonGroupFormField,
-    EditorFormField,
-    TableFormField,
-    MentionFormField
+    EditorFormField   
 } = Form;
+
 
 let CheckboxItem = CheckboxGroupFormField.Item;
 let RadioItem = RadioGroupFormField.Item;
@@ -42,6 +41,7 @@ class Demo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            showPass: false,
             jsxvalues: {
                 test1: "我是测试",
                 fruit: "apple",
@@ -86,6 +86,13 @@ class Demo extends React.Component {
         })
     }
 
+    handleShowPassChange() {
+        let me = this;
+        me.setState({
+            showPass: !me.state.showPass
+        })
+    }
+
     handleFormClick(data) {
         this.refs.form.setState({
            mode: Constants.MODE.VIEW
@@ -100,11 +107,11 @@ class Demo extends React.Component {
     handleChange(value, name, pass) {
         // console.log(value, name, pass);
         let me = this;
-        if (name == 'number') {
-            me.refs.form.setValues({
-                number: 1
-            })
-        }
+        // if (name == 'number') {
+        //     me.refs.form.setValues({
+        //         number: 1
+        //     })
+        // }
     }
 
     handleKeyDown(e) {
@@ -308,6 +315,15 @@ class Demo extends React.Component {
                             <CheckboxItem value="sea" text="大海"/>
                         </CheckboxGroupFormField>
                     </FormRow>
+                    <InputFormField jsxname="pass" jsxlabel="请输入密码" inputType={me.state.showPass ? 'text' : 'password'}>
+                        <RightAddon>
+                            <i className={classnames({
+                                "kuma-icon": true,
+                                "kuma-icon-privacy": !me.state.showPass,
+                                "kuma-icon-public": me.state.showPass
+                            })} onClick={me.handleShowPassChange.bind(me)}></i>
+                        </RightAddon>
+                    </InputFormField>
                     <TextAreaFormField jsxname="textArea" 
                                         jsxlabel="多行文本框" 
                                         jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}} 

@@ -27,7 +27,7 @@ $ gulp server
 
 * getValues(force) 获取目前的 values 和 pass（是否通过检测）。  
 参数：
-    * force `Boolean`: 是否做强制校验，在强制校验的情况下将无视所有 instantValidate 配置。
+    * force `Boolean`: 强制校验或不校验，undefined 时则忽略此配置。
 
 * resetValues() 重置所有的 FormField，如果有默认值则重置为默认值。
 
@@ -115,6 +115,7 @@ $ gulp server
 |onBlur|function(e, pass)|optional|noop|输入框 blur 时触发，第二个参数为验证是否通过，若 validateOnBlur 为 false，则 pass 永远为 true|1.2.10|
 |onFocus|function(e)|optional|noop|输入框获取焦点时触发|1.2.10|
 |autoTrim|boolean|optional|-|自动去除值两端的空格|1.2.12|
+|inputType|string|optional|'text'|<input> 的 type，目前支持 "text" 和 "password"|1.2.23|
 
 * 插件：
     * Count，通过 InputFormField.Count 取得，一个内置的计数器，用法如下：

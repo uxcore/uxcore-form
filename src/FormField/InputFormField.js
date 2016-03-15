@@ -79,7 +79,7 @@ class InputFormField extends FormField {
     }
 
     getValue()  {
-        return this.refs.root.getDOMNode().value
+        return ReactDOM.findDOMNode(this.refs.root).value();
     }
 
     handleChange(e) {
@@ -215,8 +215,8 @@ class InputFormField extends FormField {
                         "kuma-uxform-input-has-left": !!leftAddon
                     })}
                     ref="root"
-                    type="text"
-                    key="input"
+                    key={me.props.inputType}
+                    type={me.props.inputType}
                     placeholder={me.props.jsxplaceholder}
                     disabled={(me.props.jsxdisabled == "disabled" || me.props.jsxdisabled == true) ? "disabled" : ""}
                     name={me.props.key}
@@ -249,13 +249,15 @@ InputFormField.propTypes = assign({}, FormField.propTypes, {
     onFocus: React.PropTypes.func,
     onKeyDown: React.PropTypes.func,
     validateOnBlur: React.PropTypes.bool,
-    autoTrim: React.PropTypes.bool
+    autoTrim: React.PropTypes.bool,
+    inputType: React.PropTypes.string
 });
 InputFormField.defaultProps = assign({}, FormField.defaultProps, {
     onBlur: () => {},
     onFocus: () => {},
     onKeyDown: () => {},
-    validateOnBlur: false
+    validateOnBlur: false,
+    inputType: 'text'
 });
 InputFormField.displayName = "InputFormField";
 module.exports = InputFormField;
