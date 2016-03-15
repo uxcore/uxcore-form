@@ -97,16 +97,19 @@ class FormField extends React.Component {
         else {
             instant = me.props.jsxinstant
         }
-        // if force or instant, validate should be done, but if there are not
-        // jsxrules, validate cannot be done.
-        if ((!!force || instant) && me.props.jsxrules) {
-            let error = me.isDirty();
-            me.setState({error: error.isDirty, errMsg: error.errMsg});
-            return !error.isDirty;
-        } else {
+        // `force` has the top priority, `undefined` is not equal to `false`
+        // `instant` has the sceond priority here 
+        // eternalsky@2016.03.15 
+        if (force === true || (force !== false && instant)) {
+            if (me.props.jsxrules) {
+                let error = me.isDirty();
+                me.setState({error: error.isDirty, errMsg: error.errMsg});
+                return !error.isDirty;
+            }
+        }
+        else if (force === false) {
             return true;
         }
-
     }
 
     /*

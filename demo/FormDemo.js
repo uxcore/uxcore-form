@@ -76,7 +76,7 @@ class Demo extends React.Component {
 
     handleClick() {
         let me = this;
-        console.log(JSON.stringify(me.refs.form.getValues()));
+        console.log(JSON.stringify(me.refs.form.getValues(true)));
     }
 
     handleSetValues() {
@@ -252,7 +252,7 @@ class Demo extends React.Component {
 
         return (
             <div className="demo">
-                <Form ref="form" instantValidate={true} jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
+                <Form ref="form" instantValidate={false} jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField
@@ -262,7 +262,7 @@ class Demo extends React.Component {
                          autoTrim={false}
                          jsxlabel="普通输入框普通输入框"
                          jsxtips="请输入数字"
-                         validateOnBlur={true}
+                         validateOnBlur={false}
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}>
                             <LeftAddon>
                                 <i className="kuma-icon kuma-icon-phone"></i>
@@ -305,7 +305,7 @@ class Demo extends React.Component {
                                         jsxlabel="多行文本框" 
                                         jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}} 
                                         jsxplaceholder="测试" 
-                                        validateOnBlur={true}
+                                        validateOnBlur={false}
                                         onBlur={me.handleTextAreaBlur.bind(me)}/>
                     <FormRowTitle jsxtitle="我是行标题2"/>
                     <FormRow>
@@ -376,7 +376,7 @@ class Demo extends React.Component {
                                      jsxcontent="1"/>
 
                     <ButtonGroupFormField>
-                        <Button size="medium" action="submit" onClick={me.handleClick.bind(me)}>提交</Button>
+                        <Button size="medium" onClick={me.handleClick.bind(me)}>提交</Button>
                         <Button size="medium" type="secondary" action="reset">取消</Button>
                         <Button type="secondary" onClick={me.handleSetValues.bind(me)}>手动setValues</Button>
                         <Button size="medium" type="secondary" onClick={me.handleValueChange.bind(me)}>修改 props</Button>
