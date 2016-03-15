@@ -229,6 +229,6 @@ Form.propTypes = {
     jsxonChange: React.PropTypes.func
 }
 
-Form.displayName = Form;
+Form.displayName = "Form";
 
 module.exports = Form;

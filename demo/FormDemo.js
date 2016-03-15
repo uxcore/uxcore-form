@@ -252,7 +252,7 @@ class Demo extends React.Component {
 
         return (
             <div className="demo">
-                <Form ref="form" instantValidate={true} jsxmode={me.state.mode} jsxvalues={{} || me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
+                <Form ref="form" instantValidate={true} jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField
@@ -260,7 +260,7 @@ class Demo extends React.Component {
                          jsxname="test1"
                          jsxdisabled={false}
                          autoTrim={false}
-                         jsxlabel="普通输入框"
+                         jsxlabel="普通输入框普通输入框"
                          jsxtips="请输入数字"
                          validateOnBlur={true}
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}>
@@ -301,10 +301,6 @@ class Demo extends React.Component {
                             <CheckboxItem value="sea" text="大海"/>
                         </CheckboxGroupFormField>
                     </FormRow>
-                    <CheckboxGroupFormField jsxname="checkbox2" jsxlabel="复选框">
-                        <CheckboxItem value="air" text="天空"/>
-                        <CheckboxItem value="sea" text="大海"/>
-                    </CheckboxGroupFormField>
                     <TextAreaFormField jsxname="textArea" 
                                         jsxlabel="多行文本框" 
                                         jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}} 
