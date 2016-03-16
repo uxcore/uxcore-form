@@ -106,11 +106,16 @@ class FormField extends React.Component {
                 me.setState({error: error.isDirty, errMsg: error.errMsg});
                 return !error.isDirty;
             }
+            else {
+                return true;
+            }
         }
-        else if (force === false) {
+        else {
             return true;
         }
     }
+
+
 
     /*
      * rule can be an object, containing errMsg & validator,

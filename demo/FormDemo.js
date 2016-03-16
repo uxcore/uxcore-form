@@ -10,7 +10,8 @@ let classnames = require('classnames');
 let Button = require('uxcore-button');
 let Select = require('uxcore-select2');
 
-let Form = require('../src');
+let Form = require('../build');
+
 let {
     Constants,
     FormRowTitle,

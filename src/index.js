@@ -5,5 +5,19 @@
  * Copyright 2014-2015, Uxcore Team, Alinw.
  * All rights reserved.
  */
+let Form = require('./Form');
 
-module.exports = require('./Form');
+// 以 Form 插件的形式给出
+Form.TextAreaFormField = require("./FormField/TextAreaFormField");
+Form.InputFormField = require("./FormField/InputFormField");
+Form.RadioGroupFormField = require("./FormField/RadioGroupFormField");
+Form.SelectFormField = require("./FormField/SelectFormField");
+Form.NumberInputFormField = require('./FormField/NumberInputFormField');
+Form.DateFormField = require('./FormField/DateFormField');
+Form.CheckboxGroupFormField = require("./FormField/CheckboxGroupFormField");
+Form.CascadeSelectFormField = require("./FormField/CascadeSelectFormField");
+Form.OtherFormField = require("./FormField/OtherFormField");
+Form.ButtonGroupFormField = require("./FormField/ButtonGroupFormField");
+Form.EditorFormField = require("./FormField/EditorFormField");
+
+module.exports = Form;
