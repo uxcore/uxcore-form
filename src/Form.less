@@ -11,8 +11,8 @@
         height: 0;
     }
     .kuma-mention:focus {
-        border: 1px @brand-primary solid;
-        color: @input-color;
+        border: 1px @border-color solid;
+        color: @text-primary-color;
         outline: none;
         padding: 7px 10px;
     }
@@ -48,7 +48,14 @@
     *zoom: 1;
     .kuma-label {
         padding-top: 9px;
-        padding-right: @label-padding-right;
+        padding-right: 10px;
+        &.vertical-align {
+            width: 100%;
+            display: block;
+            text-align: left;
+            padding-top: 0px;
+            padding-bottom: 8px;
+        }
     }
     &:after {
         clear: both;
@@ -94,44 +101,44 @@
     display: table-cell;
     width: 35px;
     text-align: center;
-    border: 1px solid @input-border;
+    border: 1px solid @border-color;
     border-left: none;
 }
 
 .kuma-uxform-left-icon {
     display: table-cell;
     width: 30px;
-    border: 1px solid @input-border;
+    border: 1px solid @border-color;
     border-right: none;
     text-align: center;
-    border-bottom-left-radius: @input-radius;
-    border-top-left-radius: @input-radius;
+    border-bottom-left-radius: @input-border-radius;
+    border-top-left-radius: @input-border-radius;
     vertical-align: top;
     padding-top: 5px;
 }
 
 .kuma-uxform-left-icon-focus {
-    border-color: @brand-primary;
+    border-color: @border-color;
     outline: none;
 }
 
 .kuma-uxform-right-icon {
     display: table-cell;
     width: 30px;
-    border: 1px solid @input-border;
+    border: 1px solid @border-color;
     border-left: none;
     text-align: center;
-    border-bottom-right-radius: @input-radius;
-    border-top-right-radius: @input-radius;
+    border-bottom-right-radius: @input-border-radius;
+    border-top-right-radius: @input-border-radius;
     vertical-align: top;
     padding-top: 5px;
 }
 
 .kuma-input:focus + .kuma-uxform-right-icon,
 .kuma-input:focus + .kuma-uxform-count {
-    border: 1px @brand-primary solid;
+    border: 1px @border-color solid;
     border-left: none;
-    color: @input-color;
+    color: @text-primary-color;
     outline: none;
 }
 
@@ -143,7 +150,7 @@
 }
 .kuma-uxform-field-content {
     font-size: 12px;
-    color: @input-color-explain;
+    color: @text-primary-color;
     width: 100%;
     .kuma-uxform-tips {
         padding-top: 8px;
@@ -175,7 +182,9 @@
         .kuma-textarea,
         .kuma-select2-selection,
         .mce-panel {
-            border-color: #ea5652;
+            color: @text-danger-color;
+            border-color: @border-danger-color;
+            background-color: @bg-danger-color
         }
     }
 }
@@ -239,9 +248,6 @@
 .kuma-select-uxform-field {
     .kuma-select2 {
         width: 100%;
-    }
-    .kuma-select2-selection--multiple > ul > li {
-        margin-top: 7px;
     }
 }
 

@@ -203,8 +203,12 @@ class FormField extends React.Component {
     renderLabel() {
         let me = this;
         let mode = me.props.jsxmode || me.props.mode;
+        let align = me.props.verticalAlign || me.props.jsxVerticalAlign; // jsxVerticalAlign is an internal varible.
         if (me.props.jsxshowLabel) {
-            return  <label className="kuma-label">
+            return  <label className={classnames({
+                "kuma-label": true,
+                "vertical-align": align
+            })}>
                         <span className="required">{(me.props.required && mode == Constants.MODE.EDIT) ? "* " : ""}</span>
                         <span className="label-content" dangerouslySetInnerHTML={{__html: me.props.jsxlabel}} />
                     </label>

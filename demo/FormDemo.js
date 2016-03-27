@@ -10,7 +10,7 @@ let classnames = require('classnames');
 let Button = require('uxcore-button');
 let Select = require('uxcore-select2');
 
-let Form = require('../build');
+let Form = require('../src');
 
 let {
     Constants,
@@ -266,10 +266,11 @@ class Demo extends React.Component {
 
         return (
             <div className="demo">
-                <Form ref="form" instantValidate={false} jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
+                <Form ref="form" instantValidate={true} jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField
+                         verticalAlign={true}
                          required={true}
                          jsxname="test1"
                          jsxdisabled={false}
