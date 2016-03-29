@@ -19,5 +19,6 @@ Form.CascadeSelectFormField = require("./FormField/CascadeSelectFormField");
 Form.OtherFormField = require("./FormField/OtherFormField");
 Form.ButtonGroupFormField = require("./FormField/ButtonGroupFormField");
 Form.EditorFormField = require("./FormField/EditorFormField");
+Form.SearchFormField = require("./FormField/SearchFormField");
 
 module.exports = Form;

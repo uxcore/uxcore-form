@@ -149,7 +149,7 @@ class SelectFormField extends FormField {
     }
 
     hasDeprecatedProps() {
-        let arr = ['jsxstyle', 'jsxmultiple', 'jsxallowClear', 'jsxcombobox', 'jsxsearchPlaceholder', 'jsxtags', 'jsxdisabled', 'jsxshowSearch', 'jsxplaceholder'];
+        let arr = ['jsxmultiple', 'jsxallowClear', 'jsxcombobox', 'jsxsearchPlaceholder', 'jsxtags', 'jsxdisabled', 'jsxshowSearch', 'jsxplaceholder'];
         let me = this;
         let keys = Object.keys(me.props);
         let hasDeprecated = keys.some((item, index) => {

@@ -125,6 +125,7 @@ $ gulp server
         <Count total="20">
     </InputFormField>
     ```
+
     * LeftAddon/RightAddon，通过 InputFormField.LeftAddon/InputFormField.RightAddon 取得，给 input 左侧加入自定义的图标或文字，用法如下：
 
     ```javascript
@@ -175,7 +176,20 @@ $ gulp server
 |afterFetch|func|optional|-|会传入返回的数据， 将其处理为 jsxdata 的格式并返回|
 |dataType|string|optional|'json'|发送 ajax 请求的类型|
 
-此外，SelectFormField 还支持 [uxcore-select2](https://www.npmjs.com/package/uxcore-select2) 除 onSelect/onDeselect 外的全部属性。
+> 此外，SelectFormField 还支持 [uxcore-select2](https://www.npmjs.com/package/uxcore-select2) 除 onSelect/onDeselect 外的全部属性。
+
+### SearchFormField
+
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|advancedOptions|array|optional|-|右侧高级选项的选择项：格式为`[{value: xxx, text: xxx}]`|
+|advancedConfig|object|optional|-|右侧高级选项的配置，同 `uxcore-select2`|
+|classOptions|array|optional|-|左侧类别选项的选择项：格式为`[{value: xxx, text: xxx}]`|
+|classConfig|object|optional|-|左侧类别选项的配置，同 `uxcore-select2`|
+|tidy|bool|optional|-|精简模式|
+|onIconClick|function(e)|optional|-|点击搜索图标触发回调|
+
+> 该组件继承自 SelectFormField，支持 SelectFormField 的全部 props。
 
 ### CheckboxGroupFormField
 
@@ -214,10 +228,7 @@ $ gulp server
 |jsxplaceholder|string|optional|""|占位符|
 |jsxtype|string|optional|""|目前支持 "money", "cnmobile" 和 "card", 提供三种格式化显示的方法。"money"的格式为`123 121 121.213 121`,"cnmobile"的格式为 `86 1565 7263 8223`, "card" 的格式为 `3321 3123 3243 4343`|
 
-### UploadFormField
 
-> 支持 uxcore-uploader 的所有配置项。
-> 具体说明参考：https://github.com/uxcore/uxcore-uploader
 
 ### CascadeSelectFormField
 

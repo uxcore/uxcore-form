@@ -10,15 +10,6 @@
         clear: both;
         height: 0;
     }
-    .kuma-mention:focus {
-        border: 1px @border-color solid;
-        color: @text-primary-color;
-        outline: none;
-        padding: 7px 10px;
-    }
-    .kuma-mention-panel {
-        z-index: 1;
-    }
 }
 
 .kuma-uxform-row-title {
@@ -64,23 +55,7 @@
         height: 0;
         visibility: hidden;
     }
-    select {
-        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAWCAYAAADwza0nAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODBFQkMyNkZDRUJFMTFFNEIzQzZGOUUwMjFDMTZDRkQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODBFQkMyNzBDRUJFMTFFNEIzQzZGOUUwMjFDMTZDRkQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4MEVCQzI2RENFQkUxMUU0QjNDNkY5RTAyMUMxNkNGRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4MEVCQzI2RUNFQkUxMUU0QjNDNkY5RTAyMUMxNkNGRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkYdGT4AAADNSURBVHjaYuzp6WHAASqgdAc2SRYcmvyAuAWImYD4OhBvRFfAhEWTORAvB2JmIGYE4mVQMbwaVYB4MxBzIYlxQcVUcGkUBeLtUBodYMgx4TMVn2uYoH5Zjs0f+PwP0jgZGorEApDayaDoyIJikgATA5lgpGicBsT/ScTTQBpzgXgTCZaB1OaCNP4F4kggPkmEppNQtX9hfvwGxL5AfAePpjtQNd/QA+c1EHtCaXSAIceEz1R8rmHC449/0BCMxuZ/FjwhVw1lb8CmACDAABlpNwXghNgSAAAAAElFTkSuQmCC");
-        background-position: center right -15px;
-        background-repeat: no-repeat;
-        background-size: 7px 11px;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-        border-bottom-color: #c2c2c2;
-        border-top-color: #d6d6d6;
-        height: 30px;
-        width:100%;
-    }
-    input {
-        margin-right: 2px;
-        vertical-align: middle;
-    }
     .kuma-input {
-        height: 34px;
         vertical-align: middle;
         *vertical-align: -5px;
         &.kuma-uxform-input-has-right {
@@ -201,14 +176,7 @@
         padding-top: 10px;
     }
 }
-.kuma-upload-uxform-field {
-    .kuma-uxform-field-content {
-        padding-top: 7px;
-    }
-    .kuma-upload-filelist.nwmode {
-        margin-top: 10px;
-    }
-}
+
 .kuma-cascade-date-uxform-field {
     .uxcore {
         display: inline-block;
@@ -216,9 +184,6 @@
     .kuma-calendar-picker {
         width: 200px;
         display: inline-block;
-        .kuma-icon-calender {
-            top: 7px;
-        }
     }
 }
 
@@ -229,27 +194,70 @@
     line-height: 34px;
 }
 
-.kuma-select-uxform-field,
-.kuma-cascade-select-uxform-field {
-    .kuma-select2-selection {
-        min-height: 34px;
-        .kuma-select2-selection__rendered {
-            line-height: 32px;
-        }
-        .kuma-select2-arrow {
-            // line-height: 34px;
-        }
-        .kuma-select2-search__field {
-            vertical-align: middle;
-        }
-    }
-}
-
 .kuma-select-uxform-field {
     .kuma-select2 {
         width: 100%;
     }
 }
+
+.kuma-search-uxform-field {
+    &:hover {
+        .kuma-search-uxform-field-icon.tidy-pattern {
+            border-color: @border-hover-color;
+        }
+        .kuma-select2-selection {
+            border-color: @border-hover-color;
+        }
+    }
+    .kuma-select2 {
+        width: 200px;
+    }
+    .kuma-uxform-advanced-search {
+        width: 100px;
+        .kuma-select2-selection {
+            border-left: none;
+        }
+    }
+    .kuma-uxform-class-search {
+        background: @basic-200;
+        width: 70px;
+        .kuma-select2-selection__placeholder {
+            color: @text-primary-color;
+        }
+    }
+    .kuma-select2-selection {
+        border-right: none;
+    }
+    .kuma-select2-combobox {
+        .kuma-select2-arrow {
+            display: none;
+        }
+    }
+    .kuma-search-uxform-field-icon {
+        cursor: pointer;
+        display: inline-block;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        color: white;
+        background: @bg-selected-color;
+        vertical-align: top;
+        &.tidy-pattern {
+            border: 1px solid @border-color;
+            color: @text-thirdary-color;
+            border-left: none;
+            background: white;
+        }
+    }
+} 
+
+.kuma-uxform-class-dropdown {
+    .kuma-select2-dropdown-menu-item {
+        padding: 7px 0 7px 10px;
+    }
+}
+
 
 .kuma-cascade-select-uxform-field {
     .kuma-select2 {
