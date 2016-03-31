@@ -21,7 +21,11 @@ class FormRow extends React.Component {
         React.Children.forEach(children, function(child, index) {
             // 如果是自己添加的 DOM 直接抛弃
             if (typeof child.type == 'function') {
-                if (/FormField/.test(child.type.displayName)) {
+                let displayName = child.type.displayName;
+                if (displayName === 'EngineNode') {
+                    displayName = child.props._componentName;
+                }
+                if (/FormField/.test(displayName)) {
                     if (child.props.jsxshow) {
                         me.totalFlex += child.props.jsxflex;
                     }
