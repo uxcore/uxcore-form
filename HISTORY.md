@@ -1,7 +1,14 @@
+
+## 1.3.0
+
+* `CHANGED` new style
+
 ## 1.2.24
+
 * `HotFix` fix doValidate bug which will return undefined if jsxrules is not defined
 
 ## 1.2.23
+
 * `NEW` `InputFormField` add new prop `inputType` #71
 * `NEW` add new prop `onKeyDown` in `InputFormField` & `TextAreaFormField`
 * `CHANGED` the first param `force` of `getValues` has the top priority.
