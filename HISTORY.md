@@ -1,3 +1,7 @@
+## 1.2.26
+
+* `NEW` support visual engine
+
 ## 1.2.25
 
 * `CHANGED` add prop placeholder in EditorFormField
