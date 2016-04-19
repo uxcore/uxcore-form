@@ -270,7 +270,6 @@ class Demo extends React.Component {
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField
-                         verticalAlign={true}
                          required={true}
                          jsxname="test1"
                          jsxdisabled={false}

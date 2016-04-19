@@ -108,7 +108,7 @@ class SelectFormField extends FormField {
             me.fetchData(value);
         }
         else {
-            me.props.onSearch(value);
+            me.props.onSearch && me.props.onSearch(value);
         }
     }
     _processData() {
@@ -209,7 +209,7 @@ class SelectFormField extends FormField {
 
             // only jsxfetchUrl mode need pass label, for the options always change.
             // when mount, state.label is undefined, which cause defalutValue cannot be used.
-            if (!!me.props.jsxfetchUrl && !!me.state.label && me.state.label.length !== 0) {
+            if ((!!me.props.jsxfetchUrl || !!me.props.onSearch) && !!me.state.label && me.state.label.length !== 0) {
                 options.label = me.state.label || [];
             }
 
@@ -282,7 +282,6 @@ SelectFormField.defaultProps = assign({}, FormField.defaultProps, {
     jsxdata: {},
     beforeFetch: (obj) => {return obj},
     afterFetch: (obj) => {return obj},
-    onSearch: () => {},
     jsxshowSearch: true,
     jsxallowClear: false,
     jsxtags: false,
