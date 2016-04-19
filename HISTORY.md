@@ -1,3 +1,7 @@
+## 1.2.25
+
+* `CHANGED` add prop placeholder in EditorFormField
+
 ## 1.2.24
 * `HotFix` fix doValidate bug which will return undefined if jsxrules is not defined
 

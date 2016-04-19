@@ -10,7 +10,7 @@ let classnames = require('classnames');
 let Button = require('uxcore-button');
 let Select = require('uxcore-select2');
 
-let Form = require('../build');
+let Form = require('../src');
 
 let {
     Constants,
@@ -62,8 +62,7 @@ class Demo extends React.Component {
                       }
                    ]
                 },
-                cascade: ["a", "ab"],
-                editor: "a"
+                cascade: ["a", "ab"]
             },
             jsxdata: {
                 "bj": "北京",
@@ -397,7 +396,7 @@ class Demo extends React.Component {
                      jsxlabel="级联选择"/>
                     <EditorFormField jsxname="editor"
                                      jsxlabel="富文本编辑器"
-                                     jsxcontent="1"/>
+                                     placeholder="测试" />
 
                     <ButtonGroupFormField>
                         <Button size="medium" onClick={me.handleClick.bind(me)}>提交</Button>

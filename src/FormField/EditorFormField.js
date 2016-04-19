@@ -57,6 +57,7 @@ class EditorFormField extends FormField {
         }
         if (mode == Constants.MODE.EDIT) {
             return <Tinymce ref="tinymce"
+                            placeholder={me.props.placeholder}
                             config={me.props.jsxconfig}
                             content={me.state.value}
                             onChange={me.handleChange.bind(me)}
