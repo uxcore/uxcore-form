@@ -20,7 +20,7 @@ class EditorFormField extends FormField {
         let prevMode = prevProps.jsxmode || prevProps.mode;
         let mode = me.props.jsxmode || me.props.mode;
         if (prevMode == Constants.MODE.VIEW && mode == Constants.MODE.EDIT) {
-            me.refs.tinymce.resetValue(me.state.value);
+            me.refs.tinymce.resetValue((me.state.value == undefined || me.state.value == null) ? "" : me.state.value);
         }
     }
 
@@ -57,8 +57,9 @@ class EditorFormField extends FormField {
         }
         if (mode == Constants.MODE.EDIT) {
             return <Tinymce ref="tinymce"
+                            placeholder={me.props.placeholder}
                             config={me.props.jsxconfig}
-                            content={me.state.value}
+                            content={me.state.value || ""}
                             onChange={me.handleChange.bind(me)}
                             onKeyup={me.handleKeyup.bind(me)}/>
         }

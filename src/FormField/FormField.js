@@ -88,7 +88,7 @@ class FormField extends React.Component {
      * if no rule, it means validate pass.
      */
 
-    doValidate (force) {
+    doValidate(force) {
         let me = this;
         let instant = true;
         if ('instantValidate' in me.props) {

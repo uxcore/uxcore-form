@@ -1,3 +1,7 @@
+## 1.3.2
+
+* `CHANGED` upgrade uxcore-select2 to ~0.2.0
+
 ## 1.3.1
 
 * `CHANGED` upgrade uxcore-calendar to ~0.3.0
@@ -5,6 +9,14 @@
 ## 1.3.0
 
 * `CHANGED` new style
+
+## 1.2.26
+
+* `NEW` support visual engine
+
+## 1.2.25
+
+* `CHANGED` add prop placeholder in EditorFormField
 
 ## 1.2.24
 

@@ -5,6 +5,8 @@ let FormField = require('./FormField');
 let Constants = require("uxcore-const");
 let Select = require('uxcore-select2');
 let assign = require('object-assign');
+let Validator = require('uxcore-validator');
+let {isObject, isArray} = Validator;
 let {Option} = Select;
 let selectOptions = ['onSelect', 'onDeselect', 'getPopupContainer', 'multiple', 'filterOption', 'allowClear', 'combobox', 'searchPlaceholder', 'tags', 'disabled', 'showSearch', 'placeholder', 'optionLabelProp', 'maxTagTextLength', 'dropdownMatchSelectWidth', 'dropdownClassName', 'notFoundContent'];
 
@@ -20,7 +22,7 @@ class SelectFormField extends FormField {
     componentWillReceiveProps(nextProps) {
         let me = this;
         if (!me._isEqual(nextProps.value, me.props.value)) {
-            me.handleDataChange(nextProps.value, true);
+            me.handleDataChange(me._processValue(nextProps.value), true);
         }
         if (!me._isEqual(nextProps.jsxdata, me.props.jsxdata)) {
             me.setState({
@@ -41,20 +43,19 @@ class SelectFormField extends FormField {
         if (!me.props.standalone) {
             me.props.attachFormField(me);
             me.props.handleDataChange(me, {
-                value: me.props.value,
+                value: me._processValue(me.props.value),
                 pass: true
             }, true);
         }
         me.hasDeprecatedProps();
     }
 
-    handleDataChange(value, fromReset, label) {
+    handleDataChange(value, fromReset) {
         let me = this;
         me.setState({
             value: value,
-            label: label || [],
             formatValue: me.formatValue(value),
-            error: !!fromReset ? false: me.state.error,
+            error: !!fromReset ? false : me.state.error,
             /*
              * why set state fromReset? some field like editor cannot be reset in the common way
              * so set this state to tell the field that you need to reset by yourself.
@@ -70,7 +71,6 @@ class SelectFormField extends FormField {
                 pass: pass
             });
         });
-
     }
 
     fetchData(value) {
@@ -78,7 +78,9 @@ class SelectFormField extends FormField {
         let ajaxOptions = {
             url: me.props.jsxfetchUrl,
             dataType: me.props.dataType,
-            data: me.props.beforeFetch({q: value}),
+            data: me.props.beforeFetch({
+                q: value
+            }),
             success: (data) => {
                 let fetchData = me.props.afterFetch(data);
                 if (!!me.props.jsxdata) {
@@ -106,8 +108,7 @@ class SelectFormField extends FormField {
         let me = this;
         if (me.props.jsxfetchUrl) {
             me.fetchData(value);
-        }
-        else {
+        } else {
             me.props.onSearch && me.props.onSearch(value);
         }
     }
@@ -120,30 +121,53 @@ class SelectFormField extends FormField {
             if (!!children) {
                 return children;
             }
-        }
-        else {
+        } else {
             let arr = values.map(function(value, index) {
                 let content = ""
                 let {multiple, jsxmultiple, combobox, jsxcombobox} = me.props;
                 if (multiple == true || jsxmultiple == true || combobox == true || jsxcombobox == true) {
                     content = me.state.data[value];
-                }
-                else {
+                } else {
                     content = <span title={me.state.data[value]}>{me.state.data[value]}</span>;
                 }
-                return <Option key={value} title={me.state.data[value]}>{content}</Option>
+                return <Option key={value} title={me.state.data[value]}>
+                         {content}
+                       </Option>
             });
             return arr;
         }
+    }
 
+    _processValue(value) {
+        let me = this;
+        value = value || me.state.value;
+        if (!me.props.jsxfetchUrl && !me.props.onSearch) {
+            return value;
+        }
+        if (typeof value == "string") {
+            return {
+                key: value
+            }
+        } else if (value instanceof Array) {
+            return value.map((item) => {
+                if (typeof item == "string") {
+                    return {
+                        key: item
+                    }
+                } else {
+                    return item;
+                }
+            })
+        } else {
+            return value;
+        }
     }
 
     addSpecificClass() {
         let me = this;
         if (me.props.jsxprefixCls == "kuma-uxform-field") {
-            return me.props.jsxprefixCls + " kuma-select-uxform-field" ;
-        }
-        else {
+            return me.props.jsxprefixCls + " kuma-select-uxform-field";
+        } else {
             return me.props.jsxprefixCls
         }
     }
@@ -158,17 +182,6 @@ class SelectFormField extends FormField {
         if (hasDeprecated) {
             console.warn("SelectFormField: props same as uxcore-select2 can be passed without prefix 'jsx' now (exclude style). we will remove the support of the props mentioned above with prefix 'jsx' at uxcore-form@1.3.0 .");
         }
-    }
-
-    getValuePropValue(child) {
-        let key = "";
-        if ('value' in child.props) {
-            key = child.props.value;
-        }
-        else {
-            key = child.key;
-        }
-        return key;
     }
 
     renderField() {
@@ -189,7 +202,6 @@ class SelectFormField extends FormField {
                 tags: me.props.jsxtags,
                 optionFilterProp: me.props.optionFilterProp,
                 disabled: !!me.props.jsxdisabled,
-                // value: me.state.value || [],
                 showSearch: me.props.jsxshowSearch,
                 placeholder: me.props.jsxplaceholder,
                 onChange: me.handleChange.bind(me),
@@ -209,48 +221,28 @@ class SelectFormField extends FormField {
 
             // only jsxfetchUrl mode need pass label, for the options always change.
             // when mount, state.label is undefined, which cause defalutValue cannot be used.
-            if ((!!me.props.jsxfetchUrl || !!me.props.onSearch) && !!me.state.label && me.state.label.length !== 0) {
-                options.label = me.state.label || [];
+            if (!!me.props.jsxfetchUrl || !!me.props.onSearch) {
+                options.labelInValue = true;
             }
 
             if (!me.props.combobox || me.state.fromReset) {
-                options.value = me.state.value || [];
+                options.value = me._processValue() || [];
             }
 
             if (!!me.props.jsxfetchUrl) {
                 options.filterOption = false;
             }
-            arr.push(<Select
-                     {...options}>
-                        {me._processData()}
-                    </Select>);
-        }
-        else if (mode == Constants.MODE.VIEW){
+            arr.push(<Select {...options}>
+                       {me._processData()}
+                     </Select>);
+        } else if (mode == Constants.MODE.VIEW) {
             let str = '';
             if (me.state.value) {
-                let values = typeof me.state.value == 'string' ? [me.state.value] : me.state.value;
-
-                if (me.state.label && me.state.label.length > 0) {
-                    str = me.state.label;
-                }
-                else {
-                    // if in jsxdata or jsxfetchUrl mode
-                    if (Object.keys(me.state.data).length > 0) {
-                        values.forEach((value, index) => {
-                            str += me.state.data[value] + " ";
-                        });
-                    }
-                    // else in <Option> Mode
-                    else {
-                        me.props.children && me.props.children.forEach((child, index) => {
-                            let valuePropValue = me.getValuePropValue(child);
-                            if (values.indexOf(valuePropValue) !== -1) {
-                                str += child.props[me.props.optionLabelProp] + " ";
-                            }
-                        })
-
-                    }
-                }
+                let value = me._processValue();
+                let values = !isArray(value) ? [value] : value;
+                str = values.map((item) => {
+                    return item.key;
+                }).join(" ");
             }
             arr.push(<span key="select">{str}</span>);
         }
@@ -280,8 +272,12 @@ SelectFormField.defaultProps = assign({}, FormField.defaultProps, {
     jsxplaceholder: "请下拉选择",
     jsxcombobox: false,
     jsxdata: {},
-    beforeFetch: (obj) => {return obj},
-    afterFetch: (obj) => {return obj},
+    beforeFetch: (obj) => {
+        return obj
+    },
+    afterFetch: (obj) => {
+        return obj
+    },
     jsxshowSearch: true,
     jsxallowClear: false,
     jsxtags: false,
