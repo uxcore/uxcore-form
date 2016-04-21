@@ -207,23 +207,29 @@ Form.defaultProps = {
 // http://facebook.github.io/react/docs/reusable-components.html
 Form.propTypes = {
     /**
-     * @title: 类名前缀/PrefixCls
+     * @title: 类名前缀
+     * @veIgnore
      */
     jsxprefixCls: React.PropTypes.string,
     /**
-     * @title: 显示模式/mode
+     * @title CSS类名
+     */
+    className: React.PropTypes.string,
+    /**
+     * @title 显示模式
      */
     jsxmode: React.PropTypes.string,
     /**
-     * @title: 默认值/values
+     * @title 默认值
      */
     jsxvalues: React.PropTypes.object,
     /**
-     * @title: 是否即时校验/instantValidate
+     * @title 是否即时校验
+     * @veFieldStyle block
      */
     instantValidate: React.PropTypes.bool,
     /**
-     * @title: 表单域改变时的回调/onChange
+     * @title 表单域改变时的回调
      */
     jsxonChange: React.PropTypes.func
 }
