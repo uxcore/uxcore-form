@@ -4,43 +4,39 @@ const {Bundle} = require('engine');
 const {BoolSetter, TextSetter, ChoiceSetter, JsonSetter, NumberSetter} = require('engine-utils');
 
 module.exports = Bundle.createPrototype({
-    title: "表单",
+    title: "表单容器",
     category: "表单",
-    icon: "", // todo: require("./logo.svg"),
+    icon: require('./logo.svg'), // todo: require("./logo.svg"),
     componentName: "Form",
     canHovering: true,
     canSelecting: true,
     canDraging: true,
     isInline: false,
-    isContainer: false,
+    isContainer: true,
     canDropto: true,
-    conDroping: false,
+    conDroping: true,
     configure: [{
-            name: "jsxprefixCls",
-            title: "@title: 类名前缀/PrefixCls",
-            defaultValue: "kuma-uxform",
-            required: false,
-            fieldStyle: "block",
-            setter: <TextSetter multiline={true} rows={2} />
-        }, {
             name: "jsxmode",
-            title: "@title: 显示模式/mode",
+            title: "显示模式",
             defaultValue: "edit",
             required: false,
             fieldStyle: "block",
+            fieldCollapsed: false,
             setter: <TextSetter multiline={true} rows={2} />
         }, {
             name: "jsxvalues",
-            title: "@title: 默认值/values",
+            title: "默认值",
             defaultValue: {},
             required: false,
             fieldStyle: "accordion",
+            fieldCollapsed: false,
             setter: <JsonSetter />
         }, {
             name: "instantValidate",
-            title: "@title: 是否即时校验/instantValidate",
+            title: "是否即时校验",
             defaultValue: true,
             fieldStyle: "block",
+            fieldCollapsed: false,
             setter: <BoolSetter />
         }]
 });

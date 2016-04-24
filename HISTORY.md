@@ -1,3 +1,7 @@
+## 1.3.3
+
+* `NEW` add visual engine support
+
 ## 1.3.2
 
 * `CHANGED` upgrade uxcore-select2 to ~0.2.0

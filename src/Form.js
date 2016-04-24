@@ -213,6 +213,7 @@ Form.propTypes = {
     jsxprefixCls: React.PropTypes.string,
     /**
      * @title CSS类名
+     * @veIgnore
      */
     className: React.PropTypes.string,
     /**
