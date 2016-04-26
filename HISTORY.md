@@ -1,3 +1,7 @@
+## 1.3.4
+
+* `FIX` fix typo in `prototype.js`
+
 ## 1.3.3
 
 * `NEW` add visual engine support

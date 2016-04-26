@@ -14,7 +14,7 @@ module.exports = Bundle.createPrototype({
     isInline: false,
     isContainer: true,
     canDropto: true,
-    conDroping: true,
+    canDroping: true,
     configure: [{
             name: "jsxmode",
             title: "显示模式",
