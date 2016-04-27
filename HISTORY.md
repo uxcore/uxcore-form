@@ -1,3 +1,7 @@
+## 1.3.6
+
+`NEW` add visual engine view.
+
 ## 1.3.5
 
 * `CHANGED` add candroping config
