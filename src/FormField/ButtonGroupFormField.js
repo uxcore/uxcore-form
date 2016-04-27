@@ -24,7 +24,6 @@ class ButtonGroupFormField extends React.Component {
             }
             if (child.props.action == "reset") {
                 props.onClick = () => {
-                    console.log("reset")
                     me.props.resetValues();
                 }
              }

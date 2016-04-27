@@ -1,3 +1,8 @@
+## 1.3.5
+
+* `CHANGED` add candroping config
+* `CHANGED` remove dependency `uxcore-uploader` `uxcore-button`  
+
 ## 1.3.4
 
 * `FIX` fix typo in `prototype.js`
