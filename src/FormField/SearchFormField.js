@@ -1,7 +1,7 @@
 /**
  * Created by xy on 15/4/13.
  */
-let SelectFormField = require('./SelectFormField');
+let SelectFormField = require('uxcore-select-form-field');
 let Constants = require("uxcore-const");
 let Select = require('uxcore-select2');
 let assign = require('object-assign');

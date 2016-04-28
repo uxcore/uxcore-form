@@ -1,3 +1,7 @@
+## 1.3.8
+
+`HOTFIX` fix select2 & selectFormField dependency
+
 ## 1.3.7
 
 `CHANGED` adjust prototypeView style
