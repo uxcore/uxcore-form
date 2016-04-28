@@ -1,3 +1,7 @@
+## 1.3.7
+
+`CHANGED` adjust prototypeView style
+
 ## 1.3.6
 
 `NEW` add visual engine view.
