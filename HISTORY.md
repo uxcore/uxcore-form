@@ -1,3 +1,7 @@
+## 1.3.9
+
+`HOTFIX` fix issue #91
+
 ## 1.3.8
 
 `HOTFIX` fix select2 & selectFormField dependency

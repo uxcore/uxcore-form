@@ -8,7 +8,7 @@
 
 let React = require('react');
 let ReactDOM = require('react-dom');
-let FormRow = require("./FormRow");
+let FormRow = require("uxcore-form-row");
 let FormRowTitle = require("./FormRowTitle");
 let FormField = require("./FormField/FormField");
 
