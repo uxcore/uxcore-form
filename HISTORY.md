@@ -1,6 +1,7 @@
 ## 1.3.10
 
-`NEW` add prop `autosize` in `TextAreaFormField`
+`NEW` add prop `autosize` in `TextAreaFormField` (#90)
+`CHANGED` setValues enhancement: won't crash if field name is not found. (#89)
 
 ## 1.3.9
 
