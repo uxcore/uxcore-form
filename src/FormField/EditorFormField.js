@@ -1,4 +1,4 @@
-let FormField = require('./FormField');
+let FormField = require('uxcore-form-field');
 let Constants = require("uxcore-const");
 let Tinymce = require("uxcore-tinymce");
 let assign = require('object-assign');

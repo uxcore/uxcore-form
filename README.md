@@ -148,6 +148,9 @@ $ gulp server
 |onBlur|function(e, pass)|optional|noop|输入框 blur 时触发，第二个参数为验证是否通过，若 validateOnBlur 为 false，则 pass 永远为 true|1.2.11|
 |onFocus|function(e)|optional|noop|输入框获取焦点时触发|1.2.11|
 |autoTrim|boolean|optional|-|自动去除值两端的空格|1.2.12|
+|autosize|boolean|optional|true|根据内容自动撑开(IE8 下无效)|1.3.10|
+
+> 配置 autosize 的同时，还可以通过样式指定 min-height 和 max-height
 
 
 ### RadioGroupFormField

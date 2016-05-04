@@ -1,6 +1,6 @@
 let React = require('react');
 let ReactDOM = require('react-dom');
-let FormField = require('./FormField');
+let FormField = require('uxcore-form-field');
 let Constants = require("uxcore-const");
 let classnames = require('classnames');
 let assign = require('object-assign');

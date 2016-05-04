@@ -406,9 +406,6 @@ class Demo extends React.Component {
                         <Button type="secondary" onClick={me.changeMode.bind(me)}>转变模式</Button>
                         <Button type="secondary" onClick={me.update.bind(me)}>强制刷新</Button>
                     </ButtonGroupFormField>
-                    <OtherFormField>
-                        <div>1</div>
-                    </OtherFormField>
                 </Form>
             </div>
         );

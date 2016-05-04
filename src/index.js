@@ -8,7 +8,7 @@
 let Form = require('./Form');
 
 // 以 Form 插件的形式给出
-Form.TextAreaFormField = require("./FormField/TextAreaFormField");
+Form.TextAreaFormField = require("uxcore-textarea-form-field");
 Form.InputFormField = require("./FormField/InputFormField");
 Form.RadioGroupFormField = require("./FormField/RadioGroupFormField");
 Form.SelectFormField = require("uxcore-select-form-field");

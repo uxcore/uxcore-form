@@ -10,7 +10,7 @@ let React = require('react');
 let ReactDOM = require('react-dom');
 let FormRow = require("uxcore-form-row");
 let FormRowTitle = require("./FormRowTitle");
-let FormField = require("./FormField/FormField");
+let FormField = require("uxcore-form-field");
 
 let Constants = require("uxcore-const");
 let Validators = require("./Validators");

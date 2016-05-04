@@ -1,7 +1,7 @@
 /**
  * Created by xy on 15/4/13.
  */
-let FormField = require('./FormField');
+let FormField = require('uxcore-form-field');
 let Constants = require("uxcore-const");
 let assign = require('object-assign');
 

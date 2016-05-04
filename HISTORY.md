@@ -1,3 +1,7 @@
+## 1.3.10
+
+`NEW` add prop `autosize` in `TextAreaFormField`
+
 ## 1.3.9
 
 `HOTFIX` fix issue #91
