@@ -5,6 +5,7 @@ var inquirer = require('inquirer');
 var spawn = require('cross-spawn');
 var file = require('html-wiring');
 var colors = require('colors/safe');
+var git = require('git-rev');
 
 colors.setTheme({
     info: ['bold', 'green']
@@ -135,56 +136,60 @@ gulp.task('default', ['pack_build', 'logo_build'], function() {
 
 gulp.task('publish', ['pack_build', 'logo_build'], function() {
     setTimeout(function() {
-        var questions = [
-            {
-                type: 'input',
-                name: 'version',
-                message: 'please enter the package version to publish (should be xx.xx.xx)',
-                default: pkg.version,
-                validate: function(input) {
-                    if (/\d+\.\d+\.\d+/.test(input)) {
-                        if (versionCompare(input, pkg.version)) {
+        git.branch(function(branch) {
+            var defaultBranch = branch;
+            var defaultNpm = /@ali/.test(pkg.name) ? 'tnpm' : 'npm';
+            var questions = [
+                {
+                    type: 'input',
+                    name: 'version',
+                    message: 'please enter the package version to publish (should be xx.xx.xx)',
+                    default: pkg.version,
+                    validate: function(input) {
+                        if (/\d+\.\d+\.\d+/.test(input)) {
+                            if (versionCompare(input, pkg.version)) {
+                                return true;
+                            }
+                            else {
+                                return "the version you entered should be larger than now"
+                            }
+                        }
+                        else {
+                            return "the version you entered is not valid"
+                        }
+                    }
+                },
+                {
+                    type: 'input',
+                    name: 'branch',
+                    message: 'which branch you want to push',
+                    default: defaultBranch
+                },
+                {
+                    type: 'input',
+                    name: 'npm',
+                    message: 'which npm you want to publish',
+                    default: defaultNpm,
+                    validate: function(input) {
+                        if (/npm/.test(input)) {
                             return true;
                         }
                         else {
-                            return "the version you entered should be larger than now"
+                            return "it seems not a valid npm"
                         }
                     }
-                    else {
-                        return "the version you entered is not valid"
-                    }
                 }
-            },
-            {
-                type: 'input',
-                name: 'branch',
-                message: 'which branch you want to push',
-                default: 'master'
-            },
-            {
-                type: 'input',
-                name: 'npm',
-                message: 'which npm you want to publish',
-                default: 'npm',
-                validate: function(input) {
-                    if (/npm/.test(input)) {
-                        return true;
-                    }
-                    else {
-                        return "it seems not a valid npm"
-                    }
-                }
-            }
-        ];
-        inquirer.prompt(questions, function(answers) {
-            pkg.version = answers.version;
-            file.writeFileFromString(JSON.stringify(pkg, null, ' '), 'package.json');
-            console.log(colors.info('#### Git Info ####'));
-            spawn.sync('git', ['add', '.'], {stdio: 'inherit'});
-            spawn.sync('git', ['commit', '-m', 'ver. ' + pkg.version], {stdio: 'inherit'});
-            spawn.sync('git', ['push', 'origin', answers.branch], {stdio: 'inherit'});
-            console.log(colors.info('#### Npm Info ####'));
-            spawn.sync(answers.npm, ['publish'], {stdio: 'inherit'});
+            ];
+            inquirer.prompt(questions, function(answers) {
+                pkg.version = answers.version;
+                file.writeFileFromString(JSON.stringify(pkg, null, ' '), 'package.json');
+                console.log(colors.info('#### Git Info ####'));
+                spawn.sync('git', ['add', '.'], {stdio: 'inherit'});
+                spawn.sync('git', ['commit', '-m', 'ver. ' + pkg.version], {stdio: 'inherit'});
+                spawn.sync('git', ['push', 'origin', answers.branch], {stdio: 'inherit'});
+                console.log(colors.info('#### Npm Info ####'));
+                spawn.sync(answers.npm, ['publish'], {stdio: 'inherit'});
+            })
         })
     }, 0)
     
