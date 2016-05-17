@@ -79,7 +79,7 @@ class Form extends React.Component {
         let keys = Object.keys(me.fields);
         let data = me.props.jsxvalues || me.props.passedData || {};
         for (let i = 0; i < keys.length; i++) {
-            me.fields[keys[i]] && me.fields[keys[i]].handleDataChange(data[keys[i]] == undefined ? null : data[keys[i]], true)
+            me.fields[keys[i]] && me.fields[keys[i]].setValue(data[keys[i]] == undefined ? null : data[keys[i]], true)
         }
     }
 
@@ -95,7 +95,7 @@ class Form extends React.Component {
         let keys = Object.keys(data);
         for (let i = 0; i < keys.length; i++) {
             if (!deepEqual( data[keys[i]], savedData[keys[i]]) ) {
-                me.fields[keys[i]].handleDataChange(data[keys[i]] == undefined ? null : data[keys[i]], true)
+                me.fields[keys[i]].setValue(data[keys[i]] == undefined ? null : data[keys[i]], true)
             }
         }
     }
