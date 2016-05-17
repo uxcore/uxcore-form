@@ -8,12 +8,12 @@
 
 let classnames = require('classnames');
 let Button = require('uxcore-button');
-let Select = require('uxcore-select2');
 
 let Form = require('../src');
 
 let {
     Constants,
+
     FormRowTitle,
     FormRow,
     FormField,
@@ -28,7 +28,7 @@ let {
     CascadeSelectFormField,
     OtherFormField,
     ButtonGroupFormField,
-    EditorFormField   
+    EditorFormField
 } = Form;
 
 
@@ -324,10 +324,10 @@ class Demo extends React.Component {
                             })} onClick={me.handleShowPassChange.bind(me)}></i>
                         </RightAddon>
                     </InputFormField>
-                    <TextAreaFormField jsxname="textArea" 
-                                        jsxlabel="多行文本框" 
-                                        jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}} 
-                                        jsxplaceholder="测试" 
+                    <TextAreaFormField jsxname="textArea"
+                                        jsxlabel="多行文本框"
+                                        jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}
+                                        jsxplaceholder="测试"
                                         validateOnBlur={false}
                                         onBlur={me.handleTextAreaBlur.bind(me)}/>
                     <FormRowTitle jsxtitle="我是行标题2"/>

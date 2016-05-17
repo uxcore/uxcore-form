@@ -44,6 +44,7 @@
     "kuma-base": "~1.0.1",
     "react": "~0.14.0",
     "react-dom": "~0.14.0",
+    "uxcore-button": "^0.4.5",
     "uxcore-kuma": "~2.0.0",
     "webpack": "^1.10.5"
   },
