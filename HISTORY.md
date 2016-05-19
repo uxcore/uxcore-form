@@ -1,4 +1,4 @@
-## 1.4.2
+## 1.4.3
 
 `HOTFIX` fix dependency uxcore-input-form-field
 
@@ -7,7 +7,7 @@
 * `FIX` options not shown in searchFormField
 * `CHANGED` update uxcore-date-form-field to ~0.2.0
 
-## 1.3.14
+## 1.3.15
 
 `HOTFIX` fix dependency uxcore-input-form-field
 
