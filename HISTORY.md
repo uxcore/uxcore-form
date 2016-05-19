@@ -1,3 +1,8 @@
+## 1.4.0
+ 
+* `FIX` options not shown in searchFormField
+* `CHANGED` update uxcore-date-form-field to ~0.2.0
+
 ## 1.3.13
 
 `CHANGED` update uxcore-validator dependency
