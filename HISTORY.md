@@ -1,4 +1,4 @@
-## 1.4.1
+## 1.4.2
 
 `HOTFIX` fix dependency uxcore-input-form-field
 
