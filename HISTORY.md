@@ -1,3 +1,7 @@
+## 1.3.13
+
+`CHANGED` update uxcore-validator dependency
+
 ## 1.3.12
 
 `CHANGED` SearchFormField style update
