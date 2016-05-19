@@ -1,3 +1,7 @@
+## 1.3.12
+
+`CHANGED` SearchFormField style update
+
 ## 1.3.11
 
 `CHANGED` separate DateFormField from Form
