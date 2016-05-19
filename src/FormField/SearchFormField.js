@@ -74,16 +74,25 @@ class SearchFormField extends SelectFormField {
         let me = this;
         let arr = [];
         let mode = me.props.jsxmode || me.props.mode;
+        const hasClass = me.props.classOptions instanceof Array && me.props.classOptions.length > 0;
+        const hasAdvance = me.props.advancedOptions instanceof Array && me.props.advancedOptions.length > 0;
+
 
         let options = {
             ref: "el",
             key: "select",
+            className: classnames({
+                'has-class': hasClass,
+                'has-advance': hasAdvance,
+                'kuma-uxform-main-search': true,
+            }),
             optionFilterProp: me.props.optionFilterProp,
             combobox: me.props.combobox,
             onChange: me.handleChange.bind(me),
             onSearch: me.handleSearch.bind(me),
             key: 'search'
         };
+
 
 
         selectOptions.forEach((item, index) => {
@@ -109,7 +118,7 @@ class SearchFormField extends SelectFormField {
         if (!!me.props.jsxfetchUrl) {
             options.filterOption = false;
         }
-        if (!me.props.tidy && me.props.classOptions instanceof Array && me.props.classOptions.length > 0) {
+        if (!me.props.tidy && hasClass) {
             arr.push(me.renderClassOptions())
         }
         arr.push(<Select
@@ -117,7 +126,7 @@ class SearchFormField extends SelectFormField {
                     {me._processData()}
                 </Select>);
 
-        if (!me.props.tidy && me.props.advancedOptions instanceof Array && me.props.advancedOptions.length > 0) {
+        if (!me.props.tidy && hasAdvance) {
             arr.push(me.renderAdvancedOptions())
         }
         arr.push(
@@ -137,6 +146,9 @@ class SearchFormField extends SelectFormField {
         let options = assign({}, {
             showSearch: false,
             key: 'class',
+            dropdownAlign: {
+                offset: [0, 0]
+            },
             dropdownClassName: classnames({
                 "kuma-uxform-class-dropdown": true,
                 [dropdownClassName]: !!dropdownClassName 
@@ -154,7 +166,7 @@ class SearchFormField extends SelectFormField {
 
     renderAdvancedOptions() {
         let me = this;
-        let {className, onChange, ...otherOptions} = me.props.advancedConfig;
+        let {className, dropdownClassName, onChange, ...otherOptions} = me.props.advancedConfig;
         let options = assign({}, {
             showSearch: false,
             key: 'advanced',
@@ -162,6 +174,13 @@ class SearchFormField extends SelectFormField {
                 'kuma-uxform-advanced-search': true,
                 [className]: !!className
             }),
+            dropdownClassName: classnames({
+                "kuma-uxform-advanced-dropdown": true,
+                [dropdownClassName]: !!dropdownClassName 
+            }),
+            dropdownAlign: {
+                offset: [0, 0]
+            },
             onChange: me.handleAdvancedChange.bind(me)
         }, otherOptions);
         return  <Select {...options}>

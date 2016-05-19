@@ -14,6 +14,15 @@ module.exports = Bundle.createPrototype({
     isInline: false,
     isContainer: true,
     canDropto: true,
+    initialChildren: [{
+        componentName: "SelectFormField",
+        props: {
+            jsxdata: {
+                a: '选项A',
+                b: '选项B'
+            }
+        }
+    }],
     canDroping: function(placement) {
         var name = placement.getComponentName();
         return /FormRow|FormField/.test(name);

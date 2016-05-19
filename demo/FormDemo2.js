@@ -76,7 +76,9 @@ class Demo extends React.Component {
 
         let tidyVer = assign({}, searchOptions, {
           jsxname: 'tidy',
-          tidy: true
+          tidy: true,
+          advancedOptions: [],
+          classOptions: []
         });
 
 

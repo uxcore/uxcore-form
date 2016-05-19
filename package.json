@@ -42,8 +42,8 @@
     "html-wiring": "~1.2.0",
     "inquirer": "^0.12.0",
     "kuma-base": "~1.0.1",
-    "react": "~0.14.0",
-    "react-dom": "~0.14.0",
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0",
     "uxcore-kuma": "~2.0.0",
     "webpack": "^1.10.5"
   },
@@ -58,6 +58,7 @@
     "uxcore-form-field": "~0.1.2",
     "uxcore-form-row": "~0.1.3",
     "uxcore-formatter": "~0.1.1",
+    "uxcore-input-form-field": "~0.1.1",
     "uxcore-other-form-field": "~0.1.2",
     "uxcore-radiogroup": "~1.1.0",
     "uxcore-select-form-field": "~0.1.1",

@@ -211,34 +211,66 @@
     }
     .kuma-select2 {
         width: 200px;
+        height: 32px;
+    }
+    .kuma-select2-arrow {
+        height: 30px;
+    }
+    .kuma-select2-selection--single {
+        height: 32px;
+        .kuma-select2-selection__rendered {
+            line-height: 30px;
+        }
+    }
+    .kuma-uxform-main-search {
+        &.has-class {
+            .kuma-select2-selection {
+                border-left: none;
+            }
+        }
+        .kuma-select2-selection {
+            border-right: none;
+        }
+    }
+    
+    .kuma-select2-combobox {
+        .kuma-select2-arrow {
+            display: none;
+        }
     }
     .kuma-uxform-advanced-search {
         width: 100px;
         .kuma-select2-selection {
             border-left: none;
         }
+        &.kuma-select2-open .kuma-select2-selection {
+            border-left: 1px solid @border-color;
+        }
+
     }
     .kuma-uxform-class-search {
-        background: @basic-200;
         width: 70px;
+        .kuma-select2-selection {
+            background: @basic-200;
+        }
         .kuma-select2-selection__placeholder {
             color: @text-primary-color;
         }
     }
-    .kuma-select2-selection {
-        border-right: none;
-    }
-    .kuma-select2-combobox {
-        .kuma-select2-arrow {
-            display: none;
+
+    .kuma-uxform-advanced-search,
+    .kuma-uxform-class-search {
+        &.kuma-select2-open .kuma-select2-selection {
+            border-bottom: none;
         }
     }
+    
     .kuma-search-uxform-field-icon {
         cursor: pointer;
         display: inline-block;
-        width: 34px;
-        height: 34px;
-        line-height: 34px;
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
         text-align: center;
         color: white;
         background: @bg-selected-color;
@@ -256,6 +288,13 @@
     .kuma-select2-dropdown-menu-item {
         padding: 7px 0 7px 10px;
     }
+    background: @basic-200;
+}
+
+.kuma-uxform-class-dropdown,
+.kuma-uxform-advanced-dropdown {
+    border-top: none;
+    box-shadow: none;
 }
 
 
