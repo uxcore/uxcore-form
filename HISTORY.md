@@ -1,3 +1,7 @@
+## 1.4.5
+
+`CHANGED` remove useless dependencies
+
 ## 1.4.4
 
 `CHANGED` update radiogroup & checkbox-group
