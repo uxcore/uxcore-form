@@ -38,7 +38,7 @@ class ButtonGroupFormField extends React.Component {
 
                     //警告断言, 在uxcore-form外直接使用时,不能正常工作,这里给出警告信息
                     if(!me.props.resetValues || typeof me.props.resetValues !== 'function') {
-                        console.warn('resetValues method missing, the reset button will work incorrectly');
+                        console.warn('resetValues method missing, the reset button will works incorrectly');
                     }
 
                     props.onClick = () => {
