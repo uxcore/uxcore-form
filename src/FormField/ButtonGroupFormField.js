@@ -10,24 +10,44 @@ class ButtonGroupFormField extends React.Component {
 
     _processChild() {
         let me = this;
-        let length = React.Children.count(me.props.children);
-        if (!length) {
+        let containsChildren = React.Children.count(me.props.children) > 0;
+        if (!containsChildren) {
             return false;
         }
-        let elements = React.Children.map(me.props.children, (child, index) => {
-            let props = {};
-            if (child.props.action == "submit") {
-                props.onClick = () => {
-                    let data = me.props.getValues();
-                    child.props.onClick(data)
+
+        //使用forEach,剔除不合法的child,比如null或undefined
+        let elements = [];
+
+        React.Children.forEach(me.props.children, (child, index) => {
+            if(React.isValidElement(child)) {
+                let props = { key: index };
+
+                if (child.props.action == "submit") {
+
+                    //警告断言, 在uxcore-form外直接使用时,不能正常工作,这里给出警告信息
+                    if(!me.props.getValues || typeof me.props.getValues !== 'function') {
+                        console.warn("getValues method missing, the submit button will works incorrectly");
+                    }
+
+                    props.onClick = () => {
+                        let data = me.props.getValues();
+                        child.props.onClick(data)
+                    }
                 }
+                if (child.props.action == "reset") {
+
+                    //警告断言, 在uxcore-form外直接使用时,不能正常工作,这里给出警告信息
+                    if(!me.props.resetValues || typeof me.props.resetValues !== 'function') {
+                        console.warn('resetValues method missing, the reset button will work incorrectly');
+                    }
+
+                    props.onClick = () => {
+                        me.props.resetValues();
+                    }
+                }
+
+                elements.push(React.cloneElement(child, props));
             }
-            if (child.props.action == "reset") {
-                props.onClick = () => {
-                    me.props.resetValues();
-                }
-             }
-            return React.cloneElement(child, props);
         });
 
         return elements;
