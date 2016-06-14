@@ -1,3 +1,9 @@
+## 1.5.0
+
+`CHANGED` use new dev tools
+`CHANGED` update tinymce dependency to ~0.2.0
+`CHANGED` add warning in ButtonGroupFormField
+
 ## 1.4.5
 
 `CHANGED` remove useless dependencies

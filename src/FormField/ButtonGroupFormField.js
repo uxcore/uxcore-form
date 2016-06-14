@@ -19,7 +19,7 @@ class ButtonGroupFormField extends React.Component {
         let elements = [];
 
         React.Children.forEach(me.props.children, (child, index) => {
-            if(React.isValidElement(child)) {
+            if (React.isValidElement(child)) {
                 let props = { key: index };
 
                 if (child.props.action == "submit") {
