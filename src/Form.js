@@ -27,7 +27,9 @@ class Form extends React.Component {
         super(props);
         this.fields = {};
         this.errors = {};
-        this.data = {};
+        this.data = {
+            
+        };
         this.state= {
         };
     }
