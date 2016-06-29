@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/FormField/ButtonGroupFormField.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/FormField/</a> ButtonGroupFormField.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">43.28% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>29/67</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">19.57% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>9/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.3% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>19/46</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i &lt; keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); <span class="missing-if-branch" title="if path not taken" >I</span>if (value &amp;&amp; value.configurable &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >obj[key] === undefined)</span> { <span class="cstat-no" title="statement not covered" >Object.defineProperty(obj, key, value); </span>} } return obj; }
+&nbsp;
+<span class="fstat-no" title="function not covered" >function _defineProperty(obj, key, value) {</span> <span class="cstat-no" title="statement not covered" >if (key in obj) { <span class="cstat-no" title="statement not covered" >Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); </span>} else { <span class="cstat-no" title="statement not covered" >obj[key] = value; </span>} <span class="cstat-no" title="statement not covered" ></span>return obj; </span>}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function _classCallCheck(instance, Constructor) {</span> <span class="cstat-no" title="statement not covered" >if (!(instance instanceof Constructor)) { <span class="cstat-no" title="statement not covered" >throw new TypeError("Cannot call a class as a function"); </span>} </span>}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function _possibleConstructorReturn(self, call) {</span> <span class="cstat-no" title="statement not covered" >if (!self) { <span class="cstat-no" title="statement not covered" >throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); </span>} <span class="cstat-no" title="statement not covered" ></span>return call &amp;&amp; (typeof call === "object" || typeof call === "function") ? call : self; </span>}
+&nbsp;
+function _inherits(subClass, superClass) { <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof superClass !== "function" &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >superClass !== null)</span> { <span class="cstat-no" title="statement not covered" >throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); </span>} subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); <span class="missing-if-branch" title="else path not taken" >E</span>if (superClass) Object.setPrototypeOf ? <span class="branch-0 cbranch-no" title="branch not covered" >Object.setPrototypeOf(subClass, superClass) </span>: _defaults(subClass, superClass); }
+&nbsp;
+var React = require('react');
+var ReactDOM = require('react-dom');
+var classnames = require('classnames');
+var assign = require("object-assign");
+&nbsp;
+var ButtonGroupFormField = function (_React$Component) {
+    _inherits(ButtonGroupFormField, _React$Component);
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function ButtonGroupFormField(props) {</span>
+<span class="cstat-no" title="statement not covered" >        _classCallCheck(this, ButtonGroupFormField);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return _possibleConstructorReturn(this, _React$Component.call(this, props));</span>
+    }
+&nbsp;
+    ButtonGroupFormField.prototype._processChild = <span class="fstat-no" title="function not covered" >function _processChild() {</span>
+<span class="cstat-no" title="statement not covered" >        var me = this;</span>
+<span class="cstat-no" title="statement not covered" >        var containsChildren = React.Children.count(me.props.children) &gt; 0;</span>
+<span class="cstat-no" title="statement not covered" >        if (!containsChildren) {</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+&nbsp;
+        //使用forEach,剔除不合法的child,比如null或undefined
+<span class="cstat-no" title="statement not covered" >        var elements = [];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        React.Children.forEach(me.props.children, <span class="fstat-no" title="function not covered" >function (child, index) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (React.isValidElement(child)) {</span>
+<span class="cstat-no" title="statement not covered" >                var props = { key: index };</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (child.props.action == "submit") {</span>
+&nbsp;
+                    //警告断言, 在uxcore-form外直接使用时,不能正常工作,这里给出警告信息
+<span class="cstat-no" title="statement not covered" >                    if (!me.props.getValues || typeof me.props.getValues !== 'function') {</span>
+<span class="cstat-no" title="statement not covered" >                        console.warn("getValues method missing, the submit button will works incorrectly");</span>
+                    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    props.onClick = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                        var data = me.props.getValues();</span>
+<span class="cstat-no" title="statement not covered" >                        child.props.onClick(data);</span>
+                    };
+                }
+<span class="cstat-no" title="statement not covered" >                if (child.props.action == "reset") {</span>
+&nbsp;
+                    //警告断言, 在uxcore-form外直接使用时,不能正常工作,这里给出警告信息
+<span class="cstat-no" title="statement not covered" >                    if (!me.props.resetValues || typeof me.props.resetValues !== 'function') {</span>
+<span class="cstat-no" title="statement not covered" >                        console.warn('resetValues method missing, the reset button will works incorrectly');</span>
+                    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    props.onClick = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                        me.props.resetValues();</span>
+                    };
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                elements.push(React.cloneElement(child, props));</span>
+            }
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return elements;</span>
+    };
+&nbsp;
+    ButtonGroupFormField.prototype.render = <span class="fstat-no" title="function not covered" >function render() {</span>
+<span class="cstat-no" title="statement not covered" >        var _classnames;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var me = this;</span>
+<span class="cstat-no" title="statement not covered" >        var elements = me._processChild();</span>
+<span class="cstat-no" title="statement not covered" >        return React.createElement(</span>
+            'div',
+            { className: classnames((_classnames = {}, _defineProperty(_classnames, me.props.jsxprefixCls, true), _defineProperty(_classnames, me.props.className, !!me.props.className), _classnames)), style: assign({}, me.props.style, {
+                    display: me.props.jsxshow ? "table" : "none"
+                }) },
+            !!elements &amp;&amp; elements
+        );
+    };
+&nbsp;
+    return ButtonGroupFormField;
+}(React.Component);
+&nbsp;
+ButtonGroupFormField.propTypes = {
+    jsxprefixCls: React.PropTypes.string,
+    jsxflex: React.PropTypes.number,
+    jsxshow: React.PropTypes.bool
+};
+ButtonGroupFormField.defaultProps = {
+    jsxprefixCls: "kuma-uxform-field kuma-button-group-uxform-field", // 默认类名
+    jsxflex: 1, // 占 Form 的比例，类似于 css3 中的 flex-box
+    jsxshow: true
+};
+ButtonGroupFormField.displayName = "ButtonGroupFormField";
+&nbsp;
+module.exports = ButtonGroupFormField;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jun 17 2016 17:17:31 GMT+0800 (CST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

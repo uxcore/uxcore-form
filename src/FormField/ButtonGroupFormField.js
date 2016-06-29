@@ -1,7 +1,7 @@
-let React = require('react');
-let ReactDOM = require('react-dom');
-let classnames = require('classnames');
-let assign = require("object-assign");
+const React = require('react');
+const ReactDOM = require('react-dom');
+const classnames = require('classnames');
+const assign = require("object-assign");
 
 class ButtonGroupFormField extends React.Component {
     constructor(props) {

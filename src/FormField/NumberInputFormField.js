@@ -1,6 +1,7 @@
-let InputFormField = require('./InputFormField');
-let Formatter = require("uxcore-formatter");
-let assign = require('object-assign');
+const React = require('react');
+const InputFormField = require('uxcore-input-form-field');
+const Formatter = require("uxcore-formatter");
+const assign = require('object-assign');
 
 class NumberInputFormField extends InputFormField {
     constructor(props) {

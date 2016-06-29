@@ -1,7 +1,7 @@
-let FormField = require('uxcore-form-field');
-let Constants = require("uxcore-const");
-let Tinymce = require("uxcore-tinymce");
-let assign = require('object-assign');
+const FormField = require('uxcore-form-field');
+const Constants = require("uxcore-const");
+const Tinymce = require("uxcore-tinymce");
+const assign = require('object-assign');
 
 class EditorFormField extends FormField {
     constructor(props) {

@@ -1,9 +1,10 @@
-let FormField = require('uxcore-form-field');
-let Constants = require("uxcore-const");
-let Select = require('uxcore-select2');
-let {Option} = Select;
-let assign = require('object-assign');
-let update = React.addons.update;
+const React = require('react');
+const FormField = require('uxcore-form-field');
+const Constants = require("uxcore-const");
+const Select = require('uxcore-select2');
+const {Option} = Select;
+const assign = require('object-assign');
+const deepcopy = require('deepcopy');
 
 class CascadeSelectFormField extends FormField {
     constructor(props) {
@@ -17,7 +18,7 @@ class CascadeSelectFormField extends FormField {
 
     handleChange(i, value) {
         let me = this;
-        let values = update(me.state.value, {}) || [];
+        let values = deepcopy(me.state.value || []);
         if (!!values[i]) {
             values = values.slice(0, i);
             values.push(value);

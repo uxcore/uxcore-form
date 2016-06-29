@@ -1,10 +1,10 @@
 /**
  * Created by xy on 15/4/13.
  */
-let FormField = require('uxcore-form-field');
-let Constants = require("uxcore-const");
-let RadioGroup = require('uxcore-radiogroup');
-let Item = RadioGroup.Item;
+const FormField = require('uxcore-form-field');
+const Constants = require("uxcore-const");
+const RadioGroup = require('uxcore-radiogroup');
+const Item = RadioGroup.Item;
 
 
 class RadioGroupFormField extends FormField {

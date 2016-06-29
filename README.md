@@ -179,6 +179,24 @@ $ gulp server
 |afterFetch|func|optional|-|会传入返回的数据， 将其处理为 jsxdata 的格式并返回|
 |dataType|string|optional|'json'|发送 ajax 请求的类型|
 
+#### jsxdata 的格式
+jsxdata 目前支持两种格式
+
+```js
+// Object
+{
+    a: "A",
+    b: "B"
+}
+// Array
+[
+    {
+        value: 'a',
+        text: 'A'
+    }
+]
+```
+
 > 此外，SelectFormField 还支持 [uxcore-select2](https://www.npmjs.com/package/uxcore-select2) 除 onSelect/onDeselect 外的全部属性。
 
 ### SearchFormField

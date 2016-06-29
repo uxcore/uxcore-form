@@ -1,3 +1,7 @@
+## 1.5.1
+
+`CHANGED` fix server render bug
+
 ## 1.5.0
 
 `CHANGED` use new dev tools

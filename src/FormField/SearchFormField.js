@@ -1,14 +1,15 @@
 /**
  * Created by xy on 15/4/13.
  */
-let SelectFormField = require('uxcore-select-form-field');
-let Constants = require("uxcore-const");
-let Select = require('uxcore-select2');
-let assign = require('object-assign');
-let deepcopy = require('deepcopy');
-let classnames = require('classnames');
-let {Option} = Select;
-let selectOptions = ['onSelect', 'onDeselect', 'getPopupContainer', 'filterOption', 'allowClear', 'searchPlaceholder', 'tags', 'disabled', 'showSearch', 'placeholder', 'optionLabelProp', 'maxTagTextLength', 'dropdownMatchSelectWidth', 'dropdownClassName', 'notFoundContent'];
+const React = require('react');
+const SelectFormField = require('uxcore-select-form-field');
+const Constants = require("uxcore-const");
+const Select = require('uxcore-select2');
+const assign = require('object-assign');
+const deepcopy = require('deepcopy');
+const classnames = require('classnames');
+const {Option} = Select;
+const selectOptions = ['onSelect', 'onDeselect', 'getPopupContainer', 'filterOption', 'allowClear', 'searchPlaceholder', 'tags', 'disabled', 'showSearch', 'placeholder', 'optionLabelProp', 'maxTagTextLength', 'dropdownMatchSelectWidth', 'dropdownClassName', 'notFoundContent'];
 
 class SearchFormField extends SelectFormField {
     constructor(props) {
