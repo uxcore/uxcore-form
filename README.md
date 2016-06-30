@@ -1,6 +1,6 @@
 ---
 
-React Form Field
+React Form
 
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
@@ -133,6 +133,7 @@ $ npm start
 |validateOnBlur|boolean|optional|false|验证是否是在 blur 的时候出发，默认情况是在 change 时触发，此项为 true 后，onChange 的 pass 永远为 true，相对应的 onBlur 的 pass 会随之变化|1.2.10|
 |onBlur|function(e, pass)|optional|noop|输入框 blur 时触发，第二个参数为验证是否通过，若 validateOnBlur 为 false，则 pass 永远为 true|1.2.10|
 |onFocus|function(e)|optional|noop|输入框获取焦点时触发|1.2.10|
+|renderView|function(value)|optional|noop|自定义渲染 view 状态，参数是默认渲染的值|1.6.0|
 |autoTrim|boolean|optional|-|自动去除值两端的空格|1.2.12|
 |inputType|string|optional|'text'|input 的 type，目前支持 "text" 和 "password"|1.2.23|
 

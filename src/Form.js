@@ -111,6 +111,9 @@ class Form extends React.Component {
         let pass = true;
         let keys = Object.keys(me.fields);
         for (let i = 0; i < keys.length; i++) {
+            if (!me.fields[keys[i]].getProps().jsxshow) {
+                continue;
+            }
             let itemPass = me.fields[keys[i]].doValidate(force);
             me.errors[keys[i]] = !itemPass;
             if (!itemPass) {

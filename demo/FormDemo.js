@@ -325,6 +325,7 @@ class Demo extends React.Component {
                     </InputFormField>
                     <TextAreaFormField jsxname="textArea"
                                         jsxlabel="多行文本框"
+                                        jsxshow={false}
                                         jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}
                                         jsxplaceholder="测试"
                                         validateOnBlur={false}
