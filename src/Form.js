@@ -59,10 +59,10 @@ class Form extends React.Component {
 
     }
 
-    handleDataChange(field, fieldData, fromMount){
+    handleDataChange(field, fieldData, silence){
         let me = this;
         me.data[field.props.jsxname] = fieldData.value;
-        if (!fromMount) {
+        if (!silence) {
             me.props.jsxonChange(me._copy(me.data), field.props.jsxname, fieldData.pass);
         }
     }
@@ -81,7 +81,10 @@ class Form extends React.Component {
         let keys = Object.keys(me.fields);
         let data = me.props.jsxvalues || me.props.passedData || {};
         for (let i = 0; i < keys.length; i++) {
-            me.fields[keys[i]] && me.fields[keys[i]].handleDataChange(data[keys[i]] == undefined ? null : data[keys[i]], true)
+            // see uxcore-form-field for details
+            // the first true means fromReset and don't do validate
+            // the second true means slience and don't trigger form onChange
+            me.fields[keys[i]] && me.fields[keys[i]].handleDataChange(data[keys[i]] == undefined ? null : data[keys[i]], true, true);
         }
     }
 
@@ -97,7 +100,8 @@ class Form extends React.Component {
         let keys = Object.keys(data);
         for (let i = 0; i < keys.length; i++) {
             if (!deepEqual( data[keys[i]], savedData[keys[i]]) ) {
-                me.fields[keys[i]].handleDataChange(data[keys[i]] == undefined ? null : data[keys[i]], true)
+                // see resetValues() to get the param meaning.
+                me.fields[keys[i]].handleDataChange(data[keys[i]] == undefined ? null : data[keys[i]], true, true)
             }
         }
     }
@@ -178,7 +182,7 @@ class Form extends React.Component {
                         detachFormField: me.detachFormField.bind(me),
                         handleDataChange: me.handleDataChange.bind(me),
                         getValues: me.getValues.bind(me),
-                        resetValues: me.resetValues.bind(me)
+                        resetValues: me.resetValues.bind(me),
                     });
                 })}
             </div>

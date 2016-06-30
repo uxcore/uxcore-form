@@ -1,3 +1,7 @@
+## 1.6.0
+
+`CHANGED` do not trigger jsxonChange when resetValues() & setValues() & jsxvalues change. (#82)
+
 ## 1.5.1
 
 `CHANGED` fix server render bug

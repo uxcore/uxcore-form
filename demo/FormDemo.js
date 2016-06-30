@@ -13,7 +13,6 @@ let Form = require('../src');
 
 let {
     Constants,
-
     FormRowTitle,
     FormRow,
     FormField,
@@ -105,7 +104,7 @@ class Demo extends React.Component {
     }
 
     handleChange(value, name, pass) {
-        // console.log(value, name, pass);
+        console.log(value, name, pass);
         let me = this;
         // if (name == 'number') {
         //     me.refs.form.setValues({
