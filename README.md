@@ -22,8 +22,8 @@ React Form Field
 [devdep-image]: http://img.shields.io/david/dev/uxcore/uxcore-form.svg?style=flat-square
 [devdep-url]: https://david-dm.org/uxcore/uxcore-form#info=devDependencies
 [downloads-image]: https://img.shields.io/npm/dm/uxcore-form.svg
-[sauce-image]: https://saucelabs.com/browser-matrix/uxcore.svg
-[sauce-url]: https://saucelabs.com/u/uxcore
+[sauce-image]: https://saucelabs.com/browser-matrix/uxcore-form.svg
+[sauce-url]: https://saucelabs.com/u/uxcore-form
 
 #### setup develop environment
 
