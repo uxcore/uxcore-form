@@ -65,16 +65,19 @@ class CascadeSelectFormField extends FormField {
                     return <Option key={index} value={item.value}>{item.text}</Option>
                 });
 
+                const placeholder = me.props.jsxplaceholder;
+
                 let selectOptions = {
                     ref: "el",
                     key: "select",
                     optionLabelProp: "children",
                     style: me.props.jsxstyle,
-                    showSearch: me.props.jsxshowSearch,
-                    placeholder: me.props.jsxplaceholder
+                    showSearch: me.props.showSearch,
+                    searchPlaceholder: ((placeholder instanceof Array) ? placeholder[i] : placeholder),
+                    placeholder: ((placeholder instanceof Array) ? placeholder[i] : placeholder),
                 };
                 selectOptions.onChange = me.handleChange.bind(me, i);
-                selectOptions.value = stateValue[i] || null;
+                selectOptions.value = stateValue[i] || undefined;
                 if (i != 0) {
                     arr.push(<span key={"split" + i} className="kuma-uxform-split">-</span>)
                 }
@@ -117,7 +120,10 @@ class CascadeSelectFormField extends FormField {
 CascadeSelectFormField.propTypes = assign({}, FormField.propTypes, {
     jsxstyle: React.PropTypes.object,
     jsxshowSearch: React.PropTypes.bool,
-    jsxplaceholder: React.PropTypes.string,
+    jsxplaceholder: React.PropTypes.oneOfType([
+        React.PropTypes.string,
+        React.PropTypes.array,
+    ]),
     jsxdata: React.PropTypes.object
 });
 CascadeSelectFormField.defaultProps = assign({}, FormField.defaultProps, {

@@ -259,6 +259,7 @@ jsxdata 目前支持两种格式
 |jsxtype|string|optional|single|single/cascade 单独、级联|
 |jsxfrom|string|optional|-|开始日期|
 |jsxto|string|optional|-|结束日期|
+|panel|string|optional|"day"|何种面板,枚举值为"month","year"和"day"|
 
 除此之外，支持除 onSelect，[uxcore-calendar](https://www.npmjs.com/package/uxcore-calendar) 的所有 props。
 
@@ -275,7 +276,7 @@ jsxdata 目前支持两种格式
 
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|
-|jsxdata|object|required|-|目前级联选择框，只支持直接传入 data 初始化，格式见 Usage 中的 casData，length 为必须传的 key，告诉 field 有几层级联。|
+|jsxdata|object|required|-|级联选择框，只支持直接传入 data 初始化，格式见 Usage 中的 casData，length 为必须传的 key，告诉 field 有几层级联。|
 |jsxplaceholder|string|optional|"请下拉选择"|占位符|
 |jsxstyle|object|optional|-|与 react 传入 style 的方式相同，修改选择框的样式|
 

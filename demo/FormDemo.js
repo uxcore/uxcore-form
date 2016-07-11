@@ -325,7 +325,6 @@ class Demo extends React.Component {
                     </InputFormField>
                     <TextAreaFormField jsxname="textArea"
                                         jsxlabel="多行文本框"
-                                        jsxshow={false}
                                         jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}
                                         jsxplaceholder="测试"
                                         validateOnBlur={false}
@@ -392,6 +391,7 @@ class Demo extends React.Component {
                     <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" format="yyyy/MM/dd" />
                     <CascadeSelectFormField
                      jsxdata={casData}
+                     jsxplaceholder={['选项一', '选项二', '选项三']}
                      jsxname="cascade"
                      jsxlabel="级联选择"/>
                     <EditorFormField jsxname="editor"
