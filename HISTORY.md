@@ -1,3 +1,10 @@
+## 1.6.1
+
+* `CHANGED` CascadeFormField support multiple placeholders.
+* `CHANGED` Form doValidate will pass the field whose jsxshow is false.
+* `NEW` add renderView prop in InputFormField
+* `CHANGED` remove ve support !
+
 ## 1.6.0
 
 `CHANGED` do not trigger jsxonChange when resetValues() & setValues() & jsxvalues change. (#82)
