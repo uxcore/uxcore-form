@@ -27,7 +27,8 @@ let {
     CascadeSelectFormField,
     OtherFormField,
     ButtonGroupFormField,
-    EditorFormField
+    EditorFormField,
+    SwitchFormField,
 } = Form;
 
 
@@ -323,6 +324,7 @@ class Demo extends React.Component {
                             })} onClick={me.handleShowPassChange.bind(me)}></i>
                         </RightAddon>
                     </InputFormField>
+                    <SwitchFormField jsxname="switch" jsxlabel="开关" checkedChildren="显示" unCheckedChildren="隐藏" />
                     <TextAreaFormField jsxname="textArea"
                                         jsxlabel="多行文本框"
                                         jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}

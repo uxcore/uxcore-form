@@ -36,6 +36,7 @@ class Demo extends React.Component {
             jsxlabel: "搜索框",
             dataType: "jsonp",
             searchPlaceholder: "请勿泄露员工信息", 
+            placeholder: "请勿泄露员工信息", 
             jsxfetchUrl: "http://suggest.taobao.com/sug",
             advancedOptions: [
                {

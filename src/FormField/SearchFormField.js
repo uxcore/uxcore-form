@@ -203,6 +203,7 @@ SearchFormField.propTypes = assign({}, SelectFormField.propTypes, {
 SearchFormField.defaultProps = assign({}, SelectFormField.defaultProps, {
     jsxshowLabel: false,
     combobox: true,
+    showSearch: false,
     advancedConfig: {},
     classConfig: {},
     tidy: false,

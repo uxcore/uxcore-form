@@ -20,5 +20,6 @@ Form.OtherFormField = require("uxcore-other-form-field");
 Form.ButtonGroupFormField = require("./FormField/ButtonGroupFormField");
 Form.EditorFormField = require("./FormField/EditorFormField");
 Form.SearchFormField = require("./FormField/SearchFormField");
+Form.SwitchFormField = require("uxcore-switch-form-field");
 
 module.exports = Form;
