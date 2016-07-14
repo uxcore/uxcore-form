@@ -1,3 +1,7 @@
+## 1.6.3
+
+* `FIX` fix label style bug in IE/FireFox
+
 ## 1.6.2
 
 * `NEW` add SwitchFormField 
