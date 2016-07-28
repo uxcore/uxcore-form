@@ -1,6 +1,6 @@
 {
  "name": "uxcore-form",
- "version": "1.6.3",
+ "version": "1.7.0",
  "description": "form component for uxcore",
  "repository": "https://github.com/uxcore/uxcore-form.git",
  "author": "eternalsky",
@@ -55,8 +55,8 @@
   "uxcore-input-form-field": "~0.1.1",
   "uxcore-other-form-field": "~0.1.2",
   "uxcore-radiogroup": "~1.2.0",
-  "uxcore-select-form-field": "~0.1.1",
-  "uxcore-select2": "~0.2.3",
+  "uxcore-select-form-field": "~0.2.0",
+  "uxcore-select2": "~0.3.0",
   "uxcore-switch-form-field": "~0.1.1",
   "uxcore-textarea-form-field": "^0.1.1",
   "uxcore-tinymce": "~0.2.0",

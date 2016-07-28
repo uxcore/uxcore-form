@@ -1,3 +1,8 @@
+## 1.7.0
+
+* `CHNAGED` change dependency `uxcore-select2` to ~0.3.0
+* `CHNAGED` change dependency `uxcore-select-form-field` to ~0.2.0
+
 ## 1.6.3
 
 * `FIX` fix label style bug in IE/FireFox
