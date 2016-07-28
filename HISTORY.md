@@ -1,3 +1,7 @@
+## 1.7.1
+
+* `CHANGED` change dependency `uxcore-edate-form-field` to ~0.3.0
+
 ## 1.7.0
 
 * `CHNAGED` change dependency `uxcore-select2` to ~0.3.0

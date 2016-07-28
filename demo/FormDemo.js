@@ -390,7 +390,7 @@ class Demo extends React.Component {
                         <Option value="3">第三个选项</Option>
                     </SelectFormField>
                     <FormRowTitle jsxtitle="级联类"/>
-                    <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" format="yyyy/MM/dd" />
+                    <DateFormField showTime jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" format="yyyy/MM/dd" />
                     <CascadeSelectFormField
                      jsxdata={casData}
                      jsxplaceholder={['选项一', '选项二', '选项三']}
