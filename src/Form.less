@@ -48,6 +48,10 @@
             padding-top: 0px;
             padding-bottom: 8px;
         }
+        &.label-match-input-height {
+            padding-top: 0px;
+            vertical-align: middle;
+        }
     }
     &:after {
         clear: both;
@@ -124,25 +128,26 @@
     table-layout: fixed;
 
 }
+
+.kuma-uxform-tips {
+    padding-top: 8px;
+    color: #999;
+    .kuma-icon {
+        margin-right: 4px;
+        color: #39bffc;
+    }
+}
+.kuma-uxform-errormsg {
+    padding-top: 8px;
+    color: #ea5652;
+    .kuma-icon {
+        margin-right: 4px;
+    }
+}
 .kuma-uxform-field-content {
     font-size: 12px;
     color: @text-primary-color;
     width: 100%;
-    .kuma-uxform-tips {
-        padding-top: 8px;
-        color: #999;
-        .kuma-icon {
-            margin-right: 4px;
-            color: #39bffc;
-        }
-    }
-    .kuma-uxform-errormsg {
-        padding-top: 8px;
-        color: #ea5652;
-        .kuma-icon {
-            margin-right: 4px;
-        }
-    }
     .kuma-radio-group {
         > span {
             padding: 0px 20px 0px 4px;

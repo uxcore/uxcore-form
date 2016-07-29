@@ -1,3 +1,7 @@
+## 1.7.2
+
+* `CHANGED` add labelMatchInputHeight support (style) [#111](https://github.com/uxcore/uxcore-form/issues/111)
+
 ## 1.7.1
 
 * `CHANGED` change dependency `uxcore-edate-form-field` to ~0.3.0
