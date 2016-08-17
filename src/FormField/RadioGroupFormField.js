@@ -1,6 +1,7 @@
 /**
  * Created by xy on 15/4/13.
  */
+const React = require('react');
 const FormField = require('uxcore-form-field');
 const Constants = require("uxcore-const");
 const RadioGroup = require('uxcore-radiogroup');

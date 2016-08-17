@@ -1,3 +1,4 @@
+const React = require('react');
 const FormField = require('uxcore-form-field');
 const Constants = require("uxcore-const");
 const Tinymce = require("uxcore-tinymce");

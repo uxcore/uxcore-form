@@ -1,6 +1,8 @@
 const FormField = require('uxcore-form-field');
 const Constants = require("uxcore-const");
 const CheckboxGroup = require("uxcore-checkbox-group");
+const React = require('react');
+
 const Item = CheckboxGroup.Item;
 
 class CheckboxGroupFormField extends FormField {

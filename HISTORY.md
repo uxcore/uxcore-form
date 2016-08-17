@@ -1,3 +1,7 @@
+## 1.7.3
+
+* `FIXED` fix server render bug 
+
 ## 1.7.2
 
 * `CHANGED` add labelMatchInputHeight support (style) [#111](https://github.com/uxcore/uxcore-form/issues/111)
