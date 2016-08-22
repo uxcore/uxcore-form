@@ -106,7 +106,7 @@ class Form extends React.Component {
         }
     }
 
-    doValidate(force) {
+    doValidate(force, always) {
         let me = this;
         let pass = true;
         let keys = Object.keys(me.fields);
@@ -114,7 +114,7 @@ class Form extends React.Component {
             if (!me.fields[keys[i]].getProps().jsxshow) {
                 continue;
             }
-            let itemPass = me.fields[keys[i]].doValidate(force);
+            let itemPass = me.fields[keys[i]].doValidate(force, always);
             me.errors[keys[i]] = !itemPass;
             if (!itemPass) {
                 pass = false;
