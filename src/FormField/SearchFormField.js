@@ -124,7 +124,7 @@ class SearchFormField extends SelectFormField {
         }
         arr.push(<Select
                  {...options}>
-                    {me.generateOptionsFromData()}
+                    {me._generateOptionsFromData()}
                 </Select>);
 
         if (!me.props.tidy && hasAdvance) {

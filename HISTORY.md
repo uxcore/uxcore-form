@@ -1,7 +1,3 @@
-## 1.7.5
-
-* `FIXED` SearchFormField missing function 
-
 ## 1.7.4
 
 * `CHANGED` doValidate support param `always` which make doValidate always set the field error state to true/false.
