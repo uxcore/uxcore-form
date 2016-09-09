@@ -1,3 +1,7 @@
+## 1.8.0
+
+* `CHANGED` update `uxcore-date-form-field` to ~0.4.0
+
 ## 1.7.5
 
 * `CHANGED` support Child is null
@@ -16,7 +20,7 @@
 
 ## 1.7.1
 
-* `CHANGED` change dependency `uxcore-edate-form-field` to ~0.3.0
+* `CHANGED` change dependency `uxcore-date-form-field` to ~0.3.0
 
 ## 1.7.0
 
