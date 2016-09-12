@@ -29,6 +29,7 @@ let {
     ButtonGroupFormField,
     EditorFormField,
     SwitchFormField,
+    PickableFormField,
 } = Form;
 
 
@@ -263,6 +264,20 @@ class Demo extends React.Component {
             jsxcolumns:columns
         };
 
+        const itemsData = [{
+          text: '条件一',
+          value: 1,
+          num: 15
+        }, {
+          text: '条件二',
+          value: 2,
+          num: 20
+        }, {
+          text: '条件三',
+          value: 3,
+          disable: true
+        }];
+
         return (
             <div className="demo">
                 <Form ref="form" instantValidate={true} jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
@@ -325,7 +340,17 @@ class Demo extends React.Component {
                             })} onClick={me.handleShowPassChange.bind(me)}></i>
                         </RightAddon>
                     </InputFormField>
-                    <SwitchFormField jsxname="switch" jsxlabel="开关" checkedChildren="显示" unCheckedChildren="隐藏" />
+                    <FormRow>
+                        <SwitchFormField jsxname="switch" jsxlabel="开关" checkedChildren="显示" unCheckedChildren="隐藏" />
+                        <PickableFormField
+                          jsxlabel="test:"
+                          jsxname="test"
+                          data={itemsData}
+                          multiple={true}
+                          value={me.state.value}
+                          type="hook" 
+                        />
+                    </FormRow>
                     <TextAreaFormField jsxname="textArea"
                                         jsxlabel="多行文本框"
                                         jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}
@@ -394,6 +419,7 @@ class Demo extends React.Component {
                     <DateFormField showTime jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" format="yyyy/MM/dd" />
                     <CascadeSelectFormField
                      jsxdata={casData}
+                     allowClear
                      jsxplaceholder={['选项一', '选项二', '选项三']}
                      jsxname="cascade"
                      jsxlabel="级联选择"/>

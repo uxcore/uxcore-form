@@ -1,3 +1,8 @@
+## 1.8.1
+
+* `NEW` add new FormField `PickableFormField`
+* `CHANGED` CascadeSelectFormField support `allowClear`
+
 ## 1.8.0
 
 * `CHANGED` update `uxcore-date-form-field` to ~0.4.0
