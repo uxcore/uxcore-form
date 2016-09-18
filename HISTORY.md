@@ -1,3 +1,7 @@
+## 1.8.2
+
+* `CHANGED` update `PickableFormField` to ~0.2.0
+
 ## 1.8.1
 
 * `NEW` add new FormField `PickableFormField`

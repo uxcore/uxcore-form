@@ -131,6 +131,7 @@ $ npm start
 |jsxplaceholder|string|optional|""|占位符|-|
 |jsxdisabled|boolean|optional|false|disable 状态|-|
 |validateOnBlur|boolean|optional|false|验证是否是在 blur 的时候出发，默认情况是在 change 时触发，此项为 true 后，onChange 的 pass 永远为 true，相对应的 onBlur 的 pass 会随之变化|1.2.10|
+|onKeyDown|function(e)|optional|noop|监听键盘事件|
 |onBlur|function(e, pass)|optional|noop|输入框 blur 时触发，第二个参数为验证是否通过，若 validateOnBlur 为 false，则 pass 永远为 true|1.2.10|
 |onFocus|function(e)|optional|noop|输入框获取焦点时触发|1.2.10|
 |renderView|function(value)|optional|noop|自定义渲染 view 状态，参数是默认渲染的值|1.6.0|
@@ -165,6 +166,7 @@ $ npm start
 |---|---|---|---|---|
 |jsxplaceholder|string|optional|""|占位符|
 |validateOnBlur|boolean|optional|false|验证是否是在 blur 的时候出发，默认情况是在 change 时触发，此项为 true 后，onChange 的 pass 永远为 true，相对应的 onBlur 的 pass 会随之变化|1.2.11|
+|onKeyDown|function(e)|optional|noop|监听键盘事件|
 |onBlur|function(e, pass)|optional|noop|输入框 blur 时触发，第二个参数为验证是否通过，若 validateOnBlur 为 false，则 pass 永远为 true|1.2.11|
 |onFocus|function(e)|optional|noop|输入框获取焦点时触发|1.2.11|
 |autoTrim|boolean|optional|-|自动去除值两端的空格|1.2.12|
@@ -279,6 +281,15 @@ jsxdata 目前支持两种格式
 |jsxdata|object|required|-|级联选择框，只支持直接传入 data 初始化，格式见 Usage 中的 casData，length 为必须传的 key，告诉 field 有几层级联。|
 |jsxplaceholder|string|optional|"请下拉选择"|占位符|
 |jsxstyle|object|optional|-|与 react 传入 style 的方式相同，修改选择框的样式|
+
+### PickableFormField
+
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|multiple|boolean|optional|true|是否支持多选|
+|value|string/number|required|-|pickable Item 对应的值|
+|type|string|optional|normal|样式风格，可选值为normal,simple,hook|
+|max|number|optional|99|最大显示的数字，超过 max，显示 max+|
 
 ### EditorFormField
 
