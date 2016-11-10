@@ -8,7 +8,7 @@ class FormRow extends React.Component {
     this.totalFlex = 0;
   }
 
-  _processChild(children) {
+  processChild(children) {
     const me = this;
     me.totalFlex = 0;
     const length = React.Children.count(children);
@@ -17,9 +17,9 @@ class FormRow extends React.Component {
       console.warn('FORM: You must pass children to the form component');
       return false;
     }
-    React.Children.forEach(children, (child, index) => {
+    React.Children.forEach(children, (child) => {
       // 如果是自己添加的 DOM 直接抛弃
-      if (typeof child.type == 'function') {
+      if (typeof child.type === 'function') {
         let displayName = child.type.displayName;
         if (displayName === 'EngineNode') {
           displayName = child.props._componentName;
@@ -38,12 +38,13 @@ class FormRow extends React.Component {
 
   render() {
     const me = this;
-    const elements = me._processChild(me.props.children);
+    const elements = me.processChild(me.props.children);
     return (
-      <div className={classnames({
-        [me.props.jsxprefixCls]: true,
-        [me.props.className]: !!me.props.className,
-      })}
+      <div
+        className={classnames({
+          [me.props.jsxprefixCls]: true,
+          [me.props.className]: !!me.props.className,
+        })}
       >
         {!!elements && elements.map((child, index) => {
           const value = me.props.data[child.props.jsxname];
@@ -51,16 +52,15 @@ class FormRow extends React.Component {
             mode: me.props.mode,
             jsxinstant: me.props.instantValidate,
             value,
+            asyncValidate: me.props.asyncValidate,
             key: child.props.jsxname || index,
-            style: { width: `${child.props.jsxflex / me.totalFlex * 100}%` },
+            style: { width: `${(child.props.jsxflex / me.totalFlex) * 100}%` },
             attachFormField: me.props.attachFormField,
             detachFormField: me.props.detachFormField,
             handleDataChange: me.props.handleDataChange,
             getValues: me.props.getValues,
             resetValues: me.props.resetValues,
           });
-
-          return child;
         })}
       </div>
     );

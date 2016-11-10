@@ -159,14 +159,14 @@ class Form extends React.Component {
   processChild(children) {
     const length = React.Children.count(children);
     const elements = [];
-    if (length == 0) {
+    if (length === 0) {
       console.warn('FORM: You must pass children to the form component');
       return false;
     }
 
-    React.Children.forEach(children, (child, index) => {
+    React.Children.forEach(children, (child) => {
       // 如果是自己添加的 DOM 直接抛弃
-      if (child && typeof child.type == 'function') {
+      if (child && typeof child.type === 'function') {
         let displayName = child.type.displayName;
         if (displayName === 'EngineNode') {
           displayName = child.props._componentName;
@@ -175,8 +175,7 @@ class Form extends React.Component {
           elements.push(<FormRow>
             {child}
           </FormRow>);
-        }
-        else if (/FormRow/.test(displayName)) {
+        } else if (/FormRow/.test(displayName)) {
           elements.push(child);
         }
       }
@@ -202,6 +201,7 @@ class Form extends React.Component {
           React.cloneElement(child, {
             mode: me.props.jsxmode,
             instantValidate: me.props.instantValidate,
+            asyncValidate: me.props.asyncValidate,
             data: deepcopy(me.props.jsxvalues || me.props.passedData || {}),
             key: index,
             attachFormField: me.attachFormField,

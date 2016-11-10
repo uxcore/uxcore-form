@@ -1,3 +1,7 @@
+## 1.8.3
+
+* `NEW` add new prop `asyncValidate`
+
 ## 1.8.2
 
 * `CHANGED` update `PickableFormField` to ~0.2.0
