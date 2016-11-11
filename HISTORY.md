@@ -1,3 +1,7 @@
+## 1.8.4
+
+* `CHANGED` getValues method will return a promise if asyncValidate is true 
+
 ## 1.8.3
 
 * `NEW` add new prop `asyncValidate`

@@ -44,10 +44,14 @@ class Form extends React.Component {
         pass: flag,
       };
     }
-    return {
-      values: deepcopy(me.data),
-      pass: true,
-    };
+    return new Promise((resolve) => {
+      me.doValidate(force).then((pass) => {
+        resolve({
+          values: deepcopy(me.data),
+          pass,
+        });
+      });
+    });
   }
 
   /*
@@ -136,7 +140,7 @@ class Form extends React.Component {
         }
       }
       Promise.all(promises).then((result) => {
-        const failItems = result.filter(item => item);
+        const failItems = result.filter(item => item === false);
         if (failItems.length) {
           pass = false;
         }
