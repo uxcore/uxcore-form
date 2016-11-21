@@ -1,3 +1,7 @@
+## 1.8.6
+
+* `CHANGED` RadioFormField support `jsxdisabled`
+
 ## 1.8.5
 
 * `CHANGED` EditorFormField jsxcontent is deprecated. use jsxvalues directly.

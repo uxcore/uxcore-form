@@ -178,6 +178,10 @@ $ npm start
 
 ### RadioGroupFormField
 
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|jsxdisabled|boolean|optional|false|disable 状态|
+
 * Item：通过 RadioGroupFormField.Item 取得，有两个 props
     * value
     * text：显示的值

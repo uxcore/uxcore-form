@@ -314,11 +314,13 @@ class Demo extends React.Component {
           </FormRow>
           <InputFormField jsxname="pass" jsxlabel="请输入密码" inputType={me.state.showPass ? 'text' : 'password'}>
             <RightAddon>
-              <i className={classnames({
-                'kuma-icon': true,
-                'kuma-icon-privacy': !me.state.showPass,
-                'kuma-icon-public': me.state.showPass,
-              })} onClick={me.handleShowPassChange.bind(me)}
+              <i
+                className={classnames({
+                  'kuma-icon': true,
+                  'kuma-icon-privacy': !me.state.showPass,
+                  'kuma-icon-public': me.state.showPass,
+                })}
+                onClick={me.handleShowPassChange.bind(me)}
               />
             </RightAddon>
           </InputFormField>
