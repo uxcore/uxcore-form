@@ -1,3 +1,7 @@
+## 1.8.5
+
+* `CHANGED` EditorFormField jsxcontent is deprecated. use jsxvalues directly.
+
 ## 1.8.4
 
 * `CHANGED` getValues method will return a promise if asyncValidate is true 
