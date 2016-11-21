@@ -297,7 +297,7 @@ jsxdata 目前支持两种格式
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|
 |placeholder|string|optional|""|占位符|
-|jsxcontent|string|optional|""|由于 tinymce 的默认值传法的特殊性，EditorFormField 的默认值通过此 prop 传入|
+|jsxcontent|string|optional|""|已废弃，默认值直接通过 Form 的 jsxvalues 即可传递|
 |jsxconfig|object|optional|{}|用户自定义的配置项，tinyMCE 的配置项，官方文档中所有 init 部分的配置在这里完成，详细见 http://www.tinymce.com/wiki.php/Configuration|
 
 

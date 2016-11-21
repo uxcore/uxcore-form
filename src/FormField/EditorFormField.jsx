@@ -14,7 +14,7 @@ class EditorFormField extends FormField {
   componentWillReceiveProps(nextProps) {
     const me = this;
     if (!deepEqual(nextProps.value, me.props.value)) {
-      me.handleDataChange(nextProps.value, true);
+      me.handleDataChange(nextProps.value, false, true);
     }
   }
 
@@ -54,8 +54,8 @@ class EditorFormField extends FormField {
   renderField() {
     const me = this;
     const mode = me.props.jsxmode || me.props.mode;
-    if (me.state.fromReset && mode === Constants.MODE.EDIT) {
-      me.tinymce.resetValue(me.props.jsxcontent);
+    if (me.state.fromReset && mode === Constants.MODE.EDIT && me.tinymce) {
+      me.tinymce.resetValue(me.state.value || me.props.jsxcontent);
     }
     if (mode === Constants.MODE.EDIT) {
       return (

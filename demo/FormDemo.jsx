@@ -52,6 +52,7 @@ class Demo extends React.Component {
         fruit: 'apple',
         number: 1,
         city: 'nj',
+        editor: '我是一个编辑器',
         option: '1',
         // textArea: "我是多行文本",
         // date: "2015-09-01",
@@ -136,6 +137,7 @@ class Demo extends React.Component {
         fruit: 'apple',
         city: [],
         textArea: '我是多行文本',
+        editor: '默认值被手动修改',
         date: '2015-09-01',
         checkbox: ['sea'],
         // cascade: ["a", "ab"]
