@@ -1,3 +1,7 @@
+## 1.8.7
+
+* `FIXED` searchFormField lineHeight bug
+
 ## 1.8.6
 
 * `CHANGED` RadioFormField support `jsxdisabled`

@@ -36,6 +36,9 @@ class Demo extends React.Component {
       searchPlaceholder: '请勿泄露员工信息',
       placeholder: '请勿泄露员工信息',
       jsxfetchUrl: 'http://suggest.taobao.com/sug',
+      onSelect() {
+        console.log('select');
+      },
       advancedOptions: [
         {
           value: '1',
