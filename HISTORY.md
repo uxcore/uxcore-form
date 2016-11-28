@@ -1,3 +1,7 @@
+## 1.8.8
+
+* `CHANGED` add subComp TextAreaCount for TextAreaFormField
+
 ## 1.8.7
 
 * `FIXED` searchFormField lineHeight bug

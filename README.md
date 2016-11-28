@@ -175,6 +175,15 @@ $ npm start
 
 > 配置 autosize 的同时，还可以通过样式指定 min-height 和 max-height
 
+* 插件：
+    * Count，通过 TextAreaFormField.TextAreaCount 取得，一个内置的计数器，用法如下：
+
+    ```javascript
+    <TextAreaFormField>
+        <TextAreaCount total={100}>
+    </TextAreaFormField>
+    ```
+
 
 ### RadioGroupFormField
 

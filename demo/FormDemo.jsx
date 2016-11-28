@@ -39,6 +39,7 @@ const {
 const CheckboxItem = CheckboxGroupFormField.Item;
 const RadioItem = RadioGroupFormField.Item;
 const { Count, LeftAddon, RightAddon } = InputFormField;
+const { TextAreaCount } = TextAreaFormField;
 const Option = SelectFormField.Option;
 
 class Demo extends React.Component {
@@ -297,7 +298,14 @@ class Demo extends React.Component {
             />
 
             <ButtonGroupFormField jsxshow={false}>
-              <Button size="medium" type="primary" action="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
+              <Button
+                size="medium"
+                type="primary"
+                action="submit"
+                onClick={me.handleFormClick.bind(me)}
+              >
+                提交
+              </Button>
               <Button size="medium" type="secondary" action="reset">取消</Button>
             </ButtonGroupFormField>
           </FormRow>
@@ -347,7 +355,9 @@ class Demo extends React.Component {
             jsxplaceholder="测试"
             validateOnBlur={false}
             onBlur={me.handleTextAreaBlur.bind(me)}
-          />
+          >
+            <TextAreaCount total={100} />
+          </TextAreaFormField>
           <FormRowTitle jsxtitle="我是行标题2" />
           <FormRow>
             <SelectFormField
