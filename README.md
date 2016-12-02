@@ -313,6 +313,10 @@ jsxdata 目前支持两种格式
 |jsxcontent|string|optional|""|已废弃，默认值直接通过 Form 的 jsxvalues 即可传递|
 |jsxconfig|object|optional|{}|用户自定义的配置项，tinyMCE 的配置项，官方文档中所有 init 部分的配置在这里完成，详细见 http://www.tinymce.com/wiki.php/Configuration|
 
+#### API
+
+setContent(content)：设置 EditorFormField 的值，很不幸，EditorFormField 无法做成完全受控的组件，因为 setContent 操作会导致搜狗等中文输入法使用障碍，因此 EditorFormField 的值重置通过这个 API 来完成，或者也可以使用 Form 的 setValues 方法。
+
 
 ### OtherFormField
 

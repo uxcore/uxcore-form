@@ -51,6 +51,10 @@ class EditorFormField extends FormField {
     return me.props.jsxprefixCls;
   }
 
+  setContent(content) {
+    this.tinymce.resetValue(content);
+  }
+
   renderField() {
     const me = this;
     const mode = me.props.jsxmode || me.props.mode;

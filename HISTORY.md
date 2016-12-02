@@ -1,3 +1,7 @@
+## 1.8.9
+
+* `CHANGED` EditorFormField add new API `setContent`
+
 ## 1.8.8
 
 * `CHANGED` add subComp TextAreaCount for TextAreaFormField
