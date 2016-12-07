@@ -1,3 +1,7 @@
+## 1.8.10
+
+* `FIXED` textarea height bug [#121](https://github.com/uxcore/uxcore-form/issues/121)
+
 ## 1.8.9
 
 * `CHANGED` EditorFormField add new API `setContent`
