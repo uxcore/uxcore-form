@@ -1,3 +1,7 @@
+## 1.8.11
+
+* `CHANGED` update `uxcore-date-form-field` to ~0.5.0 
+
 ## 1.8.10
 
 * `FIXED` textarea height bug [#121](https://github.com/uxcore/uxcore-form/issues/121)

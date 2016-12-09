@@ -276,6 +276,7 @@ jsxdata 目前支持两种格式
 |jsxfrom|string|optional|-|开始日期|
 |jsxto|string|optional|-|结束日期|
 |panel|string|optional|"day"|何种面板,枚举值为"month","year"和"day"|
+|autoMatchWidth|boolean|optional|false|从 1.8.11 版本支持，在级联状态下输入框自动匹配宽度|
 
 除此之外，支持除 onSelect，[uxcore-calendar](https://www.npmjs.com/package/uxcore-calendar) 的所有 props。
 
