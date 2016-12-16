@@ -8,7 +8,6 @@
 
 const React = require('react');
 const FormRow = require('uxcore-form-row');
-const FormField = require('uxcore-form-field');
 const classnames = require('classnames');
 const deepcopy = require('lodash/cloneDeep');
 const deepEqual = require('deep-equal');
@@ -224,7 +223,7 @@ class Form extends React.Component {
 // 以 Form 的插件的形式给出
 Form.FormRow = FormRow;
 Form.FormRowTitle = FormRowTitle;
-Form.FormField = FormField;
+
 
 // Form.MentionFormField = MentionFormField;
 Form.Constants = Constants;

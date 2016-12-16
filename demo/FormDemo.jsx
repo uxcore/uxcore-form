@@ -33,6 +33,7 @@ const {
   EditorFormField,
   SwitchFormField,
   PickableFormField,
+  createFormField,
 } = Form;
 
 
@@ -41,6 +42,7 @@ const RadioItem = RadioGroupFormField.Item;
 const { Count, LeftAddon, RightAddon } = InputFormField;
 const { TextAreaCount } = TextAreaFormField;
 const Option = SelectFormField.Option;
+const CustomField = createFormField();
 
 class Demo extends React.Component {
 
@@ -436,6 +438,8 @@ class Demo extends React.Component {
             jsxlabel="富文本编辑器"
             placeholder="测试"
           />
+
+          <CustomField jsxname="custom" jsxlabel="定制" placeholder="test" />
 
           <ButtonGroupFormField>
             <Button size="medium" onClick={me.handleClick.bind(me)}>提交</Button>

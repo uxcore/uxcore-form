@@ -56,6 +56,16 @@ $ npm start
 
 * isDirty() 获取目前的数据是否没有通过检测，返回 true 或 false。
 
+#### Form.createCellField(options)
+
+|Name                |Type                |Require   |Default     |Since Ver. |Note | 
+|---                 |---                 |---       |---         |---        |---|
+|options.component           |React Element       |yes       |input       |1.8.12    |被包裹的组件，需要提供 value 和 onChange，或相同功能的 API |
+|options.valuePropName       |string              |No        |value       |1.8.12    |与 value 对应的 prop 名字 |
+|options.changePropName      |string              |No        |onChange    |1.8.12    |与 onChange 对应的 prop 名字|
+|options.processValue        |func(value, ...other)                |No        | -          |1.8.12    |针对 value（editKey 对应字段）的处理函数|
+|options.renderView         |func(value)                |No        | `val => JSON.stringify(val)`         |1.8.12    |定制化渲染 view 状态|
+
 ## props
 
 ### Form

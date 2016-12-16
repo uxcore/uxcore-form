@@ -22,5 +22,7 @@ Form.EditorFormField = require('./FormField/EditorFormField');
 Form.SearchFormField = require('./FormField/SearchFormField');
 Form.SwitchFormField = require('uxcore-switch-form-field');
 Form.PickableFormField = require('uxcore-pickable-form-field');
+Form.FormField = require('uxcore-form-field');
 
+Form.createFormField = Form.FormField.createFormField;
 module.exports = Form;

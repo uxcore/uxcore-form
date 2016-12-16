@@ -1,3 +1,7 @@
+## 1.8.12
+
+* `CHANGED` add new API `createFormField`
+
 ## 1.8.11
 
 * `CHANGED` update `uxcore-date-form-field` to ~0.5.0 
