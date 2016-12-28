@@ -1,3 +1,7 @@
+## 1.8.13
+
+* `CHANGED` checkbox & radio style change
+
 ## 1.8.12
 
 * `CHANGED` add new API `createFormField`
