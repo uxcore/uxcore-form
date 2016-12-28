@@ -56,7 +56,7 @@ $ npm start
 
 * isDirty() 获取目前的数据是否没有通过检测，返回 true 或 false。
 
-#### Form.createCellField(options)
+#### Form.createFormField(options)
 
 |Name                |Type                |Require   |Default     |Since Ver. |Note | 
 |---                 |---                 |---       |---         |---        |---|

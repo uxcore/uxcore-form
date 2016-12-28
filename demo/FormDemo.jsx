@@ -370,7 +370,13 @@ class Demo extends React.Component {
               disabled={false}
               jsxdata={me.state.jsxdata}
             />
-            <DateFormField format="yyyy-MM-dd HH:mm:ss" jsxname="date" jsxlabel="日期" jsxto={'2016-05-24'} locale="zh-cn" />
+            <DateFormField
+              format="yyyy-MM-dd HH:mm:ss"
+              jsxname="date"
+              jsxlabel="日期"
+              jsxto={'2016-05-24'}
+              locale="zh-cn"
+            />
           </FormRow>
           <FormRow>
             <SelectFormField
@@ -424,7 +430,24 @@ class Demo extends React.Component {
             jsxtype="cascade"
             jsxname="casDate"
             jsxlabel="级联日期"
+            // instantValidate={false}
             format="yyyy/MM/dd"
+            jsxrules={[{
+              validator: (value) => {
+                if (typeof value === 'undefined') {
+                  return false;
+                } else if (Array.isArray(value) && value.length < 2) {
+                  return false;
+                }
+                for (let i = 0, l = value.length; i < l; i++) {
+                  if (!value[i]) {
+                    return false;
+                  }
+                }
+                return true;
+              },
+              errMsg: '出错啦',
+            }]}
           />
           <CascadeSelectFormField
             jsxdata={casData}

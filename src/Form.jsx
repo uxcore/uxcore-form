@@ -150,7 +150,16 @@ class Form extends React.Component {
 
 
   isDirty() {
-    return !this.doValidate();
+    const me = this;
+    const { asyncValidate } = me.props;
+    if (!asyncValidate) {
+      return !me.doValidate();
+    }
+    return new Promise((resolve) => {
+      me.doValidate().then((pass) => {
+        resolve(!pass);
+      });
+    });
   }
 
   /*
