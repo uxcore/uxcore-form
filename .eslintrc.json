@@ -19,6 +19,7 @@
       {
         "allowForLoopAfterthoughts": true
       }
-    ]
+    ],
+    "no-underscore-dangle": "off"
   }
 }

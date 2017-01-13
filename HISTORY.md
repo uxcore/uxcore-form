@@ -1,3 +1,9 @@
+## 1.9.0
+
+* `CHANGED` update `uxcore-select2` to ~0.4.0
+* `CHANGED` update `uxcore-select-form-field` to ~0.3.0
+* `CHANGED` update `uxcore-date-form-field` to ~0.6.0
+
 ## 1.8.13
 
 * `CHANGED` checkbox & radio style change
