@@ -91,6 +91,7 @@ class Demo extends React.Component {
     const me = this;
     me.refs.form.setValues({
       test1: '我不是测试',
+      cascade: [],
     });
   }
 

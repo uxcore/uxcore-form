@@ -71,7 +71,7 @@ class CascadeSelectFormField extends FormField {
           placeholder: ((placeholder instanceof Array) ? placeholder[i] : placeholder),
         };
         selectOptions.onChange = me.handleChange.bind(me, i);
-        selectOptions.value = stateValue[i] || undefined;
+        selectOptions.value = stateValue[i] || [];
         if (i !== 0) {
           arr.push(<span key={`split${i}`} className="kuma-uxform-split">-</span>);
         }

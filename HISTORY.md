@@ -1,3 +1,7 @@
+## 1.9.1
+
+* `FIXED` cascadeSelectFormField can not be reset 
+
 ## 1.9.0
 
 * `CHANGED` update `uxcore-select2` to ~0.4.0
