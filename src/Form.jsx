@@ -215,7 +215,7 @@ class Form extends React.Component {
             instantValidate: me.props.instantValidate,
             asyncValidate: me.props.asyncValidate,
             data: deepcopy(me.props.jsxvalues || me.props.passedData || {}),
-            key: index,
+            key: child.key || index,
             attachFormField: me.attachFormField,
             detachFormField: me.detachFormField,
             handleDataChange: me.handleDataChange,

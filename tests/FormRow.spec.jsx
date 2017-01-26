@@ -1,9 +1,9 @@
 import expect from 'expect.js';
 import React from 'react';
 import { mount } from 'enzyme';
-import Form from '../src/Form';
 import FormField from 'uxcore-form-field';
-import FormRow from '../src/FormRow';
+import FormRow from 'uxcore-form-row';
+import Form from '../src/Form';
 
 /* eslint-disable react/no-string-refs */
 describe('FormRow', () => {

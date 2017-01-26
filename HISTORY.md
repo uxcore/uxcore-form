@@ -1,3 +1,7 @@
+## 1.9.2
+
+* `CHANGED` use user-specified FormRow key
+
 ## 1.9.1
 
 * `FIXED` cascadeSelectFormField can not be reset 

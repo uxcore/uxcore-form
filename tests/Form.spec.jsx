@@ -2,6 +2,7 @@ import expect from 'expect.js';
 import React from 'react';
 import { mount } from 'enzyme';
 import FormField from 'uxcore-form-field';
+import FormRow from 'uxcore-form-row';
 
 import Form from '../src/Form';
 import FormRowTitle from '../src/FormRowTitle';
@@ -41,7 +42,7 @@ describe('Form', () => {
     );
     expect(wrapper.find('FormField').prop('jsxinstant')).to.be(false);
   });
-  it('jsxonChange', (done) => {
+  it.skip('jsxonChange', (done) => {
     wrapper = mount(
       <Form
         jsxvalues={{ test: '1' }}
@@ -56,6 +57,15 @@ describe('Form', () => {
       </Form>
     );
     wrapper.node.handleDataChange(wrapper.find('FormField').node, { value: '2', pass: true });
+  });
+
+  it('use user FormRow key if specified', () => {
+    wrapper = mount(
+      <Form>
+        <FormRow key="test" />
+      </Form>
+    );
+    expect(wrapper.find('FormRow').key()).to.be('test');
   });
   describe('API', () => {
     it('getValues', () => {
