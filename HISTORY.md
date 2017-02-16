@@ -1,3 +1,7 @@
+## 1.10.0
+
+* `CHANGED` update `uxcore-date-form-field` to ~0.7.0
+
 ## 1.9.2
 
 * `CHANGED` use user-specified FormRow key
