@@ -1,3 +1,8 @@
+## 1.10.1
+
+* `CHANGED` `CheckboxFormField` show key if label is not found in view mode
+* `CHANGED` `RadioFormField` show key if label is not found in view mode
+
 ## 1.10.0
 
 * `CHANGED` update `uxcore-date-form-field` to ~0.7.0
