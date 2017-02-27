@@ -306,6 +306,7 @@ jsxdata 目前支持两种格式
 |jsxdata|object|required|-|级联选择框，只支持直接传入 data 初始化，格式见 Usage 中的 casData，length 为必须传的 key，告诉 field 有几层级联。|
 |jsxplaceholder|string|optional|"请下拉选择"|占位符|
 |jsxstyle|object|optional|-|与 react 传入 style 的方式相同，修改选择框的样式|
+|getPopupContainer|function():React Element|optional| - | 弹出的菜单渲染在哪个容器中，需返回一个 DOM Node|
 
 ### PickableFormField
 

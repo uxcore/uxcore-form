@@ -1,3 +1,7 @@
+## 1.10.2
+
+* `NEW` `CascadeSelectFormField` support `getPopupContainer`
+
 ## 1.10.1
 
 * `CHANGED` `CheckboxFormField` show key if label is not found in view mode

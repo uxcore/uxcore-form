@@ -453,6 +453,12 @@ class Demo extends React.Component {
           <CascadeSelectFormField
             jsxdata={casData}
             allowClear
+            getPopupContainer={() => {
+              const div = document.createElement('div');
+              div.className = 'uxcore';
+              document.body.appendChild(div);
+              return div;
+            }}
             jsxplaceholder={['选项一', '选项二', '选项三']}
             jsxname="cascade"
             jsxlabel="级联选择"
