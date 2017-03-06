@@ -342,6 +342,12 @@
   }
   .has-count {
     position: relative;
+    .kuma-uxform-count {
+      color: @text-helper-color;
+    }
+    .kuma-uxform-count-has-error {
+      color: @text-danger-color;
+    }
     .kuma-textarea {
       padding-bottom: 20px;
     }
@@ -349,9 +355,6 @@
       position: absolute;
       bottom: 5px;
       right: 10px;
-      &.overflow {
-          color: @text-danger-color;
-      }
     }
   }
 }
