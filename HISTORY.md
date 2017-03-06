@@ -1,3 +1,9 @@
+## 1.10.3
+
+* `CHANGED` change color if count overflow;
+* `CHANGED` tips style optimaztion
+* `CHANGED` change textarea count style
+
 ## 1.10.2
 
 * `NEW` `CascadeSelectFormField` support `getPopupContainer`
