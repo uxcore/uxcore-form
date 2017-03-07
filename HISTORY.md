@@ -1,3 +1,7 @@
+## 1.10.5
+
+* `FIXED` fix checkbox/radio view bug if there is only one child
+
 ## 1.10.3
 
 * `CHANGED` change color if count overflow;

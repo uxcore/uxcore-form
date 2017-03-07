@@ -37,7 +37,8 @@ class CheckboxGroupFormField extends FormField {
         </CheckboxGroup>
       );
     } else if (me.state.value instanceof Array) {
-      let textArr = me.props.children.filter(
+      const children = me.props.children instanceof Array ? me.props.children : [me.props.children];
+      let textArr = children.filter(
         child => me.state.value.indexOf(child.props.value) !== -1
       ).map(item => item.props.text);
       if (textArr.length === 0) {
