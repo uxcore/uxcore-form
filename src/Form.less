@@ -214,6 +214,19 @@
   }
 }
 
+.kuma-editor-uxform-field {
+  .mce-tinymce {
+    border-radius: @global-border-radius;
+    border-color: @border-color;
+    &:hover {
+      border-color: @border-hover-color;
+    }
+    &:focus {
+      border-color: @border-focus-color;
+    }
+  }
+}
+
 .kuma-pickable-uxform-field {
   .kuma-uxform-field-content {
     padding-top: 4px;

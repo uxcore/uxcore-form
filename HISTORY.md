@@ -1,3 +1,7 @@
+## 1.10.7
+
+* `CHANGED` apply special border style for EditorFormField
+
 ## 1.10.6
 
 * `FIXED` input border color difference.
