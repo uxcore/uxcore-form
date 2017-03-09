@@ -283,10 +283,14 @@
     &.has-class {
       .kuma-select2-selection {
         border-left: none;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
       }
     }
-    .kuma-select2-selection {
+   .kuma-select2-selection {
       border-right: none;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
     }
   }
   .kuma-select2-combobox {
@@ -298,6 +302,7 @@
     width: 100px;
     .kuma-select2-selection {
       border-left: none;
+      border-radius: 0px;
     }
     &.kuma-select2-open .kuma-select2-selection {
       border-left: 1px solid @border-color;
@@ -307,6 +312,8 @@
     width: 70px;
     .kuma-select2-selection {
       background: @basic-200;
+      border-bottom-right-radius: 0px;
+      border-top-right-radius: 0px;
     }
     .kuma-select2-selection__placeholder {
       color: @text-primary-color;
@@ -316,6 +323,8 @@
   .kuma-uxform-class-search {
     &.kuma-select2-open .kuma-select2-selection {
       border-bottom: none;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
     }
   }
   .kuma-search-uxform-field-icon {
@@ -328,6 +337,8 @@
     color: white;
     background: @bg-selected-color;
     vertical-align: top;
+    border-top-right-radius: @global-border-radius;
+    border-bottom-right-radius: @global-border-radius;
     &.tidy-pattern {
       border: 1px solid @border-color;
       color: @text-thirdary-color;

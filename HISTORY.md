@@ -1,3 +1,7 @@
+## 1.10.8
+
+* `FIXED` fix border-radius bug in searchFormField
+
 ## 1.10.7
 
 * `CHANGED` apply special border style for EditorFormField
