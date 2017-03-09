@@ -1,3 +1,7 @@
+## 1.10.6
+
+* `FIXED` input border color difference.
+
 ## 1.10.5
 
 * `FIXED` fix checkbox/radio view bug if there is only one child

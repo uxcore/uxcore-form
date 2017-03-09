@@ -89,15 +89,19 @@
   border: 1px solid @border-color;
   border-right: none;
   text-align: center;
-  border-bottom-left-radius: @input-border-radius;
-  border-top-left-radius: @input-border-radius;
+  border-bottom-left-radius: @global-border-radius;
+  border-top-left-radius: @global-border-radius;
   vertical-align: top;
   padding-top: 5px;
 }
 
 .kuma-uxform-left-icon-focus {
-  border-color: @border-color;
+  border-color: @border-focus-color;
   outline: none;
+}
+
+.kuma-uxform-left-icon-hover {
+  border-color: @border-hover-color;
 }
 
 .kuma-uxform-right-icon {
@@ -106,18 +110,21 @@
   border: 1px solid @border-color;
   border-left: none;
   text-align: center;
-  border-bottom-right-radius: @input-border-radius;
-  border-top-right-radius: @input-border-radius;
+  border-bottom-right-radius: @global-border-radius;
+  border-top-right-radius: @global-border-radius;
   vertical-align: top;
   padding-top: 5px;
 }
 
 .kuma-input:focus+.kuma-uxform-right-icon,
 .kuma-input:focus+.kuma-uxform-count {
-  border: 1px @border-color solid;
-  border-left: none;
-  color: @text-primary-color;
+  border-color: @border-focus-color;
   outline: none;
+}
+
+.kuma-input:hover+.kuma-uxform-right-icon,
+.kuma-input:hover+.kuma-uxform-count {
+  border-color: @border-hover-color;
 }
 
 .kuma-uxform-field-core {
