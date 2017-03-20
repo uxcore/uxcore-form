@@ -1,3 +1,7 @@
+## 2.0.0
+
+* `CHANGED` update `uxcore-pickable-form-field` to ~0.3.0
+
 ## 1.10.8
 
 * `FIXED` fix border-radius bug in searchFormField
