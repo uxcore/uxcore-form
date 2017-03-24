@@ -281,9 +281,9 @@ class Demo extends React.Component {
               <LeftAddon>
                 <i className="kuma-icon kuma-icon-phone" />
               </LeftAddon>
-              <RightAddon>
-                <span>元</span>
-              </RightAddon>
+              {/* <RightAddon>
+                <span style={{ lineHeight: '24px' }}>元</span>
+              </RightAddon>*/}
               <Count total={20} />
             </InputFormField>
             <NumberInputFormField
@@ -324,7 +324,7 @@ class Demo extends React.Component {
             </CheckboxGroupFormField>
           </FormRow>
           <InputFormField jsxname="pass" jsxlabel="请输入密码" inputType={me.state.showPass ? 'text' : 'password'}>
-            <RightAddon>
+            <LeftAddon>
               <i
                 className={classnames({
                   'kuma-icon': true,
@@ -333,7 +333,7 @@ class Demo extends React.Component {
                 })}
                 onClick={me.handleShowPassChange.bind(me)}
               />
-            </RightAddon>
+            </LeftAddon>
           </InputFormField>
           <FormRow>
             <SwitchFormField

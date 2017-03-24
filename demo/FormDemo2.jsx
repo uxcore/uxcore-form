@@ -33,33 +33,32 @@ class Demo extends React.Component {
       jsxname: 'search',
       jsxlabel: '搜索框',
       dataType: 'jsonp',
-      searchPlaceholder: '请勿泄露员工信息',
-      placeholder: '请勿泄露员工信息',
+      placeholder: '姓名/手机号/工号',
       jsxfetchUrl: 'http://suggest.taobao.com/sug',
       onSelect() {
         console.log('select');
       },
-      advancedOptions: [
-        {
-          value: '1',
-          text: '选项一',
-        },
-        {
-          value: '2',
-          text: '选项二',
-        },
-      ],
-      advancedConfig: {
-        placeholder: '高级选项',
-      },
+      // advancedOptions: [
+      //   {
+      //     value: '1',
+      //     text: '选项一',
+      //   },
+      //   {
+      //     value: '2',
+      //     text: '选项二',
+      //   },
+      // ],
+      // advancedConfig: {
+      //   placeholder: '高级选项',
+      // },
       classOptions: [
         {
           value: '1',
-          text: '类别一',
+          text: '用户',
         },
         {
           value: '2',
-          text: '类别二',
+          text: '商品',
         },
       ],
       classConfig: {

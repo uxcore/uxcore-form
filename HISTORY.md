@@ -1,3 +1,7 @@
+## 2.0.10
+
+* `CHANGED` update SearchFormField style
+
 ## 2.0.0
 
 * `CHANGED` update `uxcore-pickable-form-field` to ~0.3.0

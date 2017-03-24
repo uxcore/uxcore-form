@@ -79,7 +79,10 @@
   display: table-cell;
   width: 35px;
   text-align: center;
+  vertical-align: middle;
   border: 1px solid @border-color;
+  border-bottom-right-radius: @input-border-radius;
+  border-top-right-radius: @input-border-radius;
   border-left: none;
 }
 
@@ -95,13 +98,13 @@
   padding-top: 5px;
 }
 
+.kuma-uxform-left-icon-hover {
+  border-color: @border-hover-color;
+}
+
 .kuma-uxform-left-icon-focus {
   border-color: @border-focus-color;
   outline: none;
-}
-
-.kuma-uxform-left-icon-hover {
-  border-color: @border-hover-color;
 }
 
 .kuma-uxform-right-icon {
@@ -149,9 +152,9 @@
 .kuma-uxform-errormsg {
   padding-top: 8px;
   color: #ea5652;
-  vertical-align: middle;
   .kuma-icon {
     margin-right: 4px;
+    vertical-align: middle;
   }
   .kuma-uxform-message-content {
     vertical-align: middle;
@@ -174,10 +177,11 @@
     .kuma-input,
     .kuma-uxform-left-icon,
     .kuma-uxform-right-icon,
+    .kuma-uxform-count,
     .kuma-textarea,
     .kuma-select2-selection,
     .mce-panel {
-      color: @text-danger-color;
+      // color: @text-danger-color;
       border-color: @border-danger-color;
       background-color: @bg-danger-color
     }
@@ -258,8 +262,9 @@
 
 .kuma-search-uxform-field {
   &:hover {
-    .kuma-search-uxform-field-icon.tidy-pattern {
+    .kuma-search-uxform-field-icon {
       border-color: @border-hover-color;
+      color: @normal-alpha-3;
     }
     .kuma-select2-selection {
       border-color: @border-hover-color;
@@ -267,17 +272,6 @@
   }
   .kuma-select2 {
     width: 200px;
-    height: 32px;
-  }
-  .kuma-select2-arrow {
-    height: 30px;
-  }
-  .kuma-select2-selection--single {
-    height: 32px;
-    .kuma-select2-selection__rendered,
-    .kuma-select2-selection__placeholder {
-      line-height: 30px;
-    }
   }
   .kuma-uxform-main-search {
     &.has-class {
@@ -302,6 +296,7 @@
     width: 100px;
     .kuma-select2-selection {
       border-left: none;
+      border-right: none;
       border-radius: 0px;
     }
     &.kuma-select2-open .kuma-select2-selection {
@@ -309,7 +304,7 @@
     }
   }
   .kuma-uxform-class-search {
-    width: 70px;
+    width: 58px;
     .kuma-select2-selection {
       background: @basic-200;
       border-bottom-right-radius: 0px;
@@ -330,21 +325,16 @@
   .kuma-search-uxform-field-icon {
     cursor: pointer;
     display: inline-block;
-    width: 32px;
-    height: 32px;
-    line-height: 32px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
     text-align: center;
-    color: white;
-    background: @bg-selected-color;
+    border: 1px solid @border-color;
+    color: @normal-alpha-4;
+    border-left: none;
     vertical-align: top;
     border-top-right-radius: @global-border-radius;
     border-bottom-right-radius: @global-border-radius;
-    &.tidy-pattern {
-      border: 1px solid @border-color;
-      color: @text-thirdary-color;
-      border-left: none;
-      background: white;
-    }
   }
 }
 
@@ -358,6 +348,9 @@
 .kuma-uxform-class-dropdown,
 .kuma-uxform-advanced-dropdown {
   border-top: none;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-color: @border-color;
   box-shadow: none;
 }
 

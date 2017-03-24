@@ -4,6 +4,7 @@ const Select = require('uxcore-select2');
 const assign = require('object-assign');
 const deepcopy = require('lodash/cloneDeep');
 const classnames = require('classnames');
+const Icon = require('uxcore-icon');
 
 const { Option } = Select;
 const selectOptions = ['onSelect', 'onDeselect', 'getPopupContainer', 'filterOption', 'allowClear', 'searchPlaceholder', 'tags', 'disabled', 'showSearch', 'placeholder', 'optionLabelProp', 'maxTagTextLength', 'dropdownMatchSelectWidth', 'dropdownClassName', 'notFoundContent'];
@@ -76,7 +77,11 @@ class SearchFormField extends SelectFormField {
         'has-advance': hasAdvance,
         'kuma-uxform-main-search': true,
       }),
+      dropdownClassName: classnames('kuma-uxform-main-search-dropdown', {
+        [me.props.dropdownClassName]: !!me.props.dropdownClassName,
+      }),
       optionFilterProp: me.props.optionFilterProp,
+      dropdownMatchSelectWidth: false,
       combobox: me.props.combobox,
       onChange: me.handleChange.bind(me),
       onSearch: me.handleSearch.bind(me),
@@ -126,7 +131,7 @@ class SearchFormField extends SelectFormField {
         })} key="icon"
         onClick={me.handleIconClick}
       >
-        <i className="kuma-icon kuma-icon-search" />
+        <Icon name="sousuo" />
       </span>
     );
     return arr;
