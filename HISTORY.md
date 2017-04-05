@@ -1,3 +1,7 @@
+## 3.0.0
+
+* `CHANGED` update `uxcore-date-form-field` to ~0.8.0
+
 ## 2.0.10
 
 * `CHANGED` update SearchFormField style
