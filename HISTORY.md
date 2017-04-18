@@ -1,3 +1,7 @@
+## 3.1.0
+
+* `CHANGED` method `setValues` will handle non-existent key. (#135) 
+
 ## 3.0.0
 
 * `CHANGED` update `uxcore-date-form-field` to ~0.8.0
