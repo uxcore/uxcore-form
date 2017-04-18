@@ -65,9 +65,11 @@ class Form extends React.Component {
     for (let i = 0; i < keys.length; i++) {
       if (!deepEqual(data[keys[i]], savedData[keys[i]])) {
         // see resetValues() to get the param meaning.
-        me.fields[keys[i]].handleDataChange(data[keys[i]] === undefined
-          ? null
-          : data[keys[i]], true, true);
+        if (me.fields[keys[i]]) {
+          me.fields[keys[i]].handleDataChange(data[keys[i]] === undefined
+            ? null
+            : data[keys[i]], true, true);
+        }
       }
     }
   }
