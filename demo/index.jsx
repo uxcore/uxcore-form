@@ -9,8 +9,8 @@
  const React = require('react');
  const ReactDOM = require('react-dom');
 
-//  const Demo = require('./FormDemo');
- const Demo = require('./FormDemo2');
+ const Demo = require('./FormDemo');
+//  const Demo = require('./FormDemo2');
 //  const Demo = require('./FormDemoAsync');
 
  ReactDOM.render(<Demo />, document.getElementById('UXCoreDemo'));
