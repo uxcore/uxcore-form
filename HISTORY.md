@@ -1,3 +1,7 @@
+## 2.1.0
+
+* `CHANGED` margin/padding adjustment, content color change
+
 ## 2.0.0
 
 * `CHANGED` update `uxcore-pickable-form-field` to ~0.3.0
