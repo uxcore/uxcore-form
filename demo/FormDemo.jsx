@@ -384,6 +384,7 @@ class Demo extends React.Component {
               jsxlabel="单选 combo 模式"
               disabled={false}
               jsxname="goods"
+              mode="edit"
               jsxfetchUrl="http://suggest.taobao.com/sug"
               dataType="jsonp"
               combobox
