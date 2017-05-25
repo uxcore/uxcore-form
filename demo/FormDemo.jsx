@@ -292,6 +292,7 @@ class Demo extends React.Component {
               jsxtype="money"
               delimiter=","
               fixedNum={4}
+              formatValueOnBlur
               jsxplaceholder="输入数字"
               jsxtips="数字和一般的输入框不同"
               jsxrules={[

@@ -1,3 +1,7 @@
+## 3.2.0
+
+* `CHANGED` filter invalid letter in `NumberInput`
+
 ## 3.1.0
 
 * `CHANGED` method `setValues` will handle non-existent key. (#135) 
