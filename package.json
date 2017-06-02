@@ -1,6 +1,6 @@
 {
  "name": "uxcore-form",
- "version": "3.3.0",
+ "version": "4.0.0",
  "description": "form component for uxcore",
  "repository": "https://github.com/uxcore/uxcore-form.git",
  "author": "eternalsky",
@@ -39,7 +39,7 @@
   "react-addons-test-utils": "0.14.x",
   "react-dom": "0.14.x",
   "uxcore-button": "^0.4.5",
-  "uxcore-kuma": "2.x",
+  "uxcore-kuma": "*",
   "uxcore-tools": "0.2.x"
  },
  "dependencies": {
@@ -57,7 +57,7 @@
   "uxcore-icon": "^0.1.4",
   "uxcore-input-form-field": "~0.1.1",
   "uxcore-other-form-field": "~0.1.2",
-  "uxcore-pickable-form-field": "~0.3.0",
+  "uxcore-pickable-form-field": "~0.4.0",
   "uxcore-radiogroup": "~1.2.0",
   "uxcore-select-form-field": "~0.3.0",
   "uxcore-select2": "~0.4.0",

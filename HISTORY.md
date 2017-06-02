@@ -1,3 +1,7 @@
+## 4.0.0
+
+* update `uxcore-pickable-form-field` to ~0.4.0
+
 ## 3.3.0
 
 * `CHANGED` filter invalid letter in `NumberInput`
