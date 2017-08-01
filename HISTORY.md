@@ -1,6 +1,10 @@
+## 5.0.0
+
+* `CHANGED` use `uxcore-title` instead of old FormRowTitle
+
 ## 4.0.0
 
-* update `uxcore-pickable-form-field` to ~0.4.0
+* `CHANGED` update `uxcore-pickable-form-field` to ~0.4.0
 
 ## 3.3.0
 
