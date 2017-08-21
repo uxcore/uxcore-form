@@ -53,7 +53,7 @@ class Demo extends React.Component {
       jsxvalues: {
         test1: '我是测试',
         fruit: 'apple',
-        number: 1,
+        // number: 1,
         city: 'nj',
         editor: '我是一个编辑器',
         option: '1',
@@ -92,6 +92,7 @@ class Demo extends React.Component {
     me.refs.form.setValues({
       test1: '我不是测试',
       fruit: 'orange',
+      number: '',
       cascade: [],
     });
   }
@@ -116,6 +117,7 @@ class Demo extends React.Component {
 
   handleChange(value, name, pass) {
     console.log(value, name, pass);
+    // this.setState(value);
   }
 
   handleKeyDown(e) {
@@ -141,6 +143,7 @@ class Demo extends React.Component {
         test1: '我是测试22',
         fruit: 'apple',
         city: [],
+        number: '',
         textArea: '我是多行文本',
         editor: '默认值被手动修改',
         date: '2015-09-01',
