@@ -1,3 +1,7 @@
+## 5.1.0
+
+* `CHANGED` update `uxcore-checkbox-group` & `uxcore-radiogroup` to `^1.2.0`
+
 ## 5.0.0
 
 * `CHANGED` use `uxcore-title` instead of old FormRowTitle
