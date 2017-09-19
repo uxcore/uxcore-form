@@ -6,7 +6,7 @@ React Form
 [![build status][travis-image]][travis-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 [![Dependency Status][dep-image]][dep-url]
-[![devDependency Status][devdep-image]][devdep-url] 
+[![devDependency Status][devdep-image]][devdep-url]
 [![NPM downloads][downloads-image]][npm-url]
 
 [![Sauce Test Status][sauce-image]][sauce-url]
@@ -36,7 +36,7 @@ $ npm start
 
 ## Usage
 
-> see demo/FormDemo.js for details  
+> see demo/FormDemo.js for details
 > 每一个 field 需要按照 Form -> FormRow -> FormField 的方式进行嵌套，允许 Form -> FormField 的嵌套，会自动增加 FormRow 这一层，并默认占一整行。
 
 
@@ -44,7 +44,7 @@ $ npm start
 
 ### Form
 
-* getValues(force) 获取目前的 values 和 pass（是否通过检测）。  
+* getValues(force) 获取目前的 values 和 pass（是否通过检测）。
 参数：
     * force `Boolean`: 强制校验或不校验，undefined 时则忽略此配置。
 
@@ -58,7 +58,7 @@ $ npm start
 
 #### Form.createFormField(options)
 
-|Name                |Type                |Require   |Default     |Since Ver. |Note | 
+|Name                |Type                |Require   |Default     |Since Ver. |Note |
 |---                 |---                 |---       |---         |---        |---|
 |options.component           |React Element       |yes       |input       |1.8.12    |被包裹的组件，需要提供 value 和 onChange，或相同功能的 API |
 |options.valuePropName       |string              |No        |value       |1.8.12    |与 value 对应的 prop 名字 |
@@ -112,7 +112,7 @@ $ npm start
 |jsxrules|object/array|optional|-|validators，具体用法和格式见 Usage，Form 已经提供了一些现成的 validator 供使用。也可以自己编写|
 |instantValidate|boolean|optional|true|是否开启即时校验|
 
-### Validators 
+### Validators
 
 > Form 提供了一些通用的 validator，通过 Form.Validators 来引入。用法还是见 Usage 和 `demo/formDemo.js` 包括：
 > 所有的 validator 返回 true，表示通过。
@@ -268,13 +268,20 @@ jsxdata 目前支持两种格式
     * value
     * text：显示的值
     * disabled：该 Item 的 disable 状态。
+    * addon: 额外指定的信息，例如tips
 * 使用方式：
 
 ```javascript
 <CheckboxGroupFormField>
-    <Item value="1" text="a" disabled={true}>
-    <Item value="2" text="b">
-    <Item value="3" text="c">
+    <Item value="1" text="a" disabled={true} />
+    <Item value="2" text="b" />
+    <Item value="3" text="c"
+        addon={
+            <Tooltip overlay={<div>提示</div>}>
+                <i className='kuma-icon kuma-icon-caution' style={{color: 'blue', fontSize: '12px', 'marginLeft': '3px'}} />
+            </Tooltip>
+        }
+    />
 </CheckboxGroupFormField>
 ```
 
@@ -333,12 +340,12 @@ setContent(content)：设置 EditorFormField 的值，很不幸，EditorFormFiel
 ### OtherFormField
 
 > OtherFormField 是一个特殊的 FormField，它用来和其他 FormField 一起完成布局（比如在一行排列等），如果需要一些装饰类的东西，可以以子元素的形式传入到这个 Field 里。
-> 他也可以用于布局中的占位。 
+> 他也可以用于布局中的占位。
 
 ### ButtonGroupFormField
 
-> ButtonGroupFormField 是一个特殊的 FormField，它用来生成一些特定的表单按钮，这是为了与 Grid 相结合而准备的。如果需要自定义一些按钮，请使用 OtherFormField 和 uxcore-button 相结合来使用。  
-你可以像这样使用它：  
+> ButtonGroupFormField 是一个特殊的 FormField，它用来生成一些特定的表单按钮，这是为了与 Grid 相结合而准备的。如果需要自定义一些按钮，请使用 OtherFormField 和 uxcore-button 相结合来使用。
+你可以像这样使用它：
 ```javascript
 var Button = require('uxcore-button');
 <ButtonGroupFormField>

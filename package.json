@@ -40,7 +40,8 @@
   "react-dom": "0.14.x",
   "uxcore-button": "^0.4.5",
   "uxcore-kuma": "*",
-  "uxcore-tools": "0.2.x"
+  "uxcore-tools": "0.2.x",
+  "uxcore-tooltip": "^0.4.5"
  },
  "dependencies": {
   "classnames": "^2.1.2",
@@ -48,7 +49,7 @@
   "lie": "^3.1.0",
   "lodash": "^4.16.6",
   "object-assign": "^4.0.0",
-  "uxcore-checkbox-group": "~1.1.0",
+  "uxcore-checkbox-group": "~1.2.0",
   "uxcore-const": "~0.0.1",
   "uxcore-date-form-field": "~0.8.0",
   "uxcore-form-field": "~0.2.0",
