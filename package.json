@@ -40,8 +40,8 @@
   "react-dom": "0.14.x",
   "uxcore-button": "^0.4.5",
   "uxcore-kuma": "*",
-  "uxcore-popover": "^0.5.2",
-  "uxcore-tools": "0.2.x"
+  "uxcore-tools": "0.2.x",
+  "uxcore-tooltip": "^0.4.5"
  },
  "dependencies": {
   "classnames": "^2.1.2",
