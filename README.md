@@ -277,9 +277,9 @@ jsxdata 目前支持两种格式
     <Item value="2" text="b" />
     <Item value="3" text="c"
         addon={
-            <Popover overlay={<div>提示</div>}>
+            <Tooltip overlay={<div>提示</div>}>
                 <i className='kuma-icon kuma-icon-caution' style={{color: 'blue', fontSize: '12px', 'marginLeft': '3px'}} />
-            </Popover>
+            </Tooltip>
         }
     />
 </CheckboxGroupFormField>
