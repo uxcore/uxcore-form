@@ -12,6 +12,7 @@
 const classnames = require('classnames');
 const Button = require('uxcore-button');
 const React = require('react');
+const Popover = require('uxcore-popover');
 
 const Form = require('../src');
 
@@ -324,7 +325,13 @@ class Demo extends React.Component {
               <RadioItem value="watermelon" text="Watermelon" />
             </RadioGroupFormField>
             <CheckboxGroupFormField jsxname="checkbox" jsxlabel="复选框">
-              <CheckboxItem value="air" text="天空" />
+              <CheckboxItem value="air" text="天空"
+                addon={
+                  <Popover overlay={<div>提示</div>}>
+                    <i className='kuma-icon kuma-icon-caution' style={{color: 'blue', fontSize: '12px', 'marginLeft': '3px'}} />
+                  </Popover>
+                }
+              />
               <CheckboxItem value="sea" text="大海" />
             </CheckboxGroupFormField>
           </FormRow>
