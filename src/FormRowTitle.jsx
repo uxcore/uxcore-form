@@ -3,9 +3,10 @@
  * @time: 8/7 2015
  * Form Row Title
  */
-const React = require('react');
-const classnames = require('classnames');
-const Title = require('uxcore-title');
+import React from 'react';
+
+import classnames from 'classnames';
+import Title from 'uxcore-title';
 
 const FormRowTitle = (props) => {
   const length = React.Children.count(props.children);
@@ -36,4 +37,4 @@ FormRowTitle.defaultProps = {
 
 FormRowTitle.displayName = 'FormRowTitle';
 
-module.exports = FormRowTitle;
+export default FormRowTitle;

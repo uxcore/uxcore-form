@@ -53,7 +53,7 @@ class Demo extends React.Component {
       jsxvalues: {
         test1: '我是测试',
         fruit: 'apple',
-        // number: 1,
+        number: 1,
         city: 'nj',
         editor: '我是一个编辑器',
         option: '1',

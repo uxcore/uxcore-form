@@ -6,17 +6,17 @@
  * All rights reserved.
  */
 
-const React = require('react');
-const FormRow = require('uxcore-form-row');
-const classnames = require('classnames');
-const deepcopy = require('lodash/cloneDeep');
-const deepEqual = require('deep-equal');
-const Constants = require('uxcore-const');
-const Promise = require('lie');
+import React from 'react';
 
-const Validators = require('./Validators');
-const KeyCode = require('./KeyCode');
-const FormRowTitle = require('./FormRowTitle');
+import FormRow from 'uxcore-form-row';
+import classnames from 'classnames';
+import deepcopy from 'lodash/cloneDeep';
+import deepEqual from 'deep-equal';
+import Constants from 'uxcore-const';
+import Promise from 'lie';
+import Validators from './Validators';
+import KeyCode from './KeyCode';
+import FormRowTitle from './FormRowTitle';
 
 class Form extends React.Component {
 
@@ -264,4 +264,4 @@ Form.propTypes = {
 
 Form.displayName = 'Form';
 
-module.exports = Form;
+export default Form;

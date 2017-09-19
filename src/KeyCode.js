@@ -1,6 +1,6 @@
-module.exports = {
+export default {
     /*
      * Enter
      */
-     Enter: 13
-}
+  Enter: 13,
+};

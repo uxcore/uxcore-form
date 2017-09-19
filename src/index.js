@@ -5,24 +5,42 @@
  * Copyright 2014-2015, Uxcore Team, Alinw.
  * All rights reserved.
  */
-const Form = require('./Form');
+import TextAreaFormField from 'uxcore-textarea-form-field';
+import InputFormField from 'uxcore-input-form-field';
+import SelectFormField from 'uxcore-select-form-field';
+import DateFormField from 'uxcore-date-form-field';
+import OtherFormField from 'uxcore-other-form-field';
+import SwitchFormField from 'uxcore-switch-form-field';
+import PickableFormField from 'uxcore-pickable-form-field';
+import FormField from 'uxcore-form-field';
+
+
+import Form from './Form';
+import RadioGroupFormField from './FormField/RadioGroupFormField';
+import NumberInputFormField from './FormField/NumberInputFormField';
+import CheckboxGroupFormField from './FormField/CheckboxGroupFormField';
+import CascadeSelectFormField from './FormField/CascadeSelectFormField';
+import ButtonGroupFormField from './FormField/ButtonGroupFormField';
+import EditorFormField from './FormField/EditorFormField';
+import SearchFormField from './FormField/SearchFormField';
 
 // 以 Form 插件的形式给出
-Form.TextAreaFormField = require('uxcore-textarea-form-field');
-Form.InputFormField = require('uxcore-input-form-field');
-Form.RadioGroupFormField = require('./FormField/RadioGroupFormField');
-Form.SelectFormField = require('uxcore-select-form-field');
-Form.NumberInputFormField = require('./FormField/NumberInputFormField');
-Form.DateFormField = require('uxcore-date-form-field');
-Form.CheckboxGroupFormField = require('./FormField/CheckboxGroupFormField');
-Form.CascadeSelectFormField = require('./FormField/CascadeSelectFormField');
-Form.OtherFormField = require('uxcore-other-form-field');
-Form.ButtonGroupFormField = require('./FormField/ButtonGroupFormField');
-Form.EditorFormField = require('./FormField/EditorFormField');
-Form.SearchFormField = require('./FormField/SearchFormField');
-Form.SwitchFormField = require('uxcore-switch-form-field');
-Form.PickableFormField = require('uxcore-pickable-form-field');
-Form.FormField = require('uxcore-form-field');
+Form.TextAreaFormField = TextAreaFormField;
+Form.InputFormField = InputFormField;
+Form.SelectFormField = SelectFormField;
+Form.DateFormField = DateFormField;
+Form.OtherFormField = OtherFormField;
+Form.SwitchFormField = SwitchFormField;
+Form.PickableFormField = PickableFormField;
+Form.FormField = FormField;
+Form.RadioGroupFormField = RadioGroupFormField;
+Form.NumberInputFormField = NumberInputFormField;
+Form.CheckboxGroupFormField = CheckboxGroupFormField;
+Form.CascadeSelectFormField = CascadeSelectFormField;
+Form.ButtonGroupFormField = ButtonGroupFormField;
+Form.EditorFormField = EditorFormField;
+Form.SearchFormField = SearchFormField;
 
 Form.createFormField = Form.FormField.createFormField;
-module.exports = Form;
+
+export default Form;
