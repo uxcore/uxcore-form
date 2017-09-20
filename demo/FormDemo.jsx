@@ -265,7 +265,6 @@ class Demo extends React.Component {
         <Form
           ref="form"
           instantValidate
-          verticalAlign
           jsxmode={me.state.mode}
           jsxvalues={me.state.jsxvalues}
           jsxonChange={me.handleChange.bind(me)}

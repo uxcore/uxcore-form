@@ -1,3 +1,7 @@
+## 5.2.0
+
+* `CHANGED` support new prop `verticalAlign`
+
 ## 5.1.1
 
 * `FIXED` title's height after a formfield is wrong.

@@ -79,6 +79,7 @@ $ npm start
 |jsxonChange|function(values, name, pass)|optional|noop|当表单中值有变化时触发，传回 values，格式同 jsxvalues，同时传回发生变化的表单域的 name，以及该表单域是否通过校验|
 |instantValidate|boolean|optional|true|是否开启即时校验|
 |asyncValidate|boolean|optional|false|是否开启异步校验模式，目前仅支持全局配置|
+|verticalAlign|boolean|optional|false|表单域是否竖排|
 
 ### jsxvalues 的格式
 ```javascript
@@ -111,6 +112,7 @@ $ npm start
 |jsxtips|string|optional|""|说明文字|
 |jsxrules|object/array|optional|-|validators，具体用法和格式见 Usage，Form 已经提供了一些现成的 validator 供使用。也可以自己编写|
 |instantValidate|boolean|optional|true|是否开启即时校验|
+|verticalAlign|boolean|optional|false|表单域是否竖排|
 
 ### Validators
 
