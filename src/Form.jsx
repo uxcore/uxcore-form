@@ -216,6 +216,7 @@ class Form extends React.Component {
             mode: me.props.jsxmode,
             instantValidate: me.props.instantValidate,
             asyncValidate: me.props.asyncValidate,
+            verticalAlign: me.props.verticalAlign,
             data: deepcopy(me.props.jsxvalues || me.props.passedData || {}),
             key: child.key || index,
             attachFormField: me.attachFormField,

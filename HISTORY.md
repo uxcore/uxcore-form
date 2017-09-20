@@ -1,3 +1,7 @@
+## 5.1.1
+
+* `FIXED` title's height after a formfield is wrong.
+
 ## 5.1.0
 
 * `CHANGED` update `uxcore-checkbox-group` & `uxcore-radiogroup` to `^1.2.0`
