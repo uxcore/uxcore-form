@@ -1,7 +1,7 @@
-const FormField = require('uxcore-form-field');
-const Constants = require('uxcore-const');
-const CheckboxGroup = require('uxcore-checkbox-group');
-const React = require('react');
+import FormField from 'uxcore-form-field';
+import Constants from 'uxcore-const';
+import CheckboxGroup from 'uxcore-checkbox-group';
+import React from 'react';
 
 const Item = CheckboxGroup.Item;
 
@@ -55,4 +55,4 @@ CheckboxGroupFormField.propTypes = FormField.propTypes;
 CheckboxGroupFormField.defaultProps = FormField.defaultProps;
 CheckboxGroupFormField.displayName = 'CheckboxGroupFormField';
 
-module.exports = CheckboxGroupFormField;
+export default CheckboxGroupFormField;

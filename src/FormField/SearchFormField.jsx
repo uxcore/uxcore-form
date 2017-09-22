@@ -1,10 +1,10 @@
-const React = require('react');
-const SelectFormField = require('uxcore-select-form-field');
-const Select = require('uxcore-select2');
-const assign = require('object-assign');
-const deepcopy = require('lodash/cloneDeep');
-const classnames = require('classnames');
-const Icon = require('uxcore-icon');
+import React from 'react';
+import SelectFormField from 'uxcore-select-form-field';
+import Select from 'uxcore-select2';
+import assign from 'object-assign';
+import deepcopy from 'lodash/cloneDeep';
+import classnames from 'classnames';
+import Icon from 'uxcore-icon';
 
 const { Option } = Select;
 const selectOptions = ['onSelect', 'onDeselect', 'getPopupContainer', 'filterOption', 'allowClear', 'searchPlaceholder', 'tags', 'disabled', 'showSearch', 'placeholder', 'optionLabelProp', 'maxTagTextLength', 'dropdownMatchSelectWidth', 'dropdownClassName', 'notFoundContent'];
@@ -210,4 +210,4 @@ SearchFormField.defaultProps = assign({}, SelectFormField.defaultProps, {
   onIconClick: () => { },
 });
 
-module.exports = SearchFormField;
+export default SearchFormField;

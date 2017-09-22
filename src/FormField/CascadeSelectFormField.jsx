@@ -1,9 +1,9 @@
-const React = require('react');
-const FormField = require('uxcore-form-field');
-const Constants = require('uxcore-const');
-const Select = require('uxcore-select2');
-const assign = require('object-assign');
-const deepcopy = require('lodash/cloneDeep');
+import React from 'react';
+import FormField from 'uxcore-form-field';
+import Constants from 'uxcore-const';
+import Select from 'uxcore-select2';
+import assign from 'object-assign';
+import deepcopy from 'lodash/cloneDeep';
 
 const { Option } = Select;
 
@@ -116,4 +116,4 @@ CascadeSelectFormField.defaultProps = assign({}, FormField.defaultProps, {
 });
 CascadeSelectFormField.displayName = 'CascadeSelectFormField';
 
-module.exports = CascadeSelectFormField;
+export default CascadeSelectFormField;

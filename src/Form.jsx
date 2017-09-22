@@ -170,7 +170,8 @@ class Form extends React.Component {
    * @param {React Elements Array} children this.props.children
    */
 
-  processChild(children) {
+  processChild() {
+    const children = this.props.children;
     const length = React.Children.count(children);
     const elements = [];
     if (length === 0) {
@@ -200,7 +201,7 @@ class Form extends React.Component {
 
   render() {
     const me = this;
-    const elements = me.processChild(me.props.children);
+    const elements = me.processChild();
 
     return (
       <div
@@ -217,6 +218,7 @@ class Form extends React.Component {
             instantValidate: me.props.instantValidate,
             asyncValidate: me.props.asyncValidate,
             verticalAlign: me.props.verticalAlign,
+            size: me.props.size,
             data: deepcopy(me.props.jsxvalues || me.props.passedData || {}),
             key: child.key || index,
             attachFormField: me.attachFormField,
@@ -261,6 +263,7 @@ Form.propTypes = {
   asyncValidate: React.PropTypes.bool,
   instantValidate: React.PropTypes.bool,
   jsxonChange: React.PropTypes.func,
+  children: React.PropTypes.node,
 };
 
 Form.displayName = 'Form';

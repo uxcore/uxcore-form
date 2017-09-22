@@ -1,3 +1,7 @@
+## 5.3.0
+
+* `CHANGED` support new prop `size`
+
 ## 5.2.0
 
 * `CHANGED` support new prop `verticalAlign`

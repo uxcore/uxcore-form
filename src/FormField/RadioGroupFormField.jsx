@@ -1,10 +1,11 @@
 /**
  * Created by xy on 15/4/13.
  */
-const React = require('react');
-const FormField = require('uxcore-form-field');
-const Constants = require('uxcore-const');
-const RadioGroup = require('uxcore-radiogroup');
+import React from 'react';
+
+import FormField from 'uxcore-form-field';
+import Constants from 'uxcore-const';
+import RadioGroup from 'uxcore-radiogroup';
 
 const Item = RadioGroup.Item;
 
@@ -57,4 +58,4 @@ RadioGroupFormField.displayName = 'RadioGroupFormField';
 RadioGroupFormField.propTypes = FormField.propTypes;
 RadioGroupFormField.defaultProps = FormField.defaultProps;
 RadioGroupFormField.Item = Item;
-module.exports = RadioGroupFormField;
+export default RadioGroupFormField;

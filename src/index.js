@@ -13,8 +13,6 @@ import OtherFormField from 'uxcore-other-form-field';
 import SwitchFormField from 'uxcore-switch-form-field';
 import PickableFormField from 'uxcore-pickable-form-field';
 import FormField from 'uxcore-form-field';
-
-
 import Form from './Form';
 import RadioGroupFormField from './FormField/RadioGroupFormField';
 import NumberInputFormField from './FormField/NumberInputFormField';

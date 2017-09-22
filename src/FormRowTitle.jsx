@@ -4,7 +4,6 @@
  * Form Row Title
  */
 import React from 'react';
-
 import classnames from 'classnames';
 import Title from 'uxcore-title';
 

@@ -1,1 +1,3 @@
-export default from 'uxcore-validator';
+import Validator from 'uxcore-validator';
+
+export default Validator;

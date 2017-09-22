@@ -1,6 +1,6 @@
-const React = require('react');
-const classnames = require('classnames');
-const assign = require('object-assign');
+import React from 'react';
+import classnames from 'classnames';
+import assign from 'object-assign';
 
 class ButtonGroupFormField extends React.Component {
   processChild() {
@@ -77,4 +77,4 @@ ButtonGroupFormField.defaultProps = {
 };
 ButtonGroupFormField.displayName = 'ButtonGroupFormField';
 
-module.exports = ButtonGroupFormField;
+export default ButtonGroupFormField;

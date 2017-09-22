@@ -1,9 +1,9 @@
-const React = require('react');
-const FormField = require('uxcore-form-field');
-const Constants = require('uxcore-const');
-const Tinymce = require('uxcore-tinymce');
-const assign = require('object-assign');
-const deepEqual = require('lodash/isEqual');
+import React from 'react';
+import FormField from 'uxcore-form-field';
+import Constants from 'uxcore-const';
+import Tinymce from 'uxcore-tinymce';
+import assign from 'object-assign';
+import deepEqual from 'lodash/isEqual';
 
 class EditorFormField extends FormField {
   constructor(props) {
@@ -85,4 +85,4 @@ EditorFormField.defaultProps = assign({}, FormField.defaultProps, {
 });
 EditorFormField.displayName = 'EditorFormField';
 
-module.exports = EditorFormField;
+export default EditorFormField;

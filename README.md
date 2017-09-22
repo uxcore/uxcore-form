@@ -80,6 +80,7 @@ $ npm start
 |instantValidate|boolean|optional|true|是否开启即时校验|
 |asyncValidate|boolean|optional|false|是否开启异步校验模式，目前仅支持全局配置|
 |verticalAlign|boolean|optional|false|表单域是否竖排|
+|size|string|optional|large|尺寸，支持 large、middle、small|
 
 ### jsxvalues 的格式
 ```javascript

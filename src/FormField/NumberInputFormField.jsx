@@ -1,7 +1,7 @@
-const React = require('react');
-const InputFormField = require('uxcore-input-form-field');
-const Formatter = require('uxcore-formatter');
-const assign = require('object-assign');
+import React from 'react';
+import InputFormField from 'uxcore-input-form-field';
+import Formatter from 'uxcore-formatter';
+import assign from 'object-assign';
 
 const trim = str => str.replace(/(^\s+|\s+$)/g, '');
 
@@ -78,4 +78,4 @@ NumberInputFormField.defaultProps = assign({}, InputFormField.defaultProps, {
   formatValueOnBlur: false,
 });
 
-module.exports = NumberInputFormField;
+export default NumberInputFormField;
