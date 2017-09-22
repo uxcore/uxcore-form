@@ -9,12 +9,10 @@
 
 /* eslint-disable react/jsx-no-bind */
 
-const classnames = require('classnames');
-const Button = require('uxcore-button');
-const React = require('react');
-const Tooltip = require('uxcore-tooltip');
-
-const Form = require('../src');
+import classnames from 'classnames';
+import Button from 'uxcore-button';
+import React from 'react';
+import Form from '../src';
 
 const {
   Constants,
@@ -264,7 +262,7 @@ class Demo extends React.Component {
       <div className="demo">
         <Form
           ref="form"
-          size="small"
+          size="large"
           instantValidate
           jsxmode={me.state.mode}
           jsxvalues={me.state.jsxvalues}
@@ -284,9 +282,9 @@ class Demo extends React.Component {
               onKeyDown={me.handleKeyDown.bind(me)}
               jsxrules={{ validator: Validators.isNotEmpty, errMsg: '不能为空' }}
             >
-              <LeftAddon>
+              <RightAddon>
                 <i className="kuma-icon kuma-icon-phone" />
-              </LeftAddon>
+              </RightAddon>
               {/* <RightAddon>
                 <span style={{ lineHeight: '24px' }}>元</span>
               </RightAddon>*/}
@@ -326,12 +324,8 @@ class Demo extends React.Component {
               <RadioItem value="watermelon" text="Watermelon" />
             </RadioGroupFormField>
             <CheckboxGroupFormField jsxname="checkbox" jsxlabel="复选框">
-              <CheckboxItem value="air" text="天空"
-                addon={
-                  <Tooltip overlay={<div>提示</div>}>
-                    <i className='kuma-icon kuma-icon-caution' style={{color: 'blue', fontSize: '12px', 'marginLeft': '3px'}} />
-                  </Tooltip>
-                }
+              <CheckboxItem
+                value="air" text="天空"
               />
               <CheckboxItem value="sea" text="大海" />
             </CheckboxGroupFormField>
@@ -388,7 +382,6 @@ class Demo extends React.Component {
               format="yyyy-MM-dd HH:mm:ss"
               jsxname="date"
               jsxlabel="日期"
-              jsxto={'2016-05-24'}
               locale="zh-cn"
             />
           </FormRow>
@@ -502,4 +495,4 @@ class Demo extends React.Component {
   }
 }
 
-module.exports = Demo;
+export default Demo;

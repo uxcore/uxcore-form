@@ -6,10 +6,10 @@
  * All rights reserved.
  */
 
-const assign = require('object-assign');
-const React = require('react');
+import assign from 'object-assign';
 
-const Form = require('../src');
+import React from 'react';
+import Form from '../src';
 
 const {
   FormRowTitle,
@@ -97,4 +97,4 @@ class Demo extends React.Component {
   }
 }
 
-module.exports = Demo;
+export default Demo;

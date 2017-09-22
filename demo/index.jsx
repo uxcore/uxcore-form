@@ -6,11 +6,11 @@
  * All rights reserved.
  */
 
- const React = require('react');
- const ReactDOM = require('react-dom');
+import React from 'react';
 
- const Demo = require('./FormDemo');
+import ReactDOM from 'react-dom';
+import Demo from './FormDemo';
 //  const Demo = require('./FormDemo2');
 //  const Demo = require('./FormDemoAsync');
 
- ReactDOM.render(<Demo />, document.getElementById('UXCoreDemo'));
+ReactDOM.render(<Demo />, document.getElementById('UXCoreDemo'));
