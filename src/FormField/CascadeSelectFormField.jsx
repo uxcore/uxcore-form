@@ -68,6 +68,7 @@ class CascadeSelectFormField extends FormField {
           style: me.props.jsxstyle,
           getPopupContainer: me.props.getPopupContainer,
           showSearch: me.props.showSearch,
+          size: me.getSize(),
           searchPlaceholder: ((placeholder instanceof Array) ? placeholder[i] : placeholder),
           placeholder: ((placeholder instanceof Array) ? placeholder[i] : placeholder),
         };

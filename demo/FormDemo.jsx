@@ -262,7 +262,7 @@ class Demo extends React.Component {
       <div className="demo">
         <Form
           ref="form"
-          size="large"
+          size="small"
           instantValidate
           jsxmode={me.state.mode}
           jsxvalues={me.state.jsxvalues}
