@@ -5,6 +5,7 @@ import assign from 'object-assign';
 import deepcopy from 'lodash/cloneDeep';
 import classnames from 'classnames';
 import Icon from 'uxcore-icon';
+import PropTypes from 'prop-types';
 
 const { Option } = Select;
 const selectOptions = ['onSelect', 'onDeselect', 'getPopupContainer', 'filterOption', 'allowClear', 'searchPlaceholder', 'tags', 'disabled', 'showSearch', 'placeholder', 'optionLabelProp', 'maxTagTextLength', 'dropdownMatchSelectWidth', 'dropdownClassName', 'notFoundContent'];
@@ -193,12 +194,12 @@ class SearchFormField extends SelectFormField {
 SearchFormField.Option = Option;
 SearchFormField.displayName = 'SearchFormField';
 SearchFormField.propTypes = assign({}, SelectFormField.propTypes, {
-  advancedOptions: React.PropTypes.array,
-  advancedConfig: React.PropTypes.object,
-  classOptions: React.PropTypes.array,
-  classConfig: React.PropTypes.object,
-  tidy: React.PropTypes.bool,
-  onIconClick: React.PropTypes.func,
+  advancedOptions: PropTypes.array,
+  advancedConfig: PropTypes.object,
+  classOptions: PropTypes.array,
+  classConfig: PropTypes.object,
+  tidy: PropTypes.bool,
+  onIconClick: PropTypes.func,
 });
 SearchFormField.defaultProps = assign({}, SelectFormField.defaultProps, {
   jsxshowLabel: false,

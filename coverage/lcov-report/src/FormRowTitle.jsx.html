@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">87.5% </span>
+        <span class="strong">92.31% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>14/16</span>
+        <span class='fraction'>24/26</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">62.5% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>2/4</span>
+        <span class='fraction'>5/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">75% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/3</span>
+        <span class='fraction'>3/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">91.67% </span>
+        <span class="strong">95.24% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>11/12</span>
+        <span class='fraction'>20/21</span>
       </div>
     </div>
   </div>
@@ -86,7 +86,53 @@
 41
 42
 43
-44</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -101,8 +147,9 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,39 +176,63 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
 &nbsp;
-function _defineProperty(obj, key, value) { <span class="missing-if-branch" title="if path not taken" >I</span>if (key in obj) { <span class="cstat-no" title="statement not covered" >Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); </span>} else { obj[key] = value; } return obj; }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 &nbsp;
-/**
- * @author: zhouquan.yezq
- * @time: 8/7 2015
- * Form Row Title
- */
-var React = require('react');
-var classnames = require('classnames');
+var _react = require('react');
+&nbsp;
+var _react2 = _interopRequireDefault(_react);
+&nbsp;
+var _classnames2 = require('classnames');
+&nbsp;
+var _classnames3 = _interopRequireDefault(_classnames2);
+&nbsp;
+var _uxcoreTitle = require('uxcore-title');
+&nbsp;
+var _uxcoreTitle2 = _interopRequireDefault(_uxcoreTitle);
+&nbsp;
+var _propTypes = require('prop-types');
+&nbsp;
+var _propTypes2 = _interopRequireDefault(_propTypes);
+&nbsp;
+function _interopRequireDefault(obj) { return obj &amp;&amp; obj.__esModule ? <span class="branch-0 cbranch-no" title="branch not covered" >obj </span>: { 'default': obj }; }
+&nbsp;
+function _defineProperty(obj, key, value) { <span class="missing-if-branch" title="if path not taken" >I</span>if (key in obj) { <span class="cstat-no" title="statement not covered" >Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); </span>} else { obj[key] = value; } return obj; } /**
+                                                                                                                                                                                                                   * @author: zhouquan.yezq
+                                                                                                                                                                                                                   * @time: 8/7 2015
+                                                                                                                                                                                                                   * Form Row Title
+                                                                                                                                                                                                                   */
+&nbsp;
 &nbsp;
 var FormRowTitle = function FormRowTitle(props) {
   var _classnames;
 &nbsp;
-  var length = React.Children.count(props.children);
-  return React.createElement(
+  var length = _react2['default'].Children.count(props.children);
+  return _react2['default'].createElement(
     'div',
     {
-      className: classnames((_classnames = {}, _defineProperty(_classnames, props.jsxprefixCls, true), _defineProperty(_classnames, props.className, !!props.className), _classnames))
+      className: (0, _classnames3['default'])((_classnames = {}, _defineProperty(_classnames, props.className, !!props.className), _defineProperty(_classnames, props.jsxprefixCls, true), _classnames))
     },
-    props.jsxtitle,
-    !!length &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >React.Children.map(props.children, <span class="fstat-no" title="function not covered" >function (item) {</span></span>
+    _react2['default'].createElement(
+      _uxcoreTitle2['default'],
+      { type: 'secondary' },
+      props.jsxtitle
+    ),
+    !!length &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >_react2['default'].Children.map(props.children, <span class="fstat-no" title="function not covered" >function (item) {</span></span>
 <span class="cstat-no" title="statement not covered" >      return item;</span>
     })
   );
 };
 &nbsp;
 FormRowTitle.propTypes = {
-  jsxprefixCls: React.PropTypes.string,
-  jsxtitle: React.PropTypes.string,
-  className: React.PropTypes.string,
-  children: React.PropTypes.any
+  jsxprefixCls: _propTypes2['default'].string,
+  jsxtitle: _propTypes2['default'].string,
+  className: _propTypes2['default'].string,
+  children: _propTypes2['default'].any
 };
 &nbsp;
 FormRowTitle.defaultProps = {
@@ -171,14 +242,15 @@ FormRowTitle.defaultProps = {
 &nbsp;
 FormRowTitle.displayName = 'FormRowTitle';
 &nbsp;
-module.exports = FormRowTitle;
+exports['default'] = FormRowTitle;
+module.exports = exports['default'];
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jan 26 2017 13:53:54 GMT+0800 (CST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Sep 28 2017 21:26:48 GMT+0800 (CST)
 </div>
 </div>
 <script src="../prettify.js"></script>

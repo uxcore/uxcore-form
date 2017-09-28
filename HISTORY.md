@@ -1,3 +1,7 @@
+## 5.4.0
+
+* `CHANGED` support React@15.x
+
 ## 5.3.0
 
 * `CHANGED` support new prop `size`

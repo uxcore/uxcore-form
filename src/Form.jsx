@@ -14,6 +14,7 @@ import deepcopy from 'lodash/cloneDeep';
 import deepEqual from 'deep-equal';
 import Constants from 'uxcore-const';
 import Promise from 'lie';
+import PropTypes from 'prop-types';
 import Validators from './Validators';
 import KeyCode from './KeyCode';
 import FormRowTitle from './FormRowTitle';
@@ -256,14 +257,14 @@ Form.defaultProps = {
 
 // http://facebook.github.io/react/docs/reusable-components.html
 Form.propTypes = {
-  jsxprefixCls: React.PropTypes.string,
-  className: React.PropTypes.string,
-  jsxmode: React.PropTypes.string,
-  jsxvalues: React.PropTypes.object,
-  asyncValidate: React.PropTypes.bool,
-  instantValidate: React.PropTypes.bool,
-  jsxonChange: React.PropTypes.func,
-  children: React.PropTypes.node,
+  jsxprefixCls: PropTypes.string,
+  className: PropTypes.string,
+  jsxmode: PropTypes.string,
+  jsxvalues: PropTypes.object,
+  asyncValidate: PropTypes.bool,
+  instantValidate: PropTypes.bool,
+  jsxonChange: PropTypes.func,
+  children: PropTypes.node,
 };
 
 Form.displayName = 'Form';

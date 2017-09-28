@@ -2,6 +2,7 @@ import React from 'react';
 import InputFormField from 'uxcore-input-form-field';
 import Formatter from 'uxcore-formatter';
 import assign from 'object-assign';
+import PropTypes from 'prop-types';
 
 const trim = str => str.replace(/(^\s+|\s+$)/g, '');
 
@@ -67,10 +68,10 @@ class NumberInputFormField extends InputFormField {
 
 NumberInputFormField.displayName = 'NumberInputFormField';
 NumberInputFormField.propTypes = assign({}, InputFormField.propTypes, {
-  jsxtype: React.PropTypes.string,
-  delimiter: React.PropTypes.string,
-  fixedNum: React.PropTypes.number,
-  formatValueOnBlur: React.PropTypes.bool,
+  jsxtype: PropTypes.string,
+  delimiter: PropTypes.string,
+  fixedNum: PropTypes.number,
+  formatValueOnBlur: PropTypes.bool,
 });
 NumberInputFormField.defaultProps = assign({}, InputFormField.defaultProps, {
   jsxtype: '',

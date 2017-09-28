@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import assign from 'object-assign';
+import PropTypes from 'prop-types';
 
 class ButtonGroupFormField extends React.Component {
   processChild() {
@@ -66,9 +67,9 @@ class ButtonGroupFormField extends React.Component {
 }
 
 ButtonGroupFormField.propTypes = {
-  jsxprefixCls: React.PropTypes.string,
-  jsxflex: React.PropTypes.number,
-  jsxshow: React.PropTypes.bool,
+  jsxprefixCls: PropTypes.string,
+  jsxflex: PropTypes.number,
+  jsxshow: PropTypes.bool,
 };
 ButtonGroupFormField.defaultProps = {
   jsxprefixCls: 'kuma-uxform-field kuma-button-group-uxform-field', // 默认类名

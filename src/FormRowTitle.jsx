@@ -6,6 +6,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import Title from 'uxcore-title';
+import PropTypes from 'prop-types';
 
 const FormRowTitle = (props) => {
   const length = React.Children.count(props.children);
@@ -23,10 +24,10 @@ const FormRowTitle = (props) => {
 };
 
 FormRowTitle.propTypes = {
-  jsxprefixCls: React.PropTypes.string,
-  jsxtitle: React.PropTypes.string,
-  className: React.PropTypes.string,
-  children: React.PropTypes.any,
+  jsxprefixCls: PropTypes.string,
+  jsxtitle: PropTypes.string,
+  className: PropTypes.string,
+  children: PropTypes.any,
 };
 
 FormRowTitle.defaultProps = {

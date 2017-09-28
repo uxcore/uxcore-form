@@ -1,11 +1,14 @@
 import expect from 'expect.js';
 import React from 'react';
-import { mount } from 'enzyme';
+import Enzyme, { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
 import FormField from 'uxcore-form-field';
 import FormRow from 'uxcore-form-row';
 
 import Form from '../src/Form';
 import FormRowTitle from '../src/FormRowTitle';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 /* eslint-disable react/no-string-refs */
 describe('Form', () => {
@@ -56,7 +59,7 @@ describe('Form', () => {
         <FormField jsxname="test" jsxlabel="test" />
       </Form>
     );
-    wrapper.node.handleDataChange(wrapper.find('FormField').node, { value: '2', pass: true });
+    wrapper.instance().handleDataChange(wrapper.find('FormField').node, { value: '2', pass: true });
   });
 
   it('use user FormRow key if specified', () => {
@@ -75,7 +78,7 @@ describe('Form', () => {
           <FormField jsxname="test" jsxlabel="test" />
         </Form>
       );
-      expect(JSON.stringify(wrapper.node.getValues().values)).to.be(JSON.stringify(values));
+      expect(JSON.stringify(wrapper.instance().getValues().values)).to.be(JSON.stringify(values));
     });
 
     it('resetValues', () => {
@@ -85,9 +88,9 @@ describe('Form', () => {
           <FormField jsxname="test" jsxlabel="test" />
         </Form>
       );
-      wrapper.node.handleDataChange(wrapper.find('FormField').node, { value: '2', pass: true });
-      wrapper.node.resetValues();
-      expect(JSON.stringify(wrapper.node.getValues().values)).to.be(JSON.stringify(values));
+      wrapper.instance().handleDataChange(wrapper.find('FormField').instance(), { value: '2', pass: true });
+      wrapper.instance().resetValues();
+      expect(JSON.stringify(wrapper.instance().getValues().values)).to.be(JSON.stringify(values));
     });
 
     it('setValues', () => {
@@ -97,10 +100,10 @@ describe('Form', () => {
           <FormField jsxname="test" jsxlabel="test" />
         </Form>
       );
-      wrapper.node.setValues({
+      wrapper.instance().setValues({
         test: '2',
       });
-      expect(JSON.stringify(wrapper.node.getValues().values)).to.be(JSON.stringify({ test: '2' }));
+      expect(JSON.stringify(wrapper.instance().getValues().values)).to.be(JSON.stringify({ test: '2' }));
     });
 
     it('isDirty', () => {
@@ -110,7 +113,7 @@ describe('Form', () => {
           <FormField jsxname="test" jsxlabel="test" jsxrules={{ validator: value => value !== '1', errMsg: 'error' }} />
         </Form>
       );
-      expect(wrapper.node.isDirty()).to.be(true);
+      expect(wrapper.instance().isDirty()).to.be(true);
     });
 
     it('doValidate', () => {
@@ -120,7 +123,7 @@ describe('Form', () => {
           <FormField jsxname="test" jsxlabel="test" jsxrules={{ validator: value => value !== '1', errMsg: 'error' }} />
         </Form>
       );
-      expect(wrapper.node.doValidate()).to.be(false);
+      expect(wrapper.instance().doValidate()).to.be(false);
     });
   });
   describe('FormRowTitle', () => {
@@ -145,7 +148,7 @@ describe('Form', () => {
           <FormField jsxname="test" jsxlabel="test" jsxrules={(value, resolve, reject) => { reject('error'); }} />
         </Form>
       );
-      wrapper.node.handleDataChange(wrapper.find('FormField').node, { value: '2', pass: true });
+      wrapper.instance().handleDataChange(wrapper.find('FormField').node, { value: '2', pass: true });
     });
     it('doValidate', (done) => {
       wrapper = mount(
@@ -156,7 +159,7 @@ describe('Form', () => {
           <FormField jsxname="test" jsxlabel="test" jsxrules={(value, resolve, reject) => { reject('error'); }} />
         </Form>
       );
-      wrapper.node.doValidate().then((pass) => {
+      wrapper.instance().doValidate().then((pass) => {
         expect(pass).to.be(false);
         done();
       });

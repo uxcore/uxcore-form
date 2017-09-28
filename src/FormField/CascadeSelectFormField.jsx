@@ -4,6 +4,7 @@ import Constants from 'uxcore-const';
 import Select from 'uxcore-select2';
 import assign from 'object-assign';
 import deepcopy from 'lodash/cloneDeep';
+import PropTypes from 'prop-types';
 
 const { Option } = Select;
 
@@ -103,13 +104,13 @@ class CascadeSelectFormField extends FormField {
 }
 
 CascadeSelectFormField.propTypes = assign({}, FormField.propTypes, {
-  jsxstyle: React.PropTypes.object,
-  jsxshowSearch: React.PropTypes.bool,
-  jsxplaceholder: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.array,
+  jsxstyle: PropTypes.object,
+  jsxshowSearch: PropTypes.bool,
+  jsxplaceholder: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
   ]),
-  jsxdata: React.PropTypes.object,
+  jsxdata: PropTypes.object,
 });
 CascadeSelectFormField.defaultProps = assign({}, FormField.defaultProps, {
   jsxshowSearch: false,
