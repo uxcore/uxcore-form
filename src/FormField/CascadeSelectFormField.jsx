@@ -61,14 +61,20 @@ class CascadeSelectFormField extends FormField {
 
         const placeholder = me.props.jsxplaceholder;
 
-        const selectOptions = {
+        let selectOptions = {};
+
+        const selectKeys = Object.keys(Select.RcSelect.propTypes)
+          .filter(key => ['defaultValue'].indexOf(key) === -1);
+        selectKeys.forEach((key) => {
+          selectOptions[key] = me.props[key];
+        });
+        selectOptions = {
+          ...selectOptions,
           ref: 'el',
           key: 'select',
           optionLabelProp: 'children',
-          allowClear: me.props.allowClear,
           style: me.props.jsxstyle,
           getPopupContainer: me.props.getPopupContainer,
-          showSearch: me.props.showSearch,
           size: me.getSize(),
           searchPlaceholder: ((placeholder instanceof Array) ? placeholder[i] : placeholder),
           placeholder: ((placeholder instanceof Array) ? placeholder[i] : placeholder),

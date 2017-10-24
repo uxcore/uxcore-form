@@ -1,3 +1,7 @@
+## 5.5.0
+
+* `CHANGD` Cascade pass all Select prop
+
 ## 5.4.0
 
 * `CHANGED` support React@15.x
