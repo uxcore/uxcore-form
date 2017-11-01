@@ -9,8 +9,7 @@
 import React from 'react';
 
 import ReactDOM from 'react-dom';
-import Demo from './FormDemo';
-//  const Demo = require('./FormDemo2');
-//  const Demo = require('./FormDemoAsync');
+// import Demo from './FormDemo';
+import Demo from './FormDemoSize';
 
 ReactDOM.render(<Demo />, document.getElementById('UXCoreDemo'));

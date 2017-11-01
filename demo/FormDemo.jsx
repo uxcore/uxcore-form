@@ -44,7 +44,6 @@ const Option = SelectFormField.Option;
 const CustomField = createFormField();
 
 class Demo extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -262,8 +261,9 @@ class Demo extends React.Component {
       <div className="demo">
         <Form
           ref="form"
-          size="small"
+          size="large"
           instantValidate
+          verticalAlign
           jsxmode={me.state.mode}
           jsxvalues={me.state.jsxvalues}
           jsxonChange={me.handleChange.bind(me)}
@@ -296,6 +296,7 @@ class Demo extends React.Component {
               jsxtype="money"
               delimiter=","
               fixedNum={4}
+              jsxmode="view"
               formatValueOnBlur
               jsxplaceholder="输入数字"
               jsxtips="数字和一般的输入框不同"

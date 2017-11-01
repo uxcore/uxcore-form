@@ -20,6 +20,7 @@
         "allowForLoopAfterthoughts": true
       }
     ],
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "react/prefer-stateless-function": "off"
   }
 }
