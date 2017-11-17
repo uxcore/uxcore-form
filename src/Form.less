@@ -25,20 +25,13 @@
   display: table;
   float: left;
   width: 100%;
-  padding: 0 5px 16px 0px;
+  padding: 0 24px 16px 0px;
   *zoom: 1;
   .kuma-label {
     width: 88px;
     padding-top: (@trigger-height-large - 18) / 2;
     padding-right: 16px;
     vertical-align: top;
-    &.vertical-align {
-      width: 100%;
-      display: block;
-      text-align: left;
-      padding-top: 0px;
-      padding-bottom: 5px;
-    }
     &.label-match-input-height {
       padding-top: 0px;
       vertical-align: middle;
@@ -66,12 +59,7 @@
       border-top-left-radius: 0;
     }
   }
-  &__view {
-    padding-bottom: 7px;
-  }
-  &__layout-v {
-    padding-bottom: 13px;
-  }
+  
 }
 
 .kuma-uxform-field-content {
@@ -83,9 +71,7 @@
       padding: 0px 20px 0px 4px;
     }
   }
-  &.view-mode {
-    padding-top: 9px;
-  }
+  
   &.has-error {
     .kuma-input,
     .kuma-uxform-left-icon,
@@ -101,23 +87,6 @@
   .kuma-radio-group-item,
   .kuma-checkbox-group-item {
     margin-bottom: 8px;
-  }
-}
-
-.kuma-uxform-field-small {
-  .kuma-label {
-    padding-top: (@trigger-height-small - 18) / 2;
-  }
-}
-
-.kuma-uxform-field-middle {
-  .kuma-label {
-    padding-top: (@trigger-height-middle - 18) / 2;
-  }
-  .kuma-uxform-field-content {
-    &.view-mode {
-      padding-top: 7px;
-    }
   }
 }
 
@@ -184,7 +153,7 @@
 
 .kuma-uxform-tips {
   padding-top: 4px;
-  color: #999;
+  color: @normal-alpha-4;
   .kuma-icon {
     vertical-align: middle;
     margin-right: 4px;
@@ -208,6 +177,68 @@
 }
 
 
+// different status for field
+
+.kuma-uxform-field__view {
+}
+
+// different layout for field
+
+.kuma-uxform-field__layout-v {
+  .kuma-label.vertical-align {
+    width: 100%;
+    display: block;
+    text-align: left;
+    padding-top: 0px;
+    padding-bottom: 4px;
+  }
+}
+
+.kuma-uxform-field__layout-h {
+  .kuma-uxform-field-content.view-mode {
+    padding-top: 9px;
+  }
+  // increse the weight to prevent being overrided
+  &.kuma-uxform-field__all-view.kuma-uxform-field {
+    .kuma-uxform-field-content.view-mode {
+      padding-top: 0px;
+    }
+    .kuma-label {
+      padding-top: 0px;
+    }
+  }
+}
+
+// different size for field
+
+.kuma-uxform-field-middle {
+  .kuma-label {
+    padding-top: 7px;
+  }
+  &.kuma-uxform-field__layout-h .kuma-uxform-field-content.view-mode {
+    padding-top: 7px;
+  }
+}
+
+.kuma-uxform-field-small {
+  .kuma-label {
+    padding-top: 5px;
+    padding-right: 12px;
+  }
+  &.kuma-uxform-field {
+    padding-bottom: 12px;
+  }
+  &.kuma-uxform-field__layout-h .kuma-uxform-field-content.view-mode {
+    padding-top: 5px;
+  }
+}
+
+.kuma-input-uxform-field {
+  .kuma-uxform-input {
+    display: table;
+    width: 100%;
+  }
+}
 
 .kuma-button-group-uxform-field {
   padding-left: 100px;
@@ -217,30 +248,53 @@
 }
 
 .kuma-checkbox-group-uxform-field,
-.kuma-radio-group-uxform-field {
-  .kuma-uxform-field-content {
-    padding-top: (@trigger-height-large - 18) / 2;
-    &.view-mode {
-      padding-top: 9px;
-    }
+.kuma-radio-group-uxform-field  {
+  .kuma-radio-group,
+  .kuma-checkbox-group {
+    margin-top: (@trigger-height-large - 18) / 2;
   }
   &.kuma-uxform-field-middle {
-    .kuma-uxform-field-content {
-      padding-top: (@trigger-height-middle - 18) / 2;
+    .kuma-radio-group,
+    .kuma-checkbox-group {
+      margin-top: (@trigger-height-middle - 18) / 2;
     }
   }
   &.kuma-uxform-field-small {
-    .kuma-uxform-field-content {
-      padding-top: (@trigger-height-small - 18) / 2;
+    .kuma-radio-group,
+    .kuma-checkbox-group {
+      margin-top: (@trigger-height-small - 18) / 2;
     }
   }
 }
 
 .kuma-switch-uxform-field {
-  .kuma-uxform-field-content {
-    padding-top: 6px;
-    &.view-mode {
-      padding-top: 9px;
+  .kuma-switch {
+    margin-top: (@trigger-height-large - 24) / 2;
+  }
+  &.kuma-uxform-field-middle {
+    .kuma-switch {
+      margin-top: (@trigger-height-middle - 24) / 2;
+    }
+  }
+  &.kuma-uxform-field-small {
+    .kuma-switch {
+      margin-top: (@trigger-height-small - 24) / 2;
+    }
+  }
+}
+
+.kuma-pickable-uxform-field {
+  .kuma-pickable {
+    margin-top: (@trigger-height-large - 28) / 2;
+  }
+  &.kuma-uxform-field-middle {
+    .kuma-pickable {
+      margin-top: (@trigger-height-middle - 28) / 2;
+    }
+  }
+  &.kuma-uxform-field-small {
+    .kuma-pickable {
+      margin-top: (@trigger-height-small - 28) / 2;
     }
   }
 }
@@ -254,15 +308,6 @@
     }
     &:focus {
       border-color: @border-focus-color;
-    }
-  }
-}
-
-.kuma-pickable-uxform-field {
-  .kuma-uxform-field-content {
-    padding-top: 4px;
-    &.view-mode {
-      padding-top: 9px;
     }
   }
 }
@@ -308,7 +353,7 @@
         border-bottom-left-radius: 0px;
       }
     }
-   .kuma-select2-selection {
+    .kuma-select2-selection {
       border-right: none;
       border-top-right-radius: 0px;
       border-bottom-right-radius: 0px;
@@ -406,6 +451,30 @@
       position: absolute;
       bottom: 5px;
       right: 10px;
+    }
+  }
+}
+
+
+// For input box max width
+
+.kuma-uxform-field__input-box {
+  &-middle {
+    .kuma-uxform-input,
+    .kuma-select2,
+    .kuma-calendar-picker-input,
+    .kuma-textarea,
+    .mce-tinymce {
+      max-width: 360px;
+    }
+  }
+  &-large {
+    .kuma-uxform-input,
+    .kuma-select2,
+    .kuma-calendar-picker-input,
+    .kuma-textarea,
+    .mce-tinymce {
+      max-width: 564px;
     }
   }
 }

@@ -20,7 +20,6 @@ import KeyCode from './KeyCode';
 import FormRowTitle from './FormRowTitle';
 
 class Form extends React.Component {
-
   constructor(props) {
     super(props);
     this.fields = {};
@@ -219,6 +218,7 @@ class Form extends React.Component {
             instantValidate: me.props.instantValidate,
             asyncValidate: me.props.asyncValidate,
             verticalAlign: me.props.verticalAlign,
+            autoAdjustSpacing: me.props.autoAdjustSpacing,
             size: me.props.size,
             data: deepcopy(me.props.jsxvalues || me.props.passedData || {}),
             key: child.key || index,
@@ -232,7 +232,6 @@ class Form extends React.Component {
       </div>
     );
   }
-
 }
 
 // 以 Form 的插件的形式给出
@@ -252,6 +251,7 @@ Form.defaultProps = {
   instantValidate: true,
   asyncValidate: false,
   jsxonChange: () => { },
+  autoAdjustSpacing: false,
 };
 
 
@@ -265,6 +265,7 @@ Form.propTypes = {
   instantValidate: PropTypes.bool,
   jsxonChange: PropTypes.func,
   children: PropTypes.node,
+  autoAdjustSpacing: PropTypes.bool,
 };
 
 Form.displayName = 'Form';

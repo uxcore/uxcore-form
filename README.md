@@ -114,6 +114,7 @@ $ npm start
 |jsxrules|object/array|optional|-|validators，具体用法和格式见 Usage，Form 已经提供了一些现成的 validator 供使用。也可以自己编写|
 |instantValidate|boolean|optional|true|是否开启即时校验|
 |verticalAlign|boolean|optional|false|表单域是否竖排|
+|inputBoxMaxWidth|string|optional| - | 泛指的输入框的最大宽度，通常用于较宽页面  |
 
 ### Validators
 

@@ -1,3 +1,10 @@
+## 6.0.0
+
+* `NEW` auto adjust field's margin between view mode & edit mode
+* `NEW` new field prop `inputBoxMaxWidth` to define a max width for field input box in a very wide page. 
+* `CHANGED` adjust safe distance between two fields in a row.
+* `CHANGED` adjust field's margin for different size
+
 ## 5.5.0
 
 * `CHANGD` Cascade pass all Select prop

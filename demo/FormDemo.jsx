@@ -38,6 +38,7 @@ const {
 
 const CheckboxItem = CheckboxGroupFormField.Item;
 const RadioItem = RadioGroupFormField.Item;
+const PickItem = PickableFormField.Item;
 const { Count, LeftAddon, RightAddon } = InputFormField;
 const { TextAreaCount } = TextAreaFormField;
 const Option = SelectFormField.Option;
@@ -263,7 +264,7 @@ class Demo extends React.Component {
           ref="form"
           size="large"
           instantValidate
-          verticalAlign
+          verticalAlign={false}
           jsxmode={me.state.mode}
           jsxvalues={me.state.jsxvalues}
           jsxonChange={me.handleChange.bind(me)}
@@ -276,7 +277,7 @@ class Demo extends React.Component {
               jsxname="test1"
               jsxdisabled={false}
               autoTrim={false}
-              jsxlabel="普通输入框普通输入框"
+              jsxlabel="普通输入框"
               jsxtips="请输入数字"
               validateOnBlur={false}
               onKeyDown={me.handleKeyDown.bind(me)}
@@ -331,7 +332,7 @@ class Demo extends React.Component {
               <CheckboxItem value="sea" text="大海" />
             </CheckboxGroupFormField>
           </FormRow>
-          <InputFormField jsxname="pass" jsxlabel="请输入密码" inputType={me.state.showPass ? 'text' : 'password'}>
+          <InputFormField inputBoxMaxWidth="middle" jsxname="pass" jsxlabel="请输入密码" inputType={me.state.showPass ? 'text' : 'password'}>
             <LeftAddon>
               <i
                 className={classnames({
@@ -351,13 +352,15 @@ class Demo extends React.Component {
               unCheckedChildren="隐藏"
             />
             <PickableFormField
-              jsxlabel="test:"
-              jsxname="test"
-              data={itemsData}
+              jsxlabel="筛选"
+              jsxname="pick"
               multiple
-              value={me.state.value}
               type="hook"
-            />
+            >
+              {itemsData.map((item, index) => (
+                <PickItem key={index} value={item.value}>{item.text}</PickItem>
+              ))}
+            </PickableFormField>
           </FormRow>
           <TextAreaFormField
             jsxname="textArea"
