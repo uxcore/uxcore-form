@@ -4,7 +4,7 @@ import Form from '../src';
 const {
   InputFormField, FormRow, FormRowTitle,
   TextAreaFormField, SelectFormField, DateFormField,
-  EditorFormField,
+  EditorFormField, SearchFormField,
 } = Form;
 
 class Demo extends React.Component {
@@ -89,9 +89,17 @@ class Demo extends React.Component {
           <FormRowTitle jsxtitle="默认输入框最大尺寸" />
           <InputFormField {...commonFieldProps} jsxname="text" jsxlabel="单行文本框" />
           <SelectFormField {...commonFieldProps} jsxname="select" jsxlabel="单选框" />
+          <SearchFormField {...commonFieldProps} jsxname="search" jsxlabel="搜索框" jsxshowLabel />
           <DateFormField {...commonFieldProps} jsxname="date" jsxlabel="日期框" />
-          <TextAreaFormField {...commonFieldProps} jsxname="textarea" jsxlabel="多行文本框" inputBoxMaxWidth="large" />
-          <EditorFormField {...commonFieldProps} jsxname="editor" jsxlabel="富文本框" inputBoxMaxWidth="large" />
+          <DateFormField
+            {...commonFieldProps} jsxname="date" jsxtype="cascade" jsxlabel="日期框" autoMatchWidth
+          />
+          <TextAreaFormField
+            {...commonFieldProps} jsxname="textarea" jsxlabel="多行文本框" inputBoxMaxWidth="large"
+          />
+          <EditorFormField
+            {...commonFieldProps} jsxname="editor" jsxlabel="富文本框" inputBoxMaxWidth="large"
+          />
         </Form>
       </div>
     );
