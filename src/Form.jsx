@@ -115,11 +115,12 @@ class Form extends React.Component {
     delete this.data[name];
   }
 
-  doValidate(force, always) {
+  doValidate(force, always, onError = () => {}) {
     const me = this;
     let pass = true;
     const keys = Object.keys(me.fields);
     const { asyncValidate } = me.props;
+    const errorArray = [];
     if (!asyncValidate) {
       for (let i = 0; i < keys.length; i++) {
         if (!me.fields[keys[i]].getProps().jsxshow) {
@@ -127,9 +128,13 @@ class Form extends React.Component {
         }
         const itemPass = me.fields[keys[i]].doValidate(force, always);
         me.errors[keys[i]] = !itemPass;
+        errorArray.push({ key: keys[i], error: !itemPass });
         if (!itemPass) {
           pass = false;
         }
+      }
+      if (!pass) {
+        onError(errorArray);
       }
       return pass;
     }
@@ -141,12 +146,40 @@ class Form extends React.Component {
         }
       }
       Promise.all(promises).then((result) => {
+        keys.forEach((key, index) => {
+          me.errors[key] = result[index];
+          errorArray.push({ key, error: result[index] });
+        });
         const failItems = result.filter(item => item === false);
         if (failItems.length) {
           pass = false;
         }
+        if (!pass) {
+          onError(errorArray);
+        }
         resolve(pass);
       });
+    });
+  }
+
+  doValidateAndScroll(force, always) {
+    return this.doValidate(force, always, (errorArray) => {
+      let firstErrorItem;
+      for (let i = 0; i < errorArray.length; i += 1) {
+        const item = errorArray[i];
+        if (item.error) {
+          firstErrorItem = item.key;
+          break;
+        }
+      }
+      if (firstErrorItem && this.fields[firstErrorItem]) {
+        const errorField = this.fields[firstErrorItem];
+        const errorFieldNode = errorField.getDom();
+        console.log(errorFieldNode);
+        // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
+        // compatible ability is over IE8.
+        errorFieldNode.scrollIntoView();
+      }
     });
   }
 

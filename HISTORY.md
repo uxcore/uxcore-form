@@ -1,3 +1,7 @@
+## 6.1.0
+
+* `NEW` add new API `doValidateAndScroll`
+
 ## 6.0.0
 
 * `NEW` auto adjust field's margin between view mode & edit mode

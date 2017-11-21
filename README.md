@@ -54,7 +54,13 @@ $ npm start
 参数：
     * data `Object`: 和 jsxvalues 的格式相同。
 
-* isDirty() 获取目前的数据是否没有通过检测，返回 true 或 false。
+* isDirty() 获取目前的表单是否没有通过检测，返回 true 或 false。
+
+* doValidate(force, always) 获取目前的表单是否通过检测，返回 true 或者 false。
+    * force：是否强制校验，无视不校验的规则。
+    * always：强制校验通过或者失败，通常可以用于清空出错状态。
+
+* doValidateAndScroll(force, always) 获取目前的表单是否通过检测并滚动至第一个出错的 field，参数同上。
 
 #### Form.createFormField(options)
 

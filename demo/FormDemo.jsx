@@ -83,7 +83,9 @@ class Demo extends React.Component {
 
   handleClick() {
     const me = this;
-    console.log(JSON.stringify(me.refs.form.getValues(true)));
+    me.refs.form.doValidateAndScroll();
+    console.log(this.refs.form.getValues());
+    // console.log(JSON.stringify(me.refs.form.getValues()));
   }
 
   handleSetValues() {

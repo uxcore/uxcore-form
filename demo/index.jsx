@@ -9,7 +9,7 @@
 import React from 'react';
 
 import ReactDOM from 'react-dom';
-// import Demo from './FormDemo';
-import Demo from './FormDemoSize';
+import Demo from './FormDemo';
+// import Demo from './FormDemoSize';
 
 ReactDOM.render(<Demo />, document.getElementById('UXCoreDemo'));
