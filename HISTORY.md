@@ -1,3 +1,7 @@
+## 6.1.1
+
+* `CHANGED` adjust textarea min-height
+
 ## 6.1.0
 
 * `NEW` add new API `doValidateAndScroll`
