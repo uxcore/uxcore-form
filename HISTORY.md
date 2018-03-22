@@ -1,3 +1,7 @@
+## 6.2.0
+
+* `CHANEGD` NumberInputFormField add new prop `formatOnBlur`
+
 ## 6.1.1
 
 * `CHANGED` adjust textarea min-height

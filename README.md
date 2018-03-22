@@ -313,6 +313,9 @@ jsxdata 目前支持两种格式
 |---|---|---|---|---|
 |jsxplaceholder|string|optional|""|占位符|
 |jsxtype|string|optional|""|目前支持 "money", "cnmobile" 和 "card", 提供三种格式化显示的方法。"money"的格式为`123 121 121.213 121`,"cnmobile"的格式为 `86 1565 7263 8223`, "card" 的格式为 `3321 3123 3243 4343`|
+|fixedNum|number|optional| - | 锁定小数位 |
+|delimiter|string|optional| ' ' | 分隔符 |
+|formatOnBlur|bool|optional| false | 在失焦时进行格式化（6.2.0 后支持） |
 
 
 

@@ -298,9 +298,8 @@ class Demo extends React.Component {
               jsxlabel="数字输入框"
               jsxtype="money"
               delimiter=","
-              fixedNum={4}
-              jsxmode="view"
-              formatValueOnBlur
+              fixedNum={2}
+              formatOnBlur
               jsxplaceholder="输入数字"
               jsxtips="数字和一般的输入框不同"
               jsxrules={[

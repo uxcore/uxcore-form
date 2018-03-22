@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 const trim = str => str.replace(/(^\s+|\s+$)/g, '');
 
 class NumberInputFormField extends InputFormField {
-
   handleChange(e) {
     const me = this;
     const { autoTrim } = me.props;
@@ -20,15 +19,27 @@ class NumberInputFormField extends InputFormField {
   }
 
   handleBlur(e) {
-    const me = this;
-    me.setState({
-      focus: false,
-    });
-    let pass = true;
-    if (me.props.validateOnBlur) {
-      pass = me.doValidate();
+    super.handleBlur(e);
+    const { formatOnBlur } = this.props;
+    if (formatOnBlur) {
+      const value = e.currentTarget.value;
+      const formatedVale = this.deFormatValue(this.formatValueOnBlur(this.deFormatValue(value)));
+      this.handleDataChange(formatedVale);
     }
-    me.props.onBlur(e, pass);
+  }
+
+  formatValueOnBlur(value) {
+    if (value === undefined || value === null) return '';
+    const me = this;
+    const newValue = `${value}`;
+    if (me.props.jsxtype === 'money') {
+      return Formatter.money(newValue, me.props.delimiter, me.props.fixedNum);
+    } else if (me.props.jsxtype === 'cnmobile') {
+      return Formatter.cnmobile(newValue, me.props.delimiter);
+    } else if (me.props.jsxtype === 'card') {
+      return Formatter.card(newValue, me.props.delimiter);
+    }
+    return newValue;
   }
 
   formatValue(value) {
@@ -63,7 +74,6 @@ class NumberInputFormField extends InputFormField {
     }
     return me.props.jsxprefixCls;
   }
-
 }
 
 NumberInputFormField.displayName = 'NumberInputFormField';
@@ -71,12 +81,12 @@ NumberInputFormField.propTypes = assign({}, InputFormField.propTypes, {
   jsxtype: PropTypes.string,
   delimiter: PropTypes.string,
   fixedNum: PropTypes.number,
-  formatValueOnBlur: PropTypes.bool,
+  formatOnBlur: PropTypes.bool,
 });
 NumberInputFormField.defaultProps = assign({}, InputFormField.defaultProps, {
   jsxtype: '',
   delimiter: ' ',
-  formatValueOnBlur: false,
+  formatOnBlur: false,
 });
 
 export default NumberInputFormField;
