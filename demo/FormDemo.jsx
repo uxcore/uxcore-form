@@ -290,7 +290,7 @@ class Demo extends React.Component {
               </RightAddon>
               {/* <RightAddon>
                 <span style={{ lineHeight: '24px' }}>元</span>
-              </RightAddon>*/}
+              </RightAddon> */}
               <Count total={20} />
             </InputFormField>
             <NumberInputFormField
@@ -306,7 +306,11 @@ class Demo extends React.Component {
                 { validator: Validators.isNotEmpty, errMsg: '不能为空' },
                 { validator: Validators.isNum, errMsg: '请输入数字' },
               ]}
-            />
+            >
+              <RightAddon>
+                1111
+              </RightAddon>
+            </NumberInputFormField>
 
             <ButtonGroupFormField jsxshow={false}>
               <Button

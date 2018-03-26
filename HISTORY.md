@@ -1,3 +1,7 @@
+## 6.2.1 
+
+* `FIXED` wrong NumberInputFormField right addon style.
+
 ## 6.2.0
 
 * `CHANEGD` NumberInputFormField add new prop `formatOnBlur`
