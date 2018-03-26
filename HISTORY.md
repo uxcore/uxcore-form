@@ -1,3 +1,7 @@
+## 6.2.2
+
+* `FIXED` NumberInputFormField do not format empty string
+
 ## 6.2.1 
 
 * `FIXED` wrong NumberInputFormField right addon style.

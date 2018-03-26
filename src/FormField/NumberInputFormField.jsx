@@ -29,7 +29,7 @@ class NumberInputFormField extends InputFormField {
   }
 
   formatValueOnBlur(value) {
-    if (value === undefined || value === null) return '';
+    if (value === undefined || value === null || value === '') return '';
     const me = this;
     const newValue = `${value}`;
     if (me.props.jsxtype === 'money') {
@@ -43,7 +43,7 @@ class NumberInputFormField extends InputFormField {
   }
 
   formatValue(value) {
-    if (value === undefined || value === null) return '';
+    if (value === undefined || value === null || value === '') return '';
     const me = this;
     const newValue = `${value}`;
     if (me.props.jsxtype === 'money') {
