@@ -4,6 +4,7 @@ import Constants from 'uxcore-const';
 import Tinymce from 'uxcore-tinymce';
 import assign from 'object-assign';
 import deepEqual from 'lodash/isEqual';
+import RichText from 'uxcore-rich-text';
 
 class EditorFormField extends FormField {
   constructor(props) {
@@ -73,9 +74,9 @@ class EditorFormField extends FormField {
         />
       );
     }
-    return <span key="text" dangerouslySetInnerHTML={{ __html: me.state.value }} />;
+    // return <span key="text" dangerouslySetInnerHTML={{ __html: me.state.value }} />;
+    return <RichText content={me.state.value} />;
   }
-
 }
 
 EditorFormField.propTypes = assign({}, FormField.propTypes);

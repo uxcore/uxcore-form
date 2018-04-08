@@ -1,3 +1,7 @@
+## 6.3.0
+
+* `CHANGED` use `uxcore-rich-text`
+
 ## 6.2.2
 
 * `FIXED` NumberInputFormField do not format empty string
