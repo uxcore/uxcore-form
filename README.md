@@ -253,7 +253,7 @@ jsxdata 目前支持两种格式
 ]
 ```
 
-> 配置 jsxfetchUrl 后，会默认以空搜索值发起一次请求，我们强烈建议您完善空搜索值的请求，返回热点数据和个人关联数据，以提供更好的选择体验。
+> 配置 jsxfetchUrl 后，会在组件渲染后立刻以空搜索值发起一次请求，我们强烈建议服务端完善空值搜索的请求处理逻辑，返回热点数据和用户关联数据，以提供更好的选择体验。
 
 > 此外，SelectFormField 还支持 [uxcore-select2](https://www.npmjs.com/package/uxcore-select2) 除 onSelect/onDeselect 外的全部属性。
 

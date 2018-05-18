@@ -1,6 +1,6 @@
 {
  "name": "uxcore-form",
- "version": "6.3.1",
+ "version": "6.3.2",
  "description": "form component for uxcore",
  "repository": "https://github.com/uxcore/uxcore-form.git",
  "author": "eternalsky",
@@ -54,7 +54,7 @@
   "object-assign": "^4.0.0",
   "prop-types": "15.x",
   "uxcore-checkbox-group": "^1.2.0",
-  "uxcore-const": "~0.0.1",
+  "uxcore-const": "^1.0.0",
   "uxcore-date-form-field": "~0.8.0",
   "uxcore-form-field": "~0.2.0",
   "uxcore-form-row": "~0.1.3",
