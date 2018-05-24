@@ -1,3 +1,7 @@
+## 6.3.3
+
+* `FIXED` input & addon border color 
+
 ## 6.3.0
 
 * `CHANGED` use `uxcore-rich-text`

@@ -50,7 +50,7 @@ class Demo extends React.Component {
     this.state = {
       showPass: false,
       jsxvalues: {
-        test1: '我是测试',
+        // test1: '我是测试',
         fruit: 'apple',
         number: 1,
         city: 'nj',
@@ -356,7 +356,7 @@ class Demo extends React.Component {
               checkedChildren="显示"
               unCheckedChildren="隐藏"
             />
-            <PickableFormField
+            {/* <PickableFormField
               jsxlabel="筛选"
               jsxname="pick"
               multiple
@@ -365,7 +365,7 @@ class Demo extends React.Component {
               {itemsData.map((item, index) => (
                 <PickItem key={index} value={item.value}>{item.text}</PickItem>
               ))}
-            </PickableFormField>
+            </PickableFormField> */}
           </FormRow>
           <TextAreaFormField
             jsxname="textArea"

@@ -59,7 +59,6 @@
       border-top-left-radius: 0;
     }
   }
-  
 }
 
 .kuma-uxform-field-content {
@@ -71,7 +70,21 @@
       padding: 0px 20px 0px 4px;
     }
   }
-  
+  .kuma-input {
+    &:hover {
+      &+.kuma-uxform-right-icon,
+      &+.kuma-uxform-count {
+        border-color: @border-hover-color;
+      }
+    }
+    &:focus {
+      &+.kuma-uxform-right-icon,
+      &+.kuma-uxform-count {
+        border-color: @border-focus-color;
+        outline: none;
+      }
+    }
+  }
   &.has-error {
     .kuma-input,
     .kuma-uxform-left-icon,
@@ -82,6 +95,20 @@
     .mce-panel {
       border-color: @border-danger-color;
       background-color: @bg-danger-color
+    }
+    .kuma-input {
+      &:hover {
+        &+.kuma-uxform-right-icon,
+        &+.kuma-uxform-count {
+          border-color: @border-danger-color;
+        }
+      }
+      &:focus {
+        &+.kuma-uxform-right-icon,
+        &+.kuma-uxform-count {
+          border-color: @border-danger-color;
+        }
+      }
     }
   }
   .kuma-radio-group-item,
@@ -134,17 +161,6 @@
   padding-top: 0px;
 }
 
-.kuma-input:focus+.kuma-uxform-right-icon,
-.kuma-input:focus+.kuma-uxform-count {
-  border-color: @border-focus-color;
-  outline: none;
-}
-
-.kuma-input:hover+.kuma-uxform-right-icon,
-.kuma-input:hover+.kuma-uxform-count {
-  border-color: @border-hover-color;
-}
-
 .kuma-uxform-field-core {
   display: table;
   width: 100%;
@@ -176,14 +192,10 @@
   }
 }
 
-
 // different status for field
-
-.kuma-uxform-field__view {
-}
+.kuma-uxform-field__view {}
 
 // different layout for field
-
 .kuma-uxform-field__layout-v {
   .kuma-label.vertical-align {
     width: 100%;
@@ -197,8 +209,7 @@
 .kuma-uxform-field__layout-h {
   .kuma-uxform-field-content.view-mode {
     padding-top: 9px;
-  }
-  // increse the weight to prevent being overrided
+  } // increse the weight to prevent being overrided
   &.kuma-uxform-field__all-view.kuma-uxform-field {
     .kuma-uxform-field-content.view-mode {
       padding-top: 0px;
@@ -210,7 +221,6 @@
 }
 
 // different size for field
-
 .kuma-uxform-field-middle {
   .kuma-label {
     padding-top: 7px;
@@ -249,7 +259,7 @@
 }
 
 .kuma-checkbox-group-uxform-field,
-.kuma-radio-group-uxform-field  {
+.kuma-radio-group-uxform-field {
   .kuma-radio-group,
   .kuma-checkbox-group {
     margin-top: (@trigger-height-large - 18) / 2;
@@ -457,9 +467,7 @@
   }
 }
 
-
 // For input box max width
-
 .kuma-uxform-field__input-box {
   &-middle {
     .kuma-uxform-field-core {
