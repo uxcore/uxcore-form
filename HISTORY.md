@@ -1,3 +1,7 @@
+## 6.3.4
+
+* `FIXED` SearchField handleDataChange
+
 ## 6.3.3
 
 * `FIXED` input & addon border color 

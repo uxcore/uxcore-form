@@ -35,27 +35,25 @@ class SearchFormField extends SelectFormField {
       <Option key={item.value} title={item.text}>{item.text}</Option>);
   }
 
-  handleChange(value, label) {
+  handleChange(value) {
     const me = this;
     const stateValue = deepcopy(me.state.value) || {};
     stateValue.main = value;
-    me.handleDataChange(stateValue, false, label);
+    me.handleDataChange(stateValue);
   }
 
   handleClassChange(value) {
     const me = this;
     const stateValue = deepcopy(me.state.value) || {};
-    const label = me.state.label;
     stateValue.class = value;
-    me.handleDataChange(stateValue, false, label);
+    me.handleDataChange(stateValue);
   }
 
   handleAdvancedChange(value) {
     const me = this;
     const stateValue = deepcopy(me.state.value) || {};
-    const label = me.state.label;
     stateValue.advanced = value;
-    me.handleDataChange(stateValue, false, label);
+    me.handleDataChange(stateValue);
   }
 
   handleIconClick(e) {
