@@ -7,7 +7,6 @@
  */
 
 import React from 'react';
-
 import FormRow from 'uxcore-form-row';
 import classnames from 'classnames';
 import deepcopy from 'lodash/cloneDeep';

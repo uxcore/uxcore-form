@@ -9,8 +9,8 @@
 
 /* eslint-disable react/jsx-no-bind */
 
-import classnames from 'classnames';
 import Button from 'uxcore-button';
+import Icon from 'uxcore-icon';
 import React from 'react';
 import Form from '../src';
 
@@ -39,7 +39,7 @@ const {
 const CheckboxItem = CheckboxGroupFormField.Item;
 const RadioItem = RadioGroupFormField.Item;
 const PickItem = PickableFormField.Item;
-const { Count, LeftAddon, RightAddon } = InputFormField;
+const { Count, RightAddon } = InputFormField;
 const { TextAreaCount } = TextAreaFormField;
 const Option = SelectFormField.Option;
 const CustomField = createFormField();
@@ -338,16 +338,14 @@ class Demo extends React.Component {
             </CheckboxGroupFormField>
           </FormRow>
           <InputFormField inputBoxMaxWidth="middle" jsxname="pass" jsxlabel="请输入密码" inputType={me.state.showPass ? 'text' : 'password'}>
-            <LeftAddon>
-              <i
-                className={classnames({
-                  'kuma-icon': true,
-                  'kuma-icon-privacy': !me.state.showPass,
-                  'kuma-icon-public': me.state.showPass,
-                })}
+            <RightAddon>
+              <Icon
+                usei
+                style={{ cursor: 'pointer' }}
+                name={!me.state.showPass ? 'xianshi' : 'yincang'}
                 onClick={me.handleShowPassChange.bind(me)}
               />
-            </LeftAddon>
+            </RightAddon>
           </InputFormField>
           <FormRow>
             <SwitchFormField
@@ -356,7 +354,7 @@ class Demo extends React.Component {
               checkedChildren="显示"
               unCheckedChildren="隐藏"
             />
-            {/* <PickableFormField
+            <PickableFormField
               jsxlabel="筛选"
               jsxname="pick"
               multiple
@@ -365,7 +363,7 @@ class Demo extends React.Component {
               {itemsData.map((item, index) => (
                 <PickItem key={index} value={item.value}>{item.text}</PickItem>
               ))}
-            </PickableFormField> */}
+            </PickableFormField>
           </FormRow>
           <TextAreaFormField
             jsxname="textArea"

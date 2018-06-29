@@ -1,7 +1,7 @@
 import expect from 'expect.js';
 import React from 'react';
 import Enzyme, { mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-15';
+import Adapter from 'enzyme-adapter-react-16';
 import FormField from 'uxcore-form-field';
 import FormRow from 'uxcore-form-row';
 
@@ -162,6 +162,10 @@ describe('Form', () => {
       wrapper.instance().doValidate().then((pass) => {
         expect(pass).to.be(false);
         done();
+      }).catch((err) => {
+        setTimeout(() => {
+          throw err;
+        });
       });
     });
   });

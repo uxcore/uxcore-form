@@ -7,9 +7,13 @@
  */
 
 import React from 'react';
-
 import ReactDOM from 'react-dom';
+import ErrorBoundary from './ErrorBoundary';
 import Demo from './FormDemo';
 // import Demo from './FormDemoSize';
 
-ReactDOM.render(<Demo />, document.getElementById('UXCoreDemo'));
+ReactDOM.render(
+  <ErrorBoundary>
+    <Demo />
+  </ErrorBoundary>
+  , document.getElementById('UXCoreDemo'));
