@@ -10,7 +10,7 @@
     "server": "uxcore-tools run server",
     "lint": "uxcore-tools run lint",
     "build": "uxcore-tools run build",
-    "test": "uxcore-tools run test",
+    "test": "uxcore-tools run electron",
     "coverage": "uxcore-tools run coverage",
     "pub": "uxcore-tools run pub",
     "dep": "uxcore-tools run dep",
