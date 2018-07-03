@@ -1,7 +1,6 @@
 ## 7.0.1
 
 * `CHANGED` update `uxcore-switch-form-field` to `^0.2.0`
-* `CHANGED` update `uxcore-select-form-field` to `^0.5.0`
 
 ## 7.0.0
 
