@@ -17,15 +17,15 @@ describe('Form', () => {
     wrapper = mount(<Form className="test" />);
     expect(wrapper.find('.kuma-uxform').prop('className')).to.contain('test');
   });
-  it('jsxprefixCls', () => {
-    wrapper = mount(<Form jsxprefixCls="kuma-test" />);
+  it('prefixCls', () => {
+    wrapper = mount(<Form prefixCls="kuma-test" />);
     expect(wrapper.find('.kuma-test')).to.have.length(1);
   });
   it('jsxmode', () => {
     wrapper = mount(
       <Form jsxmode="view">
         <FormField jsxname="test" jsxlabel="test" />
-      </Form>
+      </Form>,
     );
     expect(wrapper.find('FormField').prop('mode')).to.be('view');
   });
@@ -33,7 +33,7 @@ describe('Form', () => {
     wrapper = mount(
       <Form jsxvalues={{ test: '1' }}>
         <FormField jsxname="test" jsxlabel="test" />
-      </Form>
+      </Form>,
     );
     expect(wrapper.find('FormField').prop('value')).to.be('1');
   });
@@ -41,7 +41,7 @@ describe('Form', () => {
     wrapper = mount(
       <Form instantValidate={false}>
         <FormField jsxname="test" jsxlabel="test" />
-      </Form>
+      </Form>,
     );
     expect(wrapper.find('FormField').prop('jsxinstant')).to.be(false);
   });
@@ -57,7 +57,7 @@ describe('Form', () => {
         }}
       >
         <FormField jsxname="test" jsxlabel="test" />
-      </Form>
+      </Form>,
     );
     wrapper.instance().handleDataChange(wrapper.find('FormField').node, { value: '2', pass: true });
   });
@@ -66,7 +66,7 @@ describe('Form', () => {
     wrapper = mount(
       <Form>
         <FormRow key="test" />
-      </Form>
+      </Form>,
     );
     expect(wrapper.find('FormRow').key()).to.be('test');
   });
@@ -76,7 +76,7 @@ describe('Form', () => {
       wrapper = mount(
         <Form jsxvalues={values}>
           <FormField jsxname="test" jsxlabel="test" />
-        </Form>
+        </Form>,
       );
       expect(JSON.stringify(wrapper.instance().getValues().values)).to.be(JSON.stringify(values));
     });
@@ -86,7 +86,7 @@ describe('Form', () => {
       wrapper = mount(
         <Form jsxvalues={values}>
           <FormField jsxname="test" jsxlabel="test" />
-        </Form>
+        </Form>,
       );
       wrapper.instance().handleDataChange(wrapper.find('FormField').instance(), { value: '2', pass: true });
       wrapper.instance().resetValues();
@@ -98,7 +98,7 @@ describe('Form', () => {
       wrapper = mount(
         <Form jsxvalues={values}>
           <FormField jsxname="test" jsxlabel="test" />
-        </Form>
+        </Form>,
       );
       wrapper.instance().setValues({
         test: '2',
@@ -111,7 +111,7 @@ describe('Form', () => {
       wrapper = mount(
         <Form jsxvalues={values}>
           <FormField jsxname="test" jsxlabel="test" jsxrules={{ validator: value => value !== '1', errMsg: 'error' }} />
-        </Form>
+        </Form>,
       );
       expect(wrapper.instance().isDirty()).to.be(true);
     });
@@ -121,7 +121,7 @@ describe('Form', () => {
       wrapper = mount(
         <Form jsxvalues={values}>
           <FormField jsxname="test" jsxlabel="test" jsxrules={{ validator: value => value !== '1', errMsg: 'error' }} />
-        </Form>
+        </Form>,
       );
       expect(wrapper.instance().doValidate()).to.be(false);
     });
@@ -146,7 +146,7 @@ describe('Form', () => {
           }}
         >
           <FormField jsxname="test" jsxlabel="test" jsxrules={(value, resolve, reject) => { reject('error'); }} />
-        </Form>
+        </Form>,
       );
       wrapper.instance().handleDataChange(wrapper.find('FormField').node, { value: '2', pass: true });
     });
@@ -157,7 +157,7 @@ describe('Form', () => {
           jsxvalues={{ test: '1' }}
         >
           <FormField jsxname="test" jsxlabel="test" jsxrules={(value, resolve, reject) => { reject('error'); }} />
-        </Form>
+        </Form>,
       );
       wrapper.instance().doValidate().then((pass) => {
         expect(pass).to.be(false);

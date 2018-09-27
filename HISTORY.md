@@ -1,3 +1,8 @@
+## 7.1.0
+
+* `CHANGED` support js style export
+* `CHANGED` change prop `jsxprefixCls` to `prefixCls`
+
 ## 7.0.1
 
 * `CHANGED` update `uxcore-switch-form-field` to `^0.2.0`
