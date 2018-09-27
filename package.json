@@ -1,6 +1,6 @@
 {
   "name": "uxcore-form",
-  "version": "7.1.0",
+  "version": "7.1.1",
   "description": "form component for uxcore",
   "repository": "https://github.com/uxcore/uxcore-form.git",
   "author": "eternalsky",
@@ -34,7 +34,6 @@
     "console-polyfill": "^0.2.2",
     "enzyme": "^3.0.0",
     "expect.js": "~0.3.1",
-    "kuma-base": "1.x",
     "react": "16.x",
     "react-dom": "16.x",
     "react-test-renderer": "16.x",
@@ -46,6 +45,7 @@
     "enzyme-adapter-react-16": "1.x"
   },
   "dependencies": {
+    "kuma-base": "1.x",
     "classnames": "^2.1.2",
     "deep-equal": "~1.0.1",
     "lie": "^3.1.0",
