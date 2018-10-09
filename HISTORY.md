@@ -1,3 +1,7 @@
+## 7.2.0
+
+* `CHANGED` style improvement for more clear view mode
+
 ## 7.1.0
 
 * `CHANGED` support js style export

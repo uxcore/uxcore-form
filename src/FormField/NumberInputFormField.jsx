@@ -38,9 +38,9 @@ class NumberInputFormField extends InputFormField {
     const newValue = `${value}`;
     if (me.props.jsxtype === 'money') {
       return Formatter.money(newValue, me.props.delimiter, me.props.fixedNum);
-    } else if (me.props.jsxtype === 'cnmobile') {
+    } if (me.props.jsxtype === 'cnmobile') {
       return Formatter.cnmobile(newValue, me.props.delimiter);
-    } else if (me.props.jsxtype === 'card') {
+    } if (me.props.jsxtype === 'card') {
       return Formatter.card(newValue, me.props.delimiter);
     }
     return newValue;
@@ -55,9 +55,9 @@ class NumberInputFormField extends InputFormField {
         return Formatter.money(newValue, me.props.delimiter, me.props.fixedNum);
       }
       return Formatter.money(newValue, me.props.delimiter);
-    } else if (me.props.jsxtype === 'cnmobile') {
+    } if (me.props.jsxtype === 'cnmobile') {
       return Formatter.cnmobile(newValue, me.props.delimiter);
-    } else if (me.props.jsxtype === 'card') {
+    } if (me.props.jsxtype === 'card') {
       return Formatter.card(newValue, me.props.delimiter);
     }
     return newValue;

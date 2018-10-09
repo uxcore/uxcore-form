@@ -1,5 +1,4 @@
 @__formPrefixCls: kuma-uxform;
-
 .@{__formPrefixCls} {
   zoom: 1;
   &:after {
@@ -27,7 +26,7 @@
   display: table;
   float: left;
   width: 100%;
-  padding: 0 24px 16px 0px;
+  padding: 0 24px 24px 0px;
   *zoom: 1;
   .kuma-label {
     width: 88px;
@@ -64,8 +63,7 @@
 }
 
 .@{__formPrefixCls}-field-content {
-  font-size: 12px;
-  color: @dark-alpha-2;
+  color: @dark-2;
   width: 100%;
   .kuma-radio-group {
     >span {
@@ -171,6 +169,7 @@
 
 .@{__formPrefixCls}-tips {
   padding-top: 4px;
+  font-size: 12px;
   color: @normal-alpha-4;
   .kuma-icon {
     vertical-align: middle;
@@ -185,6 +184,7 @@
 .@{__formPrefixCls}-errormsg {
   padding-top: 4px;
   color: #ea5652;
+  font-size: 12px;
   .kuma-icon {
     margin-right: 4px;
     vertical-align: middle;
@@ -205,6 +205,48 @@
     text-align: left;
     padding-top: 0px;
     padding-bottom: 4px;
+  }
+  .@{__formPrefixCls}-field-content {
+    font-size: 14px;
+  }
+  &.kuma-input-uxform-field,
+  &.kuma-number-input-uxform-field {
+    .@{__formPrefixCls}-input {
+      .kuma-input {
+        font-size: 14px;
+      }
+    }
+    &.@{__formPrefixCls}-field-small {
+      .@{__formPrefixCls}-input {
+        .kuma-input {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  &.kuma-textarea-uxform-field {
+    .kuma-textarea {
+      font-size: 14px;
+    }
+    &.@{__formPrefixCls}-field-small {
+      .kuma-textarea {
+        font-size: 12px;
+      }
+    }
+  }
+  &.kuma-cascade-date-uxform-field {
+    .kuma-calendar-picker-input {
+      >input {
+        font-size: 14px;
+      }
+    }
+    &.@{__formPrefixCls}-field-small {
+      .kuma-calendar-picker-input {
+        >input {
+          font-size: 12px;
+        }
+      }
+    }
   }
 }
 
@@ -238,10 +280,13 @@
     padding-right: 12px;
   }
   &.@{__formPrefixCls}-field {
-    padding-bottom: 12px;
+    padding-bottom: 16px;
   }
   &.@{__formPrefixCls}-field__layout-h .@{__formPrefixCls}-field-content.view-mode {
     padding-top: 5px;
+  }
+  .@{__formPrefixCls}-field-content {
+    font-size: 12px;
   }
 }
 
@@ -446,10 +491,6 @@
 }
 
 .kuma-textarea-uxform-field {
-  textarea {
-    display: block;
-    min-height: 124px;
-  }
   .has-count {
     position: relative;
     .@{__formPrefixCls}-count {
@@ -460,6 +501,8 @@
     }
     .kuma-textarea {
       padding-bottom: 20px;
+      display: block;
+      min-height: 124px;
     }
     .@{__formPrefixCls}-textarea-count {
       position: absolute;

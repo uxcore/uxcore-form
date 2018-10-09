@@ -15,5 +15,6 @@ import Demo from './FormDemo';
 ReactDOM.render(
   <ErrorBoundary>
     <Demo />
-  </ErrorBoundary>
-  , document.getElementById('UXCoreDemo'));
+  </ErrorBoundary>,
+  document.getElementById('UXCoreDemo'),
+);

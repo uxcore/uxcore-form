@@ -78,6 +78,8 @@ class Demo extends React.Component {
         xj: '西京',
       },
       mode: Constants.MODE.EDIT,
+      size: 'middle',
+      verticalAlign: true,
     };
   }
 
@@ -264,9 +266,9 @@ class Demo extends React.Component {
       <div className="demo">
         <Form
           ref="form"
-          size="large"
+          size={me.state.size}
           instantValidate
-          verticalAlign={false}
+          verticalAlign={me.state.verticalAlign}
           jsxmode={me.state.mode}
           jsxvalues={me.state.jsxvalues}
           jsxonChange={me.handleChange.bind(me)}
@@ -321,7 +323,9 @@ class Demo extends React.Component {
               >
                 提交
               </Button>
-              <Button size="medium" type="secondary" action="reset">取消</Button>
+              <Button size="medium" type="secondary" action="reset">
+                取消
+              </Button>
             </ButtonGroupFormField>
           </FormRow>
           <FormRow>
@@ -332,7 +336,8 @@ class Demo extends React.Component {
             </RadioGroupFormField>
             <CheckboxGroupFormField jsxname="checkbox" jsxlabel="复选框">
               <CheckboxItem
-                value="air" text="天空"
+                value="air"
+                text="天空"
               />
               <CheckboxItem value="sea" text="大海" />
             </CheckboxGroupFormField>
@@ -361,7 +366,9 @@ class Demo extends React.Component {
               type="hook"
             >
               {itemsData.map((item, index) => (
-                <PickItem key={index} value={item.value}>{item.text}</PickItem>
+                <PickItem key={index} value={item.value}>
+                  {item.text}
+                </PickItem>
               ))}
             </PickableFormField>
           </FormRow>
@@ -434,9 +441,15 @@ class Demo extends React.Component {
             jsxname="option"
             jsxlabel="传 option"
           >
-            <Option value="1">第一个选项</Option>
-            <Option value="2">第二个选项</Option>
-            <Option value="3">第三个选项</Option>
+            <Option value="1">
+              第一个选项
+            </Option>
+            <Option value="2">
+              第二个选项
+            </Option>
+            <Option value="3">
+              第三个选项
+            </Option>
           </SelectFormField>
           <FormRowTitle jsxtitle="级联类" />
           <DateFormField
@@ -450,7 +463,7 @@ class Demo extends React.Component {
               validator: (value) => {
                 if (typeof value === 'undefined') {
                   return false;
-                } else if (Array.isArray(value) && value.length < 2) {
+                } if (Array.isArray(value) && value.length < 2) {
                   return false;
                 }
                 for (let i = 0, l = value.length; i < l; i++) {
@@ -485,16 +498,29 @@ class Demo extends React.Component {
           <CustomField jsxname="custom" jsxlabel="定制" placeholder="test" />
 
           <ButtonGroupFormField>
-            <Button size="medium" onClick={me.handleClick.bind(me)}>提交</Button>
-            <Button size="medium" type="secondary" action="reset">取消</Button>
-            <Button type="secondary" onClick={me.handleSetValues.bind(me)}>手动setValues</Button>
+            <Button size="medium" onClick={me.handleClick.bind(me)}>
+              提交
+            </Button>
+            <Button size="medium" type="secondary" action="reset">
+              取消
+            </Button>
+            <Button type="secondary" onClick={me.handleSetValues.bind(me)}>
+              手动setValues
+            </Button>
             <Button
               size="medium"
               type="secondary"
               onClick={me.handleValueChange.bind(me)}
-            >修改 props</Button>
-            <Button type="secondary" onClick={me.changeMode.bind(me)}>转变模式</Button>
-            <Button type="secondary" onClick={me.update.bind(me)}>强制刷新</Button>
+            >
+              修改 props
+
+            </Button>
+            <Button type="secondary" onClick={me.changeMode.bind(me)}>
+              转变模式
+            </Button>
+            <Button type="secondary" onClick={me.update.bind(me)}>
+              强制刷新
+            </Button>
           </ButtonGroupFormField>
         </Form>
       </div>
