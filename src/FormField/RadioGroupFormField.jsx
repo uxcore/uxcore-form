@@ -11,7 +11,6 @@ const Item = RadioGroup.Item;
 
 
 class RadioGroupFormField extends FormField {
-
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
@@ -21,13 +20,13 @@ class RadioGroupFormField extends FormField {
     const me = this;
     me.handleDataChange(value);
   }
+  /* eslint-disable class-methods-use-this */
   addSpecificClass() {
-    const me = this;
-    if (me.props.jsxprefixCls === 'kuma-uxform-field') {
-      return `${me.props.jsxprefixCls} kuma-radio-group-uxform-field`;
-    }
-    return me.props.jsxprefixCls;
+    return 'kuma-radio-group-uxform-field';
   }
+  /* eslint-enable class-methods-use-this */
+
+
   renderField() {
     const me = this;
     const arr = [];

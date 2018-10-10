@@ -1,4 +1,5 @@
-.kuma-uxform {
+@__formPrefixCls: kuma-uxform;
+.@{__formPrefixCls} {
   zoom: 1;
   &:after {
     visibility: hidden;
@@ -10,22 +11,22 @@
   }
 }
 
-.kuma-uxform-row-title {
+.@{__formPrefixCls}-row-title {
   clear: both;
   overflow: hidden;
 }
 
-.kuma-uxform-row {
+.@{__formPrefixCls}-row {
   min-width: 100%;
   float: left;
   clear: both;
 }
 
-.kuma-uxform-field {
+.@{__formPrefixCls}-field {
   display: table;
   float: left;
   width: 100%;
-  padding: 0 24px 16px 0px;
+  padding: 0 24px 24px 0px;
   *zoom: 1;
   .kuma-label {
     width: 88px;
@@ -47,12 +48,12 @@
   .kuma-input {
     vertical-align: middle;
     *vertical-align: -5px;
-    &.kuma-uxform-input-has-right {
+    &.@{__formPrefixCls}-input-has-right {
       border-right: none;
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
     }
-    &.kuma-uxform-input-has-left {
+    &.@{__formPrefixCls}-input-has-left {
       padding-left: 0;
       border-left: none;
       border-bottom-left-radius: 0;
@@ -61,9 +62,8 @@
   }
 }
 
-.kuma-uxform-field-content {
-  font-size: 12px;
-  color: @dark-alpha-2;
+.@{__formPrefixCls}-field-content {
+  color: @dark-2;
   width: 100%;
   .kuma-radio-group {
     >span {
@@ -72,14 +72,14 @@
   }
   .kuma-input {
     &:hover {
-      &+.kuma-uxform-right-icon,
-      &+.kuma-uxform-count {
+      &+.@{__formPrefixCls}-right-icon,
+      &+.@{__formPrefixCls}-count {
         border-color: @border-hover-color;
       }
     }
     &:focus {
-      &+.kuma-uxform-right-icon,
-      &+.kuma-uxform-count {
+      &+.@{__formPrefixCls}-right-icon,
+      &+.@{__formPrefixCls}-count {
         border-color: @border-focus-color;
         outline: none;
       }
@@ -87,9 +87,9 @@
   }
   &.has-error {
     .kuma-input,
-    .kuma-uxform-left-icon,
-    .kuma-uxform-right-icon,
-    .kuma-uxform-count,
+    .@{__formPrefixCls}-left-icon,
+    .@{__formPrefixCls}-right-icon,
+    .@{__formPrefixCls}-count,
     .kuma-textarea,
     .kuma-select2-selection,
     .mce-panel {
@@ -98,14 +98,14 @@
     }
     .kuma-input {
       &:hover {
-        &+.kuma-uxform-right-icon,
-        &+.kuma-uxform-count {
+        &+.@{__formPrefixCls}-right-icon,
+        &+.@{__formPrefixCls}-count {
           border-color: @border-danger-color;
         }
       }
       &:focus {
-        &+.kuma-uxform-right-icon,
-        &+.kuma-uxform-count {
+        &+.@{__formPrefixCls}-right-icon,
+        &+.@{__formPrefixCls}-count {
           border-color: @border-danger-color;
         }
       }
@@ -117,7 +117,7 @@
   }
 }
 
-.kuma-uxform-count {
+.@{__formPrefixCls}-count {
   display: table-cell;
   width: 35px;
   text-align: center;
@@ -128,7 +128,7 @@
   border-left: none;
 }
 
-.kuma-uxform-left-icon {
+.@{__formPrefixCls}-left-icon {
   display: table-cell;
   width: 30px;
   border: 1px solid @border-color;
@@ -140,16 +140,16 @@
   padding-top: 0px;
 }
 
-.kuma-uxform-left-icon-hover {
+.@{__formPrefixCls}-left-icon-hover {
   border-color: @border-hover-color;
 }
 
-.kuma-uxform-left-icon-focus {
+.@{__formPrefixCls}-left-icon-focus {
   border-color: @border-focus-color;
   outline: none;
 }
 
-.kuma-uxform-right-icon {
+.@{__formPrefixCls}-right-icon {
   display: table-cell;
   width: 30px;
   border: 1px solid @border-color;
@@ -158,45 +158,47 @@
   border-bottom-right-radius: @global-border-radius;
   border-top-right-radius: @global-border-radius;
   vertical-align: middle;
-  padding-top: 0px;
+  padding: 0 4px;
 }
 
-.kuma-uxform-field-core {
+.@{__formPrefixCls}-field-core {
   display: table;
   width: 100%;
   table-layout: fixed;
 }
 
-.kuma-uxform-tips {
+.@{__formPrefixCls}-tips {
   padding-top: 4px;
+  font-size: 12px;
   color: @normal-alpha-4;
   .kuma-icon {
     vertical-align: middle;
     margin-right: 4px;
     color: #39bffc;
   }
-  .kuma-uxform-message-content {
+  .@{__formPrefixCls}-message-content {
     vertical-align: middle;
   }
 }
 
-.kuma-uxform-errormsg {
+.@{__formPrefixCls}-errormsg {
   padding-top: 4px;
   color: #ea5652;
+  font-size: 12px;
   .kuma-icon {
     margin-right: 4px;
     vertical-align: middle;
   }
-  .kuma-uxform-message-content {
+  .@{__formPrefixCls}-message-content {
     vertical-align: middle;
   }
 }
 
 // different status for field
-.kuma-uxform-field__view {}
+.@{__formPrefixCls}-field__view {}
 
 // different layout for field
-.kuma-uxform-field__layout-v {
+.@{__formPrefixCls}-field__layout-v {
   .kuma-label.vertical-align {
     width: 100%;
     display: block;
@@ -204,14 +206,56 @@
     padding-top: 0px;
     padding-bottom: 4px;
   }
+  .@{__formPrefixCls}-field-content {
+    font-size: 14px;
+  }
+  &.kuma-input-uxform-field,
+  &.kuma-number-input-uxform-field {
+    .@{__formPrefixCls}-input {
+      .kuma-input {
+        font-size: 14px;
+      }
+    }
+    &.@{__formPrefixCls}-field-small {
+      .@{__formPrefixCls}-input {
+        .kuma-input {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  &.kuma-textarea-uxform-field {
+    .kuma-textarea {
+      font-size: 14px;
+    }
+    &.@{__formPrefixCls}-field-small {
+      .kuma-textarea {
+        font-size: 12px;
+      }
+    }
+  }
+  &.kuma-cascade-date-uxform-field {
+    .kuma-calendar-picker-input {
+      >input {
+        font-size: 14px;
+      }
+    }
+    &.@{__formPrefixCls}-field-small {
+      .kuma-calendar-picker-input {
+        >input {
+          font-size: 12px;
+        }
+      }
+    }
+  }
 }
 
-.kuma-uxform-field__layout-h {
-  .kuma-uxform-field-content.view-mode {
+.@{__formPrefixCls}-field__layout-h {
+  .@{__formPrefixCls}-field-content.view-mode {
     padding-top: 9px;
   } // increse the weight to prevent being overrided
-  &.kuma-uxform-field__all-view.kuma-uxform-field {
-    .kuma-uxform-field-content.view-mode {
+  &.@{__formPrefixCls}-field__all-view.@{__formPrefixCls}-field {
+    .@{__formPrefixCls}-field-content.view-mode {
       padding-top: 0px;
     }
     .kuma-label {
@@ -221,31 +265,34 @@
 }
 
 // different size for field
-.kuma-uxform-field-middle {
+.@{__formPrefixCls}-field-middle {
   .kuma-label {
     padding-top: 7px;
   }
-  &.kuma-uxform-field__layout-h .kuma-uxform-field-content.view-mode {
+  &.@{__formPrefixCls}-field__layout-h .@{__formPrefixCls}-field-content.view-mode {
     padding-top: 7px;
   }
 }
 
-.kuma-uxform-field-small {
+.@{__formPrefixCls}-field-small {
   .kuma-label {
     padding-top: 5px;
     padding-right: 12px;
   }
-  &.kuma-uxform-field {
-    padding-bottom: 12px;
+  &.@{__formPrefixCls}-field {
+    padding-bottom: 16px;
   }
-  &.kuma-uxform-field__layout-h .kuma-uxform-field-content.view-mode {
+  &.@{__formPrefixCls}-field__layout-h .@{__formPrefixCls}-field-content.view-mode {
     padding-top: 5px;
+  }
+  .@{__formPrefixCls}-field-content {
+    font-size: 12px;
   }
 }
 
 .kuma-input-uxform-field,
 .kuma-number-input-uxform-field {
-  .kuma-uxform-input {
+  .@{__formPrefixCls}-input {
     display: table;
     width: 100%;
   }
@@ -264,13 +311,13 @@
   .kuma-checkbox-group {
     margin-top: (@trigger-height-large - 18) / 2;
   }
-  &.kuma-uxform-field-middle {
+  &.@{__formPrefixCls}-field-middle {
     .kuma-radio-group,
     .kuma-checkbox-group {
       margin-top: (@trigger-height-middle - 18) / 2;
     }
   }
-  &.kuma-uxform-field-small {
+  &.@{__formPrefixCls}-field-small {
     .kuma-radio-group,
     .kuma-checkbox-group {
       margin-top: (@trigger-height-small - 18) / 2;
@@ -282,12 +329,12 @@
   .kuma-switch {
     margin-top: (@trigger-height-large - 24) / 2;
   }
-  &.kuma-uxform-field-middle {
+  &.@{__formPrefixCls}-field-middle {
     .kuma-switch {
       margin-top: (@trigger-height-middle - 24) / 2;
     }
   }
-  &.kuma-uxform-field-small {
+  &.@{__formPrefixCls}-field-small {
     .kuma-switch {
       margin-top: (@trigger-height-small - 24) / 2;
     }
@@ -298,12 +345,12 @@
   .kuma-pickable {
     margin-top: (@trigger-height-large - 28) / 2;
   }
-  &.kuma-uxform-field-middle {
+  &.@{__formPrefixCls}-field-middle {
     .kuma-pickable {
       margin-top: (@trigger-height-middle - 28) / 2;
     }
   }
-  &.kuma-uxform-field-small {
+  &.@{__formPrefixCls}-field-small {
     .kuma-pickable {
       margin-top: (@trigger-height-small - 28) / 2;
     }
@@ -330,7 +377,7 @@
   }
 }
 
-.kuma-uxform-split {
+.@{__formPrefixCls}-split {
   display: inline-block;
   margin: 0 10px;
   vertical-align: middle;
@@ -356,7 +403,7 @@
   .kuma-select2 {
     width: 200px;
   }
-  .kuma-uxform-main-search {
+  .@{__formPrefixCls}-main-search {
     &.has-class {
       .kuma-select2-selection {
         border-left: none;
@@ -375,7 +422,7 @@
       display: none;
     }
   }
-  .kuma-uxform-advanced-search {
+  .@{__formPrefixCls}-advanced-search {
     width: 100px;
     .kuma-select2-selection {
       border-left: none;
@@ -386,7 +433,7 @@
       border-left: 1px solid @border-color;
     }
   }
-  .kuma-uxform-class-search {
+  .@{__formPrefixCls}-class-search {
     width: 58px;
     .kuma-select2-selection {
       background: @basic-200;
@@ -397,8 +444,8 @@
       color: @text-primary-color;
     }
   }
-  .kuma-uxform-advanced-search,
-  .kuma-uxform-class-search {
+  .@{__formPrefixCls}-advanced-search,
+  .@{__formPrefixCls}-class-search {
     &.kuma-select2-open .kuma-select2-selection {
       border-bottom: none;
       border-bottom-left-radius: 0px;
@@ -421,15 +468,15 @@
   }
 }
 
-.kuma-uxform-class-dropdown {
+.@{__formPrefixCls}-class-dropdown {
   .kuma-select2-dropdown-menu-item {
     padding: 7px 0 7px 10px;
   }
   background: @basic-200;
 }
 
-.kuma-uxform-class-dropdown,
-.kuma-uxform-advanced-dropdown {
+.@{__formPrefixCls}-class-dropdown,
+.@{__formPrefixCls}-advanced-dropdown {
   border-top: none;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
@@ -444,22 +491,20 @@
 }
 
 .kuma-textarea-uxform-field {
-  textarea {
-    display: block;
-    min-height: 124px;
-  }
   .has-count {
     position: relative;
-    .kuma-uxform-count {
+    .@{__formPrefixCls}-count {
       color: @text-helper-color;
     }
-    .kuma-uxform-count-has-error {
+    .@{__formPrefixCls}-count-has-error {
       color: @text-danger-color;
     }
     .kuma-textarea {
       padding-bottom: 20px;
+      display: block;
+      min-height: 124px;
     }
-    .kuma-uxform-textarea-count {
+    .@{__formPrefixCls}-textarea-count {
       position: absolute;
       bottom: 5px;
       right: 10px;
@@ -468,14 +513,14 @@
 }
 
 // For input box max width
-.kuma-uxform-field__input-box {
+.@{__formPrefixCls}-field__input-box {
   &-middle {
-    .kuma-uxform-field-core {
+    .@{__formPrefixCls}-field-core {
       max-width: 360px;
     }
   }
   &-large {
-    .kuma-uxform-field-core {
+    .@{__formPrefixCls}-field-core {
       max-width: 564px;
     }
   }

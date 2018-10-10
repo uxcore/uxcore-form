@@ -7,7 +7,6 @@
  */
 
 import React from 'react';
-
 import FormRow from 'uxcore-form-row';
 import classnames from 'classnames';
 import deepcopy from 'lodash/cloneDeep';
@@ -86,7 +85,7 @@ class Form extends React.Component {
         me.fields[keys[i]].handleDataChange(
           data[keys[i]] === undefined
             ? null
-            : data[keys[i]], true, true
+            : data[keys[i]], true, true,
         );
       }
     }
@@ -115,7 +114,7 @@ class Form extends React.Component {
     delete this.data[name];
   }
 
-  doValidate(force, always, onError = () => {}) {
+  doValidate(force, always, onError = () => { }) {
     const me = this;
     let pass = true;
     const keys = Object.keys(me.fields);
@@ -123,14 +122,13 @@ class Form extends React.Component {
     const errorArray = [];
     if (!asyncValidate) {
       for (let i = 0; i < keys.length; i++) {
-        if (!me.fields[keys[i]].getProps().jsxshow) {
-          continue;
-        }
-        const itemPass = me.fields[keys[i]].doValidate(force, always);
-        me.errors[keys[i]] = !itemPass;
-        errorArray.push({ key: keys[i], error: !itemPass });
-        if (!itemPass) {
-          pass = false;
+        if (me.fields[keys[i]].getProps().jsxshow) {
+          const itemPass = me.fields[keys[i]].doValidate(force, always);
+          me.errors[keys[i]] = !itemPass;
+          errorArray.push({ key: keys[i], error: !itemPass });
+          if (!itemPass) {
+            pass = false;
+          }
         }
       }
       if (!pass) {
@@ -204,7 +202,7 @@ class Form extends React.Component {
    */
 
   processChild() {
-    const children = this.props.children;
+    const { children } = this.props;
     const length = React.Children.count(children);
     const elements = [];
     if (length === 0) {
@@ -215,14 +213,16 @@ class Form extends React.Component {
     React.Children.forEach(children, (child) => {
       // 如果是自己添加的 DOM 直接抛弃
       if (child && typeof child.type === 'function') {
-        let displayName = child.type.displayName;
+        let { displayName } = child.type;
         if (displayName === 'EngineNode') {
           displayName = child.props._componentName;
         }
         if (/FormField/.test(displayName)) {
-          elements.push(<FormRow>
-            {child}
-          </FormRow>);
+          elements.push(
+            <FormRow>
+              {child}
+            </FormRow>,
+          );
         } else if (/FormRow/.test(displayName)) {
           elements.push(child);
         }
@@ -239,7 +239,7 @@ class Form extends React.Component {
     return (
       <div
         className={classnames({
-          [me.props.jsxprefixCls]: true,
+          [me.props.prefixCls]: true,
           [me.props.className]: !!me.props.className,
           'kuma-uxform-edit-mode': me.props.jsxmode === Constants.MODE.EDIT,
           'kuma-uxform-view-mode': me.props.jsxmode === Constants.MODE.VIEW,
@@ -279,18 +279,21 @@ Form.KeyCode = KeyCode;
 
 
 Form.defaultProps = {
-  jsxprefixCls: 'kuma-uxform',
+  prefixCls: 'kuma-uxform',
   jsxmode: Constants.MODE.EDIT,
   instantValidate: true,
   asyncValidate: false,
   jsxonChange: () => { },
   autoAdjustSpacing: false,
+  className: '',
+  children: undefined,
+  jsxvalues: undefined,
 };
 
 
 // http://facebook.github.io/react/docs/reusable-components.html
 Form.propTypes = {
-  jsxprefixCls: PropTypes.string,
+  prefixCls: PropTypes.string,
   className: PropTypes.string,
   jsxmode: PropTypes.string,
   jsxvalues: PropTypes.object,

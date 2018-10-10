@@ -1,0 +1,9 @@
+import '../src/Form.less';
+import 'kuma-base/core.less';
+import 'uxcore-checkbox-group/style';
+import 'uxcore-icon/style';
+import 'uxcore-radiogroup/style';
+import 'uxcore-rich-text/style';
+import 'uxcore-select2/style';
+import 'uxcore-tinymce/style';
+import 'uxcore-title/style';

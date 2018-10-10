@@ -1,3 +1,26 @@
+## 7.2.0
+
+* `CHANGED` style improvement for more clear view mode
+
+## 7.1.0
+
+* `CHANGED` support js style export
+* `CHANGED` change prop `jsxprefixCls` to `prefixCls`
+
+## 7.0.1
+
+* `CHANGED` update `uxcore-switch-form-field` to `^0.2.0`
+
+## 7.0.0
+
+* `CHANGED` update `uxcore-date-form-field` to `^0.9.0`
+* `CHANGED` update `uxcore-form-field` to `^0.3.0`
+* `CHANGED` update `uxcore-input-form-field` to `^0.3.0`
+* `CHANGED` update `uxcore-pickable-form-field` to `^0.5.0`
+* `CHANGED` update `uxcore-select2` to `^0.5.0`
+* `CHANGED` update `uxcore-textarea-form-field` to `^0.2.0`
+* `CHANGED` adapt React@16
+
 ## 6.3.4
 
 * `FIXED` SearchField handleDataChange

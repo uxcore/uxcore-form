@@ -3,7 +3,6 @@ import FormField from 'uxcore-form-field';
 import Constants from 'uxcore-const';
 import Tinymce from 'uxcore-tinymce';
 import assign from 'object-assign';
-import deepEqual from 'lodash/isEqual';
 import RichText from 'uxcore-rich-text';
 
 class EditorFormField extends FormField {
@@ -12,14 +11,9 @@ class EditorFormField extends FormField {
     this.handleChange = this.handleChange.bind(this);
     this.handleKeyup = this.handleKeyup.bind(this);
   }
-  componentWillReceiveProps(nextProps) {
-    const me = this;
-    if (!deepEqual(nextProps.value, me.props.value)) {
-      me.handleDataChange(nextProps.value, false, true);
-    }
-  }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    super.componentDidUpdate(prevProps, prevState, snapshot);
     const me = this;
     const prevMode = prevProps.jsxmode || prevProps.mode;
     const mode = me.props.jsxmode || me.props.mode;

@@ -1,4 +1,3 @@
-import React from 'react';
 import InputFormField from 'uxcore-input-form-field';
 import Formatter from 'uxcore-formatter';
 import assign from 'object-assign';
@@ -11,10 +10,15 @@ class NumberInputFormField extends InputFormField {
     const me = this;
     const { autoTrim } = me.props;
     let value = e.currentTarget.value;
+    value = value.replace(/[^\d.-]/g, '');
+
     if (autoTrim) {
-      value = trim(value);
+      me.clearTimer();
+      me.timer = setTimeout(() => {
+        value = trim(value);
+        me.handleDataChange(me.deFormatValue(value));
+      }, 500);
     }
-    value = value.replace(/[^\d\.\-]/g, '');
     me.handleDataChange(me.deFormatValue(value));
   }
 
@@ -34,9 +38,9 @@ class NumberInputFormField extends InputFormField {
     const newValue = `${value}`;
     if (me.props.jsxtype === 'money') {
       return Formatter.money(newValue, me.props.delimiter, me.props.fixedNum);
-    } else if (me.props.jsxtype === 'cnmobile') {
+    } if (me.props.jsxtype === 'cnmobile') {
       return Formatter.cnmobile(newValue, me.props.delimiter);
-    } else if (me.props.jsxtype === 'card') {
+    } if (me.props.jsxtype === 'card') {
       return Formatter.card(newValue, me.props.delimiter);
     }
     return newValue;
@@ -51,9 +55,9 @@ class NumberInputFormField extends InputFormField {
         return Formatter.money(newValue, me.props.delimiter, me.props.fixedNum);
       }
       return Formatter.money(newValue, me.props.delimiter);
-    } else if (me.props.jsxtype === 'cnmobile') {
+    } if (me.props.jsxtype === 'cnmobile') {
       return Formatter.cnmobile(newValue, me.props.delimiter);
-    } else if (me.props.jsxtype === 'card') {
+    } if (me.props.jsxtype === 'card') {
       return Formatter.card(newValue, me.props.delimiter);
     }
     return newValue;
@@ -67,13 +71,11 @@ class NumberInputFormField extends InputFormField {
     return value;
   }
 
+  /* eslint-disable class-methods-use-this */
   addSpecificClass() {
-    const me = this;
-    if (me.props.jsxprefixCls === 'kuma-uxform-field') {
-      return `${me.props.jsxprefixCls} kuma-number-input-uxform-field`;
-    }
-    return me.props.jsxprefixCls;
+    return 'kuma-number-input-uxform-field';
   }
+  /* eslint-disable class-methods-use-this */
 }
 
 NumberInputFormField.displayName = 'NumberInputFormField';
