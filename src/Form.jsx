@@ -260,6 +260,7 @@ class Form extends React.Component {
             handleDataChange: me.handleDataChange,
             getValues: me.getValues,
             resetValues: me.resetValues,
+            formPrefixCls: me.props.prefixCls,
           })
         ))}
       </div>
