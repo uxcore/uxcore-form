@@ -266,7 +266,7 @@ jsxdata 目前支持两种格式
 |classOptions|array|optional|-|左侧类别选项的选择项：格式为`[{value: xxx, text: xxx}]`|
 |classConfig|object|optional|-|左侧类别选项的配置，同 `uxcore-select2`|
 |tidy|bool|optional|-|精简模式|
-|onIconClick|function(e)|optional|-|点击搜索图标触发回调|
+|onIconClick|function(e, value)|optional|-|点击搜索图标触发回调, value 是 Field 的值，回传方便在 standalone 方式下使用，格式为 { main, class, advanced }，对应主输入区文本、类别值（如果有）、高级选项值（如果有）|
 
 > 该组件继承自 SelectFormField，支持 SelectFormField 的全部 props。
 

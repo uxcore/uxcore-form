@@ -34,6 +34,7 @@ class Demo extends React.Component {
       dataType: 'jsonp',
       placeholder: '姓名/手机号/工号',
       jsxfetchUrl: 'http://suggest.taobao.com/sug',
+      size: 'small',
       onSelect() {
         console.log('select');
       },
@@ -70,15 +71,17 @@ class Demo extends React.Component {
         });
         return data;
       },
-      onIconClick: () => {
-        console.log(me.refs.form.getValues());
+      onIconClick: (evt, value) => {
+        console.log(value);
       },
     };
 
     const tidyVer = assign({}, searchOptions, {
       jsxname: 'tidy',
-      tidy: true,
-      advancedOptions: [],
+      advancedOptions: [{
+        value: '1111',
+        text: '高级分类',
+      }],
       classOptions: [],
     });
 
