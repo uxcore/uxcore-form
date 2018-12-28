@@ -32,6 +32,7 @@ const {
   EditorFormField,
   SwitchFormField,
   PickableFormField,
+  SearchFormField,
   createFormField,
 } = Form;
 
@@ -342,16 +343,37 @@ class Demo extends React.Component {
               <CheckboxItem value="sea" text="大海" />
             </CheckboxGroupFormField>
           </FormRow>
-          <InputFormField inputBoxMaxWidth="middle" jsxname="pass" jsxlabel="请输入密码" inputType={me.state.showPass ? 'text' : 'password'}>
-            <RightAddon>
-              <Icon
-                usei
-                style={{ cursor: 'pointer' }}
-                name={!me.state.showPass ? 'xianshi' : 'yincang'}
-                onClick={me.handleShowPassChange.bind(me)}
-              />
-            </RightAddon>
-          </InputFormField>
+          <FormRow>
+            <InputFormField jsxname="pass" jsxlabel="请输入密码" inputType={me.state.showPass ? 'text' : 'password'}>
+              <RightAddon>
+                <Icon
+                  usei
+                  style={{ cursor: 'pointer' }}
+                  name={!me.state.showPass ? 'xianshi' : 'yincang'}
+                  onClick={me.handleShowPassChange.bind(me)}
+                />
+              </RightAddon>
+            </InputFormField>
+            <SearchFormField
+              jsxlabel="搜索框"
+              jsxshowLabel
+              jsxname="search"
+              placeholder="姓名/手机号/工号"
+              classOptions={[
+                {
+                  value: '1',
+                  text: '用户',
+                },
+                {
+                  value: '2',
+                  text: '商品',
+                },
+              ]}
+              classConfig={{
+                placeholder: '类别',
+              }}
+            />
+          </FormRow>
           <FormRow>
             <SwitchFormField
               jsxname="switch"

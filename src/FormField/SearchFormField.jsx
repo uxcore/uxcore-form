@@ -21,6 +21,10 @@ class SearchFormField extends SelectFormField {
   }
   /* eslint-enable class-methods-use-this */
 
+  _getFieldSize() {
+    return this.props.size || this.props.jsxsize || 'large';
+  }
+
   _processAdvanced() {
     const me = this;
     const { advancedOptions } = me.props;
@@ -57,8 +61,7 @@ class SearchFormField extends SelectFormField {
   }
 
   handleIconClick(e) {
-    const me = this;
-    me.props.onIconClick(e);
+    this.props.onIconClick(e, this.state.value);
   }
 
 
@@ -85,6 +88,7 @@ class SearchFormField extends SelectFormField {
       onChange: me.handleChange.bind(me),
       onSearch: me.handleSearch.bind(me),
       key: 'search',
+      size: this._getFieldSize(),
     };
 
     selectOptions.forEach((item) => {
@@ -122,17 +126,16 @@ class SearchFormField extends SelectFormField {
     if (!me.props.tidy && hasAdvance) {
       arr.push(me.renderAdvancedOptions());
     }
-    arr.push(
-      <span
-        className={classnames({
-          'kuma-search-uxform-field-icon': true,
-          'tidy-pattern': me.props.tidy,
-        })} key="icon"
-        onClick={me.handleIconClick}
-      >
-        <Icon name="sousuo" />
-      </span>
-    );
+    arr.push(<span
+      className={classnames({
+        'kuma-search-uxform-field-icon': true,
+        'tidy-pattern': me.props.tidy,
+      })}
+      key="icon"
+      onClick={me.handleIconClick}
+    >
+      <Icon usei name="sousuo" />
+    </span>);
     return arr;
   }
 
@@ -154,6 +157,7 @@ class SearchFormField extends SelectFormField {
         [className]: !!className,
       }),
       transitionName: '',
+      size: this._getFieldSize(),
     }, otherOptions, {
       onChange: me.handleClassChange.bind(me),
     });
@@ -180,6 +184,7 @@ class SearchFormField extends SelectFormField {
         offset: [0, 0],
       },
       transitionName: '',
+      size: this._getFieldSize(),
     }, otherOptions, {
       onChange: me.handleAdvancedChange.bind(me),
     });
