@@ -34,7 +34,7 @@ class Demo extends React.Component {
       dataType: 'jsonp',
       placeholder: '姓名/手机号/工号',
       jsxfetchUrl: 'http://suggest.taobao.com/sug',
-      size: 'small',
+      size: 'middle',
       onSelect() {
         console.log('select');
       },

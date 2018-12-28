@@ -273,10 +273,6 @@
   &.@{__formPrefixCls}-field__layout-h .@{__formPrefixCls}-field-content.view-mode {
     padding-top: 7px;
   }
-  .kuma-search-uxform-field-icon {
-    height: 32px !important;
-    line-height: 32px !important;
-  }
 }
 
 .@{__formPrefixCls}-field-small {
@@ -292,10 +288,6 @@
   }
   .@{__formPrefixCls}-field-content {
     font-size: 12px;
-  }
-  .kuma-search-uxform-field-icon {
-    height: 28px !important;
-    line-height: 28px !important;
   }
 }
 
@@ -478,6 +470,28 @@
     vertical-align: top;
     border-top-right-radius: @global-border-radius;
     border-bottom-right-radius: @global-border-radius;
+  }
+  &.@{__formPrefixCls}-field-middle {
+    .kuma-search-uxform-field-icon {
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+
+      .uxcore-icon {
+        font-size: 14px;
+      }
+    }
+  }
+  &.@{__formPrefixCls}-field-small {
+    .kuma-search-uxform-field-icon {
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+
+      .uxcore-icon {
+        font-size: 14px;
+      }
+    }
   }
 }
 
