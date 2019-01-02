@@ -1,3 +1,9 @@
+## 7.2.3
+* `CHANGED` SearchFormField add new props size
+
+## 7.2.2
+* `CHANGED` add new props prefixCls
+
 ## 7.2.0
 
 * `CHANGED` style improvement for more clear view mode
