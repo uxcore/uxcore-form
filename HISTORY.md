@@ -1,3 +1,6 @@
+## 7.2.4
+* `CHANGED` change option splitter to ", " under view mode, the same to SelectFormField
+
 ## 7.2.3
 * `CHANGED` SearchFormField add new props size
 
@@ -33,7 +36,7 @@
 
 ## 6.3.3
 
-* `FIXED` input & addon border color 
+* `FIXED` input & addon border color
 
 ## 6.3.0
 
@@ -43,7 +46,7 @@
 
 * `FIXED` NumberInputFormField do not format empty string
 
-## 6.2.1 
+## 6.2.1
 
 * `FIXED` wrong NumberInputFormField right addon style.
 
@@ -62,7 +65,7 @@
 ## 6.0.0
 
 * `NEW` auto adjust field's margin between view mode & edit mode
-* `NEW` new field prop `inputBoxMaxWidth` to define a max width for field input box in a very wide page. 
+* `NEW` new field prop `inputBoxMaxWidth` to define a max width for field input box in a very wide page.
 * `CHANGED` adjust safe distance between two fields in a row.
 * `CHANGED` adjust field's margin for different size
 
@@ -104,7 +107,7 @@
 
 ## 3.1.0
 
-* `CHANGED` method `setValues` will handle non-existent key. (#135) 
+* `CHANGED` method `setValues` will handle non-existent key. (#135)
 
 ## 3.0.0
 
@@ -159,7 +162,7 @@
 
 ## 1.9.1
 
-* `FIXED` cascadeSelectFormField can not be reset 
+* `FIXED` cascadeSelectFormField can not be reset
 
 ## 1.9.0
 
@@ -177,7 +180,7 @@
 
 ## 1.8.11
 
-* `CHANGED` update `uxcore-date-form-field` to ~0.5.0 
+* `CHANGED` update `uxcore-date-form-field` to ~0.5.0
 
 ## 1.8.10
 
@@ -205,7 +208,7 @@
 
 ## 1.8.4
 
-* `CHANGED` getValues method will return a promise if asyncValidate is true 
+* `CHANGED` getValues method will return a promise if asyncValidate is true
 
 ## 1.8.3
 
@@ -234,7 +237,7 @@
 
 ## 1.7.3
 
-* `FIXED` fix server render bug 
+* `FIXED` fix server render bug
 
 ## 1.7.2
 
@@ -255,7 +258,7 @@
 
 ## 1.6.2
 
-* `NEW` add SwitchFormField 
+* `NEW` add SwitchFormField
 
 ## 1.6.1
 
@@ -291,7 +294,7 @@
 `HOTFIX` fix dependency uxcore-input-form-field
 
 ## 1.4.0
- 
+
 * `FIX` options not shown in searchFormField
 * `CHANGED` update uxcore-date-form-field to ~0.2.0
 
@@ -335,7 +338,7 @@
 ## 1.3.5
 
 * `CHANGED` add candroping config
-* `CHANGED` remove dependency `uxcore-uploader` `uxcore-button`  
+* `CHANGED` remove dependency `uxcore-uploader` `uxcore-button`
 
 ## 1.3.4
 
@@ -374,7 +377,7 @@
 * `NEW` `InputFormField` add new prop `inputType` #71
 * `NEW` add new prop `onKeyDown` in `InputFormField` & `TextAreaFormField`
 * `CHANGED` the first param `force` of `getValues` has the top priority.
-* `FIXED` fix label style bug #77 
+* `FIXED` fix label style bug #77
 
 ## 1.2.22
 * `FIXED` fix issue #75
@@ -387,7 +390,7 @@
 
 ## 1.2.19
 
-* `CHANGED` update scaffold 
+* `CHANGED` update scaffold
 
 ## 1.2.18
 
@@ -396,7 +399,7 @@
 
 ## 1.2.13
 
-* `CHANGED` update scaffold 
+* `CHANGED` update scaffold
 
 ## 1.2.12
 
