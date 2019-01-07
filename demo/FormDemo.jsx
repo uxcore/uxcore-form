@@ -336,11 +336,9 @@ class Demo extends React.Component {
               <RadioItem value="watermelon" text="Watermelon" />
             </RadioGroupFormField>
             <CheckboxGroupFormField jsxname="checkbox" jsxlabel="复选框">
-              <CheckboxItem
-                value="air"
-                text="天空"
-              />
-              <CheckboxItem value="sea" text="大海" />
+              <CheckboxItem value="air" text="Sky" />
+              <CheckboxItem value="sea" text="Sea" />
+              <CheckboxItem value="land" text="Land and mountains" />
             </CheckboxGroupFormField>
           </FormRow>
           <FormRow>

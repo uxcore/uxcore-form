@@ -26,6 +26,7 @@ class CheckboxGroupFormField extends FormField {
   renderField() {
     const me = this;
     const mode = me.props.jsxmode || me.props.mode;
+    const splitter = ', \u00a0';
     if (mode === Constants.MODE.EDIT) {
       return (
         <CheckboxGroup
@@ -44,7 +45,7 @@ class CheckboxGroupFormField extends FormField {
       if (textArr.length === 0) {
         textArr = me.state.value;
       }
-      return <span>{textArr.join(' ')}</span>;
+      return <span>{textArr.join(splitter)}</span>;
     }
     return null;
   }
