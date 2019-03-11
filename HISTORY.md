@@ -1,3 +1,6 @@
+## 7.2.5
+* `FIXED` fix text overflow in InputFormFiled when view mode
+
 ## 7.2.4
 * `CHANGED` change option splitter to ", " under view mode, the same to SelectFormField
 
