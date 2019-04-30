@@ -6,6 +6,7 @@ import deepcopy from 'lodash/cloneDeep';
 import classnames from 'classnames';
 import Icon from 'uxcore-icon';
 import PropTypes from 'prop-types';
+import Constants from 'uxcore-const';
 
 const { Option } = Select;
 const selectOptions = ['onSelect', 'onDeselect', 'getPopupContainer', 'filterOption', 'allowClear', 'searchPlaceholder', 'tags', 'disabled', 'showSearch', 'placeholder', 'optionLabelProp', 'maxTagTextLength', 'dropdownMatchSelectWidth', 'dropdownClassName', 'notFoundContent'];
@@ -68,7 +69,13 @@ class SearchFormField extends SelectFormField {
   renderField() {
     const me = this;
     const arr = [];
-    // const mode = me.props.jsxmode || me.props.mode;
+    const mode = me.props.jsxmode || me.props.mode;
+    const { value } = me.state
+    if (mode === Constants.MODE.VIEW) {
+      return (
+        value ? value.class ? `${value.class}-${value.main}` : value.main : ''
+      )
+    }
     const hasClass = me.props.classOptions instanceof Array && me.props.classOptions.length > 0;
     const hasAdvance = me.props.advancedOptions instanceof Array
       && me.props.advancedOptions.length > 0;
