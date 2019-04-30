@@ -1,3 +1,7 @@
+## 7.2.6
+* `FIXED` fix bug of async validator of children field
+* `FIXED` fix view mode lost for SearchFormField
+
 ## 7.2.5
 * `FIXED` fix text overflow in InputFormFiled when view mode
 
