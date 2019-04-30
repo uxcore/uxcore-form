@@ -140,7 +140,7 @@ class Form extends React.Component {
       const promises = [];
       for (let i = 0; i < keys.length; i++) {
         if (me.fields[keys[i]].getProps().jsxshow) {
-          promises.push(me.fields[keys[i]].doValidate(force, always, true));
+          promises.push(me.fields[keys[i]].doValidate(force, always));
         }
       }
       Promise.all(promises).then((result) => {
