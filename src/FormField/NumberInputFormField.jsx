@@ -64,9 +64,10 @@ class NumberInputFormField extends InputFormField {
   }
 
   deFormatValue(value) {
-    const me = this;
-    if (me.props.jsxtype === 'money' || me.props.jsxtype === 'cnmobile' || me.props.jsxtype === 'card') {
-      return value.split(me.props.delimiter).join('');
+    const { jsxtype, delimiter } = this.props;
+    if (jsxtype === 'money' || jsxtype === 'cnmobile' || jsxtype === 'card') {
+      value = value.replace(jsxtype !== 'money' ? /[^\d+]/gi : /[^(\d+|\.+)]/gi, delimiter)
+      return value.split(delimiter).join('');
     }
     return value;
   }

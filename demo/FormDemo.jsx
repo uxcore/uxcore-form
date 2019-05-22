@@ -50,6 +50,9 @@ class Demo extends React.Component {
     super(props);
     this.state = {
       showPass: false,
+      // jsxtype: 'money',
+      // delimiter: ',',
+      fixedNum: 2,
       jsxvalues: {
         // test1: '我是测试',
         fruit: 'apple',
@@ -82,6 +85,12 @@ class Demo extends React.Component {
       size: 'middle',
       verticalAlign: true,
     };
+    // setTimeout(() => {
+    //   this.setState({
+    //     jsxtype: 'money',
+    //     delimiter: ','
+    //   })
+    // }, 8000)
   }
 
   handleClick() {
@@ -299,9 +308,9 @@ class Demo extends React.Component {
             <NumberInputFormField
               jsxname="number"
               jsxlabel="数字输入框"
-              jsxtype="money"
-              delimiter=","
-              fixedNum={2}
+              jsxtype={this.state.jsxtype}
+              delimiter={this.state.delimiter}
+              fixedNum={this.state.fixedNum}
               formatOnBlur
               jsxplaceholder="输入数字"
               jsxtips="数字和一般的输入框不同"
