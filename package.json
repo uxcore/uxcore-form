@@ -45,13 +45,14 @@
     "enzyme-adapter-react-16": "1.x"
   },
   "dependencies": {
-    "kuma-base": "1.x",
     "classnames": "^2.1.2",
     "deep-equal": "~1.0.1",
+    "kuma-base": "1.x",
     "lie": "^3.1.0",
     "lodash": "^4.16.6",
     "object-assign": "^4.0.0",
     "prop-types": "15.x",
+    "uxcore-card": "^0.1.15",
     "uxcore-checkbox-group": "^1.2.0",
     "uxcore-const": "^1.0.0",
     "uxcore-date-form-field": "^0.9.0",

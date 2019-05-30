@@ -9,7 +9,7 @@ import Title from 'uxcore-title';
 import PropTypes from 'prop-types';
 
 const FormRowTitle = ({
-  children, className, prefixCls, jsxtitle,
+  children, className, prefixCls, jsxtitle, type
 }) => {
   const length = React.Children.count(children);
   return (
@@ -19,7 +19,7 @@ const FormRowTitle = ({
         [prefixCls]: true,
       })}
     >
-      <Title type="secondary">
+      <Title type={type}>
         {jsxtitle}
       </Title>
       {!!length && React.Children.map(children, item => item)}
@@ -32,6 +32,7 @@ FormRowTitle.propTypes = {
   jsxtitle: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.any,
+  type: PropTypes.string
 };
 
 FormRowTitle.defaultProps = {
@@ -39,6 +40,7 @@ FormRowTitle.defaultProps = {
   jsxtitle: '',
   children: undefined,
   className: '',
+  type: 'secondary'
 };
 
 FormRowTitle.displayName = 'FormRowTitle';
