@@ -1,3 +1,6 @@
+## 7.3.0
+* `NEW` add Form.FromCard for card layout in form, support FormRow & FormField nesting
+
 ## 7.2.6
 * `FIXED` fix bug of async validator of children field
 * `FIXED` fix view mode lost for SearchFormField
