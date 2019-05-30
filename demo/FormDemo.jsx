@@ -51,7 +51,7 @@ class Demo extends React.Component {
     super(props);
     this.state = {
       showPass: false,
-      // jsxtype: 'money',
+      jsxtype: 'money',
       // delimiter: ',',
       fixedNum: 2,
       jsxvalues: {
