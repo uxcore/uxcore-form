@@ -17,6 +17,7 @@ import Form from '../src';
 const {
   Constants,
   FormRowTitle,
+  FormCard,
   FormRow,
   InputFormField,
   Validators,
@@ -50,8 +51,11 @@ class Demo extends React.Component {
     super(props);
     this.state = {
       showPass: false,
+      jsxtype: 'money',
+      // delimiter: ',',
+      fixedNum: 2,
       jsxvalues: {
-        // test1: '我是测试',
+        test1: '我是测试',
         fruit: 'apple',
         number: 1,
         city: 'nj',
@@ -61,6 +65,15 @@ class Demo extends React.Component {
         // date: "2015-09-01",
         goods2: ['a', 'b'],
         checkbox: ['sea'],
+        theme: 'Form 展示',
+        location: 'Uxcore 站点',
+        date: 1213123123123,
+        pass:'123123',
+        content1: '这是一个 Form 的模式转换页面1。',
+        content2: '这是一个 Form 的模式转换页面2。',
+        content3: '这是一个 Form 的模式转换页面3。',
+        content4: '这是一个 Form 的模式转换页面4。',
+        content5: '这是一个 Form 的模式转换页面5。',
         dicts: {
           datas: [
             {
@@ -82,6 +95,12 @@ class Demo extends React.Component {
       size: 'middle',
       verticalAlign: true,
     };
+    // setTimeout(() => {
+    //   this.setState({
+    //     jsxtype: 'money',
+    //     delimiter: ','
+    //   })
+    // }, 8000)
   }
 
   handleClick() {
@@ -299,9 +318,9 @@ class Demo extends React.Component {
             <NumberInputFormField
               jsxname="number"
               jsxlabel="数字输入框"
-              jsxtype="money"
-              delimiter=","
-              fixedNum={2}
+              jsxtype={this.state.jsxtype}
+              delimiter={this.state.delimiter}
+              fixedNum={this.state.fixedNum}
               formatOnBlur
               jsxplaceholder="输入数字"
               jsxtips="数字和一般的输入框不同"
@@ -314,20 +333,6 @@ class Demo extends React.Component {
                 1111
               </RightAddon>
             </NumberInputFormField>
-
-            <ButtonGroupFormField jsxshow={false}>
-              <Button
-                size="medium"
-                type="primary"
-                action="submit"
-                onClick={me.handleFormClick.bind(me)}
-              >
-                提交
-              </Button>
-              <Button size="medium" type="secondary" action="reset">
-                取消
-              </Button>
-            </ButtonGroupFormField>
           </FormRow>
           <FormRow>
             <RadioGroupFormField jsxname="fruit" jsxlabel="Radio" jsxflex={1}>
@@ -342,7 +347,7 @@ class Demo extends React.Component {
             </CheckboxGroupFormField>
           </FormRow>
           <FormRow>
-            <InputFormField jsxname="pass" jsxlabel="请输入密码" inputType={me.state.showPass ? 'text' : 'password'}>
+            <InputFormField jsxname="pass" placeholder={'请输入密码'} jsxlabel="请输入密码" inputType={me.state.showPass ? 'text' : 'password'}>
               <RightAddon>
                 <Icon
                   usei
@@ -516,6 +521,91 @@ class Demo extends React.Component {
           />
 
           <CustomField jsxname="custom" jsxlabel="定制" placeholder="test" />
+
+          <FormCard
+            title="这是一个卡片"
+            defaultCollapsed={false}
+            showCollapseIcon={true}
+          >
+            <FormRowTitle jsxtitle={'折扣价看大家发'} type={'thirdary'} />
+            <FormRow>
+              <InputFormField
+                labelMatchInputHeight
+                required
+                jsxname="theme"
+                jsxlabel={'主题'}
+                jsxdisabled={false}
+                autoTrim={false}
+                validateOnBlur={false}
+                onKeyDown={me.handleKeyDown.bind(me)}
+                jsxrules={[
+                  { validator: Validators.isNotEmpty, errMsg: '不能为空' },
+                  { validator: Validators.isNum, errMsg: '必须为数字' }
+                ]}
+              >
+                <Count total={20} />
+              </InputFormField>
+              <InputFormField
+                labelMatchInputHeight
+                required
+                jsxname="location"
+                jsxdisabled={false}
+                autoTrim={false}
+                jsxlabel="普通输入框"
+                validateOnBlur={false}
+                onKeyDown={me.handleKeyDown.bind(me)}
+                jsxrules={{ validator: Validators.isNotEmpty, errMsg: '不能为空' }}
+              >
+                <Count total={20} />
+              </InputFormField>
+              <InputFormField
+                labelMatchInputHeight
+                required
+                jsxname="content5"
+                jsxdisabled={false}
+                autoTrim={false}
+                jsxlabel="普通输入框"
+                validateOnBlur={false}
+                onKeyDown={me.handleKeyDown.bind(me)}
+                jsxrules={{ validator: Validators.isNotEmpty, errMsg: '不能为空' }}
+              >
+                <Count total={20} />
+              </InputFormField>
+            </FormRow>
+            <NumberInputFormField
+              jsxname="date"
+              jsxlabel="数字输入框"
+              jsxtype={this.state.jsxtype}
+              delimiter={this.state.delimiter}
+              fixedNum={this.state.fixedNum}
+              formatOnBlur
+              jsxplaceholder="输入数字"
+              jsxtips="数字和一般的输入框不同"
+              jsxrules={[
+                { validator: Validators.isNotEmpty, errMsg: '不能为空' },
+                { validator: Validators.isNum, errMsg: '请输入数字' },
+              ]}
+            />
+          </FormCard>
+          <FormCard
+            title="这也是一个卡片"
+            showCollapseIcon={true}
+          >
+            <InputFormField
+              labelMatchInputHeight
+              required
+              jsxname="theme"
+              jsxdisabled={false}
+              autoTrim={false}
+              jsxlabel="普通输入框"
+              jsxtips="请输入数字"
+              validateOnBlur={false}
+              onKeyDown={me.handleKeyDown.bind(me)}
+              jsxrules={{ validator: Validators.isNotEmpty, errMsg: '不能为空' }}
+            >
+              <Count total={20} />
+            </InputFormField>
+          </FormCard>
 
           <ButtonGroupFormField>
             <Button size="medium" onClick={me.handleClick.bind(me)}>

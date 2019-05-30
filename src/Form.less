@@ -9,6 +9,20 @@
     clear: both;
     height: 0;
   }
+  .uxcore-card {
+    margin-bottom: 16px;
+    width: 100%;
+    .uxcore-card-content {
+      overflow-y: auto;
+    }
+    .@{__formPrefixCls}-row-title {
+      .kuma-title-secondary,
+      .kuma-title-primary,
+      .kuma-title-thirdary{
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 .@{__formPrefixCls}-row-title {
@@ -20,6 +34,11 @@
   min-width: 100%;
   float: left;
   clear: both;
+  .@{__formPrefixCls}-field {
+    &:last-child {
+      padding-right: 0;
+    }
+  }
 }
 
 .@{__formPrefixCls}-field {
@@ -126,6 +145,9 @@
   border-bottom-right-radius: @input-border-radius;
   border-top-right-radius: @input-border-radius;
   border-left: none;
+  white-space: nowrap;
+  padding: 0 2px;
+  background: #fff;
 }
 
 .@{__formPrefixCls}-left-icon {
@@ -553,3 +575,4 @@
     }
   }
 }
+

@@ -7,3 +7,4 @@ import 'uxcore-rich-text/style';
 import 'uxcore-select2/style';
 import 'uxcore-tinymce/style';
 import 'uxcore-title/style';
+import 'uxcore-card/style'

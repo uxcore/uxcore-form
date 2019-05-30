@@ -17,6 +17,7 @@ import PropTypes from 'prop-types';
 import Validators from './Validators';
 import KeyCode from './KeyCode';
 import FormRowTitle from './FormRowTitle';
+import FormCard from './FormCard'
 
 class Form extends React.Component {
   constructor(props) {
@@ -223,7 +224,7 @@ class Form extends React.Component {
               {child}
             </FormRow>,
           );
-        } else if (/FormRow/.test(displayName)) {
+        } else if (/FormRow/.test(displayName) || /FormCard/.test(displayName)) {
           elements.push(child);
         }
       }
@@ -271,6 +272,7 @@ class Form extends React.Component {
 // 以 Form 的插件的形式给出
 Form.FormRow = FormRow;
 Form.FormRowTitle = FormRowTitle;
+Form.FormCard = FormCard;
 
 
 // Form.MentionFormField = MentionFormField;
