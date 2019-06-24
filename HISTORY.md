@@ -1,3 +1,6 @@
+## 7.3.1
+* `FIXED` fix a format bug in NumberInputFormField
+
 ## 7.3.0
 * `NEW` add Form.FromCard for card layout in form, support FormRow & FormField nesting
 
