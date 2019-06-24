@@ -15,7 +15,7 @@ class NumberInputFormField extends InputFormField {
       value = trim(value);
     }
     value = value.replace(/[^\d\.\-]/g, '');
-    me.handleDataChange(me.deFormatValue(value));
+    me.handleDataChange(me.deFormatValue(me.formatValue(me.deFormatValue(value))));
   }
 
   handleBlur(e) {
