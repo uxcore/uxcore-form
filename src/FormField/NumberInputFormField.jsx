@@ -16,10 +16,10 @@ class NumberInputFormField extends InputFormField {
       me.clearTimer();
       me.timer = setTimeout(() => {
         value = trim(value);
-        me.handleDataChange(me.deFormatValue(value));
+        me.handleDataChange(me.deFormatValue(me.formatValue(me.deFormatValue(value))));
       }, 500);
     }
-    me.handleDataChange(me.deFormatValue(value));
+    me.handleDataChange(me.deFormatValue(me.formatValue(me.deFormatValue(value))));
   }
 
   handleBlur(e) {
