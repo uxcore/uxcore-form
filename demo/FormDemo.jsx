@@ -55,7 +55,7 @@ class Demo extends React.Component {
       delimiter: ',',
       fixedNum: 2,
       jsxvalues: {
-        test1: '我是测试',
+        test1: '',
         fruit: 'apple',
         number: 1,
         city: 'nj',
@@ -301,6 +301,7 @@ class Demo extends React.Component {
               jsxname="test1"
               jsxdisabled={false}
               autoTrim={false}
+              tipInLabel
               jsxlabel="普通输入框"
               jsxtips="请输入数字"
               validateOnBlur={false}
@@ -321,6 +322,7 @@ class Demo extends React.Component {
               jsxtype={this.state.jsxtype}
               delimiter={this.state.delimiter}
               fixedNum={this.state.fixedNum}
+              tipInLabel
               // formatOnBlur
               jsxplaceholder="输入数字"
               jsxtips="数字和一般的输入框不同"

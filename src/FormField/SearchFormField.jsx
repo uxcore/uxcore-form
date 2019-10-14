@@ -73,7 +73,7 @@ class SearchFormField extends SelectFormField {
     const { value } = me.state
     if (mode === Constants.MODE.VIEW) {
       return (
-        value ? value.class ? `${value.class}-${value.main}` : value.main : ''
+        value ? value.class ? `${value.class}-${value.main}` : value.main : '--'
       )
     }
     const hasClass = me.props.classOptions instanceof Array && me.props.classOptions.length > 0;
