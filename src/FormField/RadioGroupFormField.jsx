@@ -31,6 +31,7 @@ class RadioGroupFormField extends FormField {
     const me = this;
     const arr = [];
     const mode = me.props.jsxmode || me.props.mode;
+    const viewModePlaceholder = me.props.viewModePlaceholder || '--';
     if (mode === Constants.MODE.EDIT) {
       arr.push(<RadioGroup
         disabled={me.props.jsxdisabled}
@@ -44,9 +45,9 @@ class RadioGroupFormField extends FormField {
       const children = me.props.children instanceof Array ? me.props.children : [me.props.children];
       const text = children.filter(child => child.props.value === me.state.value);
       if (text.length) {
-        arr.push(<span key="radiogroup">{text[0].props.text || '--'}</span>);
+        arr.push(<span key="radiogroup">{text[0].props.text || viewModePlaceholder}</span>);
       } else {
-        arr.push(<span key="radiogroup">{me.state.value || '--'}</span>);
+        arr.push(<span key="radiogroup">{me.state.value || viewModePlaceholder}</span>);
       }
     }
     return arr;

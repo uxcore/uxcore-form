@@ -102,7 +102,7 @@ class CascadeSelectFormField extends FormField {
           data = data.contents.filter(ele => ele.value === item)[0];
           return data.text;
         });
-        arr.push(<span key="cascade">{textArr.join(' ') || '--'}</span>);
+        arr.push(<span key="cascade">{textArr.join(' ') || me.props.viewModePlaceholder || '--'}</span>);
       }
     }
     return arr;

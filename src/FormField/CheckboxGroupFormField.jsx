@@ -45,7 +45,7 @@ class CheckboxGroupFormField extends FormField {
       if (textArr.length === 0) {
         textArr = me.state.value;
       }
-      return <span>{textArr.join(splitter) || '--'}</span>;
+      return <span>{textArr.join(splitter) || me.props.viewModePlaceholder || '--'}</span>;
     }
     return null;
   }
