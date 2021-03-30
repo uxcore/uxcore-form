@@ -11,15 +11,19 @@ class NumberInputFormField extends InputFormField {
     const { autoTrim } = me.props;
     let value = e.currentTarget.value;
     value = value.replace(/[^\d.-]/g, '');
-
+    me.clearTimer();
     if (autoTrim) {
-      me.clearTimer();
       me.timer = setTimeout(() => {
         value = trim(value);
         me.handleDataChange(me.deFormatValue(me.formatValue(me.deFormatValue(value))));
       }, 500);
     }
-    me.handleDataChange(me.deFormatValue(me.formatValue(me.deFormatValue(value))));
+    // windows chrome 中 IME 合成速度较慢，直接 setValue 会导合成被打断后引发的
+    // onChange 和用户输入的 onChange 输出的 value 值不符，导致 bug。
+    // 这样做之后带来的负效应是，onChange 会固定的被触发两次，性能会有所降低，但表现看起来更加正常了。
+    me.timer = setTimeout(() => {
+      me.handleDataChange(me.deFormatValue(me.formatValue(me.deFormatValue(value))));
+    });
   }
 
   handleBlur(e) {
