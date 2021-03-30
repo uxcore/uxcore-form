@@ -1,3 +1,6 @@
+## 7.5.1
+* `FIXED` NumberInputFormField will double the entered character using chinese ime in windows
+
 ## 7.3.1
 * `FIXED` fix a format bug in NumberInputFormField
 
