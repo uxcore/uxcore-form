@@ -1,3 +1,7 @@
+## 6.3.6
+
+* `FIXED` NumberInputFormField will double the entered character using chinese ime in windows
+
 ## 6.3.4
 
 * `FIXED` SearchField handleDataChange
